@@ -70,47 +70,12 @@ function goToGitHubRepo() {
 .header h1 {
   font-size: 2.5rem;
   margin-bottom: .5rem;
-
-
 }
 
 .header .subtitle {
   font-size: 1rem;
   color: #cccccc;
   margin-bottom: 2rem;
-}
-
-.buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border: 2px solid #333;
-  border-radius: 6px;
-  background-color: #fff;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.btn:hover {
-  background-color: #f0f0f0;
-}
-
-.btn-primary {
-  background-color: #333;
-  color: #fff;
-  border-color: #333;
-}
-
-.btn-primary:hover {
-  background-color: #555;
-  border-color: #555;
 }
 
 .modal h2 {

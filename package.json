@@ -10,6 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@vercel/node": "^5.5.15",
+    "axios": "^1.13.2",
+    "mongodb": "^7.0.0",
     "nuxt": "^4.2.2",
     "vue": "^3.5.25",
     "vue-router": "^4.6.3"
