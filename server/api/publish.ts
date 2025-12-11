@@ -1,6 +1,7 @@
 import { MongoClient } from "mongodb";
 import WebSocket from "ws";
 import { getRequestIP } from "h3";
+import { ipAddress } from "@vercel/functions";
 
 const uri = process.env.MONGODB_URI!;
 const client = new MongoClient(uri);
@@ -12,17 +13,12 @@ export default defineEventHandler(async (event) => {
 
     try {
         const body = await readBody(event) as { port: number };
-        if (!body.port) return sendError(event, { statusCode: 400, statusMessage: "Port is required" });
+        if (!body.port || !body.ip) return sendError(event, { statusCode: 400, statusMessage: "IP and Port is required" });
 
-        const ip = event.node.req.socket.remoteAddress || getRequestIP(event) || event.node.req.headers['x-forwarded-for'].split(',').pop();
-        if (!ip || ip === '::1') {
-            return sendError(event, { statusCode: 400, statusMessage: "无法获取客户端 IP" });
-        }
+        const wsUrl = `ws://${body.ip}:${body.port}`;
+        console.log("Verifying " + wsUrl + " for publishing...")
 
-        console.log("publishing " + ip)
-        const wsUrl = `ws://${ip}:${body.port}`;
         let serverData: any = null;
-
         try {
             serverData = await new Promise<any>((resolve, reject) => {
                 const ws = new WebSocket(wsUrl, { handshakeTimeout: 2000 });
@@ -54,13 +50,18 @@ export default defineEventHandler(async (event) => {
         }
 
         await client.connect();
+
+        if (! serverData) {
+            return sendError(event, { statusCode: 401, statusMessage: "Can not connect to server" });
+        }
+
         const db = client.db("war_drafting");
         const collection = db.collection("servers");
 
         const now = new Date();
 
         const updateData = {
-            ip,
+            ip: body.ip,
             port: body.port,
             title: serverData?.title ?? "未知",
             owner: serverData?.owner ?? "未知",
@@ -72,7 +73,7 @@ export default defineEventHandler(async (event) => {
         };
 
         await collection.updateOne(
-            { ip, port: body.port },
+            { ip: body.ip, port: body.port },
             { $set: updateData, $setOnInsert: { createdAt: now } },
             { upsert: true }
         );
