@@ -55,10 +55,15 @@ function connectToServer() {
   if (!connectIP.value || !connectPort.value) return alert("请输入服务器地址和端口");
   // TODO
   showConnectModal.value = false;
+  joinServer(connectIP.value, connectPort.value);
 }
 
 function goToHomepage() {
   router.push('/');
+}
+
+function joinServer(addr: string, port: number) {
+
 }
 </script>
 
@@ -76,15 +81,18 @@ function goToHomepage() {
     <div class="server-list">
       <div v-if="loaded && servers.length" v-for="server in servers" :key="server._id" class="server-card">
         <h2>{{ server.title }}</h2>
-        <p>IP: {{ server.ip }} : {{ server.port }}</p>
-        <p>Owner: {{ server.owner }}</p>
-        <p>角色数量: {{ server.loadedCharacters }}</p>
-        <p>在线人数: {{ server.onlinePlayers }}</p>
+        <p>服务器地址: {{ server.ip }} : {{ server.port }}</p>
+        <p>所有者: {{ server.owner }}</p>
+        <p>载入角色数量: {{ server.loadedCharacters }}</p>
+        <p>在线人数: {{ server.onlinePlayers }}/2</p>
         <p>
           状态:
           <span :class="statusClass(server.status)">
             {{ statusText(server.status) }}
           </span>
+        </p>
+        <p class="buttons">
+          <button class="btn-connect font-kai" @click="joinServer(server.ip, server.port)">连接</button>
         </p>
       </div>
       <div v-else-if="loaded">
