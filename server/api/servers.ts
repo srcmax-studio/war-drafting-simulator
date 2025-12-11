@@ -1,23 +1,33 @@
 import { MongoClient } from "mongodb";
-import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 const uri = process.env.MONGODB_URI!;
 const client = new MongoClient(uri);
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-    if (req.method !== "GET") return res.status(405).json({ message: "Method not allowed" });
-
+export default defineEventHandler(async (event) => {
     try {
         await client.connect();
         const db = client.db("war_drafting");
         const collection = db.collection("servers");
 
-        const servers = await collection.find().sort({ updatedAt: -1 }).toArray();
+        const serversRaw = await collection.find().sort({ updatedAt: -1 }).toArray();
 
-        res.status(200).json(servers);
+        const servers = serversRaw.map(s => ({
+            _id: s._id.toString(),
+            ip: s.ip,
+            port: s.port,
+            title: s.title ?? "未知服务器",
+            owner: s.owner ?? "未知",
+            loadedCharacters: s.loadedCharacters ?? 0,
+            onlinePlayers: s.onlinePlayers ?? 0,
+            status: s.status ?? 0,
+            updatedAt: s.updatedAt ?? new Date(),
+        }));
+
+        return servers;
     } catch (e) {
         console.error(e);
+        return sendError(event, { statusCode: 500, statusMessage: "Database error" });
     } finally {
         await client.close();
     }
-}
+});
