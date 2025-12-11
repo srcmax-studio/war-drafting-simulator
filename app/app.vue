@@ -1,5 +1,3 @@
 <template>
-  <div>
-    war-drafting-simulator
-  </div>
+  <RouterView />
 </template>

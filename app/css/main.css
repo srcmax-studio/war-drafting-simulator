@@ -1,0 +1,36 @@
+.font-kai {
+    font-family:
+            "Libre Baskerville", "Baskerville", "Georgia", "Times New Roman", "Palatino Linotype", "Palatino",
+            "Helvetica Neue", "Arial", "Roboto", "Inter",  'Apple Color Emoji',
+            'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji',
+            "楷体", "正楷", "华文楷体", "Kaiti SC", "Kaiti", "Kai",
+            "Songti SC", "宋体",
+            "华文宋体",
+            "STSong", "仿宋",
+            "SimSun", "新宋体",
+            "NSimSun",
+            "FangSong",
+            serif;
+}
+
+.modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+}
+
+.modal {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        max-width: 500px;
+        width: 90%;
+        text-align: center;
+}
