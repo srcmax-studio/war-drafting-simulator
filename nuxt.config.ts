@@ -5,4 +5,7 @@ export default defineNuxtConfig({
   css: [
     '@/css/main.css'
   ],
+  plugins: [
+      '@/plugins/toast',
+  ]
 })
