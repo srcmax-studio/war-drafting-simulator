@@ -7,7 +7,8 @@ export interface ServerState {
     loadedCharacters: number,
     onlinePlayers: number,
     phase: number,
-    requirePassword: boolean
+    requirePassword: boolean,
+    tls: boolean
 }
 
 const client = ref<Client | null>(null)

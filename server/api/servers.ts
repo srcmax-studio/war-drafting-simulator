@@ -21,6 +21,7 @@ export default defineEventHandler(async (event) => {
             onlinePlayers: s.onlinePlayers ?? 0,
             status: s.status ?? 0,
             requirePassword: s.requirePassword ?? false,
+            tls: s.tls ?? false,
             updatedAt: s.updatedAt ?? new Date(),
         }));
 

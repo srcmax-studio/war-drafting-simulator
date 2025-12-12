@@ -15,7 +15,7 @@ export default defineEventHandler(async (event) => {
         const body = await readBody(event) as { port: number };
         if (!body.port || !body.ip) return sendError(event, { statusCode: 400, statusMessage: "IP and Port is required" });
 
-        const wsUrl = `ws://${body.ip}:${body.port}`;
+        const wsUrl = (body.tls ? 'wss' : 'ws') + `://${body.ip}:${body.port}`;
         console.log("Verifying " + wsUrl + " for publishing...")
 
         let serverData: any = null;
@@ -69,6 +69,7 @@ export default defineEventHandler(async (event) => {
             onlinePlayers: serverData?.onlinePlayers ?? 0,
             phase: serverData?.phase ?? 0,
             requirePassword: serverData?.requirePassword ?? false,
+            tls: body.tls ?? false,
             updatedAt: now,
         };
 

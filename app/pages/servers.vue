@@ -26,6 +26,7 @@ const servers = ref<any[]>([]);
 const showConnectModal = ref(false);
 const connectIP = ref("");
 const connectPort = ref<number | null>(null);
+const connectTLS = ref(true);
 
 let loaded = ref<boolean>(false);
 
@@ -73,13 +74,14 @@ function openConnectModal(server?: any) {
     connectIP.value = "";
     connectPort.value = 3001;
   }
+  connectTLS.value = true;
   showConnectModal.value = true;
 }
 
 function connectToServer() {
   if (!connectIP.value || !connectPort.value) return showError("请输入服务器地址和端口");
   showConnectModal.value = false;
-  joinServer(connectIP.value, connectPort.value);
+  joinServer(connectIP.value, connectPort.value, connectTLS.value);
 }
 
 function goToHomepage() {
@@ -95,12 +97,12 @@ const playerName = ref("");
 let currentServer: any = null;
 let { client, ws, players, serverState } = useClient();
 
-async function joinServer(ip: string, port: number) {
+async function joinServer(ip: string, port: number, tls: boolean = true) {
   currentServer = null;
   loading.value = true;
 
   try {
-    client.value = new Client({ip, port});
+    client.value = new Client({ip, port, tls});
     ws.value = client.value.ws;
 
     const serverData: any = await new Promise((resolve, reject) => {
@@ -146,6 +148,7 @@ async function joinServer(ip: string, port: number) {
     }
   } catch (e: any) {
     loading.value = false;
+    console.log(e)
     showError("连接服务器失败：" + (e.message ?? '未知错误'));
     if (ws.value) ws.value.close();
     ws.value = null;
@@ -197,7 +200,7 @@ function submitPassword() {
 
 async function scanServer(server: Server) {
   server.scanning = true;
-  const wsUrl = `ws://${server.ip}:${server.port}`;
+  const wsUrl = (server.tls ? 'wss' : 'ws') + `://${server.ip}:${server.port}`;
   let ws: WebSocket | null = null;
 
   try {
@@ -282,7 +285,7 @@ async function scanServer(server: Server) {
         </template>
 
         <p class="buttons">
-          <button class="btn-connect font-kai" @click="joinServer(server.ip, server.port)" :disabled="!server.connectable">连接</button>
+          <button class="btn-connect font-kai" @click="joinServer(server.ip, server.port, server.tls)" :disabled="!server.connectable">连接</button>
         </p>
       </div>
 
@@ -307,6 +310,10 @@ async function scanServer(server: Server) {
         <div class="input">
           <label>服务器端口:</label>
           <input v-model.number="connectPort" type="number" placeholder="3001" class="font-kai" />
+        </div>
+        <div class="input">
+          <label>TLS：</label>
+          <input type="checkbox" v-model="connectTLS" />
         </div>
         <div class="buttons">
           <button class="btn-connect font-kai" @click="connectToServer">连接</button>
