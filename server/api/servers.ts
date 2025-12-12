@@ -20,6 +20,7 @@ export default defineEventHandler(async (event) => {
             loadedCharacters: s.loadedCharacters ?? 0,
             onlinePlayers: s.onlinePlayers ?? 0,
             status: s.status ?? 0,
+            requirePassword: s.requirePassword ?? false,
             updatedAt: s.updatedAt ?? new Date(),
         }));
 
