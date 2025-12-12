@@ -47,10 +47,15 @@
         padding: 0.75rem 1.5rem;
         font-size: 1rem;
         border: 2px solid #333;
+        color: #333;
         border-radius: 6px;
         background-color: #fff;
         cursor: pointer;
         transition: all 0.2s ease;
+}
+
+button[disabled=disabled], button:disabled {
+        color: #ccc;
 }
 
 .btn:hover {

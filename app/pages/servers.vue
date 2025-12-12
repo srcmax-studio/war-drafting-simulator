@@ -146,7 +146,7 @@ async function joinServer(ip: string, port: number) {
     }
   } catch (e: any) {
     loading.value = false;
-    showError("连接服务器失败：" + e.message);
+    showError("连接服务器失败：" + (e.message ?? '未知错误'));
     if (ws.value) ws.value.close();
     ws.value = null;
   }
@@ -427,11 +427,16 @@ async function scanServer(server: Server) {
   border: 2px solid #333;
   background-color: #fff;
   cursor: pointer;
+  color: #333;
   border-radius: 6px;
 }
 
 .btn-connect:hover {
   background-color: #f0f0f0;
+}
+
+button[disabled=disabled], button:disabled {
+  color: #ccc;
 }
 
 .status-idle {
