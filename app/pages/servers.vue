@@ -2,6 +2,23 @@
 import { ref, onMounted } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
+import { showError } from "~/plugins/toast";
+import Spinner from "~/components/spinner.vue";
+import { Client } from "~/client";
+import { setupClient, useClient } from "~/composables/useClient";
+
+interface Server {
+  ip: string;
+  port: number;
+  title: string;
+  owner: string;
+  loadedCharacters: number;
+  status?: number;
+  onlinePlayers?: number;
+  requirePassword?: boolean;
+  connectable?: boolean;
+  scanning?: boolean;
+}
 
 const router = useRouter();
 
@@ -33,10 +50,18 @@ function statusClass(status: number) {
 onMounted(async () => {
   try {
     const res = await axios.get("/api/servers");
-    servers.value = res.data;
+    servers.value = res.data.map((s: Server) => ({
+      ...s,
+      scanning: true,
+      connectable: false
+    }));
+
+    for (const server of servers.value) {
+      scanServer(server);
+    }
     loaded.value = true;
   } catch (e) {
-    console.error(e);
+    showError("载入服务器列表时出错");
   }
 });
 
@@ -52,8 +77,7 @@ function openConnectModal(server?: any) {
 }
 
 function connectToServer() {
-  if (!connectIP.value || !connectPort.value) return alert("请输入服务器地址和端口");
-  // TODO
+  if (!connectIP.value || !connectPort.value) return showError("请输入服务器地址和端口");
   showConnectModal.value = false;
   joinServer(connectIP.value, connectPort.value);
 }
@@ -62,8 +86,157 @@ function goToHomepage() {
   router.push('/');
 }
 
-function joinServer(addr: string, port: number) {
+const loading = ref(false);
+const showPasswordModal = ref(false);
+const passwordInput = ref("");
+const showNameModal = ref(false);
+const playerName = ref("");
 
+let currentServer: any = null;
+let { client, ws, players, serverState } = useClient();
+
+async function joinServer(ip: string, port: number) {
+  currentServer = null;
+  loading.value = true;
+
+  try {
+    client.value = new Client({ip, port});
+    ws.value = client.value.ws;
+
+    const serverData: any = await new Promise((resolve, reject) => {
+      const timeout = setTimeout(() => {
+        showError("连接超时");
+        reject(new Error("连接超时"));
+      }, 5000);
+
+      ws.value!.onopen = () => {
+        ws.value!.send(JSON.stringify({ action: "status" }));
+      };
+
+      ws.value!.onmessage = (event) => {
+        clearTimeout(timeout);
+        try {
+          const data = JSON.parse(event.data);
+          resolve(data);
+        } catch (e) {
+          reject(e);
+        }
+      };
+
+      ws.value!.onerror = (err) => {
+        clearTimeout(timeout);
+        reject(err);
+      };
+
+      ws.value!.onclose = () => {
+        clearTimeout(timeout);
+      };
+    });
+
+    loading.value = false;
+    currentServer = serverData;
+
+    if (serverData.requirePassword) {
+      showPasswordModal.value = true;
+    } else {
+      loading.value = false;
+      currentServer = serverData;
+
+      showNameModal.value = true;
+    }
+  } catch (e: any) {
+    loading.value = false;
+    showError("连接服务器失败：" + e.message);
+    if (ws.value) ws.value.close();
+    ws.value = null;
+  }
+}
+
+function submitName() {
+  if (!currentServer || !ws.value) return;
+
+  if (!playerName.value) return showError("请输入名字");
+
+  ws.value.send(JSON.stringify({ action: "join", name: playerName.value }));
+  ws.value.onmessage = (event) => {
+    try {
+      const data = JSON.parse(event.data);
+      if (data.event === "joined") {
+        showNameModal.value = false;
+        players.value = data.players;
+        serverState.value = data.serverState;
+
+        setupClient();
+        router.push("/game");
+      } else if (data.event === "error") {
+        showError("加入失败：" + data.message);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+}
+
+function submitPassword() {
+  if (!currentServer) return;
+  ws.value.send(JSON.stringify({ action: 'authenticate', password: passwordInput.value }))
+  ws.value.onmessage = (event) => {
+    try {
+      const data = JSON.parse(event.data);
+      if (data.event === "authenticated") {
+        showPasswordModal.value = false;
+        showNameModal.value = true;
+      } else {
+        showError(data.message);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+}
+
+async function scanServer(server: Server) {
+  server.scanning = true;
+  const wsUrl = `ws://${server.ip}:${server.port}`;
+  let ws: WebSocket | null = null;
+
+  try {
+    ws = new WebSocket(wsUrl);
+
+    const serverData: any = await new Promise((resolve, reject) => {
+      const timeout = setTimeout(() => reject(new Error('连接超时')), 3000);
+
+      ws!.onopen = () => ws!.send(JSON.stringify({ action: 'status' }));
+
+      ws!.onmessage = (event) => {
+        clearTimeout(timeout);
+        try {
+          resolve(JSON.parse(event.data));
+        } catch (err) {
+          reject(err);
+        } finally {
+          ws?.close();
+        }
+      };
+
+      ws!.onerror = (err) => {
+        clearTimeout(timeout);
+        reject(err);
+      };
+      ws!.onclose = () => clearTimeout(timeout);
+    });
+
+    server.status = serverData.phase;
+    server.title = serverData.title;
+    server.owner = serverData.owner;
+    server.onlinePlayers = serverData.onlinePlayers;
+    server.requirePassword = serverData.requirePassword;
+    server.connectable = true;
+  } catch (err) {
+    server.connectable = false;
+  } finally {
+    server.scanning = false;
+  }
 }
 </script>
 
@@ -84,28 +257,46 @@ function joinServer(addr: string, port: number) {
         <p>服务器地址: {{ server.ip }} : {{ server.port }}</p>
         <p>所有者: {{ server.owner }}</p>
         <p>载入角色数量: {{ server.loadedCharacters }}</p>
-        <p>在线人数: {{ server.onlinePlayers }}/2</p>
-        <p>
-          状态:
-          <span :class="statusClass(server.status)">
+        <p v-if="server.scanning">连接中...</p>
+        <p v-else-if="!server.connectable" style="color: red">
+          无法连接至此服务器。
+        </p>
+        <template v-else>
+          <p>在线人数: {{ server.onlinePlayers }}/2</p>
+          <p>
+            状态:
+            <span :class="statusClass(server.status)">
             {{ statusText(server.status) }}
           </span>
-        </p>
+          </p>
+          <p>
+          <span>
+            <template v-if="server.requirePassword">
+              🔒 受密码保护
+            </template>
+            <template v-else>
+              ✅ 开放
+            </template>
+          </span>
+          </p>
+        </template>
+
         <p class="buttons">
-          <button class="btn-connect font-kai" @click="joinServer(server.ip, server.port)">连接</button>
+          <button class="btn-connect font-kai" @click="joinServer(server.ip, server.port)" :disabled="!server.connectable">连接</button>
         </p>
       </div>
+
       <div v-else-if="loaded">
         目前没有在线的公共服务器。您可以通过指定服务器地址连接未公开的服务器，或是创建服务器。
       </div>
-      <div v-else>
-        请求中...
+      <div v-else style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-height: 100px;">
+        <spinner />
+        <div style="margin-top: 1rem">请求中...</div>
       </div>
     </div>
 
     <button class="btn-connect font-kai" @click="openConnectModal(server)">连接至服务器</button>
 
-    <!-- Connect Modal -->
     <div v-if="showConnectModal" class="modal-overlay" @click.self="showConnectModal = false">
       <div class="modal">
         <h2>连接至服务器</h2>
@@ -120,6 +311,40 @@ function joinServer(addr: string, port: number) {
         <div class="buttons">
           <button class="btn-connect font-kai" @click="connectToServer">连接</button>
           <button class="btn-connect btn-close font-kai" @click="showConnectModal = false">取消</button>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="loading" class="modal-overlay">
+      <div class="modal">
+        <h2>连接中...</h2>
+        <p>正在连接服务器，请稍候</p>
+      </div>
+    </div>
+
+    <div v-if="showNameModal" class="modal-overlay" @click.self="showNameModal = false">
+      <div class="modal">
+        <h2>请输入你的名称</h2>
+        <div class="input">
+          <input v-model="playerName" type="text" class="font-kai" />
+        </div>
+        <div class="buttons">
+          <button class="btn-connect font-kai" @click="submitName">确认</button>
+          <button class="btn-connect btn-close font-kai" @click="showNameModal = false">取消</button>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="showPasswordModal" class="modal-overlay" @click.self="showPasswordModal = false">
+      <div class="modal">
+        <h2>此服务器受密码保护。</h2>
+        <h3>请输入密码以加入此服务器。</h3>
+        <div class="input">
+          <input v-model="passwordInput" type="password" class="font-kai" />
+        </div>
+        <div class="buttons">
+          <button class="btn-connect font-kai" @click="submitPassword">确认</button>
+          <button class="btn-connect btn-close font-kai" @click="showPasswordModal = false">取消</button>
         </div>
       </div>
     </div>
@@ -151,6 +376,7 @@ function joinServer(addr: string, port: number) {
   width: 150px;
   padding: 4px 6px;
   box-sizing: border-box;
+  font-size: 1rem;
 }
 
 .header h1 {
