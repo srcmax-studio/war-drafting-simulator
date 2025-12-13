@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import GameBoard from "~/components/game/GameBoard.vue";
-import Sidebar from "~/components/game/Sidebar.vue";
+import SideBar from "~/components/game/SideBar.vue";
 import ChatBox from "~/components/game/ChatBox.vue";
 
 import { setupClient, useClient } from "~/composables/useClient";
@@ -28,7 +28,7 @@ onMounted(() => {
     </div>
 
     <div class="sidebar">
-      <Sidebar :state="serverState" :players="players" />
+      <SideBar :state="serverState" :players="players" />
       <ChatBox :client="client" />
     </div>
 
