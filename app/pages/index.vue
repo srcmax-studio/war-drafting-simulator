@@ -15,15 +15,15 @@ function goToGitHubRepo() {
 </script>
 
 <template>
-  <main class="container font-kai">
+  <main class="container">
     <div class="header">
-      <h1>战争轮抽模拟器</h1>
+      <div class="text-xl text-bold">战争轮抽模拟器</div>
       <div class="subtitle">war-drafting-simulator</div>
     </div>
 
     <div class="buttons">
-      <button class="btn font-kai" @click="goToServersList">加入服务器</button>
-      <button class="btn btn-primary font-kai" @click="showModal = true">创建服务器</button>
+      <button class="btn" @click="goToServersList">加入服务器</button>
+      <button class="btn btn-primary" @click="showModal = true">创建服务器</button>
     </div>
 
     <div v-if="showModal" class="modal-overlay" @click.self="showModal = false">
@@ -42,16 +42,16 @@ function goToGitHubRepo() {
           此外，您还可以通过 "password" 选项为服务器设定密码。
         </p>
         <div class="buttons">
-          <button class="btn github-link font-kai" @click="goToGitHubRepo">
+          <button class="btn github-link" @click="goToGitHubRepo">
             GitHub 仓库
           </button>
-          <button class="btn btn-close font-kai" @click="showModal = false">关闭</button>
+          <button class="btn btn-close" @click="showModal = false">关闭</button>
         </div>
       </div>
     </div>
   </main>
 
-  <footer class="font-kai">
+  <footer>
     Made by <a href="https://srcmax.com" target="_blank">SrcMax Studio</a>
   </footer>
 </template>

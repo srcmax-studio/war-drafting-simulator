@@ -1,4 +1,4 @@
-.font-kai {
+.font-kai, html, body, input, button, main, footer {
     font-family:
             "Libre Baskerville", "Baskerville", "Georgia", "Times New Roman", "Palatino Linotype", "Palatino",
             "Helvetica Neue", "Arial", "Roboto", "Inter",  'Apple Color Emoji',
@@ -11,6 +11,18 @@
             "NSimSun",
             "FangSong",
             serif;
+}
+
+html, body, div#__nuxt {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        cursor: default;
+        user-select: none;
+}
+
+a, a:hover, a:visited {
+        color: black;
 }
 
 .modal-overlay {
@@ -71,4 +83,45 @@ button[disabled=disabled], button:disabled {
 .btn-primary:hover {
         background-color: #555;
         border-color: #555;
+}
+
+.box {
+        background: #fafafa;
+        padding: 0 1rem;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+}
+
+.text-2xl {
+        font-size: 3rem;
+}
+
+.text-xl {
+        font-size: 2rem;
+}
+
+.text-lg {
+        font-size: 1.5rem;
+}
+
+.text-md {
+        font-size: 1.2rem;
+}
+
+.text-sm {
+        font-size: 1rem;
+}
+
+.text-caption {
+        font-size: .7rem;
+}
+
+.text-bold {
+        font-weight: bold;
+}
+
+input {
+        padding: 4px 6px;
+        box-sizing: border-box;
+        font-size: 1rem;
 }

@@ -240,9 +240,9 @@ async function scanServer(server: Server) {
 </script>
 
 <template>
-  <main class="container font-kai">
+  <main class="container">
     <div class="game-header" @click="goToHomepage">
-      <h1>战争轮抽模拟器</h1>
+      <div class="text-lg text-bold">战争轮抽模拟器</div>
       <div class="subtitle">war-drafting-simulator</div>
     </div>
 
@@ -281,7 +281,7 @@ async function scanServer(server: Server) {
         </template>
 
         <p class="buttons">
-          <button class="btn-connect font-kai" @click="joinServer(server.ip, server.port, server.tls)" :disabled="!server.connectable">连接</button>
+          <button class="btn-connect" @click="joinServer(server.ip, server.port, server.tls)" :disabled="!server.connectable">连接</button>
         </p>
       </div>
 
@@ -294,26 +294,26 @@ async function scanServer(server: Server) {
       </div>
     </div>
 
-    <button class="btn-connect font-kai" @click="openConnectModal(server)">连接至服务器</button>
+    <button class="btn-connect" @click="openConnectModal(server)">连接至服务器</button>
 
     <div v-if="showConnectModal" class="modal-overlay" @click.self="showConnectModal = false">
       <div class="modal">
         <h2>连接至服务器</h2>
         <div class="input">
           <label>服务器地址：</label>
-          <input v-model="connectIP" type="text" placeholder="10.0.10.10" class="font-kai" />
+          <input v-model="connectIP" type="text" placeholder="10.0.10.10" />
         </div>
         <div class="input">
           <label>服务器端口:</label>
-          <input v-model.number="connectPort" type="number" placeholder="3001" class="font-kai" />
+          <input v-model.number="connectPort" type="number" placeholder="3001" />
         </div>
         <div class="input">
           <label>TLS：</label>
           <input type="checkbox" v-model="connectTLS" />
         </div>
         <div class="buttons">
-          <button class="btn-connect font-kai" @click="connectToServer">连接</button>
-          <button class="btn-connect btn-close font-kai" @click="showConnectModal = false">取消</button>
+          <button class="btn-connect" @click="connectToServer">连接</button>
+          <button class="btn-connect btn-close" @click="showConnectModal = false">取消</button>
         </div>
       </div>
     </div>
@@ -329,11 +329,11 @@ async function scanServer(server: Server) {
       <div class="modal">
         <h2>请输入你的名称</h2>
         <div class="input">
-          <input v-model="playerName" type="text" class="font-kai" />
+          <input v-model="playerName" type="text" />
         </div>
         <div class="buttons">
-          <button class="btn-connect font-kai" @click="submitName">确认</button>
-          <button class="btn-connect btn-close font-kai" @click="showNameModal = false">取消</button>
+          <button class="btn-connect" @click="submitName">确认</button>
+          <button class="btn-connect btn-close" @click="showNameModal = false">取消</button>
         </div>
       </div>
     </div>
@@ -343,11 +343,11 @@ async function scanServer(server: Server) {
         <h2>此服务器受密码保护。</h2>
         <h3>请输入密码以加入此服务器。</h3>
         <div class="input">
-          <input v-model="passwordInput" type="password" class="font-kai" />
+          <input v-model="passwordInput" type="password" />
         </div>
         <div class="buttons">
-          <button class="btn-connect font-kai" @click="submitPassword">确认</button>
-          <button class="btn-connect btn-close font-kai" @click="showPasswordModal = false">取消</button>
+          <button class="btn-connect" @click="submitPassword">确认</button>
+          <button class="btn-connect btn-close" @click="showPasswordModal = false">取消</button>
         </div>
       </div>
     </div>
@@ -377,9 +377,6 @@ async function scanServer(server: Server) {
 
 .input input {
   width: 150px;
-  padding: 4px 6px;
-  box-sizing: border-box;
-  font-size: 1rem;
 }
 
 .header h1 {
