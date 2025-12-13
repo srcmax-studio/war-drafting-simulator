@@ -12,20 +12,19 @@ export interface ServerState {
 }
 
 const client = ref<Client | null>(null)
-const ws = ref<WebSocket | null>(null)
 const serverState = ref<ServerState>(null)
 const players = ref<string[]>()
 
 export function useClient() {
     return {
         client,
-        ws,
         serverState,
         players
     }
 }
 
 export function setupClient() {
-    ws.onmessage = (event) => {
+    if (client.value) {
+        client.value.setup();
     }
 }

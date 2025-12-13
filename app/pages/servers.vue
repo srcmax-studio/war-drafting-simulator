@@ -95,7 +95,8 @@ const showNameModal = ref(false);
 const playerName = ref("");
 
 let currentServer: any = null;
-let { client, ws, players, serverState } = useClient();
+let { client, players, serverState } = useClient();
+let ws = ref<WebSocket>(null);
 
 async function joinServer(ip: string, port: number, tls: boolean = true) {
   currentServer = null;
@@ -110,10 +111,6 @@ async function joinServer(ip: string, port: number, tls: boolean = true) {
         showError("连接超时");
         reject(new Error("连接超时"));
       }, 5000);
-
-      ws.value!.onopen = () => {
-        ws.value!.send(JSON.stringify({ action: "status" }));
-      };
 
       ws.value!.onmessage = (event) => {
         clearTimeout(timeout);
@@ -169,7 +166,6 @@ function submitName() {
         players.value = data.players;
         serverState.value = data.serverState;
 
-        setupClient();
         router.push("/game");
       } else if (data.event === "error") {
         showError("加入失败：" + data.message);
