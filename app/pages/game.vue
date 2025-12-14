@@ -74,7 +74,7 @@ onMounted(() => {
   flex-direction: column;
   gap: 16px;
   height: 100%;
-  overflow: scroll;
+  overflow: hidden;
 }
 .game-board { grid-area: game-board; }
 </style>
