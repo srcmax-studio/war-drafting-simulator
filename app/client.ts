@@ -1,9 +1,10 @@
 import type { ClientAction } from "~/action";
 import { PongAction, RequestCharactersAction, StatusAction } from "~/action";
+import { useClient } from "~/composables/useClient";
 
-const STATUS_INITIALIZED = 0;
-const STATUS_SETUP = 10;
-const STATUS_SYNCED = 20;
+export const STATUS_INITIALIZED = 0;
+export const STATUS_SETUP = 10;
+export const STATUS_SYNCED = 20;
 
 export class Client {
     ws: WebSocket;
@@ -40,6 +41,12 @@ export class Client {
             }
 
             if (data.event === "charactersSync") {
+                const { serverState } = useClient();
+
+                if (data.characters.length !== serverState.value.loadedCharacters) {
+                    this.ws.close(4000, `角色数据不匹配。(${data.characters.length}, ${serverState.value.loadedCharacters})`);
+                }
+
                 this.characters = data.characters;
                 this.status = STATUS_SYNCED;
             }

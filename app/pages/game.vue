@@ -6,6 +6,7 @@ import ChatBox from "~/components/game/ChatBox.vue";
 import { setupClient, useClient } from "~/composables/useClient";
 import { useRouter } from "vue-router";
 import { onMounted } from "vue";
+import { STATUS_SETUP, STATUS_SYNCED } from "~/client";
 
 const router = useRouter();
 
@@ -23,8 +24,12 @@ onMounted(() => {
 
 <template>
   <div class="layout" v-if="client">
-    <div class="game-board">
+    <div class="game-board" v-if="client.status === STATUS_SYNCED">
       <GameBoard :state="serverState" :players="players" :client="client" />
+    </div>
+
+    <div class="center" v-else>
+      {{ client.status === STATUS_SETUP ? "正在同步角色数据..." : "正在初始化..." }}
     </div>
 
     <div class="sidebar">
@@ -36,13 +41,14 @@ onMounted(() => {
       <div class="modal">
         <div class="text-md">与服务器断开连接。</div>
         <p>代码 {{ client.disconnectEvent?.code }}。有关此次事件的详细信息见 <a href="https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent/code" target="_blank">https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent/code</a>。</p>
+        <p v-if="client.disconnectEvent?.reason">{{ client.disconnectEvent?.reason }}</p>
         <div class="buttons">
           <button class="btn" @click="router.push('/servers')">确定</button>
         </div>
       </div>
     </div>
   </div>
-  <div v-else>
+  <div v-else class="center">
     <h3>找不到有效服务器连接。</h3>
     <h4>将于 5 秒后返回服务器列表。</h4>
   </div>
@@ -68,6 +74,7 @@ onMounted(() => {
   flex-direction: column;
   gap: 16px;
   height: 100%;
+  overflow: scroll;
 }
 .game-board { grid-area: game-board; }
 </style>

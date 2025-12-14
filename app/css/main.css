@@ -120,6 +120,12 @@ button[disabled=disabled], button:disabled {
         font-weight: bold;
 }
 
+.center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
 input {
         padding: 4px 6px;
         box-sizing: border-box;
