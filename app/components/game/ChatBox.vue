@@ -10,10 +10,9 @@ const props = defineProps<{
 const text = ref("");
 const messagesEl = ref<HTMLElement | null>(null);
 
-function sendMessage() {
-  if (!text.value.trim()) return;
-  props.client.send(new ChatMessageAction(text.value));
-  text.value = "";
+function sendMessage(message) {
+  if (!message.trim()) return;
+  props.client.send(new ChatMessageAction(message));
 }
 
 watch(
@@ -36,11 +35,17 @@ watch(
       </div>
     </div>
 
+    <div class="preset-buttons">
+      <button @click="sendMessage('Good luck!')" class="preset-btn">GL</button>
+      <button @click="sendMessage('Have fun!')" class="preset-btn">HF</button>
+      <button @click="sendMessage('Good game!')" class="preset-btn">GG</button>
+    </div>
+
     <input
         v-model="text"
         class="input"
         placeholder="输入消息..."
-        @keyup.enter="sendMessage"
+        @keyup.enter="sendMessage(text); text = ''"
     />
   </div>
 </template>
@@ -65,5 +70,25 @@ watch(
   width: 100%;
   border: 1px solid #ccc;
   flex-shrink: 0;
+}
+
+.preset-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-shrink: 0;
+}
+
+.preset-btn {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.preset-btn:hover {
+  background-color: #e0e0e0;
 }
 </style>
