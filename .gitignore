@@ -25,4 +25,4 @@ logs
 .vercel
 .env*.local
 
-dist-electron
+dist-electron/
