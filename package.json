@@ -1,10 +1,33 @@
 {
   "name": "war-drafting-simulator",
+  "version": "0.1.0",
+  "description": "The war drafting simulator game.",
+  "author": "SrcMax Studio <support@srcmax.com>",
   "type": "module",
   "private": true,
   "main": "dist-electron/main.js",
+  "build": {
+    "appId": "com.srcmax.wds",
+    "productName": "War Drafting Simulator",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      ".output/**/*",
+      "dist-electron/**/*"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": "dmg",
+      "identity": null
+    }
+  },
   "scripts": {
     "build": "nuxt build",
+    "app:build": "cd public/cards && git checkout hd && cd ../.. && electron-builder && cd public/cards && git checkout webp && cd ../..",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
