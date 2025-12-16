@@ -36,9 +36,12 @@ watch(
     </div>
 
     <div class="preset-buttons">
+      <button @click="sendMessage('Hello!')" class="preset-btn">HI</button>
       <button @click="sendMessage('Good luck!')" class="preset-btn">GL</button>
       <button @click="sendMessage('Have fun!')" class="preset-btn">HF</button>
       <button @click="sendMessage('Good game!')" class="preset-btn">GG</button>
+      <button @click="sendMessage('Well played!')" class="preset-btn">WP</button>
+      <button @click="sendMessage('You too!')" class="preset-btn">U2</button>
     </div>
 
     <input
@@ -80,7 +83,7 @@ watch(
 }
 
 .preset-btn {
-  padding: 0.3rem 0.6rem;
+  padding: 0.3rem 0.5rem;
   border: 1px solid #ccc;
   background-color: #f0f0f0;
   cursor: pointer;
