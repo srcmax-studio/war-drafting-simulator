@@ -1,0 +1,4 @@
+[submodule "public/cards"]
+	path = public/cards
+	url = git@github.com:srcmax-studio/wds-characters-images.git
+	branch = webp
