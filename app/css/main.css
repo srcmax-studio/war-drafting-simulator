@@ -131,3 +131,36 @@ input {
         box-sizing: border-box;
         font-size: 1rem;
 }
+
+.deck-pile {
+        position: relative;
+        width: 200px;
+        height: 300px;
+        margin-bottom: 50px;
+}
+
+.deck-pile img {
+        width: 100%;
+        border-radius: 8px;
+        position: relative;
+        z-index: 3;
+}
+
+.deck-pile::before,
+.deck-pile::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 8px;
+        background: url("/card-back.webp") center / cover;
+}
+
+.deck-pile::before {
+        transform: translate(4px, 4px);
+        opacity: .6;
+}
+
+.deck-pile::after {
+        transform: translate(8px, 8px);
+        opacity: .3;
+}

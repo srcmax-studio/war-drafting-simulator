@@ -17,6 +17,9 @@ function goToGitHubRepo() {
 <template>
   <main class="container">
     <div class="header">
+      <div class="deck-pile">
+        <img :src="'card-back.webp'" />
+      </div>
       <div class="text-xl text-bold">战争轮抽模拟器</div>
       <div class="subtitle">war-drafting-simulator</div>
     </div>
@@ -52,7 +55,7 @@ function goToGitHubRepo() {
   </main>
 
   <footer>
-    Made by <a href="https://srcmax.com" target="_blank">SrcMax Studio</a>
+    Made by <a href="https://srcmax.com" target="_blank">SrcMax Studio</a>. This project is <a href="https://github.com/srcmax-studio/war-drafting-simulator" target="_blank">open-sourced</a>, licensed under <a href="https://raw.githubusercontent.com/srcmax-studio/war-drafting-simulator/refs/heads/main/LICENSE" target="_blank">MIT</a>.
   </footer>
 </template>
 
@@ -63,8 +66,17 @@ function goToGitHubRepo() {
   align-items: center;
   justify-content: center;
   min-height: 80vh;
-  text-align: center;
+  /* text-align: center will now be on .header and .buttons' container if needed */
   padding: 2rem;
+}
+
+/* --- ADD THIS NEW .header STYLE --- */
+.header {
+  display: flex; /* Enable Flexbox */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text within the header */
+  margin-bottom: 50px; /* Added margin-bottom here to separate header from buttons */
 }
 
 .header h1 {
