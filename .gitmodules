@@ -2,3 +2,6 @@
 	path = public/cards
 	url = git@github.com:srcmax-studio/wds-characters-images.git
 	branch = webp
+[submodule "app/common"]
+	path = app/common
+	url = git@github.com:srcmax-studio/war-drafting-simulator-common.git
