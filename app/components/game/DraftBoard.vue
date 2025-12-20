@@ -160,7 +160,7 @@ const onDrop = (e: DragEvent, targetPos: string) => {
 
           <Teleport to="body">
             <PositionInfo
-                v-if="showPosInfo[pos.key]"
+                v-if="showPosInfo[pos.key] && ! client.decks[client.getOpponentPlayer().name].slots.get(pos.key)"
                 :pos="pos"
                 :anchor="oppSlot[pos.key]"
             />
@@ -249,7 +249,7 @@ const onDrop = (e: DragEvent, targetPos: string) => {
 
           <Teleport to="body">
             <PositionInfo
-                v-if="showPosInfoPlayer[pos.key]"
+                v-if="showPosInfoPlayer[pos.key] && !client.decks[client.getPlayer().name].slots.get(pos.key)"
                 :pos="pos"
                 :anchor="playerSlot[pos.key]"
             />
