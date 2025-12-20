@@ -379,7 +379,6 @@ const onDrop = (e: DragEvent, targetPos: string) => {
 
 .slot-card-wrapper {
   width: 100%;
-  max-width: clamp(56px, 6vw, 80px);
   aspect-ratio: 2 / 3;
   display: flex;
   align-items: center;
