@@ -7,6 +7,7 @@ import { setupClient, useClient } from "~/composables/useClient";
 import { useRouter } from "vue-router";
 import { onMounted } from "vue";
 import { STATUS_SETUP, STATUS_SYNCED } from "~/client";
+import { showError } from "~/plugins/toast";
 
 const router = useRouter();
 
@@ -15,9 +16,8 @@ onMounted(() => {
   setupClient();
 
   if (! client.value) {
-    setTimeout(() => {
-      router.push('/servers');
-    }, 5000)
+    showError("已失去到服务器的连接。");
+    router.push('/servers');
   }
 });
 </script>
@@ -50,7 +50,6 @@ onMounted(() => {
   </div>
   <div v-else class="center">
     <h3>找不到有效服务器连接。</h3>
-    <h4>将于 5 秒后返回服务器列表。</h4>
   </div>
 </template>
 
@@ -60,6 +59,7 @@ onMounted(() => {
   height: 100%;
   box-sizing: border-box;
   padding: 16px;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
 
   display: grid;
   grid:

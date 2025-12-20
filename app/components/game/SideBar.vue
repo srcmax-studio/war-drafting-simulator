@@ -11,7 +11,7 @@ defineProps<{
     <div class="subtitle">war-drafting-simulator</div>
   </div>
 
-  <div class="box">
+  <div class="box bg-blur">
     <h4>服务器信息</h4>
     <h5>名称：<span>{{ state.title }}</span></h5>
     <h5>所有者：<span>{{ state.owner }}</span></h5>
@@ -24,10 +24,15 @@ defineProps<{
   cursor: default;
   align-self: center;
   text-align: center;
+  color: white;
 }
 
 .game-header .subtitle {
   font-size: .7rem;
   color: #cccccc;
+}
+
+.box {
+  color: ghostwhite;
 }
 </style>

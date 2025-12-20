@@ -28,7 +28,7 @@ watch(
 </script>
 
 <template>
-  <div class="box chat-box">
+  <div class="box chat-box bg-blur">
     <div class="messages" ref="messagesEl">
       <div v-for="(m, i) in client.messages" :key="i" class="msg">
         {{ m }}
@@ -61,6 +61,7 @@ watch(
   flex-direction: column;
   overflow-y: hidden;
   height: 100%;
+  color: ghostwhite;
 }
 
 .messages {
@@ -71,8 +72,11 @@ watch(
 
 .input {
   width: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid #474646;
+  border-radius: 4px;
   flex-shrink: 0;
+  color: #ccc;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
 }
 
 .preset-buttons {

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { ServerState } from "~/composables/useClient";
 import type { Client } from "~/client";
+import { PHASE_DRAFT, PHASE_LOBBY, PHASE_SIMULATING } from "~/common/common";
 
 const props = defineProps<{
   server: ServerState,
@@ -20,9 +21,9 @@ function statusText(status: number) {
 
 function statusClass(status: number) {
   switch(status) {
-    case 0: return "status-idle";
-    case 1: return "status-drafting";
-    case 2: return "status-simulating";
+    case PHASE_LOBBY: return "status-idle";
+    case PHASE_DRAFT: return "status-drafting";
+    case PHASE_SIMULATING: return "status-simulating";
     default: return "";
   }
 }

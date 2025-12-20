@@ -11,9 +11,17 @@ export interface ServerState {
     tls: boolean
 }
 
+export interface Player {
+    name: string,
+    ready: boolean,
+    hovering: string,
+    initDiscardRemaining?: number,
+    passiveDiscardRemaining?: number,
+}
+
 const client = ref<Client | null>(null)
 const serverState = ref<ServerState>(null)
-const players = ref<string[]>()
+const players = ref<Player[]>()
 
 export function useClient() {
     return {

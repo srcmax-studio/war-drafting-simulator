@@ -1,0 +1,411 @@
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted, useTemplateRef, computed } from "vue";
+import type { Client } from "~/client";
+import Card from "~/components/game/Card.vue";
+import PositionInfo from "~/components/game/PositionInfo.vue";
+import {
+  type Character,
+  DRAFT_STAGE_INIT,
+  DRAFT_STAGE_PASSIVE,
+  DRAFT_STAGE_PASSIVE_DISCARD,
+  POSITIONS
+} from "~/common/common";
+import { CardSelectAction, DecidePassiveDiscardAction, InitDiscardAction, SelectAction, SwapPositionAction } from "~/action";
+
+const props = defineProps<{
+  client: Client
+}>();
+
+const emit = defineEmits<{
+  (e: 'preview', character: Character): void
+}>();
+
+const showPosInfo = ref([]);
+const showPosInfoPlayer = ref([]);
+const oppSlot = [];
+const playerSlot = [];
+const slotRefOpp = useTemplateRef('slotRefOpp');
+const slotRefPlayer = useTemplateRef('slotRefPlayer');
+const nowTrigger = ref(Date.now());
+let timerInterval = null;
+
+const draggingPos = ref<string | null>(null);
+const dragOverPos = ref<string | null>(null);
+
+const secondsLeft = computed(() => {
+  const syncedNow = nowTrigger.value + props.client.serverClockOffset;
+  const diff = props.client.actionEndTime - syncedNow;
+  return Math.max(0, Math.ceil(diff / 1000));
+});
+
+const draftMessage = computed(() => {
+  switch (props.client.draftStage) {
+    case DRAFT_STAGE_PASSIVE_DISCARD:
+      return props.client.hasInitiative() ? "等待对手决定是否行使后手弃牌权..." : "请决定是否行使后手弃牌权...";
+    case DRAFT_STAGE_INIT:
+      return props.client.hasInitiative() ? "请决定..." : "等待对手决定...";
+    case DRAFT_STAGE_PASSIVE:
+      return ! props.client.hasInitiative() ? "请决定..." : "等待对手决定...";
+  }
+});
+
+onMounted(() => {
+  timerInterval = setInterval(() => {
+    nowTrigger.value = Date.now();
+  }, 100);
+
+  if (slotRefOpp.value && slotRefPlayer.value) {
+    for (const pos of POSITIONS) {
+      for (const slotOpp of slotRefOpp.value) {
+        if (slotOpp.dataset.key === pos.key) {
+          oppSlot[pos.key] = slotOpp;
+        }
+      }
+      for (const slotPlayer of slotRefPlayer.value) {
+        if (slotPlayer.dataset.key === pos.key) {
+          playerSlot[pos.key] = slotPlayer;
+        }
+      }
+    }
+  }
+});
+
+onUnmounted(() => {
+  if (timerInterval) clearInterval(timerInterval);
+});
+
+const haveSelectedThisRound = computed((): boolean => {
+  for (const character of props.client.pack) {
+    if (character.名字 === props.client.selectedFromPack) {
+      return true;
+    }
+  }
+  return false;
+});
+
+const handleDecidePassiveDiscard = (discard: boolean) => {
+  props.client.send(new DecidePassiveDiscardAction(discard));
+};
+
+const handleSelect = (character: Character) => {
+  if ((props.client.draftStage === DRAFT_STAGE_INIT && props.client.hasInitiative()) ||
+      (props.client.draftStage === DRAFT_STAGE_PASSIVE && ! props.client.hasInitiative())
+  ) {
+    props.client.send(new SelectAction(character.名字));
+  }
+};
+
+const handleCardSelect = () => {
+  props.client.send(new CardSelectAction(props.client.selectedFromPack));
+}
+
+const onDragStart = (e: DragEvent, posKey: string) => {
+  if (!props.client.getPlayer() || !props.client.decks[props.client.getPlayer().name].slots.get(posKey)) {
+    e.preventDefault();
+    return;
+  }
+  draggingPos.value = posKey;
+  if (e.dataTransfer) {
+    e.dataTransfer.effectAllowed = "move";
+    e.dataTransfer.setData("text/plain", posKey);
+  }
+};
+
+const onDragOver = (e: DragEvent, posKey: string) => {
+  e.preventDefault();
+  dragOverPos.value = posKey;
+};
+
+const onDragLeave = () => {
+  dragOverPos.value = null;
+};
+
+const onDrop = (e: DragEvent, targetPos: string) => {
+  e.preventDefault();
+  const sourcePos = draggingPos.value;
+  draggingPos.value = null;
+  dragOverPos.value = null;
+
+  if (sourcePos && sourcePos !== targetPos) {
+    props.client.send(new SwapPositionAction(sourcePos, targetPos));
+  }
+};
+</script>
+
+<template>
+  <div class="draft-board-grid">
+    <section class="row deck-area opponent small">
+      <div class="deck-grid">
+        <div
+            v-for="pos in POSITIONS"
+            :key="pos.key"
+            :data-key="pos.key"
+            ref="slotRefOpp"
+            class="deck-slot"
+            @mouseenter="showPosInfo[pos.key] = true"
+            @mouseleave="showPosInfo[pos.key] = false"
+        >
+          <div class="slot-title">{{ pos.key }}</div>
+          <div class="slot-card-wrapper" v-if="client.getOpponentPlayer() && client.decks[client.getOpponentPlayer().name].slots.get(pos.key)">
+            <Card
+                :character="client.decks[client.getOpponentPlayer().name].slots.get(pos.key)"
+                interactive
+                slot
+                @preview="emit('preview', $event)"
+                detail-direction="bottom"
+                :client="client"
+            />
+          </div>
+          <div class="slot-placeholder" v-else></div>
+
+          <Teleport to="body">
+            <PositionInfo
+                v-if="showPosInfo[pos.key]"
+                :pos="pos"
+                :anchor="oppSlot[pos.key]"
+            />
+          </Teleport>
+        </div>
+      </div>
+    </section>
+
+    <section class="row status-row">
+      <div class="status" v-if="secondsLeft">
+        <span class="timer">{{ secondsLeft }}</span>
+        <span class="status-text">{{ draftMessage }}</span>
+      </div>
+    </section>
+
+    <section class="row draft-row">
+      <div class="draft-cards">
+        <Card
+            v-for="character of client.pack"
+            :key="character.名字"
+            :character="character"
+            interactive
+            @preview="emit('preview', $event)"
+            :client="client"
+            @click="handleSelect(character)"
+        />
+      </div>
+    </section>
+
+    <section class="row action-row">
+      <template v-if="client.draftStage === DRAFT_STAGE_PASSIVE_DISCARD && ! client.hasInitiative()">
+        <button class="action-btn discard" @click="handleDecidePassiveDiscard(true)">弃牌</button>
+        <button class="action-btn cancel" @click="handleDecidePassiveDiscard(false)">取消</button>
+      </template>
+
+      <template v-if="client.draftStage === DRAFT_STAGE_INIT && client.hasInitiative()">
+        <button class="action-btn primary" @click="handleCardSelect" :disabled="! haveSelectedThisRound">选择</button>
+        <button class="action-btn" v-if="client.getPlayer().initDiscardRemaining > 0" @click="client.send(new InitDiscardAction())">弃牌</button>
+      </template>
+
+      <template v-if="client.draftStage === DRAFT_STAGE_PASSIVE && ! client.hasInitiative()">
+        <button class="action-btn primary" @click="handleCardSelect" :disabled="! haveSelectedThisRound">选择</button>
+      </template>
+    </section>
+
+    <section class="row deck-area player">
+      <div class="deck-grid">
+        <div
+            v-for="pos in POSITIONS"
+            :key="pos.key"
+            :data-key="pos.key"
+            ref="slotRefPlayer"
+            class="deck-slot drag-target"
+            :class="{
+              'is-dragging': draggingPos === pos.key,
+              'is-over': dragOverPos === pos.key
+            }"
+            @dragover="(e) => onDragOver(e, pos.key)"
+            @dragleave="onDragLeave"
+            @drop="(e) => onDrop(e, pos.key)"
+        >
+          <div
+              class="slot-card-wrapper clickable"
+              v-if="client.decks[client.getPlayer().name].slots.get(pos.key)"
+              draggable="true"
+              @dragstart="(e) => onDragStart(e, pos.key)"
+          >
+            <Card
+                :character="client.decks[client.getPlayer().name].slots.get(pos.key)"
+                interactive
+                slot
+                @preview="emit('preview', $event)"
+                detail-direction="top"
+                :client="client"
+            />
+          </div>
+
+          <div
+              class="slot-placeholder"
+              v-else
+              @mouseenter="showPosInfoPlayer[pos.key] = true"
+              @mouseleave="showPosInfoPlayer[pos.key] = false"
+          ></div>
+
+          <div class="slot-title">{{ pos.key }}</div>
+
+          <Teleport to="body">
+            <PositionInfo
+                v-if="showPosInfoPlayer[pos.key]"
+                :pos="pos"
+                :anchor="playerSlot[pos.key]"
+            />
+          </Teleport>
+        </div>
+      </div>
+    </section>
+  </div>
+</template>
+
+<style scoped>
+.draft-board-grid {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr minmax(56px, 7vh) minmax(200px, 32vh) minmax(56px, 7vh) 1.2fr;
+  gap: 8px;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.timer {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  font-family: monospace;
+}
+
+.draft-cards {
+  display: flex;
+  gap: clamp(8px, 2vw, 16px);
+  padding: 20px;
+}
+
+.action-row {
+  gap: 24px;
+}
+
+.action-btn {
+  padding: 10px 28px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.action-btn.cancel {
+  background: rgba(255, 255, 255, 0.1);
+  color: #eee;
+}
+
+.action-btn.cancel:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.action-btn.primary {
+  background: linear-gradient(135deg, #444, #111);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.action-btn.primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+.action-btn.discard {
+  background: linear-gradient(135deg, #e63946, #9b2226);
+  color: #fff;
+}
+
+.deck-area {
+  width: 100%;
+}
+
+.deck-grid {
+  display: grid;
+  grid-template-columns: repeat(14, minmax(0, 1fr));
+  gap: clamp(4px, 0.8vw, 8px);
+  width: 100%;
+  padding: 0 clamp(8px, 2vw, 16px);
+}
+
+.deck-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.deck-slot.is-over {
+  background: rgba(255, 255, 255, 0.1);
+  outline: 2px dashed rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.deck-slot.is-dragging {
+  opacity: 0.4;
+}
+
+.slot-placeholder {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 8px;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.slot-card-wrapper {
+  width: 100%;
+  max-width: clamp(56px, 6vw, 80px);
+  aspect-ratio: 2 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  z-index: 2;
+}
+
+.slot-card-wrapper.clickable {
+  cursor: grab;
+}
+
+.slot-card-wrapper.clickable:active {
+  cursor: grabbing;
+}
+
+.slot-card-wrapper :deep(.card) {
+  width: 100%;
+  height: 100%;
+  transform: none !important;
+}
+
+.slot-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+</style>

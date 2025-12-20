@@ -1,4 +1,4 @@
-.font-kai, html, body, input, button, main, footer {
+.font-kai, html, body, input, button, main, footer, option, select {
     font-family:
             "Libre Baskerville", "Baskerville", "Georgia", "Times New Roman", "Palatino Linotype", "Palatino",
             "Helvetica Neue", "Arial", "Roboto", "Inter",  'Apple Color Emoji',
@@ -163,4 +163,11 @@ input {
 .deck-pile::after {
         transform: translate(8px, 8px);
         opacity: .3;
+}
+
+.bg-blur {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
 }
