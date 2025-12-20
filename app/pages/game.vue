@@ -28,7 +28,7 @@ onMounted(() => {
       <GameBoard :state="serverState" :players="players" :client="client" />
     </div>
 
-    <div class="center" v-else>
+    <div class="center text-white" v-else>
       {{ client.status === STATUS_SETUP ? "正在同步角色数据..." : "正在初始化..." }}
     </div>
 
