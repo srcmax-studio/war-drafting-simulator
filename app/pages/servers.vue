@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
 import { showError } from "~/plugins/toast";
 import Spinner from "~/components/spinner.vue";
 import { Client } from "~/client";
 import { setupClient, useClient } from "~/composables/useClient";
+import ServerListing from "~/components/ServerListing.vue";
 
 interface Server {
   ip: string;
@@ -18,37 +19,28 @@ interface Server {
   requirePassword?: boolean;
   connectable?: boolean;
   scanning?: boolean;
+  tls?: boolean;
 }
 
 const router = useRouter();
 
 const servers = ref<any[]>([]);
+const lastServer = ref<any>(null);
 const showConnectModal = ref(false);
 const connectIP = ref("");
 const connectPort = ref<number | null>(null);
 const connectTLS = ref(true);
+const filterOnline = ref(false);
 
 let loaded = ref<boolean>(false);
 
-function statusText(status: number) {
-  switch(status) {
-    case 0: return "空闲";
-    case 1: return "轮抽中";
-    case 2: return "模拟中";
-    default: return "未知";
-  }
-}
+const displayServers = computed(() => {
+  if (!filterOnline.value) return servers.value;
+  return servers.value.filter(s => s.connectable);
+});
 
-function statusClass(status: number) {
-  switch(status) {
-    case 0: return "status-idle";
-    case 1: return "status-drafting";
-    case 2: return "status-simulating";
-    default: return "";
-  }
-}
-
-onMounted(async () => {
+async function loadServerList() {
+  loaded.value = false;
   try {
     const res = await axios.get("/api/servers");
     servers.value = res.data.map((s: Server) => ({
@@ -64,6 +56,17 @@ onMounted(async () => {
   } catch (e) {
     showError("载入服务器列表时出错");
   }
+}
+
+onMounted(async () => {
+  const saved = localStorage.getItem("last_connected_server");
+  if (saved) {
+    lastServer.value = JSON.parse(saved);
+    lastServer.value.scanning = true;
+    scanServer(lastServer.value);
+  }
+
+  loadServerList();
 });
 
 function openConnectModal(server?: any) {
@@ -133,14 +136,11 @@ async function joinServer(ip: string, port: number, tls: boolean = true) {
     });
 
     loading.value = false;
-    currentServer = serverData;
+    currentServer = { ...serverData, ip, port, tls };
 
     if (serverData.requirePassword) {
       showPasswordModal.value = true;
     } else {
-      loading.value = false;
-      currentServer = serverData;
-
       showNameModal.value = true;
     }
   } catch (e: any) {
@@ -162,9 +162,18 @@ function submitName() {
     try {
       const data = JSON.parse(event.data);
       if (data.event === "joined") {
+        localStorage.setItem("last_connected_server", JSON.stringify({
+          ip: currentServer.ip,
+          port: currentServer.port,
+          tls: currentServer.tls,
+          title: currentServer.title,
+          owner: currentServer.owner
+        }));
+
         showNameModal.value = false;
         players.value = data.players;
         serverState.value = data.serverState;
+        client.value.playerName = data.playerName;
 
         router.push("/game");
       } else if (data.event === "error") {
@@ -250,40 +259,27 @@ async function scanServer(server: Server) {
       <h1>公共服务器列表</h1>
     </div>
 
-    <div class="server-list">
-      <div v-if="loaded && servers.length" v-for="server in servers" :key="server._id" class="server-card">
-        <h2>{{ server.title }}</h2>
-        <p>服务器地址: {{ server.ip }} : {{ server.port }}</p>
-        <p>所有者: {{ server.owner }}</p>
-        <p>载入角色数量: {{ server.loadedCharacters }}</p>
-        <p v-if="server.scanning">连接中...</p>
-        <p v-else-if="!server.connectable" style="color: red">
-          无法连接至此服务器。
-        </p>
-        <template v-else>
-          <p>在线人数: {{ server.onlinePlayers }}/2</p>
-          <p>
-            状态:
-            <span :class="statusClass(server.status)">
-            {{ statusText(server.status) }}
-          </span>
-          </p>
-          <p>
-          <span>
-            <template v-if="server.requirePassword">
-              🔒 受密码保护
-            </template>
-            <template v-else>
-              ✅ 开放
-            </template>
-          </span>
-          </p>
-        </template>
+    <div v-if="lastServer" class="last-server-section">
+      <h3 style="margin-bottom: 1rem;">最后连接的服务器</h3>
+      <ServerListing :server="lastServer" last-connected @join="joinServer(lastServer.ip, lastServer.port, lastServer.tls)" />
+      <hr style="width: 100%; margin: 2rem 0; border: 1px solid #eee;" />
+    </div>
 
-        <p class="buttons">
-          <button class="btn-connect" @click="joinServer(server.ip, server.port, server.tls)" :disabled="!server.connectable">连接</button>
-        </p>
-      </div>
+    <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 2rem;">
+      <button class="btn-refresh" @click="loadServerList" :disabled="!loaded">刷新列表</button>
+      <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
+        <input type="checkbox" v-model="filterOnline" /> 仅显示在线
+      </label>
+    </div>
+
+    <div class="server-list">
+      <ServerListing
+          :server="server"
+          v-if="loaded && displayServers.length"
+          v-for="server in displayServers"
+          :key="server.ip + server.port"
+          @join="joinServer(server.ip, server.port, server.tls)"
+      />
 
       <div v-else-if="loaded">
         目前没有在线的公共服务器。您可以通过指定服务器地址连接未公开的服务器，或是创建服务器。
@@ -294,7 +290,7 @@ async function scanServer(server: Server) {
       </div>
     </div>
 
-    <button class="btn-connect" @click="openConnectModal(server)">连接至服务器</button>
+    <button class="btn-connect" @click="openConnectModal()">连接至服务器</button>
 
     <div v-if="showConnectModal" class="modal-overlay" @click.self="showConnectModal = false">
       <div class="modal">
@@ -416,6 +412,11 @@ async function scanServer(server: Server) {
   position: relative;
 }
 
+.last-connected {
+  border-color: #007bff;
+  background-color: #f8fbff;
+}
+
 .server-card h2 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
@@ -431,7 +432,15 @@ async function scanServer(server: Server) {
   border-radius: 6px;
 }
 
-.btn-connect:hover {
+.btn-refresh {
+  padding: 0.5rem 1rem;
+  border: 1px solid #333;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.btn-connect:hover, .btn-refresh:hover {
   background-color: #f0f0f0;
 }
 
@@ -463,5 +472,12 @@ button[disabled=disabled], button:disabled {
 .btn-close {
   background-color: #eee;
   border: 1px solid #ccc;
+}
+
+.last-server-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>
