@@ -26,7 +26,7 @@ export class Client {
     actionEndTime: number = -1;
     opponentHovering: string;
     selectedFromPack: string;
-    stream: string;
+    stream: string = "";
 
     constructor(config: {ip: string, port: number, tls: boolean}, playerName: string) {
         this.playerName = playerName;
