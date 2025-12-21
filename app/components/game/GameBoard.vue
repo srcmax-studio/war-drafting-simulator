@@ -8,7 +8,7 @@ import DraftBoard from "~/components/game/DraftBoard.vue";
 import { ReadyAction } from "~/action";
 import Coinflip from "~/components/Coinflip.vue";
 
-import { type Character, PHASE_DRAFT, PHASE_LOBBY } from "~/common/common";
+import { type Character, PHASE_DRAFT, PHASE_LOBBY, PHASE_SIMULATING } from "~/common/common";
 import Ping from "~/components/Ping.vue";
 import InitiativeCoin from "~/components/game/InitiativeCoin.vue";
 
@@ -70,8 +70,9 @@ const handleReady = () => {
       </div>
 
       <DraftBoard
-          v-if="client.gameStarted && state.phase === PHASE_DRAFT"
+          v-if="client.gameStarted && (state.phase === PHASE_DRAFT || state.phase === PHASE_SIMULATING)"
           :client="client"
+          :state="state"
           @preview="previewing = $event"
       />
 
@@ -182,6 +183,7 @@ const handleReady = () => {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
 }
 
 .game-content {

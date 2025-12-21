@@ -34,8 +34,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@types/markdown-it": "^14.1.2",
     "@vercel/node": "^5.5.15",
     "axios": "^1.13.2",
+    "markdown-it": "^14.1.0",
     "mongodb": "^7.0.0",
     "nuxt": "^4.2.2",
     "vue": "^3.5.25",

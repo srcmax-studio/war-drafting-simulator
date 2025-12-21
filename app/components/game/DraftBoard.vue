@@ -7,18 +7,38 @@ import {
   type Character,
   DRAFT_STAGE_INIT,
   DRAFT_STAGE_PASSIVE,
-  DRAFT_STAGE_PASSIVE_DISCARD,
+  DRAFT_STAGE_PASSIVE_DISCARD, PHASE_DRAFT, PHASE_SIMULATING,
   POSITIONS
 } from "~/common/common";
 import { CardSelectAction, DecidePassiveDiscardAction, InitDiscardAction, SelectAction, SwapPositionAction } from "~/action";
+import MarkdownIt from "markdown-it";
 
 const props = defineProps<{
-  client: Client
+  client: Client,
+  state: ServerState
 }>();
 
 const emit = defineEmits<{
   (e: 'preview', character: Character): void
 }>();
+
+const md = new MarkdownIt({
+  breaks: true,
+  linkify: true,
+  html: true
+});
+
+const renderedStream = computed(() => {
+  return md.render(props.client.stream || "");
+});
+
+const simContent = useTemplateRef('simContent');
+watch(() => props.client.stream, async () => {
+  await nextTick();
+  if (simContent.value) {
+    simContent.value.scrollTop = simContent.value.scrollHeight;
+  }
+});
 
 const showPosInfo = ref([]);
 const showPosInfoPlayer = ref([]);
@@ -169,42 +189,65 @@ const onDrop = (e: DragEvent, targetPos: string) => {
       </div>
     </section>
 
-    <section class="row status-row">
-      <div class="status" v-if="secondsLeft">
-        <span class="timer">{{ secondsLeft }}</span>
-        <span class="status-text">{{ draftMessage }}</span>
-      </div>
-    </section>
+    <template v-if="state.phase === PHASE_DRAFT">
+      <section class="row status-row">
+        <div class="status" v-if="secondsLeft">
+          <span class="timer">{{ secondsLeft }}</span>
+          <span class="status-text">{{ draftMessage }}</span>
+        </div>
+      </section>
 
-    <section class="row draft-row">
-      <div class="draft-cards">
-        <Card
-            v-for="character of client.pack"
-            :key="character.名字"
-            :character="character"
-            interactive
-            @preview="emit('preview', $event)"
-            :client="client"
-            @click="handleSelect(character)"
-        />
-      </div>
-    </section>
+      <section class="row draft-row">
+        <div class="draft-cards">
+          <Card
+              v-for="character of client.pack"
+              :key="character.名字"
+              :character="character"
+              interactive
+              @preview="emit('preview', $event)"
+              :client="client"
+              @click="handleSelect(character)"
+          />
+        </div>
+      </section>
 
-    <section class="row action-row">
-      <template v-if="client.draftStage === DRAFT_STAGE_PASSIVE_DISCARD && ! client.hasInitiative()">
-        <button class="action-btn discard" @click="handleDecidePassiveDiscard(true)">弃牌</button>
-        <button class="action-btn cancel" @click="handleDecidePassiveDiscard(false)">取消</button>
-      </template>
+      <section class="row action-row">
+        <template v-if="client.draftStage === DRAFT_STAGE_PASSIVE_DISCARD && ! client.hasInitiative()">
+          <button class="action-btn discard" @click="handleDecidePassiveDiscard(true)">弃牌</button>
+          <button class="action-btn cancel" @click="handleDecidePassiveDiscard(false)">取消</button>
+        </template>
 
-      <template v-if="client.draftStage === DRAFT_STAGE_INIT && client.hasInitiative()">
-        <button class="action-btn primary" @click="handleCardSelect" :disabled="! haveSelectedThisRound">选择</button>
-        <button class="action-btn" v-if="client.getPlayer().initDiscardRemaining > 0" @click="client.send(new InitDiscardAction())">弃牌</button>
-      </template>
+        <template v-if="client.draftStage === DRAFT_STAGE_INIT && client.hasInitiative()">
+          <button class="action-btn primary" @click="handleCardSelect" :disabled="! haveSelectedThisRound">选择</button>
+          <button class="action-btn" v-if="client.getPlayer().initDiscardRemaining > 0" @click="client.send(new InitDiscardAction())">弃牌</button>
+        </template>
 
-      <template v-if="client.draftStage === DRAFT_STAGE_PASSIVE && ! client.hasInitiative()">
-        <button class="action-btn primary" @click="handleCardSelect" :disabled="! haveSelectedThisRound">选择</button>
-      </template>
-    </section>
+        <template v-if="client.draftStage === DRAFT_STAGE_PASSIVE && ! client.hasInitiative()">
+          <button class="action-btn primary" @click="handleCardSelect" :disabled="! haveSelectedThisRound">选择</button>
+        </template>
+      </section>
+    </template>
+
+    <template v-else-if="state.phase === PHASE_SIMULATING">
+      <section class="row simulation-row">
+        <div class="simulation-container">
+          <div class="sim-header">
+            <span class="pulse-icon"></span>
+            <span class="sim-title">战局模拟中...</span>
+            <div class="loading-dots"><span>.</span><span>.</span><span>.</span></div>
+          </div>
+
+          <div class="sim-content" ref="simContent">
+            <div class="stream-text" v-html="renderedStream"></div>
+            <span class="cursor">_</span>
+          </div>
+
+          <div class="sim-footer">
+            <div class="scanline"></div>
+          </div>
+        </div>
+      </section>
+    </template>
 
     <section class="row deck-area player">
       <div class="deck-grid">
@@ -406,5 +449,135 @@ const onDrop = (e: DragEvent, targetPos: string) => {
   font-weight: 700;
   color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
+}
+
+.simulation-row {
+  grid-row: 2 / 5;
+  height: 100%;
+  padding: 10px 20px;
+  display: flex;
+  align-items: stretch;
+}
+
+.simulation-container {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.sim-header {
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sim-title {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+}
+
+.sim-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  line-height: 1.6;
+  color: #d1d1d1;
+  text-align: left;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.2) transparent;
+}
+
+.stream-text :deep(p) {
+  margin: 0 0 12px 0;
+  line-height: 1.6;
+}
+
+.stream-text :deep(p:last-child) {
+  display: inline;
+  margin-bottom: 0;
+}
+
+.stream-text :deep(h1),
+.stream-text :deep(h2),
+.stream-text :deep(h3) {
+  color: #fff;
+  margin: 16px 0 8px 0;
+  font-weight: 600;
+  border-left: 3px solid #00ff88;
+  padding-left: 10px;
+}
+
+.stream-text :deep(strong) {
+  color: #00ff88;
+  text-shadow: 0 0 8px rgba(0, 255, 136, 0.3);
+}
+
+.stream-text :deep(ul),
+.stream-text :deep(ol) {
+  margin: 8px 0;
+  padding-left: 20px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.stream-text :deep(code) {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #ffcc00;
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  margin-left: 4px;
+  animation: blink 1s infinite;
+  color: #00ff88;
+  vertical-align: baseline;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.scanline {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgba(0, 0, 0, 0.05) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+.pulse-icon {
+  width: 8px;
+  height: 8px;
+  background: #00ff88;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff88;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.5; }
 }
 </style>

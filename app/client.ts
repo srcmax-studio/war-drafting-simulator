@@ -1,7 +1,7 @@
 import { type ClientAction, HoverAction } from "~/action";
 import { PongAction, RequestCharactersAction, StatusAction } from "~/action";
 import { useClient } from "~/composables/useClient";
-import { type Character, PHASE_DRAFT, PHASE_LOBBY, PlayerDeck } from "~/common/common";
+import { type Character, PHASE_DRAFT, PHASE_LOBBY, PHASE_SIMULATING, PlayerDeck } from "~/common/common";
 
 export const STATUS_INITIALIZED = 0;
 export const STATUS_SETUP = 10;
@@ -26,6 +26,7 @@ export class Client {
     actionEndTime: number = -1;
     opponentHovering: string;
     selectedFromPack: string;
+    stream: string;
 
     constructor(config: {ip: string, port: number, tls: boolean}, playerName: string) {
         this.playerName = playerName;
@@ -187,9 +188,18 @@ export class Client {
                 for (const deck of data.decks) {
                     this.decks[deck.name] = PlayerDeck.deserialize(deck.data,
                         (name: string) => this.characters.find(c => c.名字 === name));
-
-                    console.log(this.decks);
                 }
+            }
+
+            if (data.event === 'simulationStart') {
+                const { serverState } = useClient();
+
+                serverState.value.phase = PHASE_SIMULATING;
+            }
+
+            if (data.event === 'simulationStream') {
+                if (! data.text) return;
+                this.stream += data.text;
             }
         }
 
