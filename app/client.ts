@@ -194,6 +194,7 @@ export class Client {
             if (data.event === 'simulationStart') {
                 const { serverState } = useClient();
 
+                this.stream = "";
                 serverState.value.phase = PHASE_SIMULATING;
             }
 
