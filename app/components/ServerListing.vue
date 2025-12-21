@@ -13,8 +13,8 @@ defineEmits(['join']);
 function statusText(status: number) {
   switch(status) {
     case 0: return "空闲";
-    case 1: return "轮抽中";
-    case 2: return "模拟中";
+    case 10: return "轮抽中";
+    case 20: return "模拟中";
     default: return "未知";
   }
 }
