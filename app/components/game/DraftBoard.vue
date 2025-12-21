@@ -4,7 +4,7 @@ import type { Client } from "~/client";
 import Card from "~/components/game/Card.vue";
 import PositionInfo from "~/components/game/PositionInfo.vue";
 import {
-  type Character,
+  type Character, DRAFT_STAGE_FINAL_CHANGES,
   DRAFT_STAGE_INIT,
   DRAFT_STAGE_PASSIVE,
   DRAFT_STAGE_PASSIVE_DISCARD, PHASE_DRAFT, PHASE_SIMULATING,
@@ -66,6 +66,8 @@ const draftMessage = computed(() => {
       return props.client.hasInitiative() ? "请决定..." : "等待对手决定...";
     case DRAFT_STAGE_PASSIVE:
       return ! props.client.hasInitiative() ? "请决定..." : "等待对手决定...";
+    case DRAFT_STAGE_FINAL_CHANGES:
+      return "请在模拟前对构建的牌组进行最终调整..."
   }
 });
 
