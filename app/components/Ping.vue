@@ -26,7 +26,7 @@ const props = defineProps({
 const smoothedPing = ref(props.ping);
 
 watch(() => props.ping, (newVal) => {
-  smoothedPing.value = (smoothedPing.value * 0.8) + (newVal * 0.2);
+  smoothedPing.value = (smoothedPing.value * 0.85) + (newVal * 0.15);
 });
 
 const activeBars = computed(() => {
