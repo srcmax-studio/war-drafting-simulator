@@ -10,7 +10,14 @@ import {
   DRAFT_STAGE_PASSIVE_DISCARD, PHASE_DRAFT, PHASE_SIMULATING,
   POSITIONS
 } from "~/common/common";
-import { CardSelectAction, DecidePassiveDiscardAction, InitDiscardAction, SelectAction, SwapPositionAction } from "~/action";
+import {
+  CardSelectAction,
+  DecidePassiveDiscardAction,
+  InitDiscardAction,
+  ReadyAction,
+  SelectAction,
+  SwapPositionAction
+} from "~/action";
 import MarkdownIt from "markdown-it";
 
 const props = defineProps<{
@@ -152,6 +159,10 @@ const onDrop = (e: DragEvent, targetPos: string) => {
     props.client.send(new SwapPositionAction(sourcePos, targetPos));
   }
 };
+
+const handleReady = () => {
+  props.client.send(new ReadyAction());
+};
 </script>
 
 <template>
@@ -230,19 +241,46 @@ const onDrop = (e: DragEvent, targetPos: string) => {
       </section>
     </template>
 
-    <template v-else-if="state.phase === PHASE_SIMULATING">
+    <template v-else-if="state.phase === PHASE_SIMULATING || client.gameEnded">
       <section class="row simulation-row">
-        <div class="simulation-container">
+        <div class="simulation-container" :class="{ 'game-ended': client.gameEnded }">
           <div class="sim-header">
-            <span class="pulse-icon"></span>
-            <span class="sim-title">战局模拟中...</span>
-            <div class="loading-dots"><span>.</span><span>.</span><span>.</span></div>
+            <span class="pulse-icon" :class="{ 'ended': client.gameEnded }"></span>
+            <span class="sim-title">{{ client.gameEnded ? '战局已结束' : '战局模拟中...' }}</span>
+            <div v-if="!client.gameEnded" class="loading-dots"><span>.</span><span>.</span><span>.</span></div>
           </div>
 
           <div class="sim-content" ref="simContent">
             <div class="stream-text" v-html="renderedStream"></div>
-            <span class="cursor">_</span>
+            <span v-if="!client.gameEnded" class="cursor">_</span>
           </div>
+
+          <Transition name="fade">
+            <div v-if="client.gameEnded" class="game-over-controls">
+              <div class="status-badge opponent">
+                <span class="dot" :class="{ 'is-ready': client.getOpponentPlayer()?.ready }"></span>
+                对手: {{ client.getOpponentPlayer()?.ready ? '准备完毕' : '准备中...' }}
+              </div>
+
+              <div class="ready-action-wrapper">
+                <button
+                    v-if="!client.getPlayer()?.ready"
+                    class="action-btn primary ready-pulse"
+                    @click="handleReady"
+                >
+                  重新准备
+                </button>
+                <div v-else class="ready-text">
+                  <i class="check-icon">✓</i> 您已准备就绪
+                </div>
+              </div>
+
+              <div class="status-badge player">
+                <span class="dot" :class="{ 'is-ready': client.getPlayer()?.ready }"></span>
+                您: {{ client.getPlayer()?.ready ? '准备完毕' : '准备中...' }}
+              </div>
+            </div>
+          </Transition>
 
           <div class="sim-footer">
             <div class="scanline"></div>
@@ -581,5 +619,94 @@ const onDrop = (e: DragEvent, targetPos: string) => {
   0% { transform: scale(0.95); opacity: 0.5; }
   50% { transform: scale(1.1); opacity: 1; }
   100% { transform: scale(0.95); opacity: 0.5; }
+}
+
+/* Game Over Controls Overlay */
+.game-over-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 70%, transparent 100%);
+  padding: 30px 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  border-top: 1px solid rgba(0, 255, 136, 0.2);
+  z-index: 10;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: monospace;
+}
+
+.status-badge .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #444;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.status-badge .dot.is-ready {
+  background: #00ff88;
+  box-shadow: 0 0 10px #00ff88;
+}
+
+.ready-action-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.ready-text {
+  color: #00ff88;
+  font-weight: bold;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.ready-pulse {
+  animation: button-pulse 2s infinite;
+  background: linear-gradient(135deg, #00ff88, #008855) !important;
+  color: #000 !important;
+  border: none;
+  min-width: 140px;
+}
+
+@keyframes button-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(0, 255, 136, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
+}
+
+.pulse-icon.ended {
+  background: #ffcc00; /* Yellow for "Reviewing" state */
+  box-shadow: 0 0 10px #ffcc00;
+  animation: none;
+}
+
+/* Transitions */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Ensure the simulation container feels different when ended */
+.simulation-container.game-ended {
+  border-color: rgba(0, 255, 136, 0.3);
+  box-shadow: inset 0 0 40px rgba(0, 255, 136, 0.05);
 }
 </style>

@@ -48,7 +48,7 @@ const handleReady = () => {
     </header>
 
     <main class="game-content">
-      <div v-if="!client.gameStarted" class="lobby-board">
+      <div v-if="!client.gameStarted && !client.gameEnded" class="lobby-board">
         <div class="status-label">
           <span v-if="client.getOpponentPlayer()">{{ client.getOpponentPlayer()?.ready ? '准备完毕' : '准备中...' }}</span>
         </div>
@@ -70,7 +70,7 @@ const handleReady = () => {
       </div>
 
       <DraftBoard
-          v-if="client.gameStarted && (state.phase === PHASE_DRAFT || state.phase === PHASE_SIMULATING)"
+          v-if="(client.gameStarted && (state.phase === PHASE_DRAFT || state.phase === PHASE_SIMULATING)) || client.gameEnded"
           :client="client"
           :state="state"
           @preview="previewing = $event"
