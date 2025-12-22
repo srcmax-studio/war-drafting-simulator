@@ -532,7 +532,6 @@ const handleReady = () => {
   flex: 1;
   padding: 20px;
   overflow-y: auto;
-  font-family: 'Fira Code', 'Courier New', monospace;
   line-height: 1.6;
   color: #d1d1d1;
   text-align: left;
