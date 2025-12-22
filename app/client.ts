@@ -16,6 +16,7 @@ export class Client {
     connected: boolean = false;
     disconnectEvent: CloseEvent;
     gameStarted = false;
+    gameEnded = false;
     initiative: Player | null;
     decks = {};
     pack: Character[] = [];
@@ -27,6 +28,7 @@ export class Client {
     opponentHovering: string;
     selectedFromPack: string;
     stream: string = "";
+    simulationTitle: string = "";
 
     constructor(config: {ip: string, port: number, tls: boolean}, playerName: string) {
         this.playerName = playerName;
@@ -151,11 +153,16 @@ export class Client {
             }
 
             if (data.event === 'gameEnd') {
+                this.saveSimulationToHistory();
+                this.stream += "\\\\  \n\n[模拟结束]\\\\  \n\n  ";
+
                 const { serverState } = useClient();
                 serverState.value.phase = PHASE_LOBBY;
 
                 this.gameStarted = false;
-                this.decks = {};
+                this.gameEnded = true;
+
+                this.pack = [];
                 this.draftStage = -1;
                 this.draftRound = -1;
             }
@@ -195,6 +202,7 @@ export class Client {
                 const { serverState } = useClient();
 
                 this.stream = "";
+                this.simulationTitle = `${this.getPlayer().name} (${this.decks[this.getPlayer().name].getPosition("皇帝").名字}) vs. ${this.getOpponentPlayer().name} (${this.decks[this.getOpponentPlayer().name].getPosition("皇帝").名字})`;
                 serverState.value.phase = PHASE_SIMULATING;
             }
 
@@ -207,4 +215,31 @@ export class Client {
         this.send(new RequestCharactersAction());
         this.status = STATUS_SETUP;
     }
+
+    saveSimulationToHistory() {
+        if (!this.stream) return;
+
+        const historyKey = 'game_sim_history';
+        const rawHistory = localStorage.getItem(historyKey);
+        let history: HistoryEntry[] = rawHistory ? JSON.parse(rawHistory) : [];
+
+        const newEntry: HistoryEntry = {
+            id: Date.now().toString(),
+            title: this.simulationTitle,
+            timestamp: Date.now(),
+            stream: this.stream
+        };
+
+        history.unshift(newEntry);
+        history = history.slice(0, 20);
+
+        localStorage.setItem(historyKey, JSON.stringify(history));
+    }
+}
+
+export interface HistoryEntry {
+    id: string;
+    title: string;
+    timestamp: number;
+    stream: string;
 }

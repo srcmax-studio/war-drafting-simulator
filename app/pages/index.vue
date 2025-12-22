@@ -29,6 +29,10 @@ function goToGitHubRepo() {
       <button class="btn btn-primary" @click="showModal = true">创建服务器</button>
     </div>
 
+    <div class="sim-history" @click="router.push('/simulationHistory')">
+      模拟历史记录
+    </div>
+
     <div v-if="showModal" class="modal-overlay" @click.self="showModal = false">
       <div class="modal">
         <h2>创建服务器</h2>
@@ -125,5 +129,12 @@ footer {
 footer a {
   color: #333;
   text-decoration: underline;
+}
+
+.sim-history {
+  margin-top: 2rem;
+  color: #ccc;
+  text-decoration: underline;
+  cursor: pointer;
 }
 </style>
