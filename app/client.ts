@@ -146,6 +146,7 @@ export class Client {
                 }
 
                 this.gameStarted = true;
+                this.gameEnded = false;
                 setTimeout(() => {
                     serverState.value.phase = PHASE_DRAFT;
                     this.messages.push(`你在首轮中${this.hasInitiative() ? '先手' : '后手'}抽取卡牌。`);
