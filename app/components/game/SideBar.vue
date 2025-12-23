@@ -15,6 +15,7 @@ defineProps<{
     <h4>服务器信息</h4>
     <h5>名称：<span>{{ state.title }}</span></h5>
     <h5>所有者：<span>{{ state.owner }}</span></h5>
+    <h5 v-if="state.model">生成模型：<span>{{ state.model }}</span></h5>
     <h5>载入角色数量：<span>{{ state.loadedCharacters }}</span></h5>
   </div>
 </template>
