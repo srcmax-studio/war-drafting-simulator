@@ -7,6 +7,8 @@ export const STATUS_INITIALIZED = 0;
 export const STATUS_SETUP = 10;
 export const STATUS_SYNCED = 20;
 
+export const PLAYER_DISCONNECTION_PAUSE = 100;
+
 export class Client {
     ws: WebSocket;
     playerName: string;
@@ -145,8 +147,7 @@ export class Client {
                     this.decks[name] = deck;
                 }
 
-                this.gameStarted = true;
-                this.gameEnded = false;
+                this.setGameStarted();
                 setTimeout(() => {
                     serverState.value.phase = PHASE_DRAFT;
                     this.messages.push(`你在首轮中${this.hasInitiative() ? '先手' : '后手'}抽取卡牌。`);
@@ -169,6 +170,8 @@ export class Client {
             }
 
             if (data.event === 'draft') {
+                this.setGameStarted();
+
                 const { players } = useClient();
 
                 players.value = data.players;
@@ -193,9 +196,11 @@ export class Client {
             }
 
             if (data.event === 'deckUpdate') {
+                this.setGameStarted();
+
                 for (const deck of data.decks) {
                     this.decks[deck.name] = PlayerDeck.deserialize(deck.data,
-                        (name: string) => this.characters.find(c => c.名字 === name));
+                        (name: string) => this.characters?.find(c => c.名字 === name));
                 }
             }
 
@@ -211,10 +216,20 @@ export class Client {
                 if (! data.text) return;
                 this.stream += data.text;
             }
+
+            if (data.event === 'gamePaused') {
+                this.draftStage = PLAYER_DISCONNECTION_PAUSE;
+                this.actionEndTime = data.endTime;
+            }
         }
 
         this.send(new RequestCharactersAction());
         this.status = STATUS_SETUP;
+    }
+
+    setGameStarted() {
+        this.gameStarted = true;
+        this.gameEnded = false;
     }
 
     saveSimulationToHistory() {

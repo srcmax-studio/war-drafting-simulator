@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, useTemplateRef, computed } from "vue";
-import type { Client } from "~/client";
+import { type Client, PLAYER_DISCONNECTION_PAUSE } from "~/client";
 import Card from "~/components/game/Card.vue";
 import PositionInfo from "~/components/game/PositionInfo.vue";
 import {
@@ -74,7 +74,9 @@ const draftMessage = computed(() => {
     case DRAFT_STAGE_PASSIVE:
       return ! props.client.hasInitiative() ? "请决定..." : "等待对手决定...";
     case DRAFT_STAGE_FINAL_CHANGES:
-      return "请在模拟前对构建的牌组进行最终调整..."
+      return "请在模拟前对构建的牌组进行最终调整...";
+    case PLAYER_DISCONNECTION_PAUSE:
+      return "正在等待玩家重新连接...";
   }
 });
 
@@ -179,9 +181,9 @@ const handleReady = () => {
             @mouseleave="showPosInfo[pos.key] = false"
         >
           <div class="slot-title">{{ pos.key }}</div>
-          <div class="slot-card-wrapper" v-if="client.getOpponentPlayer() && client.decks[client.getOpponentPlayer().name].slots.get(pos.key)">
+          <div class="slot-card-wrapper" v-if="client.getOpponentPlayer() && client.decks[client.getOpponentPlayer().name]?.slots?.get(pos.key)">
             <Card
-                :character="client.decks[client.getOpponentPlayer().name].slots.get(pos.key)"
+                :character="client.decks[client.getOpponentPlayer().name]?.slots?.get(pos.key)"
                 interactive
                 slot
                 @preview="emit('preview', $event)"
@@ -193,7 +195,7 @@ const handleReady = () => {
 
           <Teleport to="body">
             <PositionInfo
-                v-if="showPosInfo[pos.key] && ! client.decks[client.getOpponentPlayer().name].slots.get(pos.key)"
+                v-if="showPosInfo[pos.key] && ! client.decks[client.getOpponentPlayer().name]?.slots.get(pos.key)"
                 :pos="pos"
                 :anchor="oppSlot[pos.key]"
             />
@@ -307,12 +309,12 @@ const handleReady = () => {
         >
           <div
               class="slot-card-wrapper clickable"
-              v-if="client.decks[client.getPlayer().name].slots.get(pos.key)"
+              v-if="client.decks[client.getPlayer().name]?.slots?.get(pos.key)"
               draggable="true"
               @dragstart="(e) => onDragStart(e, pos.key)"
           >
             <Card
-                :character="client.decks[client.getPlayer().name].slots.get(pos.key)"
+                :character="client.decks[client.getPlayer().name]?.slots?.get(pos.key)"
                 interactive
                 slot
                 @preview="emit('preview', $event)"
@@ -332,7 +334,7 @@ const handleReady = () => {
 
           <Teleport to="body">
             <PositionInfo
-                v-if="showPosInfoPlayer[pos.key] && !client.decks[client.getPlayer().name].slots.get(pos.key)"
+                v-if="showPosInfoPlayer[pos.key] && !client.decks[client.getPlayer().name]?.slots?.get(pos.key)"
                 :pos="pos"
                 :anchor="playerSlot[pos.key]"
             />
