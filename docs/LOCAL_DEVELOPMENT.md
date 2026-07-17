@@ -1,6 +1,6 @@
 # Local Development
 
-Install Node.js 20+, clone all repositories into one parent directory and initialize recursive submodules. Run `npm install` in common, characters, images, server and client.
+Install Node.js 24+, clone all repositories into one parent directory and initialize recursive submodules. Run `npm install` in common, characters, images, server and client.
 
 Start the server with TLS disabled:
 

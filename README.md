@@ -18,7 +18,7 @@ Repository names remain stable for existing infrastructure. Product-facing names
 
 ## Quick start
 
-Node.js 20 or newer is required.
+Node.js 24 or newer is required.
 
 ```bash
 git submodule update --init --recursive
