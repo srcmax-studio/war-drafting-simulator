@@ -1,0 +1,10 @@
+{
+  "name": "万世战线 Aeonfront",
+  "short_name": "Aeonfront",
+  "description": "群英跨越时代，三线决定天下。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#101412",
+  "theme_color": "#171d1b",
+  "icons": [{ "src": "/aeonfront-mark.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

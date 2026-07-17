@@ -1,28 +1,27 @@
-# Nuxt dev/build outputs
-.output
-.data
-.nuxt
-.nitro
-.cache
-dist
+# Nuxt and Electron outputs
+.output/
+.data/
+.nuxt/
+.nitro/
+.cache/
+/dist
+dist-electron/
+release/
+coverage/
 
-# Node dependencies
-node_modules
-
-# Logs
-logs
+# Dependencies and logs
+node_modules/
+logs/
 *.log
 
-# Misc
-.DS_Store
-.fleet
-.idea
-
-# Local env files
+# Local configuration
 .env
 .env.*
 !.env.example
-.vercel
-.env*.local
+.vercel/
 
-dist-electron/
+# Editors and operating systems
+.DS_Store
+.fleet/
+.idea/
+.vscode/

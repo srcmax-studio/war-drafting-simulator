@@ -1,140 +1,51 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { useRouter } from "vue-router";
-
-const router = useRouter();
-const showModal = ref(false);
-
-function goToServersList() {
-  router.push("/servers");
-}
-
-function goToGitHubRepo() {
-  window.open("https://github.com/srcmax-studio/war-drafting-simulator-server", '_blank').focus();
-}
+import { ArrowRight, BookOpen, GalleryVerticalEnd, History, LibraryBig, ShieldCheck, Swords, Wifi } from 'lucide-vue-next';
+const extension = useRuntimeConfig().public.assetExtension;
+const featured = ['秦始皇', '花木兰', '达·芬奇', '吉尔伽美什'];
+const imageFor = (name: string) => `/cards/${encodeURIComponent(name)}.${extension}`;
+const { selectedDeck } = useDecks();
+const { history } = useMatchHistory();
 </script>
 
 <template>
-  <main class="container">
-    <div class="header">
-      <div class="deck-pile">
-        <img :src="'card-back.webp'" />
+  <div class="home-page">
+    <section class="home-hero">
+      <div class="portrait-rank" aria-hidden="true">
+        <img v-for="(name, index) in featured" :key="name" :src="imageFor(name)" :alt="name" :style="{ '--rank': index }">
       </div>
-      <div class="text-xl text-bold">战争轮抽模拟器</div>
-      <div class="subtitle">war-drafting-simulator</div>
-    </div>
-
-    <div class="buttons">
-      <button class="btn" @click="goToServersList">加入服务器</button>
-      <button class="btn btn-primary" @click="showModal = true">创建服务器</button>
-    </div>
-
-    <div class="sim-history" @click="router.push('/simulationHistory')">
-      模拟历史记录
-    </div>
-
-    <div v-if="showModal" class="modal-overlay" @click.self="showModal = false">
-      <div class="modal">
-        <h2>创建服务器</h2>
-        <p>
-          本项目开放源代码，并欢迎玩家创建自己的服务器。
-        </p>
-        <p>
-          若想创建服务器，请前往项目的 GitHub 仓库下载源代码并部署。
-        </p>
-        <p>
-          若您的服务器对互联网（公网）开放，则将会被自动发布至本网站的公共服务器列表。您可以在服务器设定文件中通过 "publish-server": false 禁用此功能。
-        </p>
-        <p>
-          此外，您还可以通过 "password" 选项为服务器设定密码。
-        </p>
-        <div class="buttons">
-          <button class="btn github-link" @click="goToGitHubRepo">
-            GitHub 仓库
-          </button>
-          <button class="btn btn-close" @click="showModal = false">关闭</button>
+      <div class="hero-copy">
+        <span class="eyebrow">AEONFRONT · SEASON 01</span>
+        <h1>万世战线</h1>
+        <p>{{ $t('home.tagline') }}</p>
+        <div class="button-row">
+          <NuxtLink class="button primary" to="/play"><Swords :size="18" /> {{ $t('home.practice') }} <ArrowRight :size="16" /></NuxtLink>
+          <NuxtLink class="button" to="/online"><Wifi :size="18" /> {{ $t('home.online') }}</NuxtLink>
         </div>
       </div>
-    </div>
-  </main>
+      <aside class="readiness-strip">
+        <span>{{ $t('home.status') }}</span>
+        <strong>{{ selectedDeck?.name }}</strong>
+        <small>{{ selectedDeck?.cardIds.length ?? 0 }}/12 CARDS</small>
+      </aside>
+    </section>
 
-  <footer>
-    Made by <a href="https://srcmax.com" target="_blank">SrcMax Studio</a>. This project is <a href="https://github.com/srcmax-studio/war-drafting-simulator" target="_blank">open-sourced</a>, licensed under <a href="https://raw.githubusercontent.com/srcmax-studio/war-drafting-simulator/refs/heads/main/LICENSE" target="_blank">MIT</a>.
-  </footer>
+    <section class="home-actions">
+      <NuxtLink to="/deck-builder"><GalleryVerticalEnd :size="22" /><div><strong>{{ $t('home.deck') }}</strong><span>{{ selectedDeck?.name }}</span></div><ArrowRight :size="18" /></NuxtLink>
+      <NuxtLink to="/collection"><LibraryBig :size="22" /><div><strong>{{ $t('home.collection') }}</strong><span>824</span></div><ArrowRight :size="18" /></NuxtLink>
+      <NuxtLink to="/fronts"><BookOpen :size="22" /><div><strong>战线档案</strong><span>30</span></div><ArrowRight :size="18" /></NuxtLink>
+      <NuxtLink to="/history"><History :size="22" /><div><strong>最近战史</strong><span>{{ history.length }}</span></div><ArrowRight :size="18" /></NuxtLink>
+    </section>
+
+    <section class="home-brief">
+      <div><ShieldCheck :size="20" /><span>服务端权威</span><small>结果由确定性规则结算</small></div>
+      <div><Swords :size="20" /><span>六回合</span><small>同时部署，分别锁定</small></div>
+      <div><BookOpen :size="20" /><span>三条战线</span><small>随机组合，依次揭示</small></div>
+    </section>
+  </div>
 </template>
 
 <style scoped>
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 80vh;
-  /* text-align: center will now be on .header and .buttons' container if needed */
-  padding: 2rem;
-}
-
-/* --- ADD THIS NEW .header STYLE --- */
-.header {
-  display: flex; /* Enable Flexbox */
-  flex-direction: column; /* Stack children vertically */
-  align-items: center; /* Center items horizontally */
-  text-align: center; /* Center text within the header */
-  margin-bottom: 50px; /* Added margin-bottom here to separate header from buttons */
-}
-
-.header h1 {
-  font-size: 2.5rem;
-  margin-bottom: .5rem;
-}
-
-.header .subtitle {
-  font-size: 1rem;
-  color: #cccccc;
-  margin-bottom: 2rem;
-}
-
-.modal h2 {
-  margin-bottom: 1rem;
-}
-
-.modal p {
-  margin-bottom: 1.5rem;
-}
-
-.github-link {
-  display: inline-block;
-  background-color: #24292f;
-  color: #fff;
-  text-decoration: none;
-}
-
-.github-link:hover {
-  background-color: #444c56;
-}
-
-.btn-close {
-  background-color: #eee;
-  border: 1px solid #ccc;
-}
-
-footer {
-  text-align: center;
-  margin-top: 3rem;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-footer a {
-  color: #333;
-  text-decoration: underline;
-}
-
-.sim-history {
-  margin-top: 2rem;
-  color: #ccc;
-  text-decoration: underline;
-  cursor: pointer;
-}
+.home-page{min-height:calc(100vh - var(--header-height))}.home-hero{position:relative;height:min(650px,calc(100vh - var(--header-height) - 120px));min-height:500px;overflow:hidden;border-bottom:1px solid var(--line);background:#121815}.portrait-rank{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr)}.portrait-rank::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,14,12,.97) 0%,rgba(10,14,12,.78) 30%,rgba(10,14,12,.15) 67%,rgba(10,14,12,.66) 100%),linear-gradient(0deg,#111614 0%,transparent 45%)}.portrait-rank img{width:100%;height:100%;object-fit:cover;object-position:center 22%;filter:saturate(.72) contrast(1.08);transform:translateY(calc(var(--rank) * 10px))}.hero-copy{position:absolute;z-index:2;left:max(28px,calc((100vw - 1424px)/2));top:50%;max-width:600px;transform:translateY(-50%)}.hero-copy h1{margin:10px 0 8px;font-family:"Noto Serif SC","Songti SC",serif;font-size:72px;line-height:1;font-weight:800;text-shadow:0 5px 28px #000}.hero-copy p{margin:0 0 28px;color:var(--paper);font-family:"Noto Serif SC",serif;font-size:19px}.readiness-strip{position:absolute;z-index:3;right:max(28px,calc((100vw - 1424px)/2));bottom:28px;display:grid;min-width:210px;padding:12px 15px;border-left:3px solid var(--teal);background:rgba(13,18,16,.82)}.readiness-strip span,.readiness-strip small{color:var(--muted);font-size:10px}.readiness-strip strong{margin:4px 0}.home-actions{width:min(1424px,100%);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--line)}.home-actions>a{min-height:112px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:13px;padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#171d1b}.home-actions>a:hover{background:#202724}.home-actions div{display:grid;gap:5px}.home-actions span{color:var(--muted);font-size:11px}.home-brief{width:min(1424px,100%);margin:28px auto 0;padding:0 28px 42px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.home-brief>div{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;padding:13px 0;border-top:1px solid var(--line)}.home-brief svg{grid-row:span 2;color:var(--copper)}.home-brief small{color:var(--muted)}
+@media(max-width:850px){.home-hero{height:620px}.portrait-rank{grid-template-columns:repeat(2,1fr)}.portrait-rank img:nth-child(n+3){display:none}.hero-copy{left:20px;right:20px;top:auto;bottom:100px;transform:none}.hero-copy h1{font-size:54px}.readiness-strip{left:20px;right:auto;bottom:20px}.home-actions{grid-template-columns:repeat(2,1fr)}.home-brief{grid-template-columns:1fr}}
+@media(max-width:480px){.home-actions{grid-template-columns:1fr}.portrait-rank{grid-template-columns:1fr}.portrait-rank img:nth-child(n+2){display:none}.hero-copy h1{font-size:46px}}
 </style>

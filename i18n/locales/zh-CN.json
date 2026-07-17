@@ -1,0 +1,12 @@
+{
+  "nav": { "main": "主导航", "menu": "打开菜单", "home": "总览", "play": "对战", "decks": "牌组", "cards": "卡牌", "fronts": "战线", "history": "战史", "settings": "设置" },
+  "common": { "search": "搜索", "all": "全部", "save": "保存", "cancel": "取消", "close": "关闭", "back": "返回", "start": "开始", "delete": "删除", "rename": "重命名", "copy": "复制", "details": "详情", "empty": "暂无记录" },
+  "home": { "tagline": "群英跨越时代，三线决定天下。", "online": "在线对战", "practice": "演武练习", "deck": "整备牌组", "collection": "查阅群英", "status": "战备状态" },
+  "play": { "title": "选择战斗方式", "practice": "演武场", "practiceDesc": "与本地确定性战术 AI 完成一场六回合对局。", "online": "在线战局", "onlineDesc": "连接权威服务器，与另一名玩家同时部署。" },
+  "game": { "turn": "回合", "orders": "军令", "initiative": "制势", "stake": "当前战功", "pendingStake": "待生效", "lock": "锁定行动", "undo": "撤销计划", "banner": "举旗", "withdraw": "撤军", "hand": "手牌", "graveyard": "阵亡", "deck": "牌库", "events": "战况记录", "victory": "胜利", "defeat": "失败", "draw": "平局", "resultReasons": { "fronts": "控制两条战线", "total_power": "全场总战力", "draw": "全场战力相同", "withdrawal": "对手撤军" } },
+  "deck": { "title": "牌组整备", "count": "已选 {count}/12", "curve": "费用曲线", "invalid": "牌组必须包含十二张不同卡牌", "preset": "预设牌组", "name": "牌组名称" },
+  "cards": { "title": "群英图鉴", "result": "共 {count} 名角色", "cost": "费用", "power": "战力", "era": "时代", "region": "地区", "profession": "职业", "identity": "身份", "ability": "技能" },
+  "fronts": { "title": "战线档案", "enabled": "启用", "strategy": "策略" },
+  "settings": { "title": "设置", "locale": "界面语言", "server": "默认服务器", "player": "玩家名", "reducedMotion": "减少动画", "highContrast": "增强对比度" },
+  "events": { "game_created": "战局建立", "cards_drawn": "抽取卡牌", "opponent_drew": "对手抽牌", "front_revealed": "战线揭示", "turn_started": "回合开始", "turn_submitted": "行动提交", "turn_plan_updated": "计划更新", "turn_locked": "行动锁定", "reveal_order": "揭示顺序", "card_deployed": "卡牌部署", "card_revealed": "卡牌揭示", "power_changed": "战力变化", "allies_reinforced": "友军增援", "energy_changed": "军令变化", "cards_recruited": "征召卡牌", "card_discarded": "卡牌弃置", "card_destroyed": "角色阵亡", "card_returned": "角色复归", "front_blocked": "战线封锁", "enemies_weakened": "敌军削弱", "formation_changed": "阵形变化", "card_copied": "卡牌复制", "initiative_seized": "夺取制势", "ability_registered": "技能触发", "card_moved": "角色调遣", "front_effect_resolved": "战线结算", "turn_resolved": "回合结算", "stake_changed": "战功生效", "banner_raised": "举旗", "banner_accepted": "接受举旗", "player_withdrew": "玩家撤军", "game_ended": "战局结束" }
+}

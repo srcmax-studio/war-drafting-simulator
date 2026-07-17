@@ -1,7 +1,11 @@
-[submodule "public/cards"]
-	path = public/cards
+[submodule "assets/card-images"]
+	path = assets/card-images
 	url = https://github.com/srcmax-studio/wds-characters-images.git
-	branch = webp
+	branch = main
 [submodule "app/common"]
 	path = app/common
 	url = https://github.com/srcmax-studio/war-drafting-simulator-common.git
+[submodule "data/characters"]
+	path = data/characters
+	url = https://github.com/srcmax-studio/war-drafting-simulator-characters.git
+	branch = main

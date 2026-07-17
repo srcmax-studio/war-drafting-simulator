@@ -1,89 +1,80 @@
-import { MongoClient } from "mongodb";
-import WebSocket from "ws";
-import { getRequestIP } from "h3";
-import { ipAddress } from "@vercel/functions";
+import { randomUUID } from 'node:crypto';
+import { MongoClient, type Document } from 'mongodb';
+import WebSocket from 'ws';
 
-const uri = process.env.MONGODB_URI!;
-const client = new MongoClient(uri);
+interface PublishBody {
+  ip: string;
+  port: number;
+  tls?: boolean;
+  product?: string;
+}
+
+interface StatusEnvelope {
+  event: string;
+  protocolVersion: string;
+  payload: Record<string, unknown>;
+}
+
+const verifyServer = (url: string): Promise<StatusEnvelope> => new Promise((resolve, reject) => {
+  const socket = new WebSocket(url, { handshakeTimeout: 3_000 });
+  const timeout = setTimeout(() => { socket.terminate(); reject(new Error('Status timeout.')); }, 4_000);
+  socket.once('message', (raw) => {
+    clearTimeout(timeout);
+    try {
+      const envelope = JSON.parse(raw.toString()) as StatusEnvelope;
+      if (envelope.event !== 'serverStatus' || envelope.protocolVersion !== 'aeonfront/1' || envelope.payload.product !== 'Aeonfront') {
+        throw new Error('Endpoint is not a compatible Aeonfront server.');
+      }
+      resolve(envelope);
+    } catch (error) {
+      reject(error);
+    } finally {
+      socket.close();
+    }
+  });
+  socket.once('error', (error) => { clearTimeout(timeout); reject(error); });
+});
 
 export default defineEventHandler(async (event) => {
-    if (event.node.req.method !== "POST") {
-        return sendError(event, { statusCode: 405, statusMessage: "Method not allowed" });
-    }
-
-    try {
-        const body = await readBody(event) as { port: number };
-        if (!body.port || !body.ip) return sendError(event, { statusCode: 400, statusMessage: "IP and Port is required" });
-
-        const wsUrl = (body.tls ? 'wss' : 'ws') + `://${body.ip}:${body.port}`;
-        console.log("Verifying " + wsUrl + " for publishing...")
-
-        let serverData: any = null;
-        try {
-            serverData = await new Promise<any>((resolve, reject) => {
-                const ws = new WebSocket(wsUrl, { handshakeTimeout: 2000 });
-
-                ws.on("message", (msg) => {
-                    try {
-                        console.log(msg.toString())
-                        const data = JSON.parse(msg.toString());
-                        resolve(data);
-                    } catch {
-                        reject(new Error("Invalid JSON from server"));
-                    } finally {
-                        ws.close();
-                    }
-                });
-
-                ws.on("open", () => {
-                    ws.send(JSON.stringify({ action: "status" }));
-                });
-
-                ws.on("error", (err) => reject(err));
-                ws.on("close", () => {
-                    if (!serverData) reject(new Error("Connection closed before receiving data"));
-                });
-            });
-        } catch (e) {
-            console.error("WS connection failed", e);
-            serverData = null;
-        }
-
-        await client.connect();
-
-        if (! serverData) {
-            return sendError(event, { statusCode: 401, statusMessage: "Can not connect to server" });
-        }
-
-        const db = client.db("war_drafting");
-        const collection = db.collection("servers");
-
-        const now = new Date();
-
-        const updateData = {
-            ip: body.ip,
-            port: body.port,
-            title: serverData?.title ?? "未知",
-            owner: serverData?.owner ?? "未知",
-            loadedCharacters: serverData?.loadedCharacters ?? 0,
-            onlinePlayers: serverData?.onlinePlayers ?? 0,
-            phase: serverData?.phase ?? 0,
-            requirePassword: serverData?.requirePassword ?? false,
-            tls: body.tls ?? false,
-            updatedAt: now,
-        };
-
-        await collection.updateOne(
-            { ip: body.ip, port: body.port },
-            { $set: updateData, $setOnInsert: { createdAt: now } },
-            { upsert: true }
-        );
-
-        return { ok: !!serverData, ...updateData };
-    } catch (e) {
-        console.error(e);
-        return sendError(event, { statusCode: 500, statusMessage: "Database or WS error" });
-    } finally {
-        await client.close();
-    }
+  if (getMethod(event) !== 'POST') throw createError({ statusCode: 405, statusMessage: 'Method not allowed' });
+  const uri = process.env.MONGODB_URI;
+  if (!uri) throw createError({ statusCode: 503, statusMessage: 'Server listing is not configured' });
+  const body = await readBody<PublishBody>(event);
+  if (!body || typeof body.ip !== 'string' || !/^[a-z0-9.-]+$/i.test(body.ip) || !Number.isInteger(body.port) || body.port < 1 || body.port > 65_535) {
+    throw createError({ statusCode: 400, statusMessage: 'Valid host and port are required' });
+  }
+  if (['localhost', '127.0.0.1', '0.0.0.0'].includes(body.ip) || body.ip.startsWith('10.') || body.ip.startsWith('192.168.')) {
+    throw createError({ statusCode: 400, statusMessage: 'Public host is required' });
+  }
+  const url = `${body.tls ? 'wss' : 'ws'}://${body.ip}:${body.port}`;
+  let status: StatusEnvelope;
+  try {
+    status = await verifyServer(url);
+  } catch (error) {
+    console.error('Server verification failed.', error);
+    throw createError({ statusCode: 422, statusMessage: 'Could not verify server endpoint' });
+  }
+  const client = new MongoClient(uri);
+  try {
+    const now = new Date();
+    const payload = status.payload;
+    const listing = {
+      ip: body.ip,
+      port: body.port,
+      title: typeof payload.title === 'string' ? payload.title : 'Aeonfront Server',
+      owner: typeof payload.owner === 'string' ? payload.owner : 'Unknown',
+      loadedCards: typeof payload.loadedCards === 'number' ? payload.loadedCards : 0,
+      onlinePlayers: typeof payload.onlinePlayers === 'number' ? payload.onlinePlayers : 0,
+      phase: typeof payload.phase === 'string' ? payload.phase : 'lobby',
+      requirePassword: payload.requirePassword === true,
+      tls: body.tls === true,
+      protocolVersion: status.protocolVersion,
+      updatedAt: now
+    };
+    const collection = client.db('aeonfront').collection<Document>('servers');
+    await collection.updateOne({ ip: body.ip, port: body.port }, { $set: listing, $setOnInsert: { listingId: randomUUID(), createdAt: now } }, { upsert: true });
+    return { ok: true, ...listing };
+  } finally {
+    await client.close();
+  }
 });

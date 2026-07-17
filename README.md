@@ -1,43 +1,49 @@
-# war-drafting-simulator
-Web client for [WDS](https://wds.srcmax.com).
+# 万世战线 Aeonfront
 
-## Server software
-This is the web client hosted on https://wds.srcmax.com. To set up a server for WDS, please head over to the [server software](https://github.com/srcmax-studio/war-drafting-simulator-server).
+**群英跨越时代，三线决定天下。**  A short-form two-player TCG for Web and Electron.
 
-## Setup
+Players bring twelve unique character cards, gain increasing military orders over six turns, and deploy simultaneously across three seeded fronts. The authoritative shared engine resolves reveal order, structured abilities, front effects, banner stakes, withdrawal and scoring without an external model.
 
-Make sure to install dependencies:
+## Repository family
+
+| Repository | Responsibility |
+| --- | --- |
+| `war-drafting-simulator` | Nuxt 4 Web client, local practice and Electron shell |
+| `war-drafting-simulator-server` | Authoritative Node.js WebSocket server |
+| `war-drafting-simulator-common` | Rules, protocol, replay and validation |
+| `war-drafting-simulator-characters` | 824 source characters, TCG configs and six presets |
+| `wds-characters-images` | 824 WebP, 824 HD images and asset index |
+
+Repository names remain stable for existing infrastructure. Product-facing names, storage keys, module names and application identity use Aeonfront.
+
+## Quick start
+
+Node.js 20 or newer is required.
 
 ```bash
+git submodule update --init --recursive
 npm install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
 npm run dev
 ```
 
-## Production
+Open `http://localhost:3000`. Practice mode is fully local. For online play, start the server repository, open two browser sessions, choose legal decks and connect both to `ws://127.0.0.1:3001`.
 
-Build the application for production:
+## Verification and builds
 
 ```bash
+npm run lint
+npm run typecheck
+npm test
+npm run validate:cards
+npm run validate:assets
+npm run validate:fronts
 npm run build
+npm run generate
+npm run app:build
 ```
 
-## License
-This project is licensed under MIT.
+Web builds use lazy WebP assets. Electron packages WebP offline by default; `npm run app:build:hd` selects the pinned HD directory without changing Git branches. No API key is needed for any game mode.
 
-```text
-Copyright 2025 SrcMax Studio
+## Documentation
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-```
+See [game design](docs/GAME_DESIGN.md), [rules](docs/RULES.md), [architecture](docs/ARCHITECTURE.md), [protocol](docs/PROTOCOL.md), [card data](docs/CARD_DATA.md), [assets](docs/CARD_ASSETS.md), [fronts](docs/FRONTS.md), [balance](docs/BALANCE.md), [migration](docs/MIGRATION.md), [local development](docs/LOCAL_DEVELOPMENT.md) and [deployment](docs/DEPLOYMENT.md).

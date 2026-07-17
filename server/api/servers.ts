@@ -1,35 +1,42 @@
-import { MongoClient } from "mongodb";
+import { MongoClient, type Document } from 'mongodb';
 
-const uri = process.env.MONGODB_URI!;
-const client = new MongoClient(uri);
+interface ServerListing extends Document {
+  ip: string;
+  port: number;
+  title: string;
+  owner: string;
+  loadedCards: number;
+  onlinePlayers: number;
+  phase: string;
+  requirePassword: boolean;
+  tls: boolean;
+  updatedAt: Date;
+}
 
-export default defineEventHandler(async (event) => {
-    try {
-        await client.connect();
-        const db = client.db("war_drafting");
-        const collection = db.collection("servers");
-
-        const serversRaw = await collection.find().sort({ updatedAt: -1 }).toArray();
-
-        const servers = serversRaw.map(s => ({
-            _id: s._id.toString(),
-            ip: s.ip,
-            port: s.port,
-            title: s.title ?? "未知服务器",
-            owner: s.owner ?? "未知",
-            loadedCharacters: s.loadedCharacters ?? 0,
-            onlinePlayers: s.onlinePlayers ?? 0,
-            status: s.status ?? 0,
-            requirePassword: s.requirePassword ?? false,
-            tls: s.tls ?? false,
-            updatedAt: s.updatedAt ?? new Date(),
-        }));
-
-        return servers;
-    } catch (e) {
-        console.error(e);
-        return sendError(event, { statusCode: 500, statusMessage: "Database error" });
-    } finally {
-        await client.close();
-    }
+export default defineEventHandler(async () => {
+  const uri = process.env.MONGODB_URI;
+  if (!uri) return [];
+  const client = new MongoClient(uri);
+  try {
+    const collection = client.db('aeonfront').collection<ServerListing>('servers');
+    const records = await collection.find({ updatedAt: { $gte: new Date(Date.now() - 5 * 60_000) } }).sort({ updatedAt: -1 }).limit(100).toArray();
+    return records.map((record) => ({
+      id: record._id.toString(),
+      ip: record.ip,
+      port: record.port,
+      title: record.title || 'Aeonfront Server',
+      owner: record.owner || 'Unknown',
+      loadedCards: record.loadedCards || 0,
+      onlinePlayers: record.onlinePlayers || 0,
+      phase: record.phase || 'lobby',
+      requirePassword: Boolean(record.requirePassword),
+      tls: Boolean(record.tls),
+      updatedAt: record.updatedAt
+    }));
+  } catch (error) {
+    console.error('Server listing query failed.', error);
+    throw createError({ statusCode: 503, statusMessage: 'Server listing unavailable' });
+  } finally {
+    await client.close();
+  }
 });

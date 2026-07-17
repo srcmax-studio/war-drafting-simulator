@@ -1,54 +1,61 @@
 {
-  "name": "war-drafting-simulator",
-  "version": "0.1.0",
-  "description": "The war drafting simulator game.",
+  "name": "aeonfront",
+  "version": "1.0.0",
+  "description": "万世战线 Aeonfront Web and Electron client.",
   "author": "SrcMax Studio <support@srcmax.com>",
   "type": "module",
   "private": true,
   "main": "dist-electron/main.js",
   "build": {
-    "appId": "com.srcmax.wds",
-    "productName": "War Drafting Simulator",
-    "directories": {
-      "output": "dist"
-    },
-    "files": [
-      ".output/**/*",
-      "dist-electron/**/*"
-    ],
-    "win": {
-      "target": "nsis"
-    },
-    "mac": {
-      "category": "public.app-category.utilities",
-      "target": "dmg",
-      "identity": null
-    }
+    "appId": "com.srcmax.aeonfront",
+    "productName": "Aeonfront",
+    "directories": { "output": "release" },
+    "files": [".output/public/**/*", "dist-electron/**/*", "package.json", "!node_modules/**/*"],
+    "npmRebuild": false,
+    "win": { "target": "nsis" },
+    "mac": { "category": "public.app-category.games", "target": "dir", "identity": null }
   },
   "scripts": {
     "build": "nuxt build",
-    "app:build": "cd public/cards && git checkout hd && cd ../.. && electron-builder && cd public/cards && git checkout webp && cd ../..",
-    "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "app:build": "npm run generate && electron-builder --mac dir --config.electronDist=node_modules/electron/dist && codesign --force --deep --sign - release/mac-arm64/Aeonfront.app",
+    "app:build:hd": "AEONFRONT_ASSET_MODE=hd npm run generate && electron-builder --mac dir --config.electronDist=node_modules/electron/dist && codesign --force --deep --sign - release/mac-arm64/Aeonfront.app",
+    "dev": "nuxt dev",
     "preview": "nuxt preview",
+    "lint": "eslint app electron nuxt.config.ts vitest.config.ts",
+    "typecheck": "nuxt typecheck",
+    "test": "vitest run",
+    "validate:cards": "tsx scripts/validate-client-data.ts",
+    "validate:assets": "node scripts/validate-client-assets.mjs",
+    "validate:fronts": "tsx scripts/validate-client-data.ts --fronts",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@types/markdown-it": "^14.1.2",
-    "@vercel/node": "^5.5.15",
-    "axios": "^1.13.2",
-    "markdown-it": "^14.1.0",
+    "@nuxtjs/i18n": "^10.0.4",
+    "lucide-vue-next": "^0.468.0",
     "mongodb": "^7.0.0",
     "nuxt": "^4.2.2",
+    "nuxt-electron": "^0.7.0",
     "vue": "^3.5.25",
     "vue-router": "^4.6.3",
-    "vue-toastification": "^2.0.0-rc.5"
+    "ws": "^8.18.3"
   },
   "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "@types/node": "^24.0.15",
+    "@types/ws": "^8.18.1",
     "electron": "^39.2.7",
     "electron-builder": "^26.0.12",
-    "nuxt-electron": "^0.7.0",
+    "eslint": "^9.31.0",
+    "eslint-plugin-vue": "^10.3.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.38.0",
+    "tsx": "^4.20.3",
     "vite-plugin-electron": "^0.29.0",
-    "vite-plugin-electron-renderer": "^0.14.6"
-  }
+    "vite-plugin-electron-renderer": "^0.14.6",
+    "vitest": "^3.2.4",
+    "vue-tsc": "^3.0.3"
+  },
+  "engines": { "node": ">=20" },
+  "license": "MIT"
 }
