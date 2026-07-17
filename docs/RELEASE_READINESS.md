@@ -13,13 +13,11 @@
 
 | Repository | Revision | Result |
 | --- | --- | --- |
+| Client implementation | `68ae74d4e8982ad881d5e72be8629cb4b951b4eb` | Verified |
 | Common rules and protocol | `2ff61dea59f5462825cc9d3b099e6e0f8d437913` | Published |
 | Character content | `9caf73accb8c3023441b8b57ebca96c36659587d` | Published |
 | Character images | `5f31ebd088b22f5c7b3efa6973f45b410120ae8e` | Unchanged |
 | Multiplayer server | `fef6b478c9762ce23ee2d1914a39bd0ab69f2565` | Published |
-
-The client implementation revision is recorded after the source commit so that this
-evidence remains tied to an immutable tree.
 
 ## Acceptance results
 
