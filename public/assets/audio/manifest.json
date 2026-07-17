@@ -1,0 +1,408 @@
+{
+  "schemaVersion": 1,
+  "sampleRate": 44100,
+  "music": [
+    {
+      "id": "home-theme",
+      "duration": 44,
+      "mp3": "/assets/audio/music/home-theme.mp3",
+      "ogg": "/assets/audio/music/home-theme.ogg",
+      "hashes": {
+        "mp3": "d960fd3a5af3c2ab9f670bf3cab9e8f9b4dc0acb1512326949a6084482db5689",
+        "ogg": "9ee7f6f7c164fa865ce2e704d4c35d20271f97743f36eefc6e72271e176a6457"
+      }
+    },
+    {
+      "id": "lobby-theme",
+      "duration": 48,
+      "mp3": "/assets/audio/music/lobby-theme.mp3",
+      "ogg": "/assets/audio/music/lobby-theme.ogg",
+      "hashes": {
+        "mp3": "3bbcb52fe7079c1b5260c619c2ae7236266ce7c5020a76ce4bae6ce26b5c955f",
+        "ogg": "7d25b90a6c9f185dd76312a6ff4c6a9745b4e6f940c5b0ddf7fed55468956059"
+      }
+    },
+    {
+      "id": "room-theme",
+      "duration": 36,
+      "mp3": "/assets/audio/music/room-theme.mp3",
+      "ogg": "/assets/audio/music/room-theme.ogg",
+      "hashes": {
+        "mp3": "bab158217f41ba8e841e5a27306eeb0de2603921c238a483aabdef03aa383678",
+        "ogg": "6386d3bbf760fff3fd21773fdcb8faff7d198a642255d5c92c2eb1d7a3cc15a4"
+      }
+    },
+    {
+      "id": "battle-theme",
+      "duration": 60,
+      "mp3": "/assets/audio/music/battle-theme.mp3",
+      "ogg": "/assets/audio/music/battle-theme.ogg",
+      "hashes": {
+        "mp3": "a7c2b990dab088be6775a8834f908105aa0d4741a5bc3f2f19ad02bd8358d1ec",
+        "ogg": "8b314db5cbf33ae98ca0baae9ea3fa67a0a804cebdc22cff7c16165bf4309436"
+      }
+    },
+    {
+      "id": "final-turn",
+      "duration": 34,
+      "mp3": "/assets/audio/music/final-turn.mp3",
+      "ogg": "/assets/audio/music/final-turn.ogg",
+      "hashes": {
+        "mp3": "dfb8f8f46cc140c1ec6c3a3aadfcd1581769a1a609ee91dde8e4e6e67850a08a",
+        "ogg": "087096764c791b6891d61af82833097ed1c698f1eb42f96ee45f2684a17d6bee"
+      }
+    },
+    {
+      "id": "victory",
+      "duration": 8,
+      "mp3": "/assets/audio/music/victory.mp3",
+      "ogg": "/assets/audio/music/victory.ogg",
+      "hashes": {
+        "mp3": "ee0d91c9790657147486f233e87207f23baa723cba443658ec87f249215faaa2",
+        "ogg": "1d413c921f6f8e0913949dbc0efed7dc84b3c0915855aeb14d5da2e75fbafa9d"
+      }
+    },
+    {
+      "id": "defeat",
+      "duration": 8,
+      "mp3": "/assets/audio/music/defeat.mp3",
+      "ogg": "/assets/audio/music/defeat.ogg",
+      "hashes": {
+        "mp3": "ee575fe77b3e03bc8af28d836be47e7c98e43edf17ad7928f9aa090c0fb0bf76",
+        "ogg": "371798d3da32e469109760b478611af723ba93d11dae644195211dad927208d1"
+      }
+    },
+    {
+      "id": "draw-withdrawal",
+      "duration": 8,
+      "mp3": "/assets/audio/music/draw-withdrawal.mp3",
+      "ogg": "/assets/audio/music/draw-withdrawal.ogg",
+      "hashes": {
+        "mp3": "f729fd15f6f949d38abc40738731bd1bb1fcc12f0bdeb0d20cdf760c878b520e",
+        "ogg": "942d656294e8992ecc37a83773d34291da4d44fe8e0b81e51924238d4a8dcd3e"
+      }
+    }
+  ],
+  "sfx": [
+    {
+      "id": "button",
+      "duration": 0.46,
+      "mp3": "/assets/audio/sfx/button.mp3",
+      "ogg": "/assets/audio/sfx/button.ogg",
+      "hashes": {
+        "mp3": "824b78b611a4c69e47f9327cae8e3f9a0d17242cc40820d3899cdb500034a4bb",
+        "ogg": "f257e5176171095ca63025c7ffdb266343ca0682799dfd59617491b241d6ad00"
+      }
+    },
+    {
+      "id": "button-primary",
+      "duration": 0.46,
+      "mp3": "/assets/audio/sfx/button-primary.mp3",
+      "ogg": "/assets/audio/sfx/button-primary.ogg",
+      "hashes": {
+        "mp3": "1961c4d14978e099fefbfcba051dea1fccea533ba1bf496a73d78532544abc90",
+        "ogg": "164a2665f667266917905e3e5e6e8b39d162268c85113c90a3e36f8879e6db1c"
+      }
+    },
+    {
+      "id": "back",
+      "duration": 0.46,
+      "mp3": "/assets/audio/sfx/back.mp3",
+      "ogg": "/assets/audio/sfx/back.ogg",
+      "hashes": {
+        "mp3": "3bf6fc4a14c4f31fbde9202fd13e3101eaf6e0e5a4ad3fad4ae0bad9fd7417b1",
+        "ogg": "04aa6606fa6a95aa052617fadda54453ef404ad708834be71fc7aefeba3aa81e"
+      }
+    },
+    {
+      "id": "error",
+      "duration": 0.46,
+      "mp3": "/assets/audio/sfx/error.mp3",
+      "ogg": "/assets/audio/sfx/error.ogg",
+      "hashes": {
+        "mp3": "d379dd43681c21a828af45ae7a9c319ed13d002ea0545c145f2633166d6b7120",
+        "ogg": "c8db49006c4172b54a1a5bd05c7704b2901c84b8e76152d3f8ebadad207f48c1"
+      }
+    },
+    {
+      "id": "success",
+      "duration": 0.46,
+      "mp3": "/assets/audio/sfx/success.mp3",
+      "ogg": "/assets/audio/sfx/success.ogg",
+      "hashes": {
+        "mp3": "0bd58e51e423b97c35c066af247fadee83ec7096a154d2ba1e60d11d67f5640a",
+        "ogg": "e4b8888d1c31a7c31fdf6e6c1d0f05e06f74ff43a154c5ba6f4837a47ac4cf5c"
+      }
+    },
+    {
+      "id": "card-hover",
+      "duration": 0.46,
+      "mp3": "/assets/audio/sfx/card-hover.mp3",
+      "ogg": "/assets/audio/sfx/card-hover.ogg",
+      "hashes": {
+        "mp3": "2165e04d1912259578cc8461b10c862009baf160a2c9b9c88a1f2b7d6372c4f6",
+        "ogg": "1ff0d0920685f72a764bff9adebac9fad16390a60065ea3ee32800204099aa6a"
+      }
+    },
+    {
+      "id": "card-select",
+      "duration": 0.46,
+      "mp3": "/assets/audio/sfx/card-select.mp3",
+      "ogg": "/assets/audio/sfx/card-select.ogg",
+      "hashes": {
+        "mp3": "8264011a14f6a60111fcdafcb75f09cda64f84d63745a84eebad6c38f31543ab",
+        "ogg": "20e634a256b81309e41b806080716936f0bbf1f3c02d1eb5811b0a625deabd02"
+      }
+    },
+    {
+      "id": "card-draw",
+      "duration": 0.9,
+      "mp3": "/assets/audio/sfx/card-draw.mp3",
+      "ogg": "/assets/audio/sfx/card-draw.ogg",
+      "hashes": {
+        "mp3": "d62fde262008607f467b62be69a9624ace1f4a55736bc3362c11d778d127af26",
+        "ogg": "df966e68a822ad6d9544e44456aeeaef3bbe545acf83a3cc7d3a2618eb9755ab"
+      }
+    },
+    {
+      "id": "card-deploy",
+      "duration": 0.9,
+      "mp3": "/assets/audio/sfx/card-deploy.mp3",
+      "ogg": "/assets/audio/sfx/card-deploy.ogg",
+      "hashes": {
+        "mp3": "41465a9a71b04b35870a8d833b4d0cce335c6c45828cc3ce751148267bc9ffae",
+        "ogg": "a71439704afc5110543276c275a77a459013de2afe635259851acc57b10e62e3"
+      }
+    },
+    {
+      "id": "card-reveal",
+      "duration": 0.9,
+      "mp3": "/assets/audio/sfx/card-reveal.mp3",
+      "ogg": "/assets/audio/sfx/card-reveal.ogg",
+      "hashes": {
+        "mp3": "0b03dfea778c8eae9093f21895b2e3f9507f56faba84bdb440c303f8378e3abd",
+        "ogg": "e543451a07841bfbd8db556e3527a3a19b795a917479d2393455941e03fd1a37"
+      }
+    },
+    {
+      "id": "power-up",
+      "duration": 0.46,
+      "mp3": "/assets/audio/sfx/power-up.mp3",
+      "ogg": "/assets/audio/sfx/power-up.ogg",
+      "hashes": {
+        "mp3": "bb8416bec6bc9c5b83e9d8cd1517bf5e233954898b0868065591388c0a45c32b",
+        "ogg": "1c5d7346fd6d837fadea70d88b1d2fdcb26b85403a48f295b2ef3524e45534de"
+      }
+    },
+    {
+      "id": "power-down",
+      "duration": 0.46,
+      "mp3": "/assets/audio/sfx/power-down.mp3",
+      "ogg": "/assets/audio/sfx/power-down.ogg",
+      "hashes": {
+        "mp3": "5d5cc7d9e1308ddc3a1455ddddce8325dee73c61a33bd9178f52965e747e9f6a",
+        "ogg": "0efafda9553e4d2aa0a7cbcfb3e63be01e6324aa672fa29d99ab6df80d8f2ef5"
+      }
+    },
+    {
+      "id": "card-move",
+      "duration": 0.9,
+      "mp3": "/assets/audio/sfx/card-move.mp3",
+      "ogg": "/assets/audio/sfx/card-move.ogg",
+      "hashes": {
+        "mp3": "a317b99159dd69a2a88d0e65c1713dadbd69690eaea126846d0b8d3edfbd7d09",
+        "ogg": "bf071e0a8b15a61988af5df6b694c3f7360f54124799bca7d1d0bc77d2dc5b8c"
+      }
+    },
+    {
+      "id": "card-copy",
+      "duration": 0.46,
+      "mp3": "/assets/audio/sfx/card-copy.mp3",
+      "ogg": "/assets/audio/sfx/card-copy.ogg",
+      "hashes": {
+        "mp3": "9258cceff32856cd206510e67b96f68cde43de93f4fa1d1d480be81a63d16bf2",
+        "ogg": "ab4313047fc0b19247ff958dbba0bc2df0bf726bcefd54536fe063b90e5b564b"
+      }
+    },
+    {
+      "id": "card-generate",
+      "duration": 0.46,
+      "mp3": "/assets/audio/sfx/card-generate.mp3",
+      "ogg": "/assets/audio/sfx/card-generate.ogg",
+      "hashes": {
+        "mp3": "3d773669915223f83bfda27f631db389f4c3325cf91ac47da9e458f7d0a07536",
+        "ogg": "a92618d04d33e7e322684ecda62e23670a241d1f0923831a4eec6185604fb9eb"
+      }
+    },
+    {
+      "id": "card-death",
+      "duration": 0.9,
+      "mp3": "/assets/audio/sfx/card-death.mp3",
+      "ogg": "/assets/audio/sfx/card-death.ogg",
+      "hashes": {
+        "mp3": "ea321899f23217875d5c0980da3b8759950fb0a6e985e6ded90664ae3e61ddc2",
+        "ogg": "4f4910c1560ece2404f7e34accb090297710658b8908ea6dfe942e05b771dcbb"
+      }
+    },
+    {
+      "id": "card-revive",
+      "duration": 0.9,
+      "mp3": "/assets/audio/sfx/card-revive.mp3",
+      "ogg": "/assets/audio/sfx/card-revive.ogg",
+      "hashes": {
+        "mp3": "b43a9c9a469c3e6fd0e0554a28129f2229609bd11fdb9dc426d7a531435ccdbc",
+        "ogg": "01945321590d8546cd4d2d44be1d529548d35486132c204980d173f28e7dd8bd"
+      }
+    },
+    {
+      "id": "card-return",
+      "duration": 0.9,
+      "mp3": "/assets/audio/sfx/card-return.mp3",
+      "ogg": "/assets/audio/sfx/card-return.ogg",
+      "hashes": {
+        "mp3": "e9521cde87a82f5d76a9c703e53f1255444b43bac28ad7df5f9dbf5e8965fe3b",
+        "ogg": "b819a47e100c8fbafd138e2e6fe51bd3fb2e3410148da8dd1c83b1f2ff445f26"
+      }
+    },
+    {
+      "id": "front-lock",
+      "duration": 0.46,
+      "mp3": "/assets/audio/sfx/front-lock.mp3",
+      "ogg": "/assets/audio/sfx/front-lock.ogg",
+      "hashes": {
+        "mp3": "1b034ee62973a5037fa159c92c04ced435ced0c61d64b46261eb3330aeffd16a",
+        "ogg": "4620165437f73f5ad19c421742a5f98375961b9575c0afb9318ca435d0981382"
+      }
+    },
+    {
+      "id": "front-reveal",
+      "duration": 1.5,
+      "mp3": "/assets/audio/sfx/front-reveal.mp3",
+      "ogg": "/assets/audio/sfx/front-reveal.ogg",
+      "hashes": {
+        "mp3": "4e8b70ac0f26466558bd44bbce146704eb04f3852b030b1094d615ca0c275e2d",
+        "ogg": "acb2a9bb9522eae9bea478a22582d9ae1f8a819be55be473b4fe58452a1f0999"
+      }
+    },
+    {
+      "id": "front-effect",
+      "duration": 1.5,
+      "mp3": "/assets/audio/sfx/front-effect.mp3",
+      "ogg": "/assets/audio/sfx/front-effect.ogg",
+      "hashes": {
+        "mp3": "863f3d9f9f68905be3f5a0e53408fcc1a8051f3df4862c2bf6fb5289b80df048",
+        "ogg": "758b5ad0fcc0c910eaba1c663d0dc3b99eaf8f6744162a6b97ae3055724a7590"
+      }
+    },
+    {
+      "id": "turn-start",
+      "duration": 1.5,
+      "mp3": "/assets/audio/sfx/turn-start.mp3",
+      "ogg": "/assets/audio/sfx/turn-start.ogg",
+      "hashes": {
+        "mp3": "2fb21026956ae14657bea114c87deee932dc1f60330c45ee1477163e7c812ce3",
+        "ogg": "b1edf57f314902b2a7e9147b39d2445c63c034ef5e8667a70c5ab5b89d217218"
+      }
+    },
+    {
+      "id": "countdown",
+      "duration": 0.46,
+      "mp3": "/assets/audio/sfx/countdown.mp3",
+      "ogg": "/assets/audio/sfx/countdown.ogg",
+      "hashes": {
+        "mp3": "5b029614c8c2ec637586305c0b979b7f56a8112f0d2e15374dc445e956dbe3b6",
+        "ogg": "50ffcd980646c6c52705b428091edbbe15e3f17d220cdefec93be95de478bb66"
+      }
+    },
+    {
+      "id": "lock-own",
+      "duration": 0.46,
+      "mp3": "/assets/audio/sfx/lock-own.mp3",
+      "ogg": "/assets/audio/sfx/lock-own.ogg",
+      "hashes": {
+        "mp3": "018ec2137b0c7861696cb93b18c3146260eb2fe5e7b5b068a7e15c6f2c0ceb27",
+        "ogg": "25f1d1005e15cbba17548cbec61e35669e33666cd058af74ff66f0137acf6543"
+      }
+    },
+    {
+      "id": "lock-opponent",
+      "duration": 0.46,
+      "mp3": "/assets/audio/sfx/lock-opponent.mp3",
+      "ogg": "/assets/audio/sfx/lock-opponent.ogg",
+      "hashes": {
+        "mp3": "82a825308dca4367e1b3f146a48eb8bf5dcde3c5c26f1cfa9445820431c335db",
+        "ogg": "8277185fbce59507b2a48447bfc487aab778beec34c1d750dbff6e0d367a7563"
+      }
+    },
+    {
+      "id": "initiative",
+      "duration": 1.5,
+      "mp3": "/assets/audio/sfx/initiative.mp3",
+      "ogg": "/assets/audio/sfx/initiative.ogg",
+      "hashes": {
+        "mp3": "70fe33a414b574bc1e1802d06423e61a5b94f52d79f3aa2682b606a5479d0e39",
+        "ogg": "1c72ba0208ea8b66b59b7c9b69131ac5be694cf2baac92b831c0c882012d1774"
+      }
+    },
+    {
+      "id": "banner",
+      "duration": 1.5,
+      "mp3": "/assets/audio/sfx/banner.mp3",
+      "ogg": "/assets/audio/sfx/banner.ogg",
+      "hashes": {
+        "mp3": "651479afa229835522c155e04c09990afc114b08db5949a07805908758df7dfe",
+        "ogg": "6ff768f0f4c126a79312f208d97efe26b2d408a85ea0bf774f42f7146262fb70"
+      }
+    },
+    {
+      "id": "stake-up",
+      "duration": 1.5,
+      "mp3": "/assets/audio/sfx/stake-up.mp3",
+      "ogg": "/assets/audio/sfx/stake-up.ogg",
+      "hashes": {
+        "mp3": "e74f2770d926efcdcd590576ab279f3c71b3110869bc10e1a27ea3c3d018508f",
+        "ogg": "015263e060e50581a75c12c5f7b3634a77c5ecee7ada0dae0b8ba01010a014ac"
+      }
+    },
+    {
+      "id": "withdrawal",
+      "duration": 1.5,
+      "mp3": "/assets/audio/sfx/withdrawal.mp3",
+      "ogg": "/assets/audio/sfx/withdrawal.ogg",
+      "hashes": {
+        "mp3": "1a6d4b40d1ed3a7605ddfd94c7f67a19a436f63be5b943d3ce1c4daa331d3c78",
+        "ogg": "a0c30b15b20a05e2e3ef5700240afb64ffbe3c0f124ab57f6718d2f714ae6e38"
+      }
+    },
+    {
+      "id": "victory",
+      "duration": 1.5,
+      "mp3": "/assets/audio/sfx/victory.mp3",
+      "ogg": "/assets/audio/sfx/victory.ogg",
+      "hashes": {
+        "mp3": "059d3264d2f4ffce2835b990b4a7b081b847331a1748b4218e75dbf8a0c793eb",
+        "ogg": "8afced3eb0e66d2cba88586b7f296626278ca4b84bd45993a859a2af3cad10ae"
+      }
+    },
+    {
+      "id": "defeat",
+      "duration": 1.5,
+      "mp3": "/assets/audio/sfx/defeat.mp3",
+      "ogg": "/assets/audio/sfx/defeat.ogg",
+      "hashes": {
+        "mp3": "7fa13566541cd34845539d7e360844954de53377cc00ca7525cb4e3fa32a6c81",
+        "ogg": "ed566f97753e1035d5870d4726694fa43562685950bb82805d644f54708c9dab"
+      }
+    },
+    {
+      "id": "draw",
+      "duration": 1.5,
+      "mp3": "/assets/audio/sfx/draw.mp3",
+      "ogg": "/assets/audio/sfx/draw.ogg",
+      "hashes": {
+        "mp3": "a24c34b16165e7574242a793286a90098c99dac92e4888cd55895e36075a3c69",
+        "ogg": "a47c4931468bcb366ddb232c9dce5a0ee357662740ab801b52a0087d540bb127"
+      }
+    }
+  ]
+}

@@ -1,8 +1,8 @@
-import { deserializeGame, serializeGame, type GameEvent, type GameState, type GameWinner } from '~/common/src/index';
+import { deserializeGame, serializeGame, type BattleSummary, type GameEvent, type GameState, type GameWinner } from '~/common/src/index';
 import { CARD_BY_ID, CARDS, CATALOG_VERSION, FRONTS } from '~/data/catalog';
 
 export interface MatchHistoryEntry {
-  schemaVersion: 2;
+  schemaVersion: 3;
   gameId: string;
   timestamp: number;
   mode: 'practice' | 'online';
@@ -13,11 +13,12 @@ export interface MatchHistoryEntry {
   packVersions: Record<string, string>;
   serializedGame?: string;
   events?: GameEvent[];
+  summary?: BattleSummary;
   winner: GameWinner | null;
 }
 
-const STORAGE_KEY = 'aeonfront_match_history_v2';
-const LEGACY_KEY = 'aeonfront_match_history_v1';
+const STORAGE_KEY = 'aeonfront_match_history_v3';
+const LEGACY_KEYS = ['aeonfront_match_history_v2', 'aeonfront_match_history_v1'];
 const MAX_HISTORY_BYTES = 4 * 1024 * 1024;
 
 export function compactGameForHistory(state: GameState): string {
@@ -46,7 +47,7 @@ const migrate = (value: unknown): MatchHistoryEntry[] => {
   return value.filter((entry): entry is Record<string, unknown> => Boolean(entry) && typeof entry === 'object')
     .filter((entry) => typeof entry.gameId === 'string' && typeof entry.deckName === 'string')
     .map((entry) => ({
-      schemaVersion: 2,
+      schemaVersion: 3,
       gameId: String(entry.gameId),
       timestamp: typeof entry.timestamp === 'number' ? entry.timestamp : Date.now(),
       mode: entry.mode === 'online' ? 'online' : 'practice',
@@ -57,6 +58,7 @@ const migrate = (value: unknown): MatchHistoryEntry[] => {
       packVersions: entry.packVersions && typeof entry.packVersions === 'object' ? entry.packVersions as Record<string, string> : {},
       ...(typeof entry.serializedGame === 'string' && entry.serializedGame ? { serializedGame: entry.serializedGame } : {}),
       ...(Array.isArray(entry.events) ? { events: entry.events as GameEvent[] } : {}),
+      ...(entry.summary && typeof entry.summary === 'object' ? { summary: entry.summary as BattleSummary } : {}),
       winner: entry.winner as GameWinner | null ?? null
     }));
 };
@@ -68,7 +70,7 @@ export function useMatchHistory() {
     if (!import.meta.client || hydrated.value) return;
     hydrated.value = true;
     try {
-      const stored = localStorage.getItem(STORAGE_KEY) ?? localStorage.getItem(LEGACY_KEY);
+      const stored = localStorage.getItem(STORAGE_KEY) ?? LEGACY_KEYS.map((key) => localStorage.getItem(key)).find(Boolean);
       if (stored) history.value = migrate(JSON.parse(stored));
     } catch {
       history.value = [];

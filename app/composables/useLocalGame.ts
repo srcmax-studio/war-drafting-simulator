@@ -1,5 +1,6 @@
 import {
   SeededRandom,
+  createBattleSummary,
   createGame,
   createPlayerView,
   lockTurn,
@@ -102,6 +103,7 @@ export function useLocalGame() {
   const plan = useState<DeploymentIntent[]>('aeonfront-local-plan', () => []);
   const error = useState<string>('aeonfront-local-error', () => '');
   const savedGameId = useState<string>('aeonfront-saved-game', () => '');
+  const startedAt = useState<number>('aeonfront-local-started-at', () => 0);
   const { selectedDeck, markUsed } = useDecks();
   const { add } = useMatchHistory();
 
@@ -124,8 +126,9 @@ export function useLocalGame() {
     if (!game.value || game.value.phase !== 'ended' || savedGameId.value === game.value.gameId) return;
     savedGameId.value = game.value.gameId;
     const setup = game.value.setup.players.find((player) => player.playerId === HUMAN_ID);
+    const summary = createBattleSummary(game.value, { startedAt: startedAt.value || Date.now(), endedAt: Date.now() });
     add({
-      schemaVersion: 2,
+      schemaVersion: 3,
       gameId: game.value.gameId,
       timestamp: Date.now(),
       mode: 'practice',
@@ -135,6 +138,7 @@ export function useLocalGame() {
       catalogVersion: game.value.setup.catalogVersion ?? CATALOG_VERSION,
       packVersions: { ...(game.value.setup.packVersions ?? PACK_VERSIONS) },
       serializedGame: compactGameForHistory(game.value),
+      summary,
       winner: game.value.winner
     });
   };
@@ -150,6 +154,7 @@ export function useLocalGame() {
     }
     const aiDeck = PRESET_DECKS[1]!.cardIds;
     const seed = Date.now() >>> 0;
+    startedAt.value = Date.now();
     game.value = createGame({
       gameId: `practice-${seed}`,
       seed,
@@ -187,6 +192,13 @@ export function useLocalGame() {
   };
 
   const clearPlan = () => { plan.value = []; error.value = ''; };
+  const reorderPlan = (fromIndex: number, toIndex: number) => {
+    const next = [...plan.value];
+    const [moved] = next.splice(fromIndex, 1);
+    if (!moved) return;
+    next.splice(toIndex, 0, moved);
+    plan.value = next.map((deployment, order) => ({ ...deployment, order }));
+  };
   const lock = () => {
     if (!game.value || game.value.phase !== 'planning') return;
     const turn = game.value.turn;
@@ -210,5 +222,7 @@ export function useLocalGame() {
     else saveResult();
   };
 
-  return { game, view, human, plan, error, isEnded, startPractice, toggleDeployment, clearPlan, lock, banner, retreat };
+  const summary = computed(() => game.value?.phase === 'ended' ? createBattleSummary(game.value, { startedAt: startedAt.value || Date.now(), endedAt: Date.now() }) : null);
+
+  return { game, view, human, plan, error, isEnded, summary, startPractice, toggleDeployment, reorderPlan, clearPlan, lock, banner, retreat };
 }

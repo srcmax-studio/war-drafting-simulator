@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Crosshair, Gauge, ShieldCheck, Sparkles, X } from 'lucide-vue-next';
 import type { CardDefinition } from '~/common/src/index';
-import { cardFallbackUrl, cardImageUrl } from '~/data/catalog';
+import { cardFallbackUrl, cardImageUrl } from '~/utils/card-images';
 import { TRIGGER_LABELS, formatCondition, formatEffect, formatLimit, formatSelector } from '~/utils/ability-text';
 
 const props = defineProps<{ card: CardDefinition | null }>();

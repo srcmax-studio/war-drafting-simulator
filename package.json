@@ -9,11 +9,24 @@
   "build": {
     "appId": "com.srcmax.aeonfront",
     "productName": "Aeonfront",
-    "directories": { "output": "release" },
-    "files": [".output/public/**/*", "dist-electron/**/*", "package.json", "!node_modules/**/*"],
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      ".output/public/**/*",
+      "dist-electron/**/*",
+      "package.json",
+      "!node_modules/**/*"
+    ],
     "npmRebuild": false,
-    "win": { "target": "nsis" },
-    "mac": { "category": "public.app-category.games", "target": "dir", "identity": null }
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "category": "public.app-category.games",
+      "target": "dir",
+      "identity": null
+    }
   },
   "scripts": {
     "build": "nuxt build",
@@ -27,8 +40,18 @@
     "test": "vitest run",
     "test:replay": "vitest run -t replay",
     "test:browser": "python3 tests/browser_acceptance.py",
+    "test:accessibility": "python3 tests/accessibility_acceptance.py",
+    "test:performance": "python3 tests/performance_acceptance.py",
+    "test:responsive": "python3 tests/responsive_acceptance.py",
+    "test:visual": "python3 tests/visual_acceptance.py",
     "test:online": "python3 tests/online_acceptance.py",
     "test:electron": "python3 tests/electron_acceptance.py",
+    "generate:front-art": "node scripts/generate-front-art.mjs",
+    "generate:home-data": "tsx scripts/build-home-data.ts",
+    "process:front-art": "node scripts/process-front-art.mjs",
+    "validate:front-art": "node scripts/validate-front-art.mjs",
+    "process:audio": "node scripts/process-audio.mjs",
+    "validate:audio": "node scripts/validate-audio.mjs",
     "generate:cards": "node data/characters/scripts/generate-tcg-data.mjs",
     "validate:cards": "tsx scripts/validate-client-data.ts",
     "validate:assets": "node scripts/validate-client-assets.mjs",
@@ -54,18 +77,21 @@
     "@eslint/js": "^9.31.0",
     "@types/node": "^24.0.15",
     "@types/ws": "^8.18.1",
+    "axe-core": "^4.12.1",
     "electron": "^39.2.7",
     "electron-builder": "^26.0.12",
     "eslint": "^9.31.0",
     "eslint-plugin-vue": "^10.3.0",
+    "tsx": "^4.20.3",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.38.0",
-    "tsx": "^4.20.3",
     "vite-plugin-electron": "^0.29.0",
     "vite-plugin-electron-renderer": "^0.14.6",
     "vitest": "^3.2.4",
     "vue-tsc": "^3.0.3"
   },
-  "engines": { "node": ">=24" },
+  "engines": {
+    "node": ">=24"
+  },
   "license": "MIT"
 }

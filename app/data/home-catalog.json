@@ -1,0 +1,6439 @@
+{
+  "catalogVersion": "CORE-2-b143b8e0",
+  "cardCount": 824,
+  "enabledFrontCount": 72,
+  "pack": {
+    "nameZh": "万世战线核心包",
+    "version": "2.0.0"
+  },
+  "cards": [
+    {
+      "cardId": "af-bssm1-0000",
+      "nameZh": "萨尔贡一世",
+      "imageKey": "萨尔贡一世",
+      "era": "青铜时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-bsam2-0001",
+      "nameZh": "乌尔纳姆",
+      "imageKey": "乌尔纳姆",
+      "era": "青铜时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-bssf3-0002",
+      "nameZh": "胡夫",
+      "imageKey": "胡夫",
+      "era": "青铜时代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-bsaf4-0003",
+      "nameZh": "美尼斯",
+      "imageKey": "美尼斯",
+      "era": "青铜时代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-msam5-0004",
+      "nameZh": "吉尔伽美什",
+      "imageKey": "吉尔伽美什",
+      "era": "神话时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-mvea6-0005",
+      "nameZh": "黄帝",
+      "imageKey": "黄帝",
+      "era": "神话时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mtea7-0006",
+      "nameZh": "大禹",
+      "imageKey": "大禹",
+      "era": "神话时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-bsea8-0007",
+      "nameZh": "商汤",
+      "imageKey": "商汤",
+      "era": "青铜时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-bvaa9-0008",
+      "nameZh": "商纣王",
+      "imageKey": "商纣王",
+      "era": "青铜时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-bsea1-0009",
+      "nameZh": "周文王",
+      "imageKey": "周文王",
+      "era": "青铜时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-bsea2-0010",
+      "nameZh": "姜子牙",
+      "imageKey": "姜子牙",
+      "era": "青铜时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-btea3-0011",
+      "nameZh": "妇好",
+      "imageKey": "妇好",
+      "era": "青铜时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mmfa4-0012",
+      "nameZh": "拉",
+      "imageKey": "拉",
+      "era": "神话时代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-mtea5-0013",
+      "nameZh": "盘古",
+      "imageKey": "盘古",
+      "era": "神话时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mtea6-0014",
+      "nameZh": "女娲",
+      "imageKey": "女娲",
+      "era": "神话时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-msmm7-0015",
+      "nameZh": "伊什塔尔",
+      "imageKey": "伊什塔尔",
+      "era": "神话时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-msia8-0016",
+      "nameZh": "梵天",
+      "imageKey": "梵天",
+      "era": "神话时代",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-miia9-0017",
+      "nameZh": "湿婆",
+      "imageKey": "湿婆",
+      "era": "神话时代",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-miib1-0018",
+      "nameZh": "因陀罗",
+      "imageKey": "因陀罗",
+      "era": "神话时代",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-mseb2-0019",
+      "nameZh": "宙斯",
+      "imageKey": "宙斯",
+      "era": "神话时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mieb3-0020",
+      "nameZh": "盖亚",
+      "imageKey": "盖亚",
+      "era": "神话时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mveb4-0021",
+      "nameZh": "奥丁",
+      "imageKey": "奥丁",
+      "era": "神话时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mra5-0022",
+      "nameZh": "奥洛伦",
+      "imageKey": "奥洛伦",
+      "era": "神话时代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-mrea6-0023",
+      "nameZh": "羽蛇神",
+      "imageKey": "羽蛇神",
+      "era": "神话时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mrib7-0024",
+      "nameZh": "维拉科查",
+      "imageKey": "维拉科查",
+      "era": "神话时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-bvsm8-0025",
+      "nameZh": "汉谟拉比",
+      "imageKey": "汉谟拉比",
+      "era": "青铜时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-bsaf9-0026",
+      "nameZh": "雅赫摩斯一世",
+      "imageKey": "雅赫摩斯一世",
+      "era": "青铜时代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-bvff1-0027",
+      "nameZh": "图特摩斯三世",
+      "imageKey": "图特摩斯三世",
+      "era": "青铜时代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-baaf2-0028",
+      "nameZh": "埃赫那吞",
+      "imageKey": "埃赫那吞",
+      "era": "青铜时代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-baaf3-0029",
+      "nameZh": "图坦卡蒙",
+      "imageKey": "图坦卡蒙",
+      "era": "青铜时代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-bsff4-0030",
+      "nameZh": "拉美西斯二世",
+      "imageKey": "拉美西斯二世",
+      "era": "青铜时代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-bsmm5-0031",
+      "nameZh": "穆尔西里二世",
+      "imageKey": "穆尔西里二世",
+      "era": "青铜时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-bsmm6-0032",
+      "nameZh": "所罗门王",
+      "imageKey": "所罗门王",
+      "era": "青铜时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-bam7-0033",
+      "nameZh": "提格拉特帕拉沙尔一世",
+      "imageKey": "提格拉特帕拉沙尔一世",
+      "era": "青铜时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-mieb8-0034",
+      "nameZh": "阿伽门农",
+      "imageKey": "阿伽门农",
+      "era": "神话时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mveb9-0035",
+      "nameZh": "米诺斯",
+      "imageKey": "米诺斯",
+      "era": "神话时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-baab4-0036",
+      "nameZh": "夏启",
+      "imageKey": "夏启",
+      "era": "青铜时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-bsab5-0037",
+      "nameZh": "傅说",
+      "imageKey": "傅说",
+      "era": "青铜时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-bsab6-0038",
+      "nameZh": "周公旦",
+      "imageKey": "周公旦",
+      "era": "青铜时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mieb7-0039",
+      "nameZh": "奥克塔努斯",
+      "imageKey": "奥克塔努斯",
+      "era": "神话时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-csaa1-0040",
+      "nameZh": "孔子",
+      "imageKey": "孔子",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-csse2-0041",
+      "nameZh": "苏格拉底",
+      "imageKey": "苏格拉底",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-cvve3-0042",
+      "nameZh": "亚历山大大帝",
+      "imageKey": "亚历山大大帝",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-csaa4-0043",
+      "nameZh": "秦始皇",
+      "imageKey": "秦始皇",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-csai5-0044",
+      "nameZh": "阿育王",
+      "imageKey": "阿育王",
+      "era": "古典时代",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-cvse6-0045",
+      "nameZh": "凯撒",
+      "imageKey": "凯撒",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-csae7-0046",
+      "nameZh": "奥古斯都",
+      "imageKey": "奥古斯都",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-csai8-0047",
+      "nameZh": "释迦牟尼",
+      "imageKey": "释迦牟尼",
+      "era": "古典时代",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-csaa9-0048",
+      "nameZh": "老子",
+      "imageKey": "老子",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-caae1-0049",
+      "nameZh": "柏拉图",
+      "imageKey": "柏拉图",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-caae2-0050",
+      "nameZh": "亚里士多德",
+      "imageKey": "亚里士多德",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-cvaa3-0051",
+      "nameZh": "汉武帝",
+      "imageKey": "汉武帝",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cvmm4-0052",
+      "nameZh": "居鲁士二世",
+      "imageKey": "居鲁士二世",
+      "era": "古典时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-caff5-0053",
+      "nameZh": "克丽奥佩特拉七世",
+      "imageKey": "克丽奥佩特拉七世",
+      "era": "古典时代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-csae8-0054",
+      "nameZh": "弗拉德里安",
+      "imageKey": "弗拉德里安",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-csae9-0055",
+      "nameZh": "君士坦丁大帝",
+      "imageKey": "君士坦丁大帝",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-caie1-0056",
+      "nameZh": "奥勒留",
+      "imageKey": "奥勒留",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-cbae2-0057",
+      "nameZh": "狄奥多西一世",
+      "imageKey": "狄奥多西一世",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-cbaa3-0058",
+      "nameZh": "张骞",
+      "imageKey": "张骞",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-csaa4-0059",
+      "nameZh": "李斯",
+      "imageKey": "李斯",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-csaa5-0060",
+      "nameZh": "霍去病",
+      "imageKey": "霍去病",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-caaa6-0061",
+      "nameZh": "班超",
+      "imageKey": "班超",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-caae7-0062",
+      "nameZh": "维吉尔",
+      "imageKey": "维吉尔",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-cmae8-0063",
+      "nameZh": "荷马",
+      "imageKey": "荷马",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-csae9-0064",
+      "nameZh": "梭伦",
+      "imageKey": "梭伦",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-caae1-0065",
+      "nameZh": "希罗多德",
+      "imageKey": "希罗多德",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-csse2-0066",
+      "nameZh": "伯里克利",
+      "imageKey": "伯里克利",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-cvmm3-0067",
+      "nameZh": "大流士一世",
+      "imageKey": "大流士一世",
+      "era": "古典时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-caia4-0068",
+      "nameZh": "迦腻色迦一世",
+      "imageKey": "迦腻色迦一世",
+      "era": "古典时代",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-caia5-0069",
+      "nameZh": "旃陀罗笈多一世",
+      "imageKey": "旃陀罗笈多一世",
+      "era": "古典时代",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-cbia6-0070",
+      "nameZh": "薄伽婆陀",
+      "imageKey": "薄伽婆陀",
+      "era": "古典时代",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-caie7-0071",
+      "nameZh": "米利都的泰勒斯",
+      "imageKey": "米利都的泰勒斯",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-caae8-0072",
+      "nameZh": "欧几里得",
+      "imageKey": "欧几里得",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-cvse9-0073",
+      "nameZh": "阿基米德",
+      "imageKey": "阿基米德",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-craa1-0074",
+      "nameZh": "查谟尔",
+      "imageKey": "查谟尔",
+      "era": "古典时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-evee1-0075",
+      "nameZh": "查理曼",
+      "imageKey": "查理曼",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-esmm2-0076",
+      "nameZh": "穆罕默德",
+      "imageKey": "穆罕默德",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-cafe3-0077",
+      "nameZh": "利奥一世",
+      "imageKey": "利奥一世",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-esae4-0078",
+      "nameZh": "提奥多里克大帝",
+      "imageKey": "提奥多里克大帝",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-evee5-0079",
+      "nameZh": "查士丁尼一世",
+      "imageKey": "查士丁尼一世",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ebae6-0080",
+      "nameZh": "圣本尼狄克",
+      "imageKey": "圣本尼狄克",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-esaa7-0081",
+      "nameZh": "隋文帝杨坚",
+      "imageKey": "隋文帝杨坚",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-esmm8-0082",
+      "nameZh": "穆阿维叶一世",
+      "imageKey": "穆阿维叶一世",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-evaa9-0083",
+      "nameZh": "唐太宗李世民",
+      "imageKey": "唐太宗李世民",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-esaa1-0084",
+      "nameZh": "玄奘",
+      "imageKey": "玄奘",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-esmm2-0085",
+      "nameZh": "奥马尔",
+      "imageKey": "奥马尔",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-eaam3-0086",
+      "nameZh": "阿拔斯·萨法赫",
+      "imageKey": "阿拔斯·萨法赫",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-esmm4-0087",
+      "nameZh": "哈伦·拉希德",
+      "imageKey": "哈伦·拉希德",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-eaae5-0088",
+      "nameZh": "阿尔弗雷德大帝",
+      "imageKey": "阿尔弗雷德大帝",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-evae6-0089",
+      "nameZh": "奥托一世",
+      "imageKey": "奥托一世",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-eaaa7-0090",
+      "nameZh": "法蒂玛",
+      "imageKey": "法蒂玛",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-esaa8-0091",
+      "nameZh": "李白",
+      "imageKey": "李白",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-esaa9-0092",
+      "nameZh": "杜甫",
+      "imageKey": "杜甫",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-eaaa1-0093",
+      "nameZh": "鉴真",
+      "imageKey": "鉴真",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-esaa2-0094",
+      "nameZh": "王安石",
+      "imageKey": "王安石",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-eaaa3-0095",
+      "nameZh": "欧麦尔·海亚姆",
+      "imageKey": "欧麦尔·海亚姆",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-ebae4-0096",
+      "nameZh": "埃里克九世",
+      "imageKey": "埃里克九世",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-evsm5-0097",
+      "nameZh": "萨拉丁",
+      "imageKey": "萨拉丁",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-evae6-0098",
+      "nameZh": "理查一世",
+      "imageKey": "理查一世",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-eama7-0099",
+      "nameZh": "迈蒙尼德",
+      "imageKey": "迈蒙尼德",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-evae8-0100",
+      "nameZh": "成吉思汗",
+      "imageKey": "成吉思汗",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-esaa9-0101",
+      "nameZh": "忽必烈",
+      "imageKey": "忽必烈",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ebae1-0102",
+      "nameZh": "马可·波罗",
+      "imageKey": "马可·波罗",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-esae2-0103",
+      "nameZh": "但丁",
+      "imageKey": "但丁",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ebar3-0104",
+      "nameZh": "伊本·白图泰",
+      "imageKey": "伊本·白图泰",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-ebae4-0105",
+      "nameZh": "乔叟",
+      "imageKey": "乔叟",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-esaa5-0106",
+      "nameZh": "郑和",
+      "imageKey": "郑和",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ebae6-0107",
+      "nameZh": "约翰·威克里夫",
+      "imageKey": "约翰·威克里夫",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ebae7-0108",
+      "nameZh": "圣女贞德",
+      "imageKey": "圣女贞德",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-esam8-0109",
+      "nameZh": "帖木儿",
+      "imageKey": "帖木儿",
+      "era": "中世纪",
+      "faction": "中亚"
+    },
+    {
+      "cardId": "af-ebae9-0110",
+      "nameZh": "圣女希尔德加德",
+      "imageKey": "圣女希尔德加德",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-esae1-0111",
+      "nameZh": "罗伯特·布鲁斯",
+      "imageKey": "罗伯特·布鲁斯",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-esmm2-0112",
+      "nameZh": "阿布·伯克尔",
+      "imageKey": "阿布·伯克尔",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-esam3-0113",
+      "nameZh": "耶律阿保机",
+      "imageKey": "耶律阿保机",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-esaa4-0114",
+      "nameZh": "赵匡胤",
+      "imageKey": "赵匡胤",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ebae5-0115",
+      "nameZh": "菲利普二世",
+      "imageKey": "菲利普二世",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-eaaa6-0116",
+      "nameZh": "伊本·西那",
+      "imageKey": "伊本·西那",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-caai7-0117",
+      "nameZh": "维克拉玛蒂亚",
+      "imageKey": "维克拉玛蒂亚",
+      "era": "古典时代",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-esai8-0118",
+      "nameZh": "商羯罗",
+      "imageKey": "商羯罗",
+      "era": "中世纪",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-esii9-0119",
+      "nameZh": "罗阇罗阇一世",
+      "imageKey": "罗阇罗阇一世",
+      "era": "中世纪",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-esim1-0120",
+      "nameZh": "马哈茂德",
+      "imageKey": "马哈茂德",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-eave2-0121",
+      "nameZh": "西奥多拉",
+      "imageKey": "西奥多拉",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ebae3-0122",
+      "nameZh": "埃格伯特",
+      "imageKey": "埃格伯特",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-esaa4-0123",
+      "nameZh": "苏轼",
+      "imageKey": "苏轼",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-evae5-0124",
+      "nameZh": "岳飞",
+      "imageKey": "岳飞",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-esaa6-0125",
+      "nameZh": "辛弃疾",
+      "imageKey": "辛弃疾",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-esmm7-0126",
+      "nameZh": "鲁米",
+      "imageKey": "鲁米",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-esir8-0127",
+      "nameZh": "拉贾·普里特维拉杰三世",
+      "imageKey": "拉贾·普里特维拉杰三世",
+      "era": "中世纪",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-esfr9-0128",
+      "nameZh": "曼萨·穆萨",
+      "imageKey": "曼萨·穆萨",
+      "era": "中世纪",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-ebaf1-0129",
+      "nameZh": "苏尼·阿里",
+      "imageKey": "苏尼·阿里",
+      "era": "中世纪",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-esrm2-0130",
+      "nameZh": "帕卡尔大帝",
+      "imageKey": "帕卡尔大帝",
+      "era": "中世纪",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-earm3-0131",
+      "nameZh": "蒂卡尔的“双鸟”",
+      "imageKey": "蒂卡尔的“双鸟”",
+      "era": "中世纪",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-earm4-0132",
+      "nameZh": "塞·阿卡特尔",
+      "imageKey": "塞·阿卡特尔",
+      "era": "中世纪",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-ebra5-0133",
+      "nameZh": "迪亚克里",
+      "imageKey": "迪亚克里",
+      "era": "中世纪",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-ebae6-0134",
+      "nameZh": "佩德罗·阿贝拉多",
+      "imageKey": "佩德罗·阿贝拉多",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ebae7-0135",
+      "nameZh": "罗杰·培根",
+      "imageKey": "罗杰·培根",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ebae8-0136",
+      "nameZh": "黑太子爱德华",
+      "imageKey": "黑太子爱德华",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-esmm9-0137",
+      "nameZh": "奥尔罕",
+      "imageKey": "奥尔罕",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-ebaa1-0138",
+      "nameZh": "伊本·赫勒敦",
+      "imageKey": "伊本·赫勒敦",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-ebae2-0139",
+      "nameZh": "扬·胡斯",
+      "imageKey": "扬·胡斯",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-esse3-0140",
+      "nameZh": "瓦迪米尔大帝",
+      "imageKey": "瓦迪米尔大帝",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-esae4-0141",
+      "nameZh": "圣路易九世",
+      "imageKey": "圣路易九世",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-esae5-0142",
+      "nameZh": "理查德·科尔德利昂",
+      "imageKey": "理查德·科尔德利昂",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ebae6-0143",
+      "nameZh": "巴托鲁斯",
+      "imageKey": "巴托鲁斯",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ebaa7-0144",
+      "nameZh": "李清照",
+      "imageKey": "李清照",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-evaa8-0145",
+      "nameZh": "朱元璋",
+      "imageKey": "朱元璋",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ebia9-0146",
+      "nameZh": "马图·钱德拉",
+      "imageKey": "马图·钱德拉",
+      "era": "中世纪",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-rvse1-0147",
+      "nameZh": "达·芬奇",
+      "imageKey": "达·芬奇",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rvse2-0148",
+      "nameZh": "米开朗基罗",
+      "imageKey": "米开朗基罗",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-raae3-0149",
+      "nameZh": "拉斐尔",
+      "imageKey": "拉斐尔",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rdve4-0150",
+      "nameZh": "哥伦布",
+      "imageKey": "哥伦布",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rdae5-0151",
+      "nameZh": "马丁·路德",
+      "imageKey": "马丁·路德",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-raae6-0152",
+      "nameZh": "莎士比亚",
+      "imageKey": "莎士比亚",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ease7-0153",
+      "nameZh": "伽利略",
+      "imageKey": "伽利略",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rdae8-0154",
+      "nameZh": "伊丽莎白一世",
+      "imageKey": "伊丽莎白一世",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-eise9-0155",
+      "nameZh": "牛顿",
+      "imageKey": "牛顿",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ease1-0156",
+      "nameZh": "路易十四",
+      "imageKey": "路易十四",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-esae2-0157",
+      "nameZh": "彼得大帝",
+      "imageKey": "彼得大帝",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-irre3-0158",
+      "nameZh": "华盛顿",
+      "imageKey": "华盛顿",
+      "era": "文艺复兴",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-ivse4-0159",
+      "nameZh": "拿破仑",
+      "imageKey": "拿破仑",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-iaae5-0160",
+      "nameZh": "詹姆斯·瓦特",
+      "imageKey": "詹姆斯·瓦特",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-esae6-0161",
+      "nameZh": "康德",
+      "imageKey": "康德",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ivse7-0162",
+      "nameZh": "达尔文",
+      "imageKey": "达尔文",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-irse8-0163",
+      "nameZh": "林肯",
+      "imageKey": "林肯",
+      "era": "文艺复兴",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-ivse9-0164",
+      "nameZh": "俾斯麦",
+      "imageKey": "俾斯麦",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rsdf1-0165",
+      "nameZh": "阿梅德",
+      "imageKey": "阿梅德",
+      "era": "文艺复兴",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-evis1-0166",
+      "nameZh": "奥朗则布",
+      "imageKey": "奥朗则布",
+      "era": "文艺复兴",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-rdis2-0167",
+      "nameZh": "阿克巴",
+      "imageKey": "阿克巴",
+      "era": "文艺复兴",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-esaa3-0168",
+      "nameZh": "郑成功",
+      "imageKey": "郑成功",
+      "era": "文艺复兴",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-evaa4-0169",
+      "nameZh": "康熙帝",
+      "imageKey": "康熙帝",
+      "era": "文艺复兴",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-esaa5-0170",
+      "nameZh": "乾隆帝",
+      "imageKey": "乾隆帝",
+      "era": "文艺复兴",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-rdaa6-0171",
+      "nameZh": "丰臣秀吉",
+      "imageKey": "丰臣秀吉",
+      "era": "文艺复兴",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-raaa7-0172",
+      "nameZh": "德川家康",
+      "imageKey": "德川家康",
+      "era": "文艺复兴",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-raia8-0173",
+      "nameZh": "巴布尔",
+      "imageKey": "巴布尔",
+      "era": "文艺复兴",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-rvms9-0174",
+      "nameZh": "苏莱曼一世",
+      "imageKey": "苏莱曼一世",
+      "era": "文艺复兴",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-rsmm1-0175",
+      "nameZh": "塞利姆一世",
+      "imageKey": "塞利姆一世",
+      "era": "文艺复兴",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-rsim2-0176",
+      "nameZh": "伊斯玛仪一世",
+      "imageKey": "伊斯玛仪一世",
+      "era": "文艺复兴",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-esmm3-0177",
+      "nameZh": "阿巴斯一世",
+      "imageKey": "阿巴斯一世",
+      "era": "文艺复兴",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-rvse4-0178",
+      "nameZh": "卡尔五世",
+      "imageKey": "卡尔五世",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ease5-0179",
+      "nameZh": "弗朗西斯·培根",
+      "imageKey": "弗朗西斯·培根",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-eise6-0180",
+      "nameZh": "笛卡尔",
+      "imageKey": "笛卡尔",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ease7-0181",
+      "nameZh": "约翰·洛克",
+      "imageKey": "约翰·洛克",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ease8-0182",
+      "nameZh": "伏尔泰",
+      "imageKey": "伏尔泰",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ease9-0183",
+      "nameZh": "卢梭",
+      "imageKey": "卢梭",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-earr1-0184",
+      "nameZh": "富兰克林",
+      "imageKey": "富兰克林",
+      "era": "文艺复兴",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-earr2-0185",
+      "nameZh": "杰斐逊",
+      "imageKey": "杰斐逊",
+      "era": "文艺复兴",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-irsr3-0186",
+      "nameZh": "玻利瓦尔",
+      "imageKey": "玻利瓦尔",
+      "era": "文艺复兴",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-irar4-0187",
+      "nameZh": "圣马丁",
+      "imageKey": "圣马丁",
+      "era": "文艺复兴",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-ivse5-0188",
+      "nameZh": "维多利亚女王",
+      "imageKey": "维多利亚女王",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-iase6-0189",
+      "nameZh": "卡尔·马克思",
+      "imageKey": "卡尔·马克思",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-irbs7-0190",
+      "nameZh": "俾路支",
+      "imageKey": "俾路支",
+      "era": "文艺复兴",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-iais8-0191",
+      "nameZh": "提普苏丹",
+      "imageKey": "提普苏丹",
+      "era": "文艺复兴",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-esis9-0192",
+      "nameZh": "沙阿·贾汗",
+      "imageKey": "沙阿·贾汗",
+      "era": "文艺复兴",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-eaae1-0193",
+      "nameZh": "路易十六",
+      "imageKey": "路易十六",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ease2-0194",
+      "nameZh": "莫扎特",
+      "imageKey": "莫扎特",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-iase3-0195",
+      "nameZh": "贝多芬",
+      "imageKey": "贝多芬",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ibdf4-0196",
+      "nameZh": "德拉伊",
+      "imageKey": "德拉伊",
+      "era": "文艺复兴",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-mivr1-0197",
+      "nameZh": "爱迪生",
+      "imageKey": "爱迪生",
+      "era": "工业革命",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mivr2-0198",
+      "nameZh": "尼古拉·特斯拉",
+      "imageKey": "尼古拉·特斯拉",
+      "era": "工业革命",
+      "faction": "欧洲/美洲"
+    },
+    {
+      "cardId": "af-msve3-0199",
+      "nameZh": "爱因斯坦",
+      "imageKey": "爱因斯坦",
+      "era": "工业革命",
+      "faction": "欧洲/美洲"
+    },
+    {
+      "cardId": "af-msee4-0200",
+      "nameZh": "居里夫人",
+      "imageKey": "居里夫人",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-miae5-0201",
+      "nameZh": "卡尔·本茨",
+      "imageKey": "卡尔·本茨",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mivr6-0202",
+      "nameZh": "亨利·福特",
+      "imageKey": "亨利·福特",
+      "era": "工业革命",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-miar7-0203",
+      "nameZh": "莱特兄弟",
+      "imageKey": "莱特兄弟",
+      "era": "工业革命",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-msae8-0204",
+      "nameZh": "巴甫洛夫",
+      "imageKey": "巴甫洛夫",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-msee9-0205",
+      "nameZh": "弗洛伊德",
+      "imageKey": "弗洛伊德",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mwve1-0206",
+      "nameZh": "列宁",
+      "imageKey": "列宁",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mwse2-0207",
+      "nameZh": "斯大林",
+      "imageKey": "斯大林",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mwae3-0208",
+      "nameZh": "墨索里尼",
+      "imageKey": "墨索里尼",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mwve4-0209",
+      "nameZh": "希特勒",
+      "imageKey": "希特勒",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mwsr5-0210",
+      "nameZh": "富兰克林·罗斯福",
+      "imageKey": "富兰克林·罗斯福",
+      "era": "工业革命",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mwse6-0211",
+      "nameZh": "丘吉尔",
+      "imageKey": "丘吉尔",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mwaa7-0212",
+      "nameZh": "孙中山",
+      "imageKey": "孙中山",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mwve8-0213",
+      "nameZh": "毛泽东",
+      "imageKey": "毛泽东",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mwae9-0214",
+      "nameZh": "蒋介石",
+      "imageKey": "蒋介石",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-msvi1-0215",
+      "nameZh": "甘地",
+      "imageKey": "甘地",
+      "era": "工业革命",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-mwaa3-0217",
+      "nameZh": "土光真三",
+      "imageKey": "土光真三",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mwsa4-0218",
+      "nameZh": "裕仁天皇",
+      "imageKey": "裕仁天皇",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mwme5-0219",
+      "nameZh": "阿塔图尔克",
+      "imageKey": "阿塔图尔克",
+      "era": "工业革命",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-mwmm6-0220",
+      "nameZh": "费萨尔一世",
+      "imageKey": "费萨尔一世",
+      "era": "工业革命",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-miaf8-0222",
+      "nameZh": "门利克二世",
+      "imageKey": "门利克二世",
+      "era": "工业革命",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-miae9-0223",
+      "nameZh": "莱奥波德二世",
+      "imageKey": "莱奥波德二世",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-miar1-0224",
+      "nameZh": "布克·华盛顿",
+      "imageKey": "布克·华盛顿",
+      "era": "工业革命",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mwar2-0225",
+      "nameZh": "杜波依斯",
+      "imageKey": "杜波依斯",
+      "era": "工业革命",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mwrr3-0226",
+      "nameZh": "萨莫拉诺",
+      "imageKey": "萨莫拉诺",
+      "era": "工业革命",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mwse4-0227",
+      "nameZh": "毕加索",
+      "imageKey": "毕加索",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-msse5-0228",
+      "nameZh": "马克斯·普朗克",
+      "imageKey": "马克斯·普朗克",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-msse6-0229",
+      "nameZh": "欧内斯特·卢瑟福",
+      "imageKey": "欧内斯特·卢瑟福",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-msse7-0230",
+      "nameZh": "亚历山大·弗莱明",
+      "imageKey": "亚历山大·弗莱明",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-msae8-0231",
+      "nameZh": "弗里茨·哈伯",
+      "imageKey": "弗里茨·哈伯",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-msai9-0232",
+      "nameZh": "马赫兰诺比斯",
+      "imageKey": "马赫兰诺比斯",
+      "era": "工业革命",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-msse1-0233",
+      "nameZh": "卡里·古德尔",
+      "imageKey": "卡里·古德尔",
+      "era": "工业革命",
+      "faction": "欧洲/美洲"
+    },
+    {
+      "cardId": "af-mwae2-0234",
+      "nameZh": "詹姆斯·乔伊斯",
+      "imageKey": "詹姆斯·乔伊斯",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mwae3-0235",
+      "nameZh": "普鲁斯特",
+      "imageKey": "普鲁斯特",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mwae4-0236",
+      "nameZh": "弗朗茨·卡夫卡",
+      "imageKey": "弗朗茨·卡夫卡",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ipsa1-0237",
+      "nameZh": "袁世凯",
+      "imageKey": "袁世凯",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ipaa2-0238",
+      "nameZh": "李鸿章",
+      "imageKey": "李鸿章",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icaa3-0239",
+      "nameZh": "康有为",
+      "imageKey": "康有为",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icsa4-0240",
+      "nameZh": "梁启超",
+      "imageKey": "梁启超",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ipsa5-0241",
+      "nameZh": "秋瑾",
+      "imageKey": "秋瑾",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icva6-0242",
+      "nameZh": "鲁迅",
+      "imageKey": "鲁迅",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icsa7-0243",
+      "nameZh": "胡适",
+      "imageKey": "胡适",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa8-0244",
+      "nameZh": "陈独秀",
+      "imageKey": "陈独秀",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icsa9-0245",
+      "nameZh": "蔡元培",
+      "imageKey": "蔡元培",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ipaa1-0246",
+      "nameZh": "宋教仁",
+      "imageKey": "宋教仁",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ipaa2-0247",
+      "nameZh": "张作霖",
+      "imageKey": "张作霖",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ipaa3-0248",
+      "nameZh": "冯玉祥",
+      "imageKey": "冯玉祥",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ipaa4-0249",
+      "nameZh": "阎锡山",
+      "imageKey": "阎锡山",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ipba5-0250",
+      "nameZh": "黎元洪",
+      "imageKey": "黎元洪",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ipsa6-0251",
+      "nameZh": "黄兴",
+      "imageKey": "黄兴",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ipba7-0252",
+      "nameZh": "林觉民",
+      "imageKey": "林觉民",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icaa8-0253",
+      "nameZh": "辜鸿铭",
+      "imageKey": "辜鸿铭",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icsa9-0254",
+      "nameZh": "王国维",
+      "imageKey": "王国维",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icaa1-0255",
+      "nameZh": "梁漱溟",
+      "imageKey": "梁漱溟",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icaa2-0256",
+      "nameZh": "徐志摩",
+      "imageKey": "徐志摩",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icaa3-0257",
+      "nameZh": "闻一多",
+      "imageKey": "闻一多",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icsa4-0258",
+      "nameZh": "郭沫若",
+      "imageKey": "郭沫若",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-itsa5-0259",
+      "nameZh": "赵元任",
+      "imageKey": "赵元任",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-itsa6-0260",
+      "nameZh": "竺可桢",
+      "imageKey": "竺可桢",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-itaa7-0261",
+      "nameZh": "詹天佑",
+      "imageKey": "詹天佑",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-itaa8-0262",
+      "nameZh": "冯如",
+      "imageKey": "冯如",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icba9-0263",
+      "nameZh": "魏源",
+      "imageKey": "魏源",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icsa1-0264",
+      "nameZh": "严复",
+      "imageKey": "严复",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ipaa2-0265",
+      "nameZh": "张之洞",
+      "imageKey": "张之洞",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ipba3-0266",
+      "nameZh": "左宗棠",
+      "imageKey": "左宗棠",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ipba4-0267",
+      "nameZh": "曾国藩",
+      "imageKey": "曾国藩",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ipaa5-0268",
+      "nameZh": "吴佩孚",
+      "imageKey": "吴佩孚",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ipsa6-0269",
+      "nameZh": "张学良",
+      "imageKey": "张学良",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa7-0270",
+      "nameZh": "杨度",
+      "imageKey": "杨度",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icba8-0271",
+      "nameZh": "丁玲",
+      "imageKey": "丁玲",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icba9-0272",
+      "nameZh": "沈从文",
+      "imageKey": "沈从文",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icsa1-0273",
+      "nameZh": "梅兰芳",
+      "imageKey": "梅兰芳",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icsa2-0274",
+      "nameZh": "徐悲鸿",
+      "imageKey": "徐悲鸿",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icaa3-0275",
+      "nameZh": "钱玄同",
+      "imageKey": "钱玄同",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ipba4-0276",
+      "nameZh": "邹容",
+      "imageKey": "邹容",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mhvi1-0277",
+      "nameZh": "特蕾莎修女",
+      "imageKey": "特蕾莎修女",
+      "era": "现代",
+      "faction": "欧洲/印度"
+    },
+    {
+      "cardId": "af-mhsr2-0278",
+      "nameZh": "马丁·路德·金",
+      "imageKey": "马丁·路德·金",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mhvf3-0279",
+      "nameZh": "曼德拉",
+      "imageKey": "曼德拉",
+      "era": "现代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-mpse4-0280",
+      "nameZh": "戴高乐",
+      "imageKey": "戴高乐",
+      "era": "现代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mpse5-0281",
+      "nameZh": "撒切尔夫人",
+      "imageKey": "撒切尔夫人",
+      "era": "现代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mpse6-0282",
+      "nameZh": "戈尔巴乔夫",
+      "imageKey": "戈尔巴乔夫",
+      "era": "现代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mpsr7-0283",
+      "nameZh": "里根",
+      "imageKey": "里根",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mpsr8-0284",
+      "nameZh": "尼克松",
+      "imageKey": "尼克松",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mpsr9-0285",
+      "nameZh": "肯尼迪",
+      "imageKey": "肯尼迪",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mpae1-0286",
+      "nameZh": "赫鲁晓夫",
+      "imageKey": "赫鲁晓夫",
+      "era": "现代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mpse2-0287",
+      "nameZh": "铁托",
+      "imageKey": "铁托",
+      "era": "现代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mpse3-0288",
+      "nameZh": "周恩来",
+      "imageKey": "周恩来",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpve4-0289",
+      "nameZh": "邓小平",
+      "imageKey": "邓小平",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpse5-0290",
+      "nameZh": "金日成",
+      "imageKey": "金日成",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpae6-0291",
+      "nameZh": "朴正熙",
+      "imageKey": "朴正熙",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpse7-0292",
+      "nameZh": "胡志明",
+      "imageKey": "胡志明",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpae8-0293",
+      "nameZh": "西哈努克",
+      "imageKey": "西哈努克",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpse9-0294",
+      "nameZh": "本·古里安",
+      "imageKey": "本·古里安",
+      "era": "现代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-mpse1-0295",
+      "nameZh": "纳赛尔",
+      "imageKey": "纳赛尔",
+      "era": "现代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-mpse2-0296",
+      "nameZh": "阿拉法特",
+      "imageKey": "阿拉法特",
+      "era": "现代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-mpve3-0297",
+      "nameZh": "霍梅尼",
+      "imageKey": "霍梅尼",
+      "era": "现代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-mpbf4-0298",
+      "nameZh": "伊迪·阿明",
+      "imageKey": "伊迪·阿明",
+      "era": "现代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-mpse5-0299",
+      "nameZh": "卡斯特罗",
+      "imageKey": "卡斯特罗",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mpsr6-0300",
+      "nameZh": "切·格瓦拉",
+      "imageKey": "切·格瓦拉",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mtar7-0301",
+      "nameZh": "奥克塔维奥·帕斯",
+      "imageKey": "奥克塔维奥·帕斯",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mtah8-0302",
+      "nameZh": "弗里达·卡罗",
+      "imageKey": "弗里达·卡罗",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mpai9-0303",
+      "nameZh": "尼赫鲁",
+      "imageKey": "尼赫鲁",
+      "era": "现代",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-mpse1-0304",
+      "nameZh": "英迪拉·甘地",
+      "imageKey": "英迪拉·甘地",
+      "era": "现代",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-mpae2-0305",
+      "nameZh": "拉吉夫·甘地",
+      "imageKey": "拉吉夫·甘地",
+      "era": "现代",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-mtai3-0306",
+      "nameZh": "萨蒂亚吉特·雷伊",
+      "imageKey": "萨蒂亚吉特·雷伊",
+      "era": "现代",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-mpaf4-0307",
+      "nameZh": "德克勒克",
+      "imageKey": "德克勒克",
+      "era": "现代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-mphf5-0308",
+      "nameZh": "科菲·安南",
+      "imageKey": "科菲·安南",
+      "era": "现代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-msvt6-0309",
+      "nameZh": "史蒂芬·霍金",
+      "imageKey": "史蒂芬·霍金",
+      "era": "现代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mtsr7-0310",
+      "nameZh": "比尔·盖茨",
+      "imageKey": "比尔·盖茨",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mtsr8-0311",
+      "nameZh": "史蒂夫·乔布斯",
+      "imageKey": "史蒂夫·乔布斯",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mtar9-0312",
+      "nameZh": "鲍勃·迪伦",
+      "imageKey": "鲍勃·迪伦",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mtae1-0313",
+      "nameZh": "约翰·列侬",
+      "imageKey": "约翰·列侬",
+      "era": "现代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mtar2-0314",
+      "nameZh": "玛丽莲·梦露",
+      "imageKey": "玛丽莲·梦露",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mtaa3-0315",
+      "nameZh": "黑泽明",
+      "imageKey": "黑泽明",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mtaa4-0316",
+      "nameZh": "李小龙",
+      "imageKey": "李小龙",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mtaa5-0317",
+      "nameZh": "金庸",
+      "imageKey": "金庸",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpta6-0318",
+      "nameZh": "钱学森",
+      "imageKey": "钱学森",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpta7-0319",
+      "nameZh": "钱三强",
+      "imageKey": "钱三强",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpse8-0320",
+      "nameZh": "瓦文萨",
+      "imageKey": "瓦文萨",
+      "era": "现代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mpse9-0321",
+      "nameZh": "哈维尔",
+      "imageKey": "哈维尔",
+      "era": "现代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mpbf1-0322",
+      "nameZh": "弗朗西斯科·马西亚斯",
+      "imageKey": "弗朗西斯科·马西亚斯",
+      "era": "现代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-mpse2-0323",
+      "nameZh": "安瓦尔·萨达特",
+      "imageKey": "安瓦尔·萨达特",
+      "era": "现代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-ntsr1-0324",
+      "nameZh": "马克·扎克伯格",
+      "imageKey": "马克·扎克伯格",
+      "era": "信息时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-ntva2-0325",
+      "nameZh": "伊隆·马斯克",
+      "imageKey": "伊隆·马斯克",
+      "era": "信息时代",
+      "faction": "美洲/非洲"
+    },
+    {
+      "cardId": "af-ntsr3-0326",
+      "nameZh": "杰夫·贝索斯",
+      "imageKey": "杰夫·贝索斯",
+      "era": "信息时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-ntsr4-0327",
+      "nameZh": "拉里·佩奇",
+      "imageKey": "拉里·佩奇",
+      "era": "信息时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-ntsr5-0328",
+      "nameZh": "谢尔盖·布林",
+      "imageKey": "谢尔盖·布林",
+      "era": "信息时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-ntar6-0329",
+      "nameZh": "萨蒂亚·纳德拉",
+      "imageKey": "萨蒂亚·纳德拉",
+      "era": "信息时代",
+      "faction": "印度/美洲"
+    },
+    {
+      "cardId": "af-ntar7-0330",
+      "nameZh": "蒂姆·库克",
+      "imageKey": "蒂姆·库克",
+      "era": "信息时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-ntaa8-0331",
+      "nameZh": "马云",
+      "imageKey": "马云",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ntaa9-0332",
+      "nameZh": "任正非",
+      "imageKey": "任正非",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ntaa1-0333",
+      "nameZh": "马化腾",
+      "imageKey": "马化腾",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-npve2-0334",
+      "nameZh": "普京",
+      "imageKey": "普京",
+      "era": "信息时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-npse3-0335",
+      "nameZh": "默克尔",
+      "imageKey": "默克尔",
+      "era": "信息时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-npar4-0336",
+      "nameZh": "奥巴马",
+      "imageKey": "奥巴马",
+      "era": "信息时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-npar5-0337",
+      "nameZh": "比尔·克林顿",
+      "imageKey": "比尔·克林顿",
+      "era": "信息时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-npme6-0338",
+      "nameZh": "沙隆",
+      "imageKey": "沙隆",
+      "era": "信息时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-npve7-0339",
+      "nameZh": "本·拉登",
+      "imageKey": "本·拉登",
+      "era": "信息时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-nhce8-0340",
+      "nameZh": "马拉拉",
+      "imageKey": "马拉拉",
+      "era": "信息时代",
+      "faction": "印度/欧洲"
+    },
+    {
+      "cardId": "af-ntaf9-0341",
+      "nameZh": "阿西娜·帕卡尔",
+      "imageKey": "阿西娜·帕卡尔",
+      "era": "信息时代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-ntar1-0342",
+      "nameZh": "苏尼塔·威廉斯",
+      "imageKey": "苏尼塔·威廉斯",
+      "era": "信息时代",
+      "faction": "印度/美洲"
+    },
+    {
+      "cardId": "af-ntcb2-0343",
+      "nameZh": "斯蒂芬·斯皮尔伯格",
+      "imageKey": "斯蒂芬·斯皮尔伯格",
+      "era": "信息时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-ntcb3-0344",
+      "nameZh": "村上春树",
+      "imageKey": "村上春树",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-fpve1-0345",
+      "nameZh": "艾达·阿米尔",
+      "imageKey": "艾达·阿米尔",
+      "era": "未来时代",
+      "faction": "中东/非洲"
+    },
+    {
+      "cardId": "af-ftve2-0346",
+      "nameZh": "织田·阳太",
+      "imageKey": "织田·阳太",
+      "era": "未来时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ftse3-0347",
+      "nameZh": "瓦利亚·科尔",
+      "imageKey": "瓦利亚·科尔",
+      "era": "未来时代",
+      "faction": "欧洲/北极"
+    },
+    {
+      "cardId": "af-ftsr4-0348",
+      "nameZh": "塞德里克·琼斯",
+      "imageKey": "塞德里克·琼斯",
+      "era": "未来时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-fpse5-0349",
+      "nameZh": "普利亚·夏尔马",
+      "imageKey": "普利亚·夏尔马",
+      "era": "未来时代",
+      "faction": "印度/太空"
+    },
+    {
+      "cardId": "af-fpte6-0350",
+      "nameZh": "玛拉基·恩戈",
+      "imageKey": "玛拉基·恩戈",
+      "era": "未来时代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-ftae7-0351",
+      "nameZh": "李薇",
+      "imageKey": "李薇",
+      "era": "未来时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-fpcr8-0352",
+      "nameZh": "卡洛斯·里奥斯",
+      "imageKey": "卡洛斯·里奥斯",
+      "era": "未来时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-ftae9-0353",
+      "nameZh": "埃拉·沃克",
+      "imageKey": "埃拉·沃克",
+      "era": "未来时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ftee1-0354",
+      "nameZh": "阿布杜拉·卡里姆",
+      "imageKey": "阿布杜拉·卡里姆",
+      "era": "未来时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-cpaa1-0355",
+      "nameZh": "管仲",
+      "imageKey": "管仲",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ccsa2-0356",
+      "nameZh": "孟子",
+      "imageKey": "孟子",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ccsa3-0357",
+      "nameZh": "庄子",
+      "imageKey": "庄子",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ccaa4-0358",
+      "nameZh": "韩非",
+      "imageKey": "韩非",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cpaa5-0359",
+      "nameZh": "商鞅",
+      "imageKey": "商鞅",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ccpa6-0360",
+      "nameZh": "屈原",
+      "imageKey": "屈原",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ccsa7-0361",
+      "nameZh": "司马迁",
+      "imageKey": "司马迁",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cpaa8-0362",
+      "nameZh": "王昭君",
+      "imageKey": "王昭君",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cpve9-0363",
+      "nameZh": "曹操",
+      "imageKey": "曹操",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cpve1-0364",
+      "nameZh": "拓跋珪",
+      "imageKey": "拓跋珪",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cpba2-0365",
+      "nameZh": "石勒",
+      "imageKey": "石勒",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cpba3-0366",
+      "nameZh": "苻坚",
+      "imageKey": "苻坚",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cpve4-0367",
+      "nameZh": "刘备",
+      "imageKey": "刘备",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cpse5-0368",
+      "nameZh": "孙权",
+      "imageKey": "孙权",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpse1-0383",
+      "nameZh": "诸葛亮",
+      "imageKey": "诸葛亮",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpsa2-0384",
+      "nameZh": "司马懿",
+      "imageKey": "司马懿",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mcaa3-0385",
+      "nameZh": "顾恺之",
+      "imageKey": "顾恺之",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mccb4-0386",
+      "nameZh": "陶渊明",
+      "imageKey": "陶渊明",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpab5-0387",
+      "nameZh": "萧衍",
+      "imageKey": "萧衍",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpab6-0388",
+      "nameZh": "苏绰",
+      "imageKey": "苏绰",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpsa7-0389",
+      "nameZh": "房玄龄",
+      "imageKey": "房玄龄",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpsa8-0390",
+      "nameZh": "魏征",
+      "imageKey": "魏征",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpse9-0391",
+      "nameZh": "武则天",
+      "imageKey": "武则天",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mcca1-0392",
+      "nameZh": "韩愈",
+      "imageKey": "韩愈",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mcca2-0393",
+      "nameZh": "柳宗元",
+      "imageKey": "柳宗元",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mccb3-0394",
+      "nameZh": "欧阳修",
+      "imageKey": "欧阳修",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpsa4-0395",
+      "nameZh": "范仲淹",
+      "imageKey": "范仲淹",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mtcb5-0396",
+      "nameZh": "毕昇",
+      "imageKey": "毕昇",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mccb6-0397",
+      "nameZh": "司马光",
+      "imageKey": "司马光",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpba7-0398",
+      "nameZh": "秦桧",
+      "imageKey": "秦桧",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mtcb9-0400",
+      "nameZh": "郭守敬",
+      "imageKey": "郭守敬",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mcca1-0401",
+      "nameZh": "施耐庵",
+      "imageKey": "施耐庵",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mcca2-0402",
+      "nameZh": "罗贯中",
+      "imageKey": "罗贯中",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpba3-0403",
+      "nameZh": "冯太后",
+      "imageKey": "冯太后",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpba4-0404",
+      "nameZh": "耶律德光",
+      "imageKey": "耶律德光",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpba5-0405",
+      "nameZh": "完颜阿骨打",
+      "imageKey": "完颜阿骨打",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpba6-0406",
+      "nameZh": "李元昊",
+      "imageKey": "李元昊",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpbb7-0407",
+      "nameZh": "孟知祥",
+      "imageKey": "孟知祥",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mcca8-0408",
+      "nameZh": "张择端",
+      "imageKey": "张择端",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mpsa9-0409",
+      "nameZh": "文天祥",
+      "imageKey": "文天祥",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mcca2-0411",
+      "nameZh": "关汉卿",
+      "imageKey": "关汉卿",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mtcb3-0412",
+      "nameZh": "黄道婆",
+      "imageKey": "黄道婆",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-rcsa1-0413",
+      "nameZh": "王阳明",
+      "imageKey": "王阳明",
+      "era": "文艺复兴",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-rpaa2-0414",
+      "nameZh": "海瑞",
+      "imageKey": "海瑞",
+      "era": "文艺复兴",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-rtaa3-0415",
+      "nameZh": "李时珍",
+      "imageKey": "李时珍",
+      "era": "文艺复兴",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-rtaa4-0416",
+      "nameZh": "徐光启",
+      "imageKey": "徐光启",
+      "era": "文艺复兴",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-rcaa5-0417",
+      "nameZh": "冯梦龙",
+      "imageKey": "冯梦龙",
+      "era": "文艺复兴",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-rcaa6-0418",
+      "nameZh": "唐寅",
+      "imageKey": "唐寅",
+      "era": "文艺复兴",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-rcaa7-0419",
+      "nameZh": "文徵明",
+      "imageKey": "文徵明",
+      "era": "文艺复兴",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-rtse8-0420",
+      "nameZh": "利玛窦",
+      "imageKey": "利玛窦",
+      "era": "文艺复兴",
+      "faction": "欧洲/东亚"
+    },
+    {
+      "cardId": "af-rpba9-0421",
+      "nameZh": "魏忠贤",
+      "imageKey": "魏忠贤",
+      "era": "文艺复兴",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-rpab1-0422",
+      "nameZh": "吴三桂",
+      "imageKey": "吴三桂",
+      "era": "文艺复兴",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-rpab2-0423",
+      "nameZh": "洪秀全",
+      "imageKey": "洪秀全",
+      "era": "文艺复兴",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ipab2-0425",
+      "nameZh": "丁汝昌",
+      "imageKey": "丁汝昌",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa3-0426",
+      "nameZh": "谭嗣同",
+      "imageKey": "谭嗣同",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmdc3-0428",
+      "nameZh": "大流士三世",
+      "imageKey": "大流士三世",
+      "era": "古典时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-cmse4-0429",
+      "nameZh": "塞琉古一世",
+      "imageKey": "塞琉古一世",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-cmae5-0430",
+      "nameZh": "卫青",
+      "imageKey": "卫青",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mmbe6-0431",
+      "nameZh": "贝利萨里乌斯",
+      "imageKey": "贝利萨里乌斯",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mmhc7-0432",
+      "nameZh": "哈立德·伊本·瓦利德",
+      "imageKey": "哈立德·伊本·瓦利德",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-mmge8-0433",
+      "nameZh": "郭子仪",
+      "imageKey": "郭子仪",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mmac9-0434",
+      "nameZh": "奥尔巴斯兰",
+      "imageKey": "奥尔巴斯兰",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-mmse11-0436",
+      "nameZh": "苏博泰",
+      "imageKey": "苏博泰",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mmze12-0437",
+      "nameZh": "朱温",
+      "imageKey": "朱温",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mmde14-0439",
+      "nameZh": "苏定方",
+      "imageKey": "苏定方",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mmaf15-0440",
+      "nameZh": "埃蒂尔卡尔·卡夸",
+      "imageKey": "埃蒂尔卡尔·卡夸",
+      "era": "中世纪",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-rmae16-0441",
+      "nameZh": "奥利弗·克伦威尔",
+      "imageKey": "奥利弗·克伦威尔",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rmae17-0442",
+      "nameZh": "古斯塔夫二世·阿道夫",
+      "imageKey": "古斯塔夫二世·阿道夫",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rmae18-0443",
+      "nameZh": "腓特烈二世",
+      "imageKey": "腓特烈二世",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rmaa19-0444",
+      "nameZh": "威廉·谢尔曼",
+      "imageKey": "威廉·谢尔曼",
+      "era": "文艺复兴",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-rmee20-0445",
+      "nameZh": "王建",
+      "imageKey": "王建",
+      "era": "文艺复兴",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-imhe21-0446",
+      "nameZh": "隆美尔",
+      "imageKey": "隆美尔",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-imme22-0447",
+      "nameZh": "蒙哥马利",
+      "imageKey": "蒙哥马利",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-imab23-0448",
+      "nameZh": "巴顿",
+      "imageKey": "巴顿",
+      "era": "工业革命",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-imje24-0449",
+      "nameZh": "朱可夫",
+      "imageKey": "朱可夫",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-imma25-0450",
+      "nameZh": "麦克阿瑟",
+      "imageKey": "麦克阿瑟",
+      "era": "工业革命",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mmsa26-0451",
+      "nameZh": "摩西·达扬",
+      "imageKey": "摩西·达扬",
+      "era": "现代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-mmva27-0452",
+      "nameZh": "武元甲",
+      "imageKey": "武元甲",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mmsh28-0453",
+      "nameZh": "沙特·阿拉布",
+      "imageKey": "沙特·阿拉布",
+      "era": "现代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-nmpe29-0454",
+      "nameZh": "彼得雷乌斯",
+      "imageKey": "彼得雷乌斯",
+      "era": "信息时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-nmaf30-0455",
+      "nameZh": "艾哈迈德·阿布迪",
+      "imageKey": "艾哈迈德·阿布迪",
+      "era": "信息时代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-rpei1-0456",
+      "nameZh": "伊凡四世",
+      "imageKey": "伊凡四世",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rphh2-0457",
+      "nameZh": "阿克巴大帝",
+      "imageKey": "阿克巴大帝",
+      "era": "文艺复兴",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-rpee3-0458",
+      "nameZh": "路易十三",
+      "imageKey": "路易十三",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rpea4-0459",
+      "nameZh": "玛丽亚·特蕾莎",
+      "imageKey": "玛丽亚·特蕾莎",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rpee5-0460",
+      "nameZh": "叶卡捷琳娜二世",
+      "imageKey": "叶卡捷琳娜二世",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rpee6-0461",
+      "nameZh": "乔治三世",
+      "imageKey": "乔治三世",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ipeve7-0462",
+      "nameZh": "维多利亚二世",
+      "imageKey": "维多利亚二世",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ipewe8-0463",
+      "nameZh": "威廉二世",
+      "imageKey": "威廉二世",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ipaww9-0464",
+      "nameZh": "伍德罗·威尔逊",
+      "imageKey": "伍德罗·威尔逊",
+      "era": "工业革命",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-mpase10-0465",
+      "nameZh": "昂山素季",
+      "imageKey": "昂山素季",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-yaae11-0466",
+      "nameZh": "炎帝",
+      "imageKey": "炎帝",
+      "era": "神话时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-yamc12-0467",
+      "nameZh": "伊南娜",
+      "imageKey": "伊南娜",
+      "era": "神话时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-yafo13-0468",
+      "nameZh": "俄西里斯",
+      "imageKey": "俄西里斯",
+      "era": "神话时代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-yamc14-0469",
+      "nameZh": "阿特拉哈西斯",
+      "imageKey": "阿特拉哈西斯",
+      "era": "神话时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-ypek15-0470",
+      "nameZh": "克里特的米诺斯",
+      "imageKey": "克里特的米诺斯",
+      "era": "神话时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-fasz16-0471",
+      "nameZh": "艾瑞姆·萨拉姆",
+      "imageKey": "艾瑞姆·萨拉姆",
+      "era": "未来时代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-fpev17-0472",
+      "nameZh": "薇拉·塔卡奇",
+      "imageKey": "薇拉·塔卡奇",
+      "era": "未来时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-fsae18-0473",
+      "nameZh": "林薇",
+      "imageKey": "林薇",
+      "era": "未来时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-fmac19-0474",
+      "nameZh": "卡西乌斯·雷克斯",
+      "imageKey": "卡西乌斯·雷克斯",
+      "era": "未来时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-fshi20-0475",
+      "nameZh": "阿贾·辛格",
+      "imageKey": "阿贾·辛格",
+      "era": "未来时代",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-yaej2-0477",
+      "nameZh": "尧",
+      "imageKey": "尧",
+      "era": "神话时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa3-0478",
+      "nameZh": "陈子锟",
+      "imageKey": "陈子锟",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-ypeh3-0479",
+      "nameZh": "赫耳墨斯",
+      "imageKey": "赫耳墨斯",
+      "era": "神话时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-cpee4-0480",
+      "nameZh": "地米斯托克利",
+      "imageKey": "地米斯托克利",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-cpee5-0481",
+      "nameZh": "塞诺芬",
+      "imageKey": "塞诺芬",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-cihk6-0482",
+      "nameZh": "伽叶",
+      "imageKey": "伽叶",
+      "era": "古典时代",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-cmmc7-0483",
+      "nameZh": "米特里达梯六世",
+      "imageKey": "米特里达梯六世",
+      "era": "古典时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-caes8-0484",
+      "nameZh": "班固",
+      "imageKey": "班固",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mped9-0485",
+      "nameZh": "狄奥多拉女皇",
+      "imageKey": "狄奥多拉女皇",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mpec10-0486",
+      "nameZh": "查理·马特",
+      "imageKey": "查理·马特",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mmci11-0487",
+      "nameZh": "伊本·鲁世德",
+      "imageKey": "伊本·鲁世德",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-mmca12-0488",
+      "nameZh": "阿布纳瓦斯",
+      "imageKey": "阿布纳瓦斯",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-raej13-0489",
+      "nameZh": "乔尔乔内",
+      "imageKey": "乔尔乔内",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rpej14-0490",
+      "nameZh": "蒙田",
+      "imageKey": "蒙田",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-raej15-0491",
+      "nameZh": "伦勃朗",
+      "imageKey": "伦勃朗",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rsej16-0492",
+      "nameZh": "莱布尼茨",
+      "imageKey": "莱布尼茨",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rpec17-0493",
+      "nameZh": "卡诺",
+      "imageKey": "卡诺",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ipefi18-0494",
+      "nameZh": "弗朗茨·约瑟夫一世",
+      "imageKey": "弗朗茨·约瑟夫一世",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ipit19-0495",
+      "nameZh": "泰戈尔",
+      "imageKey": "泰戈尔",
+      "era": "工业革命",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-mpsu20-0496",
+      "nameZh": "苏卡诺",
+      "imageKey": "苏卡诺",
+      "era": "现代",
+      "faction": "东南亚"
+    },
+    {
+      "cardId": "af-nste21-0497",
+      "nameZh": "苏珊·沃西基",
+      "imageKey": "苏珊·沃西基",
+      "era": "信息时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-nsej22-0498",
+      "nameZh": "卡尔·萨根",
+      "imageKey": "卡尔·萨根",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-npef23-0499",
+      "nameZh": "弗朗索瓦·密特朗",
+      "imageKey": "弗朗索瓦·密特朗",
+      "era": "现代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-nmaj24-0500",
+      "nameZh": "乔治·马歇尔",
+      "imageKey": "乔治·马歇尔",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-npeo25-0501",
+      "nameZh": "奥洛夫·帕尔梅",
+      "imageKey": "奥洛夫·帕尔梅",
+      "era": "现代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-npsb26-0502",
+      "nameZh": "阿里·布托",
+      "imageKey": "阿里·布托",
+      "era": "现代",
+      "faction": "南亚"
+    },
+    {
+      "cardId": "af-npmh27-0503",
+      "nameZh": "萨达姆·侯赛因",
+      "imageKey": "萨达姆·侯赛因",
+      "era": "现代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-npah28-0504",
+      "nameZh": "霍斯尼·穆巴拉克",
+      "imageKey": "霍斯尼·穆巴拉克",
+      "era": "现代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-npaa29-0505",
+      "nameZh": "科拉松·阿基诺",
+      "imageKey": "科拉松·阿基诺",
+      "era": "现代",
+      "faction": "东南亚"
+    },
+    {
+      "cardId": "af-npam30-0506",
+      "nameZh": "马尔科姆·X",
+      "imageKey": "马尔科姆·X",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-naml31-0507",
+      "nameZh": "莱昂纳德·伯恩斯坦",
+      "imageKey": "莱昂纳德·伯恩斯坦",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-nees32-0508",
+      "nameZh": "索尔仁尼琴",
+      "imageKey": "索尔仁尼琴",
+      "era": "现代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-namg33-0509",
+      "nameZh": "加西亚·马尔克斯",
+      "imageKey": "加西亚·马尔克斯",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-naet34-0510",
+      "nameZh": "三岛由纪夫",
+      "imageKey": "三岛由纪夫",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-naml35-0511",
+      "nameZh": "路易·阿姆斯特朗",
+      "imageKey": "路易·阿姆斯特朗",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-nsan36-0512",
+      "nameZh": "约翰·纳什",
+      "imageKey": "约翰·纳什",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-npeg37-0513",
+      "nameZh": "简·古道尔",
+      "imageKey": "简·古道尔",
+      "era": "现代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-nset38-0514",
+      "nameZh": "蒂姆·伯纳斯-李",
+      "imageKey": "蒂姆·伯纳斯-李",
+      "era": "信息时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-npez39-0515",
+      "nameZh": "安德烈·萨哈罗夫",
+      "imageKey": "安德烈·萨哈罗夫",
+      "era": "现代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-npef40-0516",
+      "nameZh": "戴安娜王妃",
+      "imageKey": "戴安娜王妃",
+      "era": "现代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-nsel41-0517",
+      "nameZh": "罗纳德·科斯",
+      "imageKey": "罗纳德·科斯",
+      "era": "现代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ipej42-0518",
+      "nameZh": "卡尔·荣格",
+      "imageKey": "卡尔·荣格",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ipap43-0519",
+      "nameZh": "约瑟夫·波普尔",
+      "imageKey": "约瑟夫·波普尔",
+      "era": "工业革命",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-ipaf44-0520",
+      "nameZh": "弗兰克·劳埃德·赖特",
+      "imageKey": "弗兰克·劳埃德·赖特",
+      "era": "工业革命",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-ipij45-0521",
+      "nameZh": "贾姆谢特吉·塔塔",
+      "imageKey": "贾姆谢特吉·塔塔",
+      "era": "工业革命",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-ipem46-0522",
+      "nameZh": "曼纳海姆",
+      "imageKey": "曼纳海姆",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ipms47-0523",
+      "nameZh": "伊本·沙特",
+      "imageKey": "伊本·沙特",
+      "era": "工业革命",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-ipam48-0524",
+      "nameZh": "玛格丽特·桑格",
+      "imageKey": "玛格丽特·桑格",
+      "era": "工业革命",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-iper49-0525",
+      "nameZh": "鲁道夫·迪塞尔",
+      "imageKey": "鲁道夫·迪塞尔",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-ipae50-0526",
+      "nameZh": "阿米莉亚·埃尔哈特",
+      "imageKey": "阿米莉亚·埃尔哈特",
+      "era": "工业革命",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-raeb51-0527",
+      "nameZh": "桑德罗·波提切利",
+      "imageKey": "桑德罗·波提切利",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rsek52-0528",
+      "nameZh": "约翰尼斯·开普勒",
+      "imageKey": "约翰尼斯·开普勒",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rpej53-0529",
+      "nameZh": "约翰·卡尔文",
+      "imageKey": "约翰·卡尔文",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rsej54-0530",
+      "nameZh": "亚当·斯密",
+      "imageKey": "亚当·斯密",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-raej55-0531",
+      "nameZh": "卡斯帕·大卫·弗里德里希",
+      "imageKey": "卡斯帕·大卫·弗里德里希",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-raed56-0532",
+      "nameZh": "德拉克洛瓦",
+      "imageKey": "德拉克洛瓦",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-raah57-0533",
+      "nameZh": "洪应明",
+      "imageKey": "洪应明",
+      "era": "文艺复兴",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cagg58-0534",
+      "nameZh": "加罗·卡鲁索",
+      "imageKey": "加罗·卡鲁索",
+      "era": "古典时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-rmac59-0535",
+      "nameZh": "马普切首领",
+      "imageKey": "马普切首领",
+      "era": "文艺复兴",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-rsec60-0536",
+      "nameZh": "查尔斯·巴贝奇",
+      "imageKey": "查尔斯·巴贝奇",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-raes61-0537",
+      "nameZh": "玛丽·雪莱",
+      "imageKey": "玛丽·雪莱",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-fpaa62-0538",
+      "nameZh": "艾米莉亚·里德",
+      "imageKey": "艾米莉亚·里德",
+      "era": "未来时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-fpis63-0539",
+      "nameZh": "维贾伊·辛格",
+      "imageKey": "维贾伊·辛格",
+      "era": "未来时代",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-fpmc64-0540",
+      "nameZh": "阿卜杜勒·哈迪",
+      "imageKey": "阿卜杜勒·哈迪",
+      "era": "未来时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-fpes65-0541",
+      "nameZh": "苏菲亚·克鲁普",
+      "imageKey": "苏菲亚·克鲁普",
+      "era": "未来时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-fads66-0542",
+      "nameZh": "张明",
+      "imageKey": "张明",
+      "era": "未来时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-fpam67-0543",
+      "nameZh": "玛拉·奥比",
+      "imageKey": "玛拉·奥比",
+      "era": "未来时代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-fpaa68-0544",
+      "nameZh": "奥里翁",
+      "imageKey": "奥里翁",
+      "era": "未来时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-fpei69-0545",
+      "nameZh": "伊戈尔·佩特罗夫",
+      "imageKey": "伊戈尔·佩特罗夫",
+      "era": "未来时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-fpac70-0546",
+      "nameZh": "里约·戈麦斯",
+      "imageKey": "里约·戈麦斯",
+      "era": "未来时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-fpah71-0547",
+      "nameZh": "基莉·麦克劳德",
+      "imageKey": "基莉·麦克劳德",
+      "era": "未来时代",
+      "faction": "大洋洲"
+    },
+    {
+      "cardId": "af-cmhc1-0548",
+      "nameZh": "汉尼拔",
+      "imageKey": "汉尼拔",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-maat72-0549",
+      "nameZh": "狄仁杰",
+      "imageKey": "狄仁杰",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-maas74-0550",
+      "nameZh": "孙悟空",
+      "imageKey": "孙悟空",
+      "era": "神话时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-maas75-0551",
+      "nameZh": "猪八戒",
+      "imageKey": "猪八戒",
+      "era": "神话时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-maas76-0552",
+      "nameZh": "沙悟净",
+      "imageKey": "沙悟净",
+      "era": "神话时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-maan77-0553",
+      "nameZh": "哪吒",
+      "imageKey": "哪吒",
+      "era": "神话时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-maay78-0554",
+      "nameZh": "杨戬",
+      "imageKey": "杨戬",
+      "era": "神话时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-maal79-0555",
+      "nameZh": "李靖",
+      "imageKey": "李靖",
+      "era": "神话时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mwar80-0556",
+      "nameZh": "王重阳",
+      "imageKey": "王重阳",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mwag81-0557",
+      "nameZh": "郭靖",
+      "imageKey": "郭靖",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mway82-0558",
+      "nameZh": "杨过",
+      "imageKey": "杨过",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mwah83-0559",
+      "nameZh": "黄药师",
+      "imageKey": "黄药师",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mwat84-0560",
+      "nameZh": "乔峰",
+      "imageKey": "乔峰",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mwav85-0561",
+      "nameZh": "虚竹",
+      "imageKey": "虚竹",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mwad86-0562",
+      "nameZh": "段誉",
+      "imageKey": "段誉",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mwaz87-0563",
+      "nameZh": "张无忌",
+      "imageKey": "张无忌",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mwat88-0564",
+      "nameZh": "张三丰",
+      "imageKey": "张三丰",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmal89-0565",
+      "nameZh": "刘邦",
+      "imageKey": "刘邦",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmax90-0566",
+      "nameZh": "项羽",
+      "imageKey": "项羽",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmas91-0567",
+      "nameZh": "萧何",
+      "imageKey": "萧何",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaz92-0568",
+      "nameZh": "张良",
+      "imageKey": "张良",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaf93-0569",
+      "nameZh": "樊哙",
+      "imageKey": "樊哙",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmah94-0570",
+      "nameZh": "韩信",
+      "imageKey": "韩信",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmas95-0571",
+      "nameZh": "孙武",
+      "imageKey": "孙武",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmas96-0572",
+      "nameZh": "孙膑",
+      "imageKey": "孙膑",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaw97-0573",
+      "nameZh": "吴起",
+      "imageKey": "吴起",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-rmnr98-0574",
+      "nameZh": "拿破仑三世",
+      "imageKey": "拿破仑三世",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rmww99-0575",
+      "nameZh": "威廉一世",
+      "imageKey": "威廉一世",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-mmah00-0576",
+      "nameZh": "韩世忠",
+      "imageKey": "韩世忠",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mmaw01-0577",
+      "nameZh": "吴玠",
+      "imageKey": "吴玠",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mmaw02-0578",
+      "nameZh": "吴璘",
+      "imageKey": "吴璘",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mmaz03-0579",
+      "nameZh": "宗泽",
+      "imageKey": "宗泽",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mmax04-0580",
+      "nameZh": "张叔夜",
+      "imageKey": "张叔夜",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mmas05-0581",
+      "nameZh": "种师道",
+      "imageKey": "种师道",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mmal06-0582",
+      "nameZh": "林默",
+      "imageKey": "林默",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaz07-0583",
+      "nameZh": "张仲景",
+      "imageKey": "张仲景",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmah08-0584",
+      "nameZh": "华佗",
+      "imageKey": "华佗",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmab09-0585",
+      "nameZh": "扁鹊",
+      "imageKey": "扁鹊",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmad10-0586",
+      "nameZh": "杜预",
+      "imageKey": "杜预",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmal11-0587",
+      "nameZh": "刘秀",
+      "imageKey": "刘秀",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaw12-0588",
+      "nameZh": "王莽",
+      "imageKey": "王莽",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mmaz13-0589",
+      "nameZh": "朱熹",
+      "imageKey": "朱熹",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmag14-0590",
+      "nameZh": "公孙龙",
+      "imageKey": "公孙龙",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmab15-0591",
+      "nameZh": "白起",
+      "imageKey": "白起",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmal16-0592",
+      "nameZh": "乐毅",
+      "imageKey": "乐毅",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmal17-0593",
+      "nameZh": "李光弼",
+      "imageKey": "李光弼",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmag18-0594",
+      "nameZh": "关羽",
+      "imageKey": "关羽",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaz19-0595",
+      "nameZh": "张飞",
+      "imageKey": "张飞",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-irzs20-0596",
+      "nameZh": "孙传芳",
+      "imageKey": "孙传芳",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-irzx21-0597",
+      "nameZh": "徐树铮",
+      "imageKey": "徐树铮",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaz22-0598",
+      "nameZh": "张角",
+      "imageKey": "张角",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaz23-0599",
+      "nameZh": "张宝",
+      "imageKey": "张宝",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaz24-0600",
+      "nameZh": "张梁",
+      "imageKey": "张梁",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmah25-0601",
+      "nameZh": "皇甫嵩",
+      "imageKey": "皇甫嵩",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmal26-0602",
+      "nameZh": "卢植",
+      "imageKey": "卢植",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaz27-0603",
+      "nameZh": "朱儁",
+      "imageKey": "朱儁",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmas28-0604",
+      "nameZh": "孙坚",
+      "imageKey": "孙坚",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmas29-0605",
+      "nameZh": "孙策",
+      "imageKey": "孙策",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmat30-0606",
+      "nameZh": "太史慈",
+      "imageKey": "太史慈",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mwac31-0607",
+      "nameZh": "黄飞鸿",
+      "imageKey": "黄飞鸿",
+      "era": "文艺复兴",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mwac32-0608",
+      "nameZh": "陈家洛",
+      "imageKey": "陈家洛",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mwal33-0609",
+      "nameZh": "令狐冲",
+      "imageKey": "令狐冲",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-claa34-0610",
+      "nameZh": "阿尔达希尔一世",
+      "imageKey": "阿尔达希尔一世",
+      "era": "古典时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-cmal35-0611",
+      "nameZh": "吕布",
+      "imageKey": "吕布",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-mmaz36-0612",
+      "nameZh": "耶律大石",
+      "imageKey": "耶律大石",
+      "era": "中世纪",
+      "faction": "中亚"
+    },
+    {
+      "cardId": "af-clak37-0613",
+      "nameZh": "迦腻色伽一世",
+      "imageKey": "迦腻色伽一世",
+      "era": "古典时代",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-cmam38-0614",
+      "nameZh": "马超",
+      "imageKey": "马超",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaz39-0615",
+      "nameZh": "赵云",
+      "imageKey": "赵云",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-irzz40-0616",
+      "nameZh": "张自忠",
+      "imageKey": "张自忠",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-irzf41-0617",
+      "nameZh": "傅作义",
+      "imageKey": "傅作义",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-irzc42-0618",
+      "nameZh": "蔡和森",
+      "imageKey": "蔡和森",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-irzz43-0619",
+      "nameZh": "张勋",
+      "imageKey": "张勋",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaz44-0620",
+      "nameZh": "祖冲之",
+      "imageKey": "祖冲之",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmac45-0621",
+      "nameZh": "陈霸先",
+      "imageKey": "陈霸先",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmal46-0622",
+      "nameZh": "刘裕",
+      "imageKey": "刘裕",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmal47-0623",
+      "nameZh": "谢灵运",
+      "imageKey": "谢灵运",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-imay48-0624",
+      "nameZh": "袁隆平",
+      "imageKey": "袁隆平",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-imad49-0625",
+      "nameZh": "邓稼先",
+      "imageKey": "邓稼先",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-imay50-0626",
+      "nameZh": "于敏",
+      "imageKey": "于敏",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-irzi51-0627",
+      "nameZh": "伊藤博文",
+      "imageKey": "伊藤博文",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-izza52-0628",
+      "nameZh": "安倍晋三",
+      "imageKey": "安倍晋三",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-irzt53-0629",
+      "nameZh": "东条英机",
+      "imageKey": "东条英机",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-irzy54-0630",
+      "nameZh": "山本五十六",
+      "imageKey": "山本五十六",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-izal55-0631",
+      "nameZh": "卢武铉",
+      "imageKey": "卢武铉",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-izaw56-0632",
+      "nameZh": "文在寅",
+      "imageKey": "文在寅",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-izal57-0633",
+      "nameZh": "李敏镐",
+      "imageKey": "李敏镐",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-izal58-0634",
+      "nameZh": "李光耀",
+      "imageKey": "李光耀",
+      "era": "现代",
+      "faction": "东南亚"
+    },
+    {
+      "cardId": "af-irza59-0635",
+      "nameZh": "埃米利奥·F·阿奎纳多",
+      "imageKey": "埃米利奥·F·阿奎纳多",
+      "era": "工业革命",
+      "faction": "东南亚"
+    },
+    {
+      "cardId": "af-izat60-0636",
+      "nameZh": "东姑阿都拉曼",
+      "imageKey": "东姑阿都拉曼",
+      "era": "现代",
+      "faction": "东南亚"
+    },
+    {
+      "cardId": "af-izat62-0638",
+      "nameZh": "唐纳德·特朗普",
+      "imageKey": "唐纳德·特朗普",
+      "era": "信息时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-izab63-0639",
+      "nameZh": "乔·拜登",
+      "imageKey": "乔·拜登",
+      "era": "信息时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-irzr64-0640",
+      "nameZh": "里希特霍芬",
+      "imageKey": "里希特霍芬",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-rvat65-0641",
+      "nameZh": "路易-阿道夫·梯也尔",
+      "imageKey": "路易-阿道夫·梯也尔",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-irzs66-0642",
+      "nameZh": "伦德施泰特",
+      "imageKey": "伦德施泰特",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-izam67-0643",
+      "nameZh": "马克龙",
+      "imageKey": "马克龙",
+      "era": "信息时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-cmas68-0644",
+      "nameZh": "孙思邈",
+      "imageKey": "孙思邈",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-smmo69-0645",
+      "nameZh": "摩西",
+      "imageKey": "摩西",
+      "era": "神话时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-smzo70-0646",
+      "nameZh": "琐罗亚斯德",
+      "imageKey": "琐罗亚斯德",
+      "era": "神话时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-smma71-0647",
+      "nameZh": "摩诃毗罗",
+      "imageKey": "摩诃毗罗",
+      "era": "神话时代",
+      "faction": "印度"
+    },
+    {
+      "cardId": "af-clga72-0648",
+      "nameZh": "恺撒大帝",
+      "imageKey": "恺撒大帝",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-cljy73-0649",
+      "nameZh": "耶稣",
+      "imageKey": "耶稣",
+      "era": "古典时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-clzc74-0650",
+      "nameZh": "蔡伦",
+      "imageKey": "蔡伦",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmum75-0651",
+      "nameZh": "穆罕穆德",
+      "imageKey": "穆罕穆德",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-izak76-0652",
+      "nameZh": "桐生一马",
+      "imageKey": "桐生一马",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-izac77-0653",
+      "nameZh": "春日一番",
+      "imageKey": "春日一番",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-izaa78-0654",
+      "nameZh": "荒川真澄",
+      "imageKey": "荒川真澄",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-izad79-0655",
+      "nameZh": "丹帝",
+      "imageKey": "丹帝",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-izat80-0656",
+      "nameZh": "托尼·史塔克",
+      "imageKey": "托尼·史塔克",
+      "era": "信息时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-izas81-0657",
+      "nameZh": "史蒂芬·罗杰斯",
+      "imageKey": "史蒂芬·罗杰斯",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-izat82-0658",
+      "nameZh": "雷神索尔",
+      "imageKey": "雷神索尔",
+      "era": "神话时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-izab83-0659",
+      "nameZh": "布鲁斯·班纳",
+      "imageKey": "布鲁斯·班纳",
+      "era": "信息时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-cmar84-0660",
+      "nameZh": "花木兰",
+      "imageKey": "花木兰",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmas85-0661",
+      "nameZh": "宋江",
+      "imageKey": "宋江",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmal86-0662",
+      "nameZh": "卢俊义",
+      "imageKey": "卢俊义",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaw87-0663",
+      "nameZh": "吴用",
+      "imageKey": "吴用",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmag88-0664",
+      "nameZh": "公孙胜",
+      "imageKey": "公孙胜",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmag89-0665",
+      "nameZh": "关胜",
+      "imageKey": "关胜",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmal90-0666",
+      "nameZh": "林冲",
+      "imageKey": "林冲",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmap91-0667",
+      "nameZh": "秦明",
+      "imageKey": "秦明",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmah92-0668",
+      "nameZh": "呼延灼",
+      "imageKey": "呼延灼",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmah93-0669",
+      "nameZh": "花荣",
+      "imageKey": "花荣",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmac94-0670",
+      "nameZh": "柴进",
+      "imageKey": "柴进",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmal95-0671",
+      "nameZh": "李应",
+      "imageKey": "李应",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaz96-0672",
+      "nameZh": "朱仝",
+      "imageKey": "朱仝",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmal97-0673",
+      "nameZh": "鲁智深",
+      "imageKey": "鲁智深",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaw98-0674",
+      "nameZh": "武松",
+      "imageKey": "武松",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmad99-0675",
+      "nameZh": "董平",
+      "imageKey": "董平",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaz00-0676",
+      "nameZh": "张清",
+      "imageKey": "张清",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmay01-0677",
+      "nameZh": "杨志",
+      "imageKey": "杨志",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmax02-0678",
+      "nameZh": "徐宁",
+      "imageKey": "徐宁",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmas03-0679",
+      "nameZh": "索超",
+      "imageKey": "索超",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmad04-0680",
+      "nameZh": "戴宗",
+      "imageKey": "戴宗",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmal05-0681",
+      "nameZh": "刘唐",
+      "imageKey": "刘唐",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmal06-0682",
+      "nameZh": "李逵",
+      "imageKey": "李逵",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmas07-0683",
+      "nameZh": "史进",
+      "imageKey": "史进",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmam08-0684",
+      "nameZh": "穆弘",
+      "imageKey": "穆弘",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmal09-0685",
+      "nameZh": "雷横",
+      "imageKey": "雷横",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmal10-0686",
+      "nameZh": "李俊",
+      "imageKey": "李俊",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmar11-0687",
+      "nameZh": "阮小二",
+      "imageKey": "阮小二",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaz12-0688",
+      "nameZh": "张横",
+      "imageKey": "张横",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmar13-0689",
+      "nameZh": "阮小五",
+      "imageKey": "阮小五",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmas14-0690",
+      "nameZh": "张顺",
+      "imageKey": "张顺",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmar15-0691",
+      "nameZh": "阮小七",
+      "imageKey": "阮小七",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmay16-0692",
+      "nameZh": "杨雄",
+      "imageKey": "杨雄",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmas17-0693",
+      "nameZh": "石秀",
+      "imageKey": "石秀",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaj18-0694",
+      "nameZh": "解珍",
+      "imageKey": "解珍",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaj19-0695",
+      "nameZh": "解宝",
+      "imageKey": "解宝",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmay20-0696",
+      "nameZh": "燕青",
+      "imageKey": "燕青",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaz21-0697",
+      "nameZh": "朱武",
+      "imageKey": "朱武",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaa22-0698",
+      "nameZh": "安道全",
+      "imageKey": "安道全",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmag23-0699",
+      "nameZh": "金大坚",
+      "imageKey": "金大坚",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmas24-0700",
+      "nameZh": "萧让",
+      "imageKey": "萧让",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmat25-0701",
+      "nameZh": "汤隆",
+      "imageKey": "汤隆",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmaz26-0702",
+      "nameZh": "朱贵",
+      "imageKey": "朱贵",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmad27-0703",
+      "nameZh": "杜兴",
+      "imageKey": "杜兴",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmal28-0704",
+      "nameZh": "凌振",
+      "imageKey": "凌振",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cmac29-0705",
+      "nameZh": "晁盖",
+      "imageKey": "晁盖",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-clzy30-0706",
+      "nameZh": "周瑜",
+      "imageKey": "周瑜",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-clgj31-0707",
+      "nameZh": "郭嘉",
+      "imageKey": "郭嘉",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-clxy32-0708",
+      "nameZh": "荀彧",
+      "imageKey": "荀彧",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-clpt33-0709",
+      "nameZh": "庞统",
+      "imageKey": "庞统",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cllx34-0710",
+      "nameZh": "陆逊",
+      "imageKey": "陆逊",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-clhz35-0711",
+      "nameZh": "黄忠",
+      "imageKey": "黄忠",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-clzl36-0712",
+      "nameZh": "张辽",
+      "imageKey": "张辽",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-clsh37-0713",
+      "nameZh": "司马徽",
+      "imageKey": "司马徽",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cldz38-0714",
+      "nameZh": "董卓",
+      "imageKey": "董卓",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-clys39-0715",
+      "nameZh": "袁绍",
+      "imageKey": "袁绍",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cllb40-0716",
+      "nameZh": "刘表",
+      "imageKey": "刘表",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-clly41-0717",
+      "nameZh": "刘焉",
+      "imageKey": "刘焉",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-clda42-0718",
+      "nameZh": "邓艾",
+      "imageKey": "邓艾",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-cljw43-0719",
+      "nameZh": "姜维",
+      "imageKey": "姜维",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-clmh44-0720",
+      "nameZh": "孟获",
+      "imageKey": "孟获",
+      "era": "古典时代",
+      "faction": "东南亚"
+    },
+    {
+      "cardId": "af-clsx45-0721",
+      "nameZh": "士燮",
+      "imageKey": "士燮",
+      "era": "古典时代",
+      "faction": "东南亚"
+    },
+    {
+      "cardId": "af-icpa46-0722",
+      "nameZh": "亚历山大·塞维鲁",
+      "imageKey": "亚历山大·塞维鲁",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-icpa47-0723",
+      "nameZh": "马克西米努斯·色雷克斯",
+      "imageKey": "马克西米努斯·色雷克斯",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-icpa48-0724",
+      "nameZh": "戴克里先",
+      "imageKey": "戴克里先",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-icpa49-0725",
+      "nameZh": "阿提拉",
+      "imageKey": "阿提拉",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-icpa50-0726",
+      "nameZh": "檀石槐",
+      "imageKey": "檀石槐",
+      "era": "古典时代",
+      "faction": "中亚"
+    },
+    {
+      "cardId": "af-icpa51-0727",
+      "nameZh": "轲比能",
+      "imageKey": "轲比能",
+      "era": "古典时代",
+      "faction": "中亚"
+    },
+    {
+      "cardId": "af-icpa52-0728",
+      "nameZh": "卑弥呼",
+      "imageKey": "卑弥呼",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa53-0729",
+      "nameZh": "乌尔班二世",
+      "imageKey": "乌尔班二世",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-icpa54-0730",
+      "nameZh": "托马斯·阿奎那",
+      "imageKey": "托马斯·阿奎那",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-icpa55-0731",
+      "nameZh": "君士坦丁十一世",
+      "imageKey": "君士坦丁十一世",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-icpa56-0732",
+      "nameZh": "真岛吾朗",
+      "imageKey": "真岛吾朗",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa57-0733",
+      "nameZh": "八神隆之",
+      "imageKey": "八神隆之",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa58-0734",
+      "nameZh": "冴岛大河",
+      "imageKey": "冴岛大河",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa59-0735",
+      "nameZh": "堂岛大吾",
+      "imageKey": "堂岛大吾",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa60-0736",
+      "nameZh": "墨子",
+      "imageKey": "墨子",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa61-0737",
+      "nameZh": "宝生永梦",
+      "imageKey": "宝生永梦",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa62-0738",
+      "nameZh": "足立宏一",
+      "imageKey": "足立宏一",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa63-0739",
+      "nameZh": "难波悠",
+      "imageKey": "难波悠",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa64-0740",
+      "nameZh": "向田纱荣子",
+      "imageKey": "向田纱荣子",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa65-0741",
+      "nameZh": "艾里克·富泽",
+      "imageKey": "艾里克·富泽",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa66-0742",
+      "nameZh": "不二宫千岁",
+      "imageKey": "不二宫千岁",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa67-0743",
+      "nameZh": "青木辽",
+      "imageKey": "青木辽",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa68-0744",
+      "nameZh": "桐生战兔",
+      "imageKey": "桐生战兔",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa69-0745",
+      "nameZh": "常磐庄吾",
+      "imageKey": "常磐庄吾",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa70-0746",
+      "nameZh": "飞电或人",
+      "imageKey": "飞电或人",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa71-0747",
+      "nameZh": "神山飞羽真",
+      "imageKey": "神山飞羽真",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa72-0748",
+      "nameZh": "荆天明",
+      "imageKey": "荆天明",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa73-0749",
+      "nameZh": "盖聂",
+      "imageKey": "盖聂",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa74-0750",
+      "nameZh": "扶苏",
+      "imageKey": "扶苏",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa75-0751",
+      "nameZh": "慕容复",
+      "imageKey": "慕容复",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa76-0752",
+      "nameZh": "黄蓉",
+      "imageKey": "黄蓉",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa77-0753",
+      "nameZh": "洪七公",
+      "imageKey": "洪七公",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa78-0754",
+      "nameZh": "欧阳锋",
+      "imageKey": "欧阳锋",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa79-0755",
+      "nameZh": "一灯",
+      "imageKey": "一灯",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa80-0756",
+      "nameZh": "周伯通",
+      "imageKey": "周伯通",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa81-0757",
+      "nameZh": "石破天",
+      "imageKey": "石破天",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa82-0758",
+      "nameZh": "大法师梅林",
+      "imageKey": "大法师梅林",
+      "era": "神话时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-icpa83-0759",
+      "nameZh": "亚瑟王",
+      "imageKey": "亚瑟王",
+      "era": "神话时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-icpa84-0760",
+      "nameZh": "彼得·帕克",
+      "imageKey": "彼得·帕克",
+      "era": "信息时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-icpa85-0761",
+      "nameZh": "斯科特·朗",
+      "imageKey": "斯科特·朗",
+      "era": "信息时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-icpa86-0762",
+      "nameZh": "史蒂芬·斯特兰奇",
+      "imageKey": "史蒂芬·斯特兰奇",
+      "era": "信息时代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-icpa87-0763",
+      "nameZh": "尚气",
+      "imageKey": "尚气",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa88-0764",
+      "nameZh": "戚少商",
+      "imageKey": "戚少商",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa89-0765",
+      "nameZh": "诸葛正我",
+      "imageKey": "诸葛正我",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa90-0766",
+      "nameZh": "元十三限",
+      "imageKey": "元十三限",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa91-0767",
+      "nameZh": "无情",
+      "imageKey": "无情",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa92-0768",
+      "nameZh": "铁手",
+      "imageKey": "铁手",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa93-0769",
+      "nameZh": "追命",
+      "imageKey": "追命",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa94-0770",
+      "nameZh": "冷血",
+      "imageKey": "冷血",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa95-0771",
+      "nameZh": "楚相玉",
+      "imageKey": "楚相玉",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa96-0772",
+      "nameZh": "顾惜朝",
+      "imageKey": "顾惜朝",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa97-0773",
+      "nameZh": "司马穰苴",
+      "imageKey": "司马穰苴",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa98-0774",
+      "nameZh": "尉缭",
+      "imageKey": "尉缭",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa99-0775",
+      "nameZh": "苏庇路里乌玛一世",
+      "imageKey": "苏庇路里乌玛一世",
+      "era": "青铜时代",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-icpa100-0776",
+      "nameZh": "伊尹",
+      "imageKey": "伊尹",
+      "era": "青铜时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa101-0777",
+      "nameZh": "李相赫",
+      "imageKey": "李相赫",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa102-0778",
+      "nameZh": "李元浩",
+      "imageKey": "李元浩",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa103-0779",
+      "nameZh": "简自豪",
+      "imageKey": "简自豪",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa104-0780",
+      "nameZh": "宋义进",
+      "imageKey": "宋义进",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa105-0781",
+      "nameZh": "姜承錄",
+      "imageKey": "姜承錄",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa106-0782",
+      "nameZh": "金泰相",
+      "imageKey": "金泰相",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa107-0783",
+      "nameZh": "王越",
+      "imageKey": "王越",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa108-0784",
+      "nameZh": "王龙",
+      "imageKey": "王龙",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa109-0785",
+      "nameZh": "王力",
+      "imageKey": "王力",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa110-0786",
+      "nameZh": "王嬴",
+      "imageKey": "王嬴",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa111-0787",
+      "nameZh": "李悝",
+      "imageKey": "李悝",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa112-0788",
+      "nameZh": "慎到",
+      "imageKey": "慎到",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa113-0789",
+      "nameZh": "申不害",
+      "imageKey": "申不害",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa114-0790",
+      "nameZh": "荀子",
+      "imageKey": "荀子",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa115-0791",
+      "nameZh": "杨朱",
+      "imageKey": "杨朱",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa117-0793",
+      "nameZh": "鬼谷子",
+      "imageKey": "鬼谷子",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa118-0794",
+      "nameZh": "吕不韦",
+      "imageKey": "吕不韦",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa119-0795",
+      "nameZh": "许行",
+      "imageKey": "许行",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa120-0796",
+      "nameZh": "艾吉奥·奥迪托雷",
+      "imageKey": "艾吉奥·奥迪托雷",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-icpa121-0797",
+      "nameZh": "阿泰尔·伊本·拉哈德",
+      "imageKey": "阿泰尔·伊本·拉哈德",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-icpa122-0798",
+      "nameZh": "康纳·肯威",
+      "imageKey": "康纳·肯威",
+      "era": "文艺复兴",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-icpa123-0799",
+      "nameZh": "爱德华·肯威",
+      "imageKey": "爱德华·肯威",
+      "era": "文艺复兴",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-icpa124-0800",
+      "nameZh": "亚诺·多里安",
+      "imageKey": "亚诺·多里安",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-icpa125-0801",
+      "nameZh": "雅各·弗莱",
+      "imageKey": "雅各·弗莱",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-icpa126-0802",
+      "nameZh": "伊薇·弗莱",
+      "imageKey": "伊薇·弗莱",
+      "era": "工业革命",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-icpa127-0803",
+      "nameZh": "巴耶克",
+      "imageKey": "巴耶克",
+      "era": "古典时代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-icpa128-0804",
+      "nameZh": "艾雅",
+      "imageKey": "艾雅",
+      "era": "古典时代",
+      "faction": "非洲"
+    },
+    {
+      "cardId": "af-icpa129-0805",
+      "nameZh": "卡珊德拉",
+      "imageKey": "卡珊德拉",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-icpa130-0806",
+      "nameZh": "阿利克西欧斯",
+      "imageKey": "阿利克西欧斯",
+      "era": "古典时代",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-icpa131-0807",
+      "nameZh": "艾沃尔",
+      "imageKey": "艾沃尔",
+      "era": "中世纪",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-icpa132-0808",
+      "nameZh": "巴辛姆·伊本·伊沙克",
+      "imageKey": "巴辛姆·伊本·伊沙克",
+      "era": "中世纪",
+      "faction": "中东"
+    },
+    {
+      "cardId": "af-icpa133-0809",
+      "nameZh": "奈绪江",
+      "imageKey": "奈绪江",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa134-0810",
+      "nameZh": "弥助",
+      "imageKey": "弥助",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa135-0811",
+      "nameZh": "杨振宁",
+      "imageKey": "杨振宁",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa136-0812",
+      "nameZh": "麦克斯韦",
+      "imageKey": "麦克斯韦",
+      "era": "文艺复兴",
+      "faction": "欧洲"
+    },
+    {
+      "cardId": "af-icpa137-0813",
+      "nameZh": "柯文哲",
+      "imageKey": "柯文哲",
+      "era": "信息时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa138-0814",
+      "nameZh": "赵九章",
+      "imageKey": "赵九章",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa139-0815",
+      "nameZh": "戴笠",
+      "imageKey": "戴笠",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa140-0816",
+      "nameZh": "蒋经国",
+      "imageKey": "蒋经国",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa141-0817",
+      "nameZh": "朱德",
+      "imageKey": "朱德",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa142-0818",
+      "nameZh": "彭德怀",
+      "imageKey": "彭德怀",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa143-0819",
+      "nameZh": "艾森豪威尔",
+      "imageKey": "艾森豪威尔",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-icpa144-0820",
+      "nameZh": "林彪",
+      "imageKey": "林彪",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa145-0821",
+      "nameZh": "粟裕",
+      "imageKey": "粟裕",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa146-0822",
+      "nameZh": "李奇微",
+      "imageKey": "李奇微",
+      "era": "现代",
+      "faction": "美洲"
+    },
+    {
+      "cardId": "af-icpa147-0823",
+      "nameZh": "刘伯承",
+      "imageKey": "刘伯承",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa148-0824",
+      "nameZh": "贺龙",
+      "imageKey": "贺龙",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa149-0825",
+      "nameZh": "陈毅",
+      "imageKey": "陈毅",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa150-0826",
+      "nameZh": "罗荣桓",
+      "imageKey": "罗荣桓",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa151-0827",
+      "nameZh": "徐向前",
+      "imageKey": "徐向前",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa152-0828",
+      "nameZh": "聂荣臻",
+      "imageKey": "聂荣臻",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa153-0829",
+      "nameZh": "叶挺",
+      "imageKey": "叶挺",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa154-0830",
+      "nameZh": "叶剑英",
+      "imageKey": "叶剑英",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa155-0831",
+      "nameZh": "张国焘",
+      "imageKey": "张国焘",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa156-0832",
+      "nameZh": "白崇禧",
+      "imageKey": "白崇禧",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa157-0833",
+      "nameZh": "段祺瑞",
+      "imageKey": "段祺瑞",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa158-0834",
+      "nameZh": "冯国璋",
+      "imageKey": "冯国璋",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa159-0835",
+      "nameZh": "杨增新",
+      "imageKey": "杨增新",
+      "era": "工业革命",
+      "faction": "中亚"
+    },
+    {
+      "cardId": "af-icpa160-0836",
+      "nameZh": "马鸿逵",
+      "imageKey": "马鸿逵",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa161-0837",
+      "nameZh": "马步芳",
+      "imageKey": "马步芳",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-icpa162-0838",
+      "nameZh": "马仲英",
+      "imageKey": "马仲英",
+      "era": "工业革命",
+      "faction": "中亚"
+    },
+    {
+      "cardId": "af-diya7-0844",
+      "nameZh": "哆啦A梦",
+      "imageKey": "哆啦A梦",
+      "era": "未来时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-diya8-0845",
+      "nameZh": "野比大雄",
+      "imageKey": "野比大雄",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-diya10-0847",
+      "nameZh": "黄克诚",
+      "imageKey": "黄克诚",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-diya11-0848",
+      "nameZh": "霍元甲",
+      "imageKey": "霍元甲",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-diya12-0849",
+      "nameZh": "杨露禅",
+      "imageKey": "杨露禅",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-diya13-0850",
+      "nameZh": "杜心武",
+      "imageKey": "杜心武",
+      "era": "工业革命",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-diya14-0851",
+      "nameZh": "叶问",
+      "imageKey": "叶问",
+      "era": "现代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-diya15-0852",
+      "nameZh": "薛仁贵",
+      "imageKey": "薛仁贵",
+      "era": "中世纪",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-diya16-0853",
+      "nameZh": "廉颇",
+      "imageKey": "廉颇",
+      "era": "古典时代",
+      "faction": "东亚"
+    },
+    {
+      "cardId": "af-diya17-0854",
+      "nameZh": "戚继光",
+      "imageKey": "戚继光",
+      "era": "文艺复兴",
+      "faction": "东亚"
+    }
+  ],
+  "presets": [
+    {
+      "deckId": "dynasty-command",
+      "name": "王朝统御",
+      "description": "以统御和持续增益巩固两条战线。",
+      "cardIds": [
+        "af-eaae1-0193",
+        "af-ipewe8-0463",
+        "af-cafe3-0077",
+        "af-csae8-0054",
+        "af-bsam2-0001",
+        "af-ipefi18-0494",
+        "af-csaa4-0043",
+        "af-cpse5-0368",
+        "af-ease1-0156",
+        "af-evee5-0079",
+        "af-csae7-0046",
+        "af-evee1-0075"
+      ],
+      "coverCardId": "af-eaae1-0193"
+    },
+    {
+      "deckId": "vanguard-charge",
+      "name": "兵锋突进",
+      "description": "利用调遣与部署爆发快速建立战力。",
+      "cardIds": [
+        "af-npve7-0339",
+        "af-ipab2-0425",
+        "af-ipaa2-0247",
+        "af-esaa6-0125",
+        "af-ipsa6-0269",
+        "af-btea3-0011",
+        "af-imhe21-0446",
+        "af-imme22-0447",
+        "af-mmsa26-0451",
+        "af-mmde14-0439",
+        "af-evae6-0098",
+        "af-bvff1-0027"
+      ],
+      "coverCardId": "af-npve7-0339"
+    },
+    {
+      "deckId": "grand-strategy",
+      "name": "谋略纵横",
+      "description": "通过手牌干扰、变阵和夺势掌控节奏。",
+      "cardIds": [
+        "af-mpab6-0388",
+        "af-mpae1-0286",
+        "af-mpae2-0305",
+        "af-bsab5-0037",
+        "af-mpsa7-0389",
+        "af-ipaww9-0464",
+        "af-npse3-0335",
+        "af-mwme5-0219",
+        "af-mpse1-0304",
+        "af-izam67-0643",
+        "af-izal55-0631",
+        "af-mpse1-0383"
+      ],
+      "coverCardId": "af-mpab6-0388"
+    },
+    {
+      "deckId": "civilization-concord",
+      "name": "文明共鸣",
+      "description": "依靠时代与地区连携在终局成长。",
+      "cardIds": [
+        "af-icsa9-0254",
+        "af-eaaa3-0095",
+        "af-fpah71-0547",
+        "af-mmci11-0487",
+        "af-bsam2-0001",
+        "af-mveb9-0035",
+        "af-esaa9-0101",
+        "af-ipej42-0518",
+        "af-fpis63-0539",
+        "af-cmas68-0644",
+        "af-rsej16-0492",
+        "af-evee1-0075"
+      ],
+      "coverCardId": "af-icsa9-0254"
+    },
+    {
+      "deckId": "mythic-coalition",
+      "name": "幻想联军",
+      "description": "运用复制、复归与特殊部署制造变化。",
+      "cardIds": [
+        "af-maas76-0552",
+        "af-mieb7-0039",
+        "af-esmm7-0126",
+        "af-namg33-0509",
+        "af-mieb8-0034",
+        "af-miib1-0018",
+        "af-icpa85-0761",
+        "af-icpa52-0728",
+        "af-cmag88-0664",
+        "af-msam5-0004",
+        "af-icpa71-0747",
+        "af-icpa130-0806"
+      ],
+      "coverCardId": "af-maas76-0552"
+    },
+    {
+      "deckId": "stellar-competition",
+      "name": "群星竞技",
+      "description": "用低费连携争夺制势权并爆发收尾。",
+      "cardIds": [
+        "af-miae5-0201",
+        "af-mpae2-0305",
+        "af-ease5-0179",
+        "af-mhvi1-0277",
+        "af-ntaa8-0331",
+        "af-mtaa3-0315",
+        "af-mtsr8-0311",
+        "af-mtsr7-0310",
+        "af-mpsr7-0283",
+        "af-nset38-0514",
+        "af-icpa102-0778",
+        "af-icpa101-0777"
+      ],
+      "coverCardId": "af-miae5-0201"
+    }
+  ],
+  "featuredCards": [
+    {
+      "cardId": "af-csaa4-0043",
+      "characterUid": "0043",
+      "characterId": "CSAA4",
+      "slug": "csaa4-0043",
+      "nameZh": "秦始皇",
+      "cost": 4,
+      "power": 10,
+      "abilities": [
+        {
+          "abilityId": "comeback_stride",
+          "nameZh": "大一统追",
+          "textZh": "大一统追：当自身费用为4，并且当前战功不高于2时，回合结束时若此处落后，自身战力+2。",
+          "trigger": "turn_end",
+          "conditions": [
+            {
+              "type": "is_trailing",
+              "operator": "equals",
+              "value": true
+            },
+            {
+              "type": "card_cost",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "type": "stake",
+              "operator": "at_most",
+              "value": 2
+            }
+          ],
+          "target": {
+            "type": "self"
+          },
+          "effects": [
+            {
+              "type": "add_power",
+              "amount": 2
+            }
+          ],
+          "priority": 100
+        }
+      ],
+      "abilityId": "comeback_stride",
+      "abilityArgs": {
+        "amount": 2
+      },
+      "abilityTextZh": "大一统追：当自身费用为4，并且当前战功不高于2时，回合结束时若此处落后，自身战力+2。",
+      "trigger": "turn_end",
+      "targetRule": "self",
+      "faction": "东亚",
+      "era": "古典时代",
+      "region": "东亚",
+      "profession": "政治家",
+      "identity": "皇帝",
+      "rarity": "S级",
+      "description": "中国第一位皇帝，完成了大一统，统一文字度量衡。",
+      "sourceAbility": "大一统：统一文化和科技树，减少区域差异损耗。",
+      "tags": [
+        "统治者",
+        "建设",
+        "政治"
+      ],
+      "set": "aeonfront-core",
+      "packId": "core",
+      "role": "战线控制与调遣",
+      "version": 2,
+      "schemaVersion": 2,
+      "balance": {
+        "basePowerValue": 10,
+        "immediateEffectValue": 0,
+        "delayedEffectValue": 0.44,
+        "ongoingEffectValue": 0,
+        "disruptionValue": 0,
+        "flexibilityValue": 0,
+        "conditionDiscount": 0.24,
+        "riskDiscount": 0,
+        "expectedTotalValue": 10.2,
+        "ceilingValue": 12.35,
+        "floorValue": 9.76
+      },
+      "imageKey": "秦始皇",
+      "designSource": "characters.json#uid=0043",
+      "catalogVersion": "CORE-2-b143b8e0"
+    },
+    {
+      "cardId": "af-cmar84-0660",
+      "characterUid": "0660",
+      "characterId": "CMAR84",
+      "slug": "cmar84-0660",
+      "nameZh": "花木兰",
+      "cost": 5,
+      "power": 13,
+      "abilities": [
+        {
+          "abilityId": "exchange_fortunes",
+          "nameZh": "替父换势",
+          "textZh": "替父换势：当对局进入第1回合后，并且控制战线不多于2条时，交换此处两名最强角色的当前战力。",
+          "trigger": "on_deploy",
+          "conditions": [
+            {
+              "type": "turn",
+              "operator": "at_least",
+              "value": 1
+            },
+            {
+              "type": "controlled_fronts",
+              "operator": "at_most",
+              "value": 2,
+              "scope": "owner"
+            }
+          ],
+          "target": {
+            "type": "strongest_card",
+            "side": "both",
+            "scope": "source_front",
+            "count": 2
+          },
+          "effects": [
+            {
+              "type": "swap_power"
+            }
+          ],
+          "priority": 100
+        },
+        {
+          "abilityId": "conditional_execution",
+          "nameZh": "替父斩将",
+          "textZh": "替父斩将：当本局首次触发，并且尚未举旗时，若此处落后，令最弱敌军阵亡。",
+          "trigger": "on_deploy",
+          "conditions": [
+            {
+              "type": "is_trailing",
+              "operator": "equals",
+              "value": true
+            },
+            {
+              "type": "first_trigger",
+              "operator": "equals",
+              "value": true
+            },
+            {
+              "type": "banner_raised",
+              "operator": "equals",
+              "value": false,
+              "scope": "owner"
+            }
+          ],
+          "target": {
+            "type": "weakest_card",
+            "side": "opponent",
+            "scope": "source_front",
+            "count": 1
+          },
+          "effects": [
+            {
+              "type": "destroy_cards"
+            }
+          ],
+          "priority": 99
+        }
+      ],
+      "abilityId": "exchange_fortunes",
+      "abilityArgs": {
+        "amount": 0
+      },
+      "abilityTextZh": "替父换势：当对局进入第1回合后，并且控制战线不多于2条时，交换此处两名最强角色的当前战力。\n替父斩将：当本局首次触发，并且尚未举旗时，若此处落后，令最弱敌军阵亡。",
+      "trigger": "on_deploy",
+      "targetRule": "strongest_card",
+      "faction": "东亚",
+      "era": "中世纪",
+      "region": "东亚",
+      "profession": "将领",
+      "identity": "巾帼英雄",
+      "rarity": "S级",
+      "description": "替父从军，征战沙场十二年，立下赫赫战功，是中国古代女英雄的典范。",
+      "sourceAbility": "替父从军：具备卓越的战斗能力和坚韧的意志，能在男性的军事环境中保持卓越的军事表现和强大的隐蔽性。",
+      "tags": [
+        "英雄",
+        "军事",
+        "忠诚"
+      ],
+      "set": "aeonfront-core",
+      "packId": "core",
+      "role": "构筑支点与跨线协同",
+      "version": 2,
+      "schemaVersion": 2,
+      "balance": {
+        "basePowerValue": 13,
+        "immediateEffectValue": 0.3,
+        "delayedEffectValue": 0,
+        "ongoingEffectValue": 0,
+        "disruptionValue": 0.3,
+        "flexibilityValue": 0,
+        "conditionDiscount": 0.4,
+        "riskDiscount": 0,
+        "expectedTotalValue": 13.2,
+        "ceilingValue": 16.15,
+        "floorValue": 12.6
+      },
+      "imageKey": "花木兰",
+      "designSource": "characters.json#uid=0660",
+      "catalogVersion": "CORE-2-b143b8e0"
+    },
+    {
+      "cardId": "af-rvse1-0147",
+      "characterUid": "0147",
+      "characterId": "RVSE1",
+      "slug": "rvse1-0147",
+      "nameZh": "达·芬奇",
+      "cost": 4,
+      "power": 10,
+      "abilities": [
+        {
+          "abilityId": "mirror_champion",
+          "nameZh": "达芬映强",
+          "textZh": "达芬映强：当自身具有发明标签，并且手牌数量不多于3时，自身复制此处最强敌军的当前战力。",
+          "trigger": "on_deploy",
+          "conditions": [
+            {
+              "type": "tag",
+              "operator": "includes",
+              "value": "发明"
+            },
+            {
+              "type": "hand_count",
+              "operator": "at_most",
+              "value": 3,
+              "scope": "owner"
+            }
+          ],
+          "target": {
+            "type": "self"
+          },
+          "effects": [
+            {
+              "type": "copy_power",
+              "target": {
+                "type": "strongest_card",
+                "side": "opponent",
+                "scope": "source_front",
+                "count": 2
+              }
+            }
+          ],
+          "priority": 100
+        },
+        {
+          "abilityId": "line_suppression",
+          "nameZh": "达芬镇线",
+          "textZh": "达芬镇线：当当前战功不高于4时，此处所有敌军战力-2。",
+          "trigger": "on_deploy",
+          "conditions": [
+            {
+              "type": "stake",
+              "operator": "at_most",
+              "value": 4
+            }
+          ],
+          "target": {
+            "type": "same_front_enemies"
+          },
+          "effects": [
+            {
+              "type": "reduce_power",
+              "amount": 2
+            }
+          ],
+          "priority": 99
+        }
+      ],
+      "abilityId": "mirror_champion",
+      "abilityArgs": {
+        "amount": 0
+      },
+      "abilityTextZh": "达芬映强：当自身具有发明标签，并且手牌数量不多于3时，自身复制此处最强敌军的当前战力。\n达芬镇线：当当前战功不高于4时，此处所有敌军战力-2。",
+      "trigger": "on_deploy",
+      "targetRule": "self",
+      "faction": "欧洲",
+      "era": "文艺复兴",
+      "region": "欧洲",
+      "profession": "博学者",
+      "identity": "巨匠",
+      "rarity": "SS级",
+      "description": "文艺复兴三杰之一，在艺术和科学领域均有巨大成就。",
+      "sourceAbility": "达·芬奇手稿：解锁跨领域科技的突破和艺术灵感。",
+      "tags": [
+        "艺术",
+        "科学",
+        "发明"
+      ],
+      "set": "aeonfront-core",
+      "packId": "core",
+      "role": "战线控制与调遣",
+      "version": 2,
+      "schemaVersion": 2,
+      "balance": {
+        "basePowerValue": 10,
+        "immediateEffectValue": 0.22,
+        "delayedEffectValue": 0,
+        "ongoingEffectValue": 0,
+        "disruptionValue": 0.22,
+        "flexibilityValue": 0,
+        "conditionDiscount": 0.24,
+        "riskDiscount": 0,
+        "expectedTotalValue": 10.2,
+        "ceilingValue": 12.7,
+        "floorValue": 9.76
+      },
+      "imageKey": "达·芬奇",
+      "designSource": "characters.json#uid=0147",
+      "catalogVersion": "CORE-2-b143b8e0"
+    },
+    {
+      "cardId": "af-msam5-0004",
+      "characterUid": "0004",
+      "characterId": "MSAM5",
+      "slug": "msam5-0004",
+      "nameZh": "吉尔伽美什",
+      "cost": 5,
+      "power": 11,
+      "abilities": [
+        {
+          "abilityId": "recall_the_fallen",
+          "nameZh": "不朽招魂",
+          "textZh": "不朽招魂：当自身来自中东，并且拥有制势权时，最早阵亡的友军返回手牌。",
+          "trigger": "on_deploy",
+          "conditions": [
+            {
+              "type": "region",
+              "operator": "equals",
+              "value": "中东"
+            },
+            {
+              "type": "has_initiative",
+              "operator": "equals",
+              "value": true
+            }
+          ],
+          "target": {
+            "type": "owner_graveyard",
+            "count": 1
+          },
+          "effects": [
+            {
+              "type": "return_to_hand"
+            }
+          ],
+          "priority": 100
+        },
+        {
+          "abilityId": "strategic_withdrawal",
+          "nameZh": "不朽退守",
+          "textZh": "不朽退守：当拥有制势权，并且阵亡区至少有1名角色时，若此处落后，自身返回手牌，然后抽1张牌。",
+          "trigger": "turn_end",
+          "conditions": [
+            {
+              "type": "is_trailing",
+              "operator": "equals",
+              "value": true
+            },
+            {
+              "type": "has_initiative",
+              "operator": "equals",
+              "value": true
+            },
+            {
+              "type": "graveyard_count",
+              "operator": "at_least",
+              "value": 1,
+              "scope": "owner"
+            }
+          ],
+          "target": {
+            "type": "self"
+          },
+          "effects": [
+            {
+              "type": "return_to_hand"
+            },
+            {
+              "type": "draw_cards",
+              "amount": 1,
+              "target": {
+                "type": "owner"
+              }
+            }
+          ],
+          "limit": {
+            "scope": "once_per_game"
+          },
+          "priority": 99
+        }
+      ],
+      "abilityId": "recall_the_fallen",
+      "abilityArgs": {
+        "amount": 0
+      },
+      "abilityTextZh": "不朽招魂：当自身来自中东，并且拥有制势权时，最早阵亡的友军返回手牌。\n不朽退守：当拥有制势权，并且阵亡区至少有1名角色时，若此处落后，自身返回手牌，然后抽1张牌。",
+      "trigger": "on_deploy",
+      "targetRule": "owner_graveyard",
+      "faction": "中东",
+      "era": "神话时代",
+      "region": "中东",
+      "profession": "冒险家",
+      "identity": "国王",
+      "rarity": "SS级",
+      "description": "乌鲁克国王，人类最早史诗中的英雄人物。",
+      "sourceAbility": "不朽探索：临时获得超凡的韧性和力量。",
+      "tags": [
+        "英雄",
+        "神话",
+        "力量"
+      ],
+      "set": "aeonfront-core",
+      "packId": "core",
+      "role": "构筑支点与跨线协同",
+      "version": 2,
+      "schemaVersion": 2,
+      "balance": {
+        "basePowerValue": 11,
+        "immediateEffectValue": 0.99,
+        "delayedEffectValue": 0.99,
+        "ongoingEffectValue": 0,
+        "disruptionValue": 0,
+        "flexibilityValue": 0,
+        "conditionDiscount": 0.4,
+        "riskDiscount": 0,
+        "expectedTotalValue": 12.57,
+        "ceilingValue": 15.52,
+        "floorValue": 10.6
+      },
+      "imageKey": "吉尔伽美什",
+      "designSource": "characters.json#uid=0004",
+      "catalogVersion": "CORE-2-b143b8e0"
+    }
+  ],
+  "fronts": [
+    {
+      "frontId": "bronze-road",
+      "nameZh": "青铜驿道",
+      "nameEn": "Bronze Relay",
+      "descriptionZh": "在此部署的卡牌费用降低1，最低为1。",
+      "descriptionEn": "Cards deployed here cost 1 less, to a minimum of 1.",
+      "effectId": "cost_down",
+      "effectArgs": {
+        "amount": 1
+      },
+      "enabled": true,
+      "weight": 1,
+      "complexity": "simple",
+      "categories": [
+        "economy"
+      ],
+      "minimumClientVersion": "aeonfront/3",
+      "packId": "core",
+      "tags": [
+        "军令",
+        "节奏"
+      ],
+      "strategyZh": "适合提前展开高费角色。",
+      "art": {
+        "artKey": "bronze-road",
+        "altZh": "青铜驿道战线场景",
+        "focalPoint": {
+          "x": 0.5,
+          "y": 0.46
+        }
+      }
+    },
+    {
+      "frontId": "mist-bastion",
+      "nameZh": "雾锁堡垒",
+      "nameEn": "Mist Bastion",
+      "descriptionZh": "在此部署的卡牌延迟到下一回合揭示。",
+      "descriptionEn": "Cards played here reveal next turn.",
+      "effectId": "delayed_reveal",
+      "effectArgs": {},
+      "enabled": true,
+      "weight": 1,
+      "complexity": "advanced",
+      "categories": [
+        "hidden",
+        "dynamic"
+      ],
+      "minimumClientVersion": "aeonfront/3",
+      "packId": "core",
+      "tags": [
+        "伏兵",
+        "隐藏"
+      ],
+      "strategyZh": "隐藏战力能干扰对手判断。",
+      "art": {
+        "artKey": "mist-bastion",
+        "altZh": "雾锁堡垒战线场景",
+        "focalPoint": {
+          "x": 0.5,
+          "y": 0.46
+        }
+      }
+    },
+    {
+      "frontId": "future-beacon",
+      "nameZh": "未来信标",
+      "nameEn": "Future Beacon",
+      "descriptionZh": "未来时代角色费用-1且战力+2。",
+      "descriptionEn": "Future-era cards cost 1 less and have +2 power.",
+      "effectId": "future_beacon",
+      "effectArgs": {
+        "era": "未来时代",
+        "cost": 1,
+        "amount": 2
+      },
+      "enabled": true,
+      "weight": 1,
+      "complexity": "advanced",
+      "categories": [
+        "trait",
+        "economy"
+      ],
+      "minimumClientVersion": "aeonfront/3",
+      "packId": "core",
+      "tags": [
+        "时代",
+        "军令"
+      ],
+      "strategyZh": "未来角色可更早形成终局阵线。",
+      "art": {
+        "artKey": "future-beacon",
+        "altZh": "未来信标战线场景",
+        "focalPoint": {
+          "x": 0.5,
+          "y": 0.46
+        }
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowDownUp, ChevronLeft, ChevronRight, Search } from 'lucide-vue-next';
+import { ArrowDownUp, ChevronLeft, ChevronRight, LibraryBig, RefreshCw, Search } from 'lucide-vue-next';
 import type { AbilityTrigger, CardDefinition } from '~/common/src/index';
 import { CARDS } from '~/data/catalog';
 import { TRIGGER_LABELS } from '~/utils/ability-text';
@@ -40,6 +40,7 @@ const filtered = computed(() => {
 const pages = computed(() => Math.max(1, Math.ceil(filtered.value.length / pageSize)));
 const visible = computed(() => filtered.value.slice((page.value - 1) * pageSize, page.value * pageSize));
 watch([search, era, region, profession, cost, tag, trigger, sortBy], () => { page.value = 1; });
+const reset = () => { search.value='';era.value='all';region.value='all';profession.value='all';cost.value='all';tag.value='all';trigger.value='all';sortBy.value='name'; };
 </script>
 
 <template>
@@ -47,16 +48,17 @@ watch([search, era, region, profession, cost, tag, trigger, sortBy], () => { pag
     <header class="page-heading"><div><span class="eyebrow">角色档案</span><h1>{{ $t('cards.title') }}</h1><p>{{ $t('cards.result', { count: filtered.length }) }} · 点击卡牌查看完整技能说明</p></div></header>
     <div class="collection-toolbar">
       <label class="search-field"><Search :size="17" /><input v-model="search" class="input" :placeholder="$t('common.search')"></label>
-      <select v-model="cost" class="select"><option value="all">{{ $t('cards.cost') }} · {{ $t('common.all') }}</option><option v-for="value in 6" :key="value" :value="String(value)">{{ value }}</option></select>
-      <select v-model="era" class="select"><option value="all">{{ $t('cards.era') }} · {{ $t('common.all') }}</option><option v-for="value in eras" :key="value">{{ value }}</option></select>
-      <select v-model="region" class="select"><option value="all">{{ $t('cards.region') }} · {{ $t('common.all') }}</option><option v-for="value in regions" :key="value">{{ value }}</option></select>
-      <select v-model="profession" class="select"><option value="all">{{ $t('cards.profession') }} · {{ $t('common.all') }}</option><option v-for="value in professions" :key="value">{{ value }}</option></select>
-      <select v-model="tag" class="select"><option value="all">标签 · 全部</option><option v-for="value in tags" :key="value">{{ value }}</option></select>
-      <select v-model="trigger" class="select"><option value="all">技能触发 · 全部</option><option v-for="value in triggers" :key="value" :value="value">{{ TRIGGER_LABELS[value] }}</option></select>
-      <label class="sort-control"><ArrowDownUp :size="16" /><select v-model="sortBy" class="select"><option value="name">按名称</option><option value="cost">按费用</option><option value="power">按战力</option></select></label>
+      <select v-model="cost" class="select" aria-label="费用筛选"><option value="all">{{ $t('cards.cost') }} · {{ $t('common.all') }}</option><option v-for="value in 6" :key="value" :value="String(value)">{{ value }}</option></select>
+      <select v-model="era" class="select" aria-label="时代筛选"><option value="all">{{ $t('cards.era') }} · {{ $t('common.all') }}</option><option v-for="value in eras" :key="value">{{ value }}</option></select>
+      <select v-model="region" class="select" aria-label="地区筛选"><option value="all">{{ $t('cards.region') }} · {{ $t('common.all') }}</option><option v-for="value in regions" :key="value">{{ value }}</option></select>
+      <select v-model="profession" class="select" aria-label="职业筛选"><option value="all">{{ $t('cards.profession') }} · {{ $t('common.all') }}</option><option v-for="value in professions" :key="value">{{ value }}</option></select>
+      <select v-model="tag" class="select" aria-label="标签筛选"><option value="all">标签 · 全部</option><option v-for="value in tags" :key="value">{{ value }}</option></select>
+      <select v-model="trigger" class="select" aria-label="技能触发筛选"><option value="all">技能触发 · 全部</option><option v-for="value in triggers" :key="value" :value="value">{{ TRIGGER_LABELS[value] }}</option></select>
+      <label class="sort-control"><ArrowDownUp :size="16" /><select v-model="sortBy" class="select" aria-label="排序"><option value="name">按名称</option><option value="cost">按费用</option><option value="power">按战力</option></select></label>
     </div>
-    <div class="card-grid"><CardTile v-for="card in visible" :key="card.cardId" :card="card" @select="detail = card" /></div>
-    <div class="pagination"><button class="icon-button" type="button" aria-label="上一页" :disabled="page <= 1" @click="page--"><ChevronLeft :size="18" /></button><span>{{ page }} / {{ pages }}</span><button class="icon-button" type="button" aria-label="下一页" :disabled="page >= pages" @click="page++"><ChevronRight :size="18" /></button></div>
+    <div v-if="visible.length" class="card-grid"><CardTile v-for="card in visible" :key="card.cardId" :card="card" @select="detail = card" /></div>
+    <div v-if="visible.length" class="pagination"><button class="icon-button" type="button" aria-label="上一页" :disabled="page <= 1" @click="page--"><ChevronLeft :size="18" /></button><span>{{ page }} / {{ pages }}</span><button class="icon-button" type="button" aria-label="下一页" :disabled="page >= pages" @click="page++"><ChevronRight :size="18" /></button></div>
+    <EmptyState v-else title="没有符合条件的角色" description="重置筛选后可查看全部角色卡牌。"><template #icon><LibraryBig :size="30" /></template><GameButton size="small" @click="reset"><RefreshCw :size="14" /> 重置筛选</GameButton></EmptyState>
     <CardDetailModal :card="detail" @close="detail = null" />
   </div>
 </template>

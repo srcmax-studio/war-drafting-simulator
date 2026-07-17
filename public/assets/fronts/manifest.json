@@ -1,0 +1,1520 @@
+{
+  "schemaVersion": 1,
+  "model": "managed-image-model-undisclosed",
+  "count": 72,
+  "hidden": "/assets/fronts/hidden.webp",
+  "assets": [
+    {
+      "frontId": "bronze-road",
+      "sourcePromptHash": "40dd6a4436063c08793fd36e898619b2c920e9d64ff1b56d619f89f0168318b5",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/bronze-road.webp",
+      "hd": "/assets/fronts/hd/bronze-road.webp",
+      "thumbnail": "/assets/fronts/thumbnails/bronze-road.webp",
+      "hashes": {
+        "web": "b9e58dfd14ecc9bd120d2bc4280a1d5b40438a77bf1a3ca78a7f89e8e6fe53c1",
+        "hd": "72c8a5466d29937825cd53d37d50ea6e01ec191325da0d36d276c4cf2ecbc000",
+        "thumbnail": "2f582bf9badef14e54acdf522372ead1b5d12ac4a55a5c431e89281ea8dba1db"
+      },
+      "dominantColor": "#55544b",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "青铜驿道战线场景"
+    },
+    {
+      "frontId": "taxed-crossing",
+      "sourcePromptHash": "00aa7f7b326df3ce3b86e4c6773af085eb6a9109aff8e92f374918b411ef4d96",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/taxed-crossing.webp",
+      "hd": "/assets/fronts/hd/taxed-crossing.webp",
+      "thumbnail": "/assets/fronts/thumbnails/taxed-crossing.webp",
+      "hashes": {
+        "web": "342c5c9d50688ac9bcd713d3c01866dd1acb5c81c9278ba95083dd5861c90e45",
+        "hd": "6a5b0db2b305ea5a35ec86c3d1a0f3b38d4153e6619282d2a58644cfd2633795",
+        "thumbnail": "3bcbbc8705d2a2baeabeadf3c9fdc9f6fa3d96d5dc96f5d5593fe2652bbf7930"
+      },
+      "dominantColor": "#3f4b41",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "榷税渡口战线场景"
+    },
+    {
+      "frontId": "signal-ridge",
+      "sourcePromptHash": "6f56af8f297c92240c9b8e591d250c15e6d7d8cf8ab5e02d2e675d336907ff6c",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/signal-ridge.webp",
+      "hd": "/assets/fronts/hd/signal-ridge.webp",
+      "thumbnail": "/assets/fronts/thumbnails/signal-ridge.webp",
+      "hashes": {
+        "web": "e44969595e3935d6270fad09fafcb25218fd06ac9223511870c92ae024567640",
+        "hd": "6c0800bc4a953eaba51c0c1de0f47c3b44268fe1d310e74dfa2ee5af35e5d365",
+        "thumbnail": "d0bd3679095db0d8b9080163c26ea81b4281af8a62d2ee74fa8bb34f7048ec07"
+      },
+      "dominantColor": "#3f443e",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "烽讯高地战线场景"
+    },
+    {
+      "frontId": "salt-marsh",
+      "sourcePromptHash": "be2affa2e6b6d89b108e0413e481d1eeae948f63c613092dd7e37987759aaf94",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/salt-marsh.webp",
+      "hd": "/assets/fronts/hd/salt-marsh.webp",
+      "thumbnail": "/assets/fronts/thumbnails/salt-marsh.webp",
+      "hashes": {
+        "web": "6e68c686da8d445cd42c6c3f29eb5005540505c7d1a9c17506537fedb8c1719d",
+        "hd": "06e1bfdbca34bf7aa5ae4242805db18c94733438202d6ad0e17a3db158d592f9",
+        "thumbnail": "4f5b795810e1b2487dd19092ec5986eaefa77517802d7d405f664a1f13ccf94a"
+      },
+      "dominantColor": "#5f6a6a",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "白盐泽战线场景"
+    },
+    {
+      "frontId": "age-archive",
+      "sourcePromptHash": "75e27defe9b8a08157e2f33a0dbdaa405c88e303ab0e855a32acde41c8caefd7",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/age-archive.webp",
+      "hd": "/assets/fronts/hd/age-archive.webp",
+      "thumbnail": "/assets/fronts/thumbnails/age-archive.webp",
+      "hashes": {
+        "web": "e2cf37fe8c0e070e000f6b15084d705ff3b8b206100f34ce320b6193404dc1b7",
+        "hd": "2e7071dfe149f7394e11921a241af9855bf12f7e843e594c31a58d1d9a434fa2",
+        "thumbnail": "1961bffa2b1a62a3f846580d0879cbda69fa2d999d7a1ed35be0046896ff92c7"
+      },
+      "dominantColor": "#43463c",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "纪元档案馆战线场景"
+    },
+    {
+      "frontId": "eastern-meridian",
+      "sourcePromptHash": "44e7fd7bc2307f61dd18f1df9ed555498a9d3d1aef048525b7fdf8f5fd53c15d",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/eastern-meridian.webp",
+      "hd": "/assets/fronts/hd/eastern-meridian.webp",
+      "thumbnail": "/assets/fronts/thumbnails/eastern-meridian.webp",
+      "hashes": {
+        "web": "d638ceb562631b27bccf8eb616e9eb1b682ba4cd91681c7ee505a69a09ff3cb2",
+        "hd": "ca62935b3f73a92a323b2639a36a8aa305ad41ffb13a32d3770b4095a15bdd58",
+        "thumbnail": "d967ac1465915c3d76622c7ca9dd8942941a511a8fb95a3eedcee3516fc63807"
+      },
+      "dominantColor": "#3f4037",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "东陆经纬台战线场景"
+    },
+    {
+      "frontId": "artificer-yard",
+      "sourcePromptHash": "584f18ddbeb2a44d9bdf0b89359ca46095d14f0db1381c5b874ad7108753a6ec",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/artificer-yard.webp",
+      "hd": "/assets/fronts/hd/artificer-yard.webp",
+      "thumbnail": "/assets/fronts/thumbnails/artificer-yard.webp",
+      "hashes": {
+        "web": "776a02fdd376fe2b3b6b29df31802a40dfa87c66be24c6bd713fee02f1e3f931",
+        "hd": "4b065f00450846b2479d97d0772ef0b88773ea26ff5cdcab4012b345a0e11046",
+        "thumbnail": "48599bc9da2e8107f95cdac98b867edb05d7eaf65f63ec2a5d739343207a37aa"
+      },
+      "dominantColor": "#454035",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "百工营造司战线场景"
+    },
+    {
+      "frontId": "crown-court",
+      "sourcePromptHash": "6947285e44db52e2a7a63953eac017425ac6ef50457b6eedd1205a73bef347fd",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/crown-court.webp",
+      "hd": "/assets/fronts/hd/crown-court.webp",
+      "thumbnail": "/assets/fronts/thumbnails/crown-court.webp",
+      "hashes": {
+        "web": "078793723cad17a3fc0032884d842fa7d2bf69cd473ce9f4d41e069bad7b2e25",
+        "hd": "49fe11476ba46d60a069d32de9c4d834828544e472b755e3c56f8d7e980c2f7c",
+        "thumbnail": "47b69d905d5e1cf86a43cd9985e75091548e67b17fa6cfcd119efc5130c148dc"
+      },
+      "dominantColor": "#343230",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "列王议庭战线场景"
+    },
+    {
+      "frontId": "westward-current",
+      "sourcePromptHash": "ff0ca8480382b277b95abe10668b29220dbadaeccf3dcbc7e017f541fa0640d0",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/westward-current.webp",
+      "hd": "/assets/fronts/hd/westward-current.webp",
+      "thumbnail": "/assets/fronts/thumbnails/westward-current.webp",
+      "hashes": {
+        "web": "8e592970adb24974c6abfaa75fc06c858c5a3210351bdc9c4fc1ec13d782e5e2",
+        "hd": "9b8633ca11aaa4b4a04cf4489513668a6ffef5c647ba54a505b31baf60131e08",
+        "thumbnail": "24a6ed7e77c1a7ff0b829e2fbb2d6e6c0f9dec306f812622abefe323799b5164"
+      },
+      "dominantColor": "#40483f",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "西迁风道战线场景"
+    },
+    {
+      "frontId": "broken-compass",
+      "sourcePromptHash": "ac4c13ce2f1f63a82b770f4959448bd96e362609854ce12f34248b0ce60998d8",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/broken-compass.webp",
+      "hd": "/assets/fronts/hd/broken-compass.webp",
+      "thumbnail": "/assets/fronts/thumbnails/broken-compass.webp",
+      "hashes": {
+        "web": "8d19d33c197812fa701a51364eda5282ecc8bd422857155987f8299075f79fbf",
+        "hd": "26823cf80f03a9d202e8c4a3e61f1ad5c3a4ca0e92d883e240ab52f397700725",
+        "thumbnail": "e4d9282834df05777d70c82fb600cd4b8a5d1060f42624b662df44b2c8fcf5b6"
+      },
+      "dominantColor": "#3d4742",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "失准罗盘场战线场景"
+    },
+    {
+      "frontId": "muster-gate",
+      "sourcePromptHash": "d33e09a397f66316b966b9e6d85d1d24e6de95cb708d6474b87eb453921b9702",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/muster-gate.webp",
+      "hd": "/assets/fronts/hd/muster-gate.webp",
+      "thumbnail": "/assets/fronts/thumbnails/muster-gate.webp",
+      "hashes": {
+        "web": "5ee69e0501221476915ed75c36c8bdeef1a323690dbd627d87fbe325c513a842",
+        "hd": "5f66eb57afc7f5e145fa1c1324d48419913fb40c26673b9d09d1a8934d535c01",
+        "thumbnail": "ed983448e9db98c6f33c08b4aea213aab7a203b7e6f747861efa84e8e8d46099"
+      },
+      "dominantColor": "#403e37",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "万民征集门战线场景"
+    },
+    {
+      "frontId": "mirror-foundry",
+      "sourcePromptHash": "a81b9d3c9a392370447053908306e303f48d5a3afa84dea73722900c094f17db",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/mirror-foundry.webp",
+      "hd": "/assets/fronts/hd/mirror-foundry.webp",
+      "thumbnail": "/assets/fronts/thumbnails/mirror-foundry.webp",
+      "hashes": {
+        "web": "ea0c28e4ded652abba667e59e4a3213744a2a84e70718f809fa721f7de6c6cf8",
+        "hd": "09459691f96b0798d029f5c88e531f9450c5c06fedef9b50d1b041b7fee5eacb",
+        "thumbnail": "fa875170c787513447346a158f3630063a9c476f6ef253fa6555c5c81a098a12"
+      },
+      "dominantColor": "#3c3b32",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "镜铸工坊战线场景"
+    },
+    {
+      "frontId": "sealed-dispatch",
+      "sourcePromptHash": "c18d3589d8063387c9f62f49cff8f8c70e226a1b7da0a03359ee78b958fe8354",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/sealed-dispatch.webp",
+      "hd": "/assets/fronts/hd/sealed-dispatch.webp",
+      "thumbnail": "/assets/fronts/thumbnails/sealed-dispatch.webp",
+      "hashes": {
+        "web": "4fcf6e432d914271470bf42c75784368a355239abe511c7e4136a9ec2a15471c",
+        "hd": "4727c365bcd9f414a3c3fddebf2932a355a42f9c6f8843a4a2752a578caace88",
+        "thumbnail": "4d5b08fdce4df5c20799cb8bc25e1e18ec5f34d3f970e847071e8eefe1b9b04b"
+      },
+      "dominantColor": "#435655",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "封缄驿站战线场景"
+    },
+    {
+      "frontId": "execution-ground",
+      "sourcePromptHash": "1aef83c4154d54d1389fc0bc725ff7702b9b4b88a02c50eb734637ca216323ba",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/execution-ground.webp",
+      "hd": "/assets/fronts/hd/execution-ground.webp",
+      "thumbnail": "/assets/fronts/thumbnails/execution-ground.webp",
+      "hashes": {
+        "web": "6e37f452a23a76d25bc393087c32d8aa030bbb67294b5c68664588a4abe57fbf",
+        "hd": "afb28a7edb5b83bfa7d3669d6735a0ea9c6d111467609b429cffda6554a882e4",
+        "thumbnail": "18447c6e3dbb242417c1c098fb68f963f693555ddd4de9833c0217312ef14286"
+      },
+      "dominantColor": "#354845",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "断旌刑场战线场景"
+    },
+    {
+      "frontId": "returning-shore",
+      "sourcePromptHash": "57233ff0846cb96d7162081c06262835c917f81ed9d9aaf32e6e9c42bf8bbaaa",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/returning-shore.webp",
+      "hd": "/assets/fronts/hd/returning-shore.webp",
+      "thumbnail": "/assets/fronts/thumbnails/returning-shore.webp",
+      "hashes": {
+        "web": "258ac63e962b7b3a3303bd7d51c0f6521e4630c3354366ad1aba511fc43d54c7",
+        "hd": "96c6359157ecc3472dd2d40299ed6d91b0589e4a19197f89fa4bedf5a27725bb",
+        "thumbnail": "5c9c740dd7f0989326d99019fbdb6d468cc1d58b1a30ecf6e1eeeccb83656df8"
+      },
+      "dominantColor": "#4a493e",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "归帆古岸战线场景"
+    },
+    {
+      "frontId": "wide-formation",
+      "sourcePromptHash": "f77e77811cc26386c04d8f255474d3b4d88731d974afdcadc943f9a80ea85df2",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/wide-formation.webp",
+      "hd": "/assets/fronts/hd/wide-formation.webp",
+      "thumbnail": "/assets/fronts/thumbnails/wide-formation.webp",
+      "hashes": {
+        "web": "43e3945cec937356256f3708a801014857b8c269770aa197502517e9c183899e",
+        "hd": "1b1bea42c8ee4e16994a7f743822734d3c95f017b54d004476fc48a895899ca6",
+        "thumbnail": "8d750712a669cdd4923eafc7f1762c008d6230bffdb315f7011eb07b3fd09532"
+      },
+      "dominantColor": "#404238",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "开阔阵原战线场景"
+    },
+    {
+      "frontId": "narrow-pass",
+      "sourcePromptHash": "57ef03ac908a34c1093f9d47feaed9f8d41a80f2fb8c5a601cb30f978303f3b1",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/narrow-pass.webp",
+      "hd": "/assets/fronts/hd/narrow-pass.webp",
+      "thumbnail": "/assets/fronts/thumbnails/narrow-pass.webp",
+      "hashes": {
+        "web": "544ee6fe275ef1d821ae922f0551df8fc57f8b76028c3dc8decfa40cece5aa3c",
+        "hd": "c2b3e0db8cf09beb50b1996c9564e474d52b3917897abaa41dcf248907fc5865",
+        "thumbnail": "a75a747183548f85d9a72b53f2acd59c39970b41f9d6400a6f3da21644af908b"
+      },
+      "dominantColor": "#373d38",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "一线天关战线场景"
+    },
+    {
+      "frontId": "light-foot-ward",
+      "sourcePromptHash": "d37a26d754d2465307b389a08dbe1abd59cc4b4b28eb8b56aa0dc5d380a8a312",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/light-foot-ward.webp",
+      "hd": "/assets/fronts/hd/light-foot-ward.webp",
+      "thumbnail": "/assets/fronts/thumbnails/light-foot-ward.webp",
+      "hashes": {
+        "web": "797dbbf1824470180ccf4fcc776d878dac98e4d0d42b87c16a9fb1240412df2d",
+        "hd": "6b741c0cf1b8a0a8a0b7d8361cc0a0f5992bdd504e1d4e7bbac7a28ac275ca3a",
+        "thumbnail": "74594eb998d00497c797ebca8fa6e2d624dd18e344999870c73d5641f97b25be"
+      },
+      "dominantColor": "#474d43",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "轻骑戒域战线场景"
+    },
+    {
+      "frontId": "heavy-standard",
+      "sourcePromptHash": "79dd378f9ac0a140e7f58c91761635372eb8f12fcd799db6d94602ea97183c7c",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/heavy-standard.webp",
+      "hd": "/assets/fronts/hd/heavy-standard.webp",
+      "thumbnail": "/assets/fronts/thumbnails/heavy-standard.webp",
+      "hashes": {
+        "web": "cc1b40d4d1653b6a7bab0a5437a4283a35be6dfc05debfe87fe2b589194bffc8",
+        "hd": "d80adb24da0c110f4eca2b5e27d84e146df597abca7cdfdc628b7d7aa9bca38d",
+        "thumbnail": "521af893e47f537e47224fcd152129bac8f60e20c5ce0b0fde754f78f75f3341"
+      },
+      "dominantColor": "#3f463d",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "重旌禁区战线场景"
+    },
+    {
+      "frontId": "silent-obelisk",
+      "sourcePromptHash": "815f035a7652e0a25dbb3c9d77abe5010ae816db17f415d9958a2f3633f9a54d",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/silent-obelisk.webp",
+      "hd": "/assets/fronts/hd/silent-obelisk.webp",
+      "thumbnail": "/assets/fronts/thumbnails/silent-obelisk.webp",
+      "hashes": {
+        "web": "840c9d0f14f38af922ac04f585bcd83bbbd107b4c2648f7f0d7717c7cdb4f824",
+        "hd": "e6fda394142653348612bb03673d09bbb843b16624868f62c8e3d204b8c73fa1",
+        "thumbnail": "39e331cc5ebe88838de48d7c7924e97d6d1f38c0403c84db90bd6dc5b801a3e8"
+      },
+      "dominantColor": "#354345",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "无铭碑林战线场景"
+    },
+    {
+      "frontId": "echo-chamber",
+      "sourcePromptHash": "0c0e32508cc2296a0e5fc5c331488e8b00417eb0fb3b080d5b53b67adb4f21ef",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/echo-chamber.webp",
+      "hd": "/assets/fronts/hd/echo-chamber.webp",
+      "thumbnail": "/assets/fronts/thumbnails/echo-chamber.webp",
+      "hashes": {
+        "web": "92ab0a241ed443a4020d83f516900b6cdf05ac54232e1b75a2e535845da2b0a3",
+        "hd": "ae528cbe98ef3b689ab35d0d29110b3b27c9d3c21e56bf9fff4db0bc049c0681",
+        "thumbnail": "48940cdac6723d0f87811cb4d948821a9e372c319140f50930e0c366c7a8407b"
+      },
+      "dominantColor": "#423e35",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "回响军府战线场景"
+    },
+    {
+      "frontId": "mist-bastion",
+      "sourcePromptHash": "98f640ee53a5d2a63d634ae9255582b1836cbb70fd22c7582ce9beda7307ea39",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/mist-bastion.webp",
+      "hd": "/assets/fronts/hd/mist-bastion.webp",
+      "thumbnail": "/assets/fronts/thumbnails/mist-bastion.webp",
+      "hashes": {
+        "web": "96d95e29ef07784ffb02686a9e2fd4dad89ec37278c309d99d723bca70918020",
+        "hd": "f7dd667e10cd726cd893343cac4b6b44fa664badf3753a37fa77ae0d49fc82f9",
+        "thumbnail": "fe93f45ea7e3327dfaecdee5624b8293c78c70c382b6d0aae1d9e76b493a03e6"
+      },
+      "dominantColor": "#4a4c40",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "雾锁堡垒战线场景"
+    },
+    {
+      "frontId": "watchtower-zero",
+      "sourcePromptHash": "529f7414c796704578f639afa8d06037ef2d3a5c65db65ca7519b1188b4b4005",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/watchtower-zero.webp",
+      "hd": "/assets/fronts/hd/watchtower-zero.webp",
+      "thumbnail": "/assets/fronts/thumbnails/watchtower-zero.webp",
+      "hashes": {
+        "web": "e7cc4f1d81e0b55ad1be3749e9ad6946d98f567dbcecc26963aade308da7ade0",
+        "hd": "73197495e1a619c26d65bfbb111ca2e63d8ee592a57d281520baa45530ec5b49",
+        "thumbnail": "3a9ecfb13053a5c9c9556266b7eb5726c86cfe0469401cdcf58e70160908d8c8"
+      },
+      "dominantColor": "#42453e",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "先觉望楼战线场景"
+    },
+    {
+      "frontId": "cipher-field",
+      "sourcePromptHash": "0e6ad4064feabcf3e034517b633b92e630a2af28fc9cebfbd365c5e168d0ff85",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/cipher-field.webp",
+      "hd": "/assets/fronts/hd/cipher-field.webp",
+      "thumbnail": "/assets/fronts/thumbnails/cipher-field.webp",
+      "hashes": {
+        "web": "9220709efdbde8759871853a427adc73efe6dbeca3df269fbc9aa0f513ba9716",
+        "hd": "3e027fb845f32fa81da08ba8a26792336fa30c23a979795474cbd11a2992ae5d",
+        "thumbnail": "c11d93111382420ca779b73ce26171a8b2b21a7dd50fd3729b44b2317c697256"
+      },
+      "dominantColor": "#3b423c",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "密算原战线场景"
+    },
+    {
+      "frontId": "upended-dais",
+      "sourcePromptHash": "4715e33d133e3e1d89fe607a20a2156194f52b7c3610db354de0514daf2773e7",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/upended-dais.webp",
+      "hd": "/assets/fronts/hd/upended-dais.webp",
+      "thumbnail": "/assets/fronts/thumbnails/upended-dais.webp",
+      "hashes": {
+        "web": "36190a857ca309e674d30c7cf4e0742a41fd90b82829d591c7e02f1fa188f792",
+        "hd": "c79c99405bfc4fb832630984e0c4c9934b0591e17567acfd021b8b9b0d17c6c5",
+        "thumbnail": "29b05aeeab54c84cef1930ebdf35fb914e7736df7b900e237ab9828aebf3181c"
+      },
+      "dominantColor": "#413c33",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "倒悬武台战线场景"
+    },
+    {
+      "frontId": "debtor-camp",
+      "sourcePromptHash": "bc466bb4c04ef62f96d41d530a50f206367da89d35582e926c3c92fa905202e3",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/debtor-camp.webp",
+      "hd": "/assets/fronts/hd/debtor-camp.webp",
+      "thumbnail": "/assets/fronts/thumbnails/debtor-camp.webp",
+      "hashes": {
+        "web": "94c1286986344408ba09c1fbfadc4ff33beb1511887230e05f1887f68583fc55",
+        "hd": "6bfc155636a0b832f33b5513393bee0ce353ae0c12d13587c4fd1f3b1974acf1",
+        "thumbnail": "490569b75d9d10e5b1484118cde88c91b3fc94ece4b310cd962e188ae91395cd"
+      },
+      "dominantColor": "#4a5959",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "负功营战线场景"
+    },
+    {
+      "frontId": "plain-banner",
+      "sourcePromptHash": "1745dd2081c84e089882f8fe41e78837f657993d03a367239389d0d46dcea14c",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/plain-banner.webp",
+      "hd": "/assets/fronts/hd/plain-banner.webp",
+      "thumbnail": "/assets/fronts/thumbnails/plain-banner.webp",
+      "hashes": {
+        "web": "f53e8cc3135d4df892365568cb883850d3bde6f29bfd343eeb637adbc0bf21c2",
+        "hd": "055b89d108167d49d4d9ea78de62290dfc16ae57a57c9c0e142b7608e2a0dd54",
+        "thumbnail": "2084f4777da835a015b70cf32ac151fd4ecec27ac4f1926817d6481da2537c4d"
+      },
+      "dominantColor": "#474741",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "素旌台战线场景"
+    },
+    {
+      "frontId": "lone-watch",
+      "sourcePromptHash": "cf7ab19638505d0e71a910bfa3aaca18f64e956f4cf9c839e9bd04a0b3b9434a",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/lone-watch.webp",
+      "hd": "/assets/fronts/hd/lone-watch.webp",
+      "thumbnail": "/assets/fronts/thumbnails/lone-watch.webp",
+      "hashes": {
+        "web": "c0d7e87994a6cc2a9f49a80475f19ccdc6581e5a77e2f3c5cc6802898c980e67",
+        "hd": "ed78f5c254a9be89ba2399dce4dcdb97fdfe2734719022abc8ca2d5880cd979d",
+        "thumbnail": "41a118952ca99660d263f8193c124fe7ad8a80b40e2e6496bcf65a3ae2f51066"
+      },
+      "dominantColor": "#393f3a",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "孤烽哨战线场景"
+    },
+    {
+      "frontId": "packed-rampart",
+      "sourcePromptHash": "0a1a8e39b4822607bbc4fa6ce438b288727eb4301358260aa9cd8fb0ec1e8ffe",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/packed-rampart.webp",
+      "hd": "/assets/fronts/hd/packed-rampart.webp",
+      "thumbnail": "/assets/fronts/thumbnails/packed-rampart.webp",
+      "hashes": {
+        "web": "f054ceb44565777fbc377a84ff6e792e47e7100923ee2147f446cc58afc87b7f",
+        "hd": "e278bd46278e5f0624cd90034e0114282b021756d15f425223d1e4d5d9a2775c",
+        "thumbnail": "392d5d75a251896dc77641a0990d0ab230cd7c4b4eacbb710525e9561534dcc1"
+      },
+      "dominantColor": "#404138",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "连营壁战线场景"
+    },
+    {
+      "frontId": "confluence-table",
+      "sourcePromptHash": "cfc3b7cf3354ea0f48b17fe8cc96fbae4d6bed79588828f002af4dd70504b7c4",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/confluence-table.webp",
+      "hd": "/assets/fronts/hd/confluence-table.webp",
+      "thumbnail": "/assets/fronts/thumbnails/confluence-table.webp",
+      "hashes": {
+        "web": "a35480de55bf3b62ace64a868565ccbd3e8150ba6859335092e8a568a65f845e",
+        "hd": "8a491fc3292caf6a1853fe8e14fd9e25a30ec31d5f800d06db9a093cbe45b941",
+        "thumbnail": "9aa68ac3e677a6558018624ee5f9c8cc1527377e33f38151fec9c4b22581ae19"
+      },
+      "dominantColor": "#40453f",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "万代会盟桌战线场景"
+    },
+    {
+      "frontId": "ancient-concord",
+      "sourcePromptHash": "ea698b7373a372ca422553a6d32899c2d9c731f31dd1d558241ef9ed34be7f83",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/ancient-concord.webp",
+      "hd": "/assets/fronts/hd/ancient-concord.webp",
+      "thumbnail": "/assets/fronts/thumbnails/ancient-concord.webp",
+      "hashes": {
+        "web": "1cb83f4569550a3bec3962635059e2ae18affb8f7b95f454fee26cb0d3d9b016",
+        "hd": "7d704d4cb839cfd6a41a9dae2236c86734b5d2d208fe936b4b754ff0f8f89637",
+        "thumbnail": "da657dbf237aa3904d52af908930d999421452b48cb123115f20f4a6f2887050"
+      },
+      "dominantColor": "#3c443e",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "上古盟誓坛战线场景"
+    },
+    {
+      "frontId": "medieval-bastion",
+      "sourcePromptHash": "67b486656e5eaab52a97d16498e95e16b0a3626e5f9c337e45cb6f0a56f1c491",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/medieval-bastion.webp",
+      "hd": "/assets/fronts/hd/medieval-bastion.webp",
+      "thumbnail": "/assets/fronts/thumbnails/medieval-bastion.webp",
+      "hashes": {
+        "web": "833db1669462f7ca88f1f3a8eb659f9b2d381e2d9bfa8c6e1ddaccd80e77b5a4",
+        "hd": "c4f527a01c9ff5f86180a4ba4c81904c4898d2e439c85e24da04200621993405",
+        "thumbnail": "966a36ea47936c8cb4d18f649c3c20ffce164e852b1f31e28899a68e276a9fec"
+      },
+      "dominantColor": "#42433c",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "中世壁垒战线场景"
+    },
+    {
+      "frontId": "modern-exchange",
+      "sourcePromptHash": "b111e2caf501262bf39d497fa39b349a8d1b64c5548bd06e2fed7e899c6b212c",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/modern-exchange.webp",
+      "hd": "/assets/fronts/hd/modern-exchange.webp",
+      "thumbnail": "/assets/fronts/thumbnails/modern-exchange.webp",
+      "hashes": {
+        "web": "5f9f8b8cdf9f4571404098cedc348a70ecd961ba283a0393d82957f4b4cda13a",
+        "hd": "4306242df72442bad128b7ad55a8422ca91f833d4a8bc9105bac7cf01ae9ded5",
+        "thumbnail": "46618587a8852195c81d0adca7bd70a306b1473c0b4d8e6e73775f296921b5d2"
+      },
+      "dominantColor": "#3c3128",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "近世交易所战线场景"
+    },
+    {
+      "frontId": "future-beacon",
+      "sourcePromptHash": "dc916cc991a112e6435c18b120fe91a7c39e48428cfa4df1dedd49a449497a2f",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/future-beacon.webp",
+      "hd": "/assets/fronts/hd/future-beacon.webp",
+      "thumbnail": "/assets/fronts/thumbnails/future-beacon.webp",
+      "hashes": {
+        "web": "2020ebbce9cd95f9b9416c22255ce23710685289207eb2f9afe61e92fcf4c675",
+        "hd": "8498ac2b36799939706705a41612cd4a360471ed64204b7a9a931204eacc0f83",
+        "thumbnail": "d46bed0d5e588aefb8892407c609ace495dcb496065a20a2f2eb0af78e81b6b6"
+      },
+      "dominantColor": "#4a544c",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "未来信标战线场景"
+    },
+    {
+      "frontId": "single-era-citadel",
+      "sourcePromptHash": "00b46ad4ab7b5cb2316cf9d47266d11760c1ebfb32985cc92bc1468bd756f465",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/single-era-citadel.webp",
+      "hd": "/assets/fronts/hd/single-era-citadel.webp",
+      "thumbnail": "/assets/fronts/thumbnails/single-era-citadel.webp",
+      "hashes": {
+        "web": "faf0e11b7473f49e6d9183bcee8d21f8fae4f0dd8911b50b22ebce4a68de3165",
+        "hd": "ecad79becca6c8eb9c09f31e8651c9be3d3d89165336e7c394d84464c80c10a8",
+        "thumbnail": "bc35dcbc12aa46675d519b90efb898efa95ac29af399371c235ebdffa49ae9e7"
+      },
+      "dominantColor": "#4c4635",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "同代城塞战线场景"
+    },
+    {
+      "frontId": "seven-age-forum",
+      "sourcePromptHash": "d97f9b9cfaec18a2194634396180f4a66207db13d605dc32d2891d712b8a42c5",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/seven-age-forum.webp",
+      "hd": "/assets/fronts/hd/seven-age-forum.webp",
+      "thumbnail": "/assets/fronts/thumbnails/seven-age-forum.webp",
+      "hashes": {
+        "web": "e9bd5ce53b72e9f4c028c2fd4f6396d8761ea9a02eecc8aec84ea3ba0dd72e39",
+        "hd": "89cc9660ac05eb70551022daec7e5de391f6d1e181ec650ef694cf96baf9de4d",
+        "thumbnail": "c8eba78d391fb58e9ef37b012bd15a91e50fa58f5df157c21881e8675d16c1ee"
+      },
+      "dominantColor": "#3c4543",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "七纪论坛战线场景"
+    },
+    {
+      "frontId": "homeland-redoubt",
+      "sourcePromptHash": "d72d8d08d1b21b093abc2e5334ddda097ebfa6d1bdf344c9564862020faae689",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/homeland-redoubt.webp",
+      "hd": "/assets/fronts/hd/homeland-redoubt.webp",
+      "thumbnail": "/assets/fronts/thumbnails/homeland-redoubt.webp",
+      "hashes": {
+        "web": "a2696302e91e22300ec82b9737297e488b11e46eed84a1072d33f41d643c9a5c",
+        "hd": "b7f9fee83000bf96688fc1432c943179d4a03f137b0662d86238c45ad2d8d99b",
+        "thumbnail": "450b3edac1f072fea0d5e66ecfaf120da5c2a1cdd557bbc7a09fd356c06339c0"
+      },
+      "dominantColor": "#46463c",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "乡土要塞战线场景"
+    },
+    {
+      "frontId": "world-congress",
+      "sourcePromptHash": "dd3d09095f2798b94e39a1178d8ac4aa9875c98d00ec414c947a409da0a95f54",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/world-congress.webp",
+      "hd": "/assets/fronts/hd/world-congress.webp",
+      "thumbnail": "/assets/fronts/thumbnails/world-congress.webp",
+      "hashes": {
+        "web": "779fb03a02613c118ae119332a77e08e2051af18795e16caef83b27da2751209",
+        "hd": "01ed1718b63f7fbf80b90445b89614dc8df2ddc269df96b19cbdf7968961a921",
+        "thumbnail": "a505d14ba1f51aa0b27583eb2bfc45e81c66d806801fdd18281c8d682a6eaa0f"
+      },
+      "dominantColor": "#5b5a4e",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "寰宇议会战线场景"
+    },
+    {
+      "frontId": "coalition-ground",
+      "sourcePromptHash": "e9ba5e1a39d71d378af67987e1f36aaad94029bb3f05879aa98ac38504360df5",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/coalition-ground.webp",
+      "hd": "/assets/fronts/hd/coalition-ground.webp",
+      "thumbnail": "/assets/fronts/thumbnails/coalition-ground.webp",
+      "hashes": {
+        "web": "92bf3be024af948c63f288be143c31523a5f91024b5258ece589bd5e129ab943",
+        "hd": "ab07858e42026f0051999ddc301e9214a83761da33baa6cf9cfec40a9eaa9fc9",
+        "thumbnail": "0dcfae5b5761691249840040ba3d92e21a9a2e084b078cb0ae3c38b8d36544ee"
+      },
+      "dominantColor": "#4b544e",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "联军会场战线场景"
+    },
+    {
+      "frontId": "guild-conclave",
+      "sourcePromptHash": "e886c17131691f50ee28b2c2b8dc93889c8b670efeeb6bb493dea87b02fc2bac",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/guild-conclave.webp",
+      "hd": "/assets/fronts/hd/guild-conclave.webp",
+      "thumbnail": "/assets/fronts/thumbnails/guild-conclave.webp",
+      "hashes": {
+        "web": "ae2cfaba756f028324486b21f573454059d540dd626691179145fb724eea0546",
+        "hd": "22372bb5f95b94134fb43e32b913177ed2b061068d77b7d9a0c094ccdf25edea",
+        "thumbnail": "e6acf40cd9a0a7d21c31e787c3331bc5b9b5b1d5ae077a44556f4c5e34c3226d"
+      },
+      "dominantColor": "#42392d",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "百业会馆战线场景"
+    },
+    {
+      "frontId": "oath-chain",
+      "sourcePromptHash": "ed45c457611c8a1e3fdbb26f7464e48947e7e6ea6f1eaf57d5f437285956bbdc",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/oath-chain.webp",
+      "hd": "/assets/fronts/hd/oath-chain.webp",
+      "thumbnail": "/assets/fronts/thumbnails/oath-chain.webp",
+      "hashes": {
+        "web": "b1cf859d4bf689853e55b449f8c88b9c0d27248f4370aaa070ce1d32bb12614f",
+        "hd": "3dc519c036476894e7c9501aa20d7c762924f38322556c4f92451530366fd1ba",
+        "thumbnail": "79dc0807b8567e5761696facdbb009f8fa13d3517f186070d884144f719cac47"
+      },
+      "dominantColor": "#363a32",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "连誓长廊战线场景"
+    },
+    {
+      "frontId": "many-crowns",
+      "sourcePromptHash": "72157d02590e9c07c4216eaa2c5222fef683c0e4d2b65df95ba8c07f14afc9dd",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/many-crowns.webp",
+      "hd": "/assets/fronts/hd/many-crowns.webp",
+      "thumbnail": "/assets/fronts/thumbnails/many-crowns.webp",
+      "hashes": {
+        "web": "d7d2d1f1dbcdbc40e75fac31e96905c183f17025f9b2b9a3939cb411fb9b781f",
+        "hd": "34f37c83e3d6679c1f2df5bd00a6079b3e5425c165d91ef713126eb634a3f14c",
+        "thumbnail": "97e0bcc39e6e163636bc1fb6f12190c178cef84234627fc84c9ff29e7da8b0e1"
+      },
+      "dominantColor": "#41433e",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "众身份议庭战线场景"
+    },
+    {
+      "frontId": "eastward-current",
+      "sourcePromptHash": "64bb81a6d888b962a85ccc932638f9bd28a5eeb67f2ff587213db8d6a0910a45",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/eastward-current.webp",
+      "hd": "/assets/fronts/hd/eastward-current.webp",
+      "thumbnail": "/assets/fronts/thumbnails/eastward-current.webp",
+      "hashes": {
+        "web": "03b70d67f9e306bfe70aebfd663423c3b3d3696a633ea987ed0732b7eae12e42",
+        "hd": "10cd6b43446799fe7d9a5ffb1cd97d5ccd2a1740b7e28c702bfb81ff989ead2f",
+        "thumbnail": "f9e2823c325619087f01fac4c1ebf9138613e15c07e9a95a7dbb68352d56eb68"
+      },
+      "dominantColor": "#474f44",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "东归风道战线场景"
+    },
+    {
+      "frontId": "central-muster",
+      "sourcePromptHash": "87fd8b27115ed342bcfa2874f5360a43d092d02487542a0a7fb52ba27accb46e",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/central-muster.webp",
+      "hd": "/assets/fronts/hd/central-muster.webp",
+      "thumbnail": "/assets/fronts/thumbnails/central-muster.webp",
+      "hashes": {
+        "web": "05403cca002ae870e0543da025dd4f544990c445b39b43ac79f20c1721ab7399",
+        "hd": "872a13020cfc0984c7983d8717e88e75c9ea0f83f8b2a8ce06c5b7dffa73b34c",
+        "thumbnail": "bdbdb43d8a677d8f8a48f0ebf4d2dace0de5ef7685e28955a846bb15c1a942e3"
+      },
+      "dominantColor": "#4c4e44",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "中军聚合场战线场景"
+    },
+    {
+      "frontId": "flank-sortie",
+      "sourcePromptHash": "61a5a8aaf23ce3219778039585c629720f60ede184484a89f3287f2338c91b00",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/flank-sortie.webp",
+      "hd": "/assets/fronts/hd/flank-sortie.webp",
+      "thumbnail": "/assets/fronts/thumbnails/flank-sortie.webp",
+      "hashes": {
+        "web": "dc73efbddc302eb26314a5253db4073c2c6693419cbfedb01f08c243ee310371",
+        "hd": "2be15f784dd9887c6da47d8c8b6b69251649403b48614403d72651f11052f101",
+        "thumbnail": "0f442f3539de2b542df47adba954e9122a11b36dd567ec950e51288cc8f34800"
+      },
+      "dominantColor": "#414842",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "两翼出击台战线场景"
+    },
+    {
+      "frontId": "wheel-formation",
+      "sourcePromptHash": "ce57dd24a098a2bee7baaf9c5b8e7f73fe0f2196d88f1cc66207f5bfff359300",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/wheel-formation.webp",
+      "hd": "/assets/fronts/hd/wheel-formation.webp",
+      "thumbnail": "/assets/fronts/thumbnails/wheel-formation.webp",
+      "hashes": {
+        "web": "a0107a6e7caafc02e5cf12029178f72261c1145b751460310ba29753d3ecd2b4",
+        "hd": "352b0a12457c65e6dd2e15ae2265ef34dbdbfec20aac168a19f90181533ddc8e",
+        "thumbnail": "a1295d2060db0e3b1f32304a285cd683643541c8f6f2756f0a299a307aa0e23e"
+      },
+      "dominantColor": "#39413d",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "轮转军阵战线场景"
+    },
+    {
+      "frontId": "adjacent-exchange",
+      "sourcePromptHash": "90913c5a89f5b1748e37f55e1ebf7644a1e7de28e2a39a5be791334a1eeeb9aa",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/adjacent-exchange.webp",
+      "hd": "/assets/fronts/hd/adjacent-exchange.webp",
+      "thumbnail": "/assets/fronts/thumbnails/adjacent-exchange.webp",
+      "hashes": {
+        "web": "6dd2a1e2b265d858c4371f47818d6dac3fce3b105498773a18b1b476930ab74e",
+        "hd": "f7803501698ca7e97a5e32985f0fad850c58623b531d5bf62db544cd140ff0f3",
+        "thumbnail": "0f1a0601af04bb8b85523b533f70fbb2dd21adcad5b99fc31a8a81bb29f4cf67"
+      },
+      "dominantColor": "#3d453f",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "邻阵易位桥战线场景"
+    },
+    {
+      "frontId": "immovable-fort",
+      "sourcePromptHash": "1843918e5c0d3398fd6f56489b5026ca6fb90c8724f626a08f2666292ba461db",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/immovable-fort.webp",
+      "hd": "/assets/fronts/hd/immovable-fort.webp",
+      "thumbnail": "/assets/fronts/thumbnails/immovable-fort.webp",
+      "hashes": {
+        "web": "c6892203e49ba1a4858081d6a31387da3311f3632d2d90397875eec1dada1add",
+        "hd": "cfca882c6570f3770d58ef3f4a0bc18526be00b68001b2207ef8111c1634f6dc",
+        "thumbnail": "8acda52b9b417ee63a6aefbed01b4e0bc40f877f82dd8584970dd17dfdd52504"
+      },
+      "dominantColor": "#3f4239",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "不动坚城战线场景"
+    },
+    {
+      "frontId": "growing-camp",
+      "sourcePromptHash": "1cfcbcb53a4488d471cedcb65f880158d441dde90aa82f6073eef05d25329c66",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/growing-camp.webp",
+      "hd": "/assets/fronts/hd/growing-camp.webp",
+      "thumbnail": "/assets/fronts/thumbnails/growing-camp.webp",
+      "hashes": {
+        "web": "7c7a94ce917c814a2af32ed8e425b204e7239b47f203a65c6b2d840ad5064b2b",
+        "hd": "c6378cd2eb30f030135139bcf97f55d45e675dc2ef0575edc1cdb8e69974a07e",
+        "thumbnail": "227991511e7c746a06cf5ad7c0640e5de72918946b89d1cc895ead430b761ca8"
+      },
+      "dominantColor": "#464237",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "扩建营盘战线场景"
+    },
+    {
+      "frontId": "single-file-gate",
+      "sourcePromptHash": "7ba9c68d2e46ff651453c8d814338ff94d82f8af5efc82693ff9a2267d8773e8",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/single-file-gate.webp",
+      "hd": "/assets/fronts/hd/single-file-gate.webp",
+      "thumbnail": "/assets/fronts/thumbnails/single-file-gate.webp",
+      "hashes": {
+        "web": "c98bf93aaaaa3790806048d8bc0326e074167f428ed6c931d8b2d1a534a31b4d",
+        "hd": "62c3a309e2cfaee0b382cd67267591db006271fccbf49908c937a9643f4263c2",
+        "thumbnail": "f7852b925b723312dd30bb1801ecefc5b0b2fd297185678211ae9057e7c23004"
+      },
+      "dominantColor": "#35413b",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "单列军门战线场景"
+    },
+    {
+      "frontId": "first-standard",
+      "sourcePromptHash": "d4c0409ae435a21a55070fdaae6bb22108c87289ceb2d1ff637419361e43b1a8",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/first-standard.webp",
+      "hd": "/assets/fronts/hd/first-standard.webp",
+      "thumbnail": "/assets/fronts/thumbnails/first-standard.webp",
+      "hashes": {
+        "web": "15292d9122cccde641dc2ec119d4b8917b041f6f710593b61202f6a741356b07",
+        "hd": "40775c50b42229ea67e5852607ee3b532173bd22baf9f6b7c8a221a6fb0dc923",
+        "thumbnail": "b5fcc5692674cd30646fc9173de823e68dede7f4f59ba25c236f97ea4cf88d88"
+      },
+      "dominantColor": "#3c463f",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "先登旌台战线场景"
+    },
+    {
+      "frontId": "last-bastion",
+      "sourcePromptHash": "052e14a00b1f4753511e9b34e6c017ca0c6ea0e431b4ecde690dc9be9e19d231",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/last-bastion.webp",
+      "hd": "/assets/fronts/hd/last-bastion.webp",
+      "thumbnail": "/assets/fronts/thumbnails/last-bastion.webp",
+      "hashes": {
+        "web": "7db8c13ab238c1028fff72e680839978c2fe176afaf83d8f7f5639faecae7366",
+        "hd": "4e47298b9704d8ca418edf81e21aead8e70ed3cc7cb8e9d02dff7f8d8c025094",
+        "thumbnail": "c4a379d888e645e40145f876deb839d24adb309af6df2f43be94a69ff8eed85f"
+      },
+      "dominantColor": "#3c382f",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "末席堡垒战线场景"
+    },
+    {
+      "frontId": "quartermaster-dock",
+      "sourcePromptHash": "c3d4c29f4f9c25654334cb13a9b4dce1976bc107a6c0959e2d2b2f202148d4d0",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/quartermaster-dock.webp",
+      "hd": "/assets/fronts/hd/quartermaster-dock.webp",
+      "thumbnail": "/assets/fronts/thumbnails/quartermaster-dock.webp",
+      "hashes": {
+        "web": "924bf4fabdac5b22b66aac266dee1c6d43d0c6e6304627d1b705ee0d602eb988",
+        "hd": "1845cb6df7925e046f778116e0493803c4db2df8fd18ea8b04af3f9a7177f781",
+        "thumbnail": "03410af7d9bad9cbf8f295f4f7919ea75d3b58ff7e6c93013897398f47571fd1"
+      },
+      "dominantColor": "#3f443a",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "辎重码头战线场景"
+    },
+    {
+      "frontId": "mobile-foundry",
+      "sourcePromptHash": "4a1eb9bb917b9fd0fd6e5b2e45cab2c01c3aef0d43f1b7a9da0ab6cfafb93cdc",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/mobile-foundry.webp",
+      "hd": "/assets/fronts/hd/mobile-foundry.webp",
+      "thumbnail": "/assets/fronts/thumbnails/mobile-foundry.webp",
+      "hashes": {
+        "web": "efd74b45b94b9c4e6f47cf87c673e1b17a2b59ba707638b70398f4c1323a2d78",
+        "hd": "370d7a0f2868b0dbf12f003abe750c1f7f6e4cfcbce2b1f63e244daceb2a04eb",
+        "thumbnail": "4d52e8c2c996c4cbbb847912080ffbdf40902dc332480e59fc166f75594cbee9"
+      },
+      "dominantColor": "#39342e",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "随军铸坊战线场景"
+    },
+    {
+      "frontId": "conscription-tax",
+      "sourcePromptHash": "44212e10e48cfb59e85d272eb90636f4a9791364e88d1b563749fcaa01f2bef5",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/conscription-tax.webp",
+      "hd": "/assets/fronts/hd/conscription-tax.webp",
+      "thumbnail": "/assets/fronts/thumbnails/conscription-tax.webp",
+      "hashes": {
+        "web": "a099069afbc5a3da392a1a1fa9fad89b3f65280f6e62fed035bfe6f454c59e75",
+        "hd": "9f8b7f74f2fa5decfd5413a5a3695108a2377b90966cf54cecc18a1b20e63b15",
+        "thumbnail": "1d20fc4fce3dd2f3218ade6e8799b1de499a4ecf71fc8e609408d675a6fb5429"
+      },
+      "dominantColor": "#60756f",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "轻兵附税所战线场景"
+    },
+    {
+      "frontId": "reserve-converter",
+      "sourcePromptHash": "7ade2b2651cc86539834c77a99a98ecb00c8518a0cb3bfdb227324b9f3c19c87",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/reserve-converter.webp",
+      "hd": "/assets/fronts/hd/reserve-converter.webp",
+      "thumbnail": "/assets/fronts/thumbnails/reserve-converter.webp",
+      "hashes": {
+        "web": "6ea1e914032b15cd042cb213451349d1af6e73a6e7470ca6b82c846b3c36bc5c",
+        "hd": "fb69baa0ae7029a192e6cd78001e7d31e2524af4aa42d2c8dc76e0cc74d78af5",
+        "thumbnail": "c6e9722b9650662fadfb44f82a93745c6fbc7064f2098efc567cb134e6ca70fc"
+      },
+      "dominantColor": "#45332b",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "余令转势台战线场景"
+    },
+    {
+      "frontId": "veteran-pass",
+      "sourcePromptHash": "67abb69282e8eae237e4d0e12739d59b6598e2e14a4081fc9137c56bb0fca4f7",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/veteran-pass.webp",
+      "hd": "/assets/fronts/hd/veteran-pass.webp",
+      "thumbnail": "/assets/fronts/thumbnails/veteran-pass.webp",
+      "hashes": {
+        "web": "a3505b43d062ddeb2d9509f3cd34966e08121828371cd8114f129f82b06badef",
+        "hd": "634c1653c726309b97fce335972990cc4183d0b90afde51100510fb7e4b2520a",
+        "thumbnail": "ee6d07a3e44f885321cffc6a82492e557d62d3c422d880961730b09ab6ee21e7"
+      },
+      "dominantColor": "#6b7e7a",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "重将关券战线场景"
+    },
+    {
+      "frontId": "opening-requisition",
+      "sourcePromptHash": "eb3964f959cc1ddad2cf1d84d93c4541881751cdcda72114e9352442c8815e1c",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/opening-requisition.webp",
+      "hd": "/assets/fronts/hd/opening-requisition.webp",
+      "thumbnail": "/assets/fronts/thumbnails/opening-requisition.webp",
+      "hashes": {
+        "web": "920713ea46cfb99ca3399e44a132f9443ee9216d9880c9f6ecf331d286f14224",
+        "hd": "573f06e03cc1e9456f250391636abe761cb1a5752c4099afbb5bae381af52dfd",
+        "thumbnail": "ef0e1c106588cb78dca7bbecb5dd8d27e8afbab464f1f61024b5358489d1d7ae"
+      },
+      "dominantColor": "#353734",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "先遣征调处战线场景"
+    },
+    {
+      "frontId": "final-requisition",
+      "sourcePromptHash": "e34b8d3398835fe3466c194eff0f8d36a327d02542bd771c7678505fd6170859",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/final-requisition.webp",
+      "hd": "/assets/fronts/hd/final-requisition.webp",
+      "thumbnail": "/assets/fronts/thumbnails/final-requisition.webp",
+      "hashes": {
+        "web": "79242dc27d63f1572266d7885a7c69fed5fd8b61d739c214684078b60bd211c8",
+        "hd": "f90caba47953e11bf2a2934b246bb2ac32f77486092f345add1bdad61f2519b1",
+        "thumbnail": "8d30f8969cb0639f12a599831082011f04f5e1df4ba72f7e05687315f004c7a5"
+      },
+      "dominantColor": "#3d3d3a",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "终局征调处战线场景"
+    },
+    {
+      "frontId": "ash-ledger",
+      "sourcePromptHash": "4cd57fb9c44fe978e7ec56ae3173a4daa5ca8798d2a25516050f9f0dc73f27d4",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/ash-ledger.webp",
+      "hd": "/assets/fronts/hd/ash-ledger.webp",
+      "thumbnail": "/assets/fronts/thumbnails/ash-ledger.webp",
+      "hashes": {
+        "web": "385bfded04966fd9a130f49c7ed823dce24199f9f1d9732325e49b5cacef6034",
+        "hd": "5694598d18277669921704df252647fc88b4999521788cb02426155948631851",
+        "thumbnail": "1caee2ae23dec0a4b3da6537bf504dbcee32f1f7ba519aecdc5e203f558d6244"
+      },
+      "dominantColor": "#43291a",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "灰烬账簿院战线场景"
+    },
+    {
+      "frontId": "archive-recycler",
+      "sourcePromptHash": "7507b44d62b19a95200c3ab411c35aba4872037ee136f13d7fb01e78b1c93a80",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/archive-recycler.webp",
+      "hd": "/assets/fronts/hd/archive-recycler.webp",
+      "thumbnail": "/assets/fronts/thumbnails/archive-recycler.webp",
+      "hashes": {
+        "web": "20d14f680abd0ca9a6043d05fac2ea8b5c85c008533c3ae5803c634c5162530f",
+        "hd": "48940c7a4cbf983509b8e05b5554c0fcdc721b3f889cd0c0bb7fc141e9c2d0a3",
+        "thumbnail": "03c12840f9ec454268f20820dd11abbbff24e6bfe8e46cc9aa89549d56055482"
+      },
+      "dominantColor": "#484131",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "旧卷回收库战线场景"
+    },
+    {
+      "frontId": "reverse-theatre",
+      "sourcePromptHash": "eb21f4449e547cd56ccb53b5a2b2a4b6e41c70ec98cd8436b0add3954980c481",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/reverse-theatre.webp",
+      "hd": "/assets/fronts/hd/reverse-theatre.webp",
+      "thumbnail": "/assets/fronts/thumbnails/reverse-theatre.webp",
+      "hashes": {
+        "web": "daf7273938cc714e799e76cd64797ca00fb1bafb8391aa7cfb3ac2d3f3216ed7",
+        "hd": "48e2534d9957c90f2ea1d1c9acbdb884f1508222bc0ad8dc23e86c9cd6718531",
+        "thumbnail": "7491b93248cff77a70ddbeca4d013613649717bb3e1f226acc6bdc9703a65193"
+      },
+      "dominantColor": "#49453c",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "逆序演武场战线场景"
+    },
+    {
+      "frontId": "ambush-valley",
+      "sourcePromptHash": "7852dc5c169ffdf3db76568116c2c84d3bcdbcbfcf4d1de59185537b0f0ef4cd",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/ambush-valley.webp",
+      "hd": "/assets/fronts/hd/ambush-valley.webp",
+      "thumbnail": "/assets/fronts/thumbnails/ambush-valley.webp",
+      "hashes": {
+        "web": "5eb1817056d7ac931448eba82e75f16da516af01657f9572ef45e12ae3961ea6",
+        "hd": "5bbdb04960f27606051bf3fce063ac42c01c1f66577fc80add7af36ea525ac71",
+        "thumbnail": "3245c4c376d94e025c5cf0375aa477fd97837fe5a7fe2e7fec2eb721dafaee72"
+      },
+      "dominantColor": "#323a34",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "伏兵幽谷战线场景"
+    },
+    {
+      "frontId": "late-intelligence",
+      "sourcePromptHash": "3c1fbd54c1b3c400b018a6c396a23cf480b7457efceb248f341e135f1c3b15d8",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/late-intelligence.webp",
+      "hd": "/assets/fronts/hd/late-intelligence.webp",
+      "thumbnail": "/assets/fronts/thumbnails/late-intelligence.webp",
+      "hashes": {
+        "web": "ede77972eb942ebdbdf939e400d8abee7027b021b7ba445998dc8234ce78f710",
+        "hd": "50c48ba6ce90fcd6ded9468ca9e5f33caeb10028b8d8bf7ff1844e7ae2bb44e7",
+        "thumbnail": "6c8df72faeac27d849d3f46b2988d3cf354ba4f18915e43f84730b983d432508"
+      },
+      "dominantColor": "#384440",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "迟报军府战线场景"
+    },
+    {
+      "frontId": "masked-strength",
+      "sourcePromptHash": "0f0cab27ecdbf1284ba8d0424b6635c5e20b2915d4a5a23609c60e617f79c77c",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/masked-strength.webp",
+      "hd": "/assets/fronts/hd/masked-strength.webp",
+      "thumbnail": "/assets/fronts/thumbnails/masked-strength.webp",
+      "hashes": {
+        "web": "4f194cfdfaadbb80cf4cad8f5f20e1f17164a364bc4322e9f9959d4d82e0b3f1",
+        "hd": "fdee9e5e7a5783e65d61e29412761cd0dd5738accd132b59dedb6ad19b78ce0e",
+        "thumbnail": "3df6a55f83f824a5add8761cc131709a22a2757af05b48aedf8fc865cac80149"
+      },
+      "dominantColor": "#3b4139",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "匿势营战线场景"
+    },
+    {
+      "frontId": "dawn-signal",
+      "sourcePromptHash": "b4b8c62af079693ea467c4a5b74fb6bcf9dfb77a9eb451a7341416edb116a519",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/dawn-signal.webp",
+      "hd": "/assets/fronts/hd/dawn-signal.webp",
+      "thumbnail": "/assets/fronts/thumbnails/dawn-signal.webp",
+      "hashes": {
+        "web": "2e6da7438d002ea269ca74510b96ad9dbacd0303e738afa1e648c9623921c582",
+        "hd": "547fe8700033cf675ddfa7b6923562e8e909a4996d15428fdad80aeabd3d1e1e",
+        "thumbnail": "f262185fa2a73e768ee2c4e93aaf3c3b2d484728c8265d33a50e3b944e3b390f"
+      },
+      "dominantColor": "#464840",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "破晓号台战线场景"
+    },
+    {
+      "frontId": "phoenix-gate",
+      "sourcePromptHash": "fd0b499cb9803c67d0f55abd1f3812ef3a04ae70149e36f6aaffce26dee5b2d2",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/phoenix-gate.webp",
+      "hd": "/assets/fronts/hd/phoenix-gate.webp",
+      "thumbnail": "/assets/fronts/thumbnails/phoenix-gate.webp",
+      "hashes": {
+        "web": "22813a445ea8103484710a4ab9db5ed56d920b2b5a5dccbd695925fe488d2e8d",
+        "hd": "2dfd27095b31537d27616acfae16065e6385f8bea634fe47fec07e341041a8eb",
+        "thumbnail": "8c1eced6509c6f1572cbd87220ae7fbf9effff64034b9da33e03ff49d1ae6399"
+      },
+      "dominantColor": "#393f3a",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "凤还关战线场景"
+    },
+    {
+      "frontId": "ancestor-field",
+      "sourcePromptHash": "dbd647fb3826ee8e729daa54e2db9918f033bcfb3c702da1f5df67117fe5c405",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/ancestor-field.webp",
+      "hd": "/assets/fronts/hd/ancestor-field.webp",
+      "thumbnail": "/assets/fronts/thumbnails/ancestor-field.webp",
+      "hashes": {
+        "web": "61d68897da3c37a44fbb70f311a081d2a6bfed0abb8f8757175a629d9c364b91",
+        "hd": "0a291e9af88e1e77b96e2d78c1766b76ab83341fb26bf86d91cc2d623139153b",
+        "thumbnail": "19555a83406b9edb01faee3b844c2cf60f82b202e339dd358a81d2de30ef43f0"
+      },
+      "dominantColor": "#4b4c40",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "先祖原战线场景"
+    },
+    {
+      "frontId": "martyr-memorial",
+      "sourcePromptHash": "ba0f7708bcf04d9fbabfea9faf5265e8bde016522f2668e2838927a8da18b922",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/martyr-memorial.webp",
+      "hd": "/assets/fronts/hd/martyr-memorial.webp",
+      "thumbnail": "/assets/fronts/thumbnails/martyr-memorial.webp",
+      "hashes": {
+        "web": "8a1659217a8127235084a0bd83ce6abe9bc799f2a053075d90c2fb0d74533d73",
+        "hd": "09d983d95e92571db30dd5c7b2a9da9a20c1b69895955d8ee209ef5f5d49ddd8",
+        "thumbnail": "d61d2ace0e80385e0ebd0ed9078cba215e18eccb333c87628ee0578256c72b91"
+      },
+      "dominantColor": "#464437",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "殉志碑战线场景"
+    },
+    {
+      "frontId": "closing-chasm",
+      "sourcePromptHash": "f1ccf0d4a5b7cf859633aeeec2eac7f33f5f4e1ee65d90b7084dd8c0c854d3d9",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/closing-chasm.webp",
+      "hd": "/assets/fronts/hd/closing-chasm.webp",
+      "thumbnail": "/assets/fronts/thumbnails/closing-chasm.webp",
+      "hashes": {
+        "web": "3b82e36901ae4621d9c871922a640e9f11cec7250bc72512c0ed22f9f54459a1",
+        "hd": "869667a483737504ede1d196986452a0f9bcb63cc0118f561bf64be32f666c5a",
+        "thumbnail": "eefd8ca2f2929a05ce55555724349c5b7d09394998351d343e86f50e6db2d42b"
+      },
+      "dominantColor": "#48483e",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "闭合裂谷战线场景"
+    },
+    {
+      "frontId": "balancing-tide",
+      "sourcePromptHash": "31d9befe7229e0ecc7ae9952be79e5a7e9b837a70b5fe1989c36ace52b3d5e01",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/balancing-tide.webp",
+      "hd": "/assets/fronts/hd/balancing-tide.webp",
+      "thumbnail": "/assets/fronts/thumbnails/balancing-tide.webp",
+      "hashes": {
+        "web": "aed915c0ec2340aa9ef9c4546742cf8fd18694e0734e80c88688349f36860580",
+        "hd": "f00a8725e07f269e067bf232b930b614a792b32d54d0f035bdd48145c37e7023",
+        "thumbnail": "f9e9f7ace1210601f3d3755a2a59c1b10249466a899ba30224a0e1d179b5d9a9"
+      },
+      "dominantColor": "#555143",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "均势潮汐战线场景"
+    },
+    {
+      "frontId": "migrating-crown",
+      "sourcePromptHash": "fd7c2a8054171df9b6e892fc27661ddacd7d888994145c7fd05c3f353778f270",
+      "model": "managed-image-model-undisclosed",
+      "width": 1536,
+      "height": 1024,
+      "web": "/assets/fronts/web/migrating-crown.webp",
+      "hd": "/assets/fronts/hd/migrating-crown.webp",
+      "thumbnail": "/assets/fronts/thumbnails/migrating-crown.webp",
+      "hashes": {
+        "web": "9294669c261e499abd378a14f4b67a9a43d092d7bb062fc255f483fe27df0048",
+        "hd": "08dd18b210e4bf377551d132b056b8f9e633e9e0377d4ab6e0ded3a24ec33d83",
+        "thumbnail": "b80f6317973972a4b051e07e2fa9dd84363a5f6aff59d0b74f31a3361b696b0e"
+      },
+      "dominantColor": "#514c3c",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.46
+      },
+      "altZh": "迁徙王冠战线场景"
+    }
+  ]
+}

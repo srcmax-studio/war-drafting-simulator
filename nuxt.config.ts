@@ -11,7 +11,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       assetExtension: useHdAssets ? 'png' : 'webp',
-      assetMode: useHdAssets ? 'hd' : 'web'
+      assetMode: useHdAssets ? 'hd' : 'web',
+      appVersion: process.env.npm_package_version ?? '2.0.0'
     }
   },
   nitro: {

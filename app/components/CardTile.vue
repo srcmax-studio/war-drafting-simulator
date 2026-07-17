@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { CardDefinition } from '~/common/src/index';
-import { cardFallbackUrl, cardImageUrl } from '~/data/catalog';
+import { cardFallbackUrl, cardImageUrl } from '~/utils/card-images';
 
 const props = withDefaults(defineProps<{ card: CardDefinition; selected?: boolean; compact?: boolean; disabled?: boolean }>(), {
   selected: false,

@@ -20,6 +20,7 @@ const presets = read<Array<{ deckId: string; cardIds: string[] }>>('data/charact
 const assets = read<Array<{ cardId: string; web: string; hd: string; fallback: boolean }>>('assets/card-images/generated/card-assets.json');
 const catalog = read<{ schemaVersion: number; catalogVersion: string; packVersions: Record<string, string>; cards: number }>('data/characters/generated/catalog.json');
 const corePack = read<{ cards: string[]; fronts: string[]; version: string; releaseStatus: string }>('data/characters/data/packs/core/pack.json');
+const homeData = read<{ catalogVersion: string; cardCount: number; enabledFrontCount: number; cards: Array<{ cardId: string }>; featuredCards: CardDefinition[]; fronts: Array<{ frontId: string }> }>('app/data/home-catalog.json');
 
 describe('client data integration', () => {
   it('loads the complete character collection', () => {
@@ -44,10 +45,16 @@ describe('client data integration', () => {
   });
   it('registers the complete catalog in the released core pack', () => {
     expect(catalog).toMatchObject({ schemaVersion: 2, cards: 824 });
-    expect(PROTOCOL_VERSION).toBe('aeonfront/2');
+    expect(PROTOCOL_VERSION).toBe('aeonfront/3');
     expect(corePack).toMatchObject({ version: catalog.packVersions.core, releaseStatus: 'released' });
     expect(new Set(corePack.cards)).toEqual(new Set(cards.map((card) => card.cardId)));
     expect(new Set(corePack.fronts)).toEqual(new Set(FRONT_DEFINITIONS.map((front) => front.frontId)));
+  });
+  it('keeps the lightweight home catalog aligned with release data', () => {
+    expect(homeData).toMatchObject({ catalogVersion: catalog.catalogVersion, cardCount: cards.length, enabledFrontCount: FRONT_DEFINITIONS.length });
+    expect(homeData.cards.map((card) => card.cardId)).toEqual(cards.map((card) => card.cardId));
+    expect(homeData.featuredCards).toHaveLength(4);
+    expect(new Set(homeData.fronts.map((front) => front.frontId))).toEqual(new Set(['bronze-road', 'mist-bastion', 'future-beacon']));
   });
   it('renders multi-skill definitions and a strict cost-value curve', () => {
     expect(cards.every((card) => (card.abilities?.length ?? 0) > 0)).toBe(true);

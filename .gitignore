@@ -8,6 +8,8 @@
 dist-electron/
 release/
 coverage/
+.front-art-source/
+.audio-source/
 
 # Dependencies and logs
 node_modules/
