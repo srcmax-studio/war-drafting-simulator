@@ -95,7 +95,7 @@ def import_json_file(page):
 def import_deck_code(page, code):
     page.get_by_role("button", name="导入", exact=True).click()
     dialog = page.get_by_role("dialog", name="导入牌组")
-    dialog.get_by_role("button", name="AFD1 牌组码").click()
+    dialog.get_by_role("button", name="牌组码", exact=True).click()
     dialog.locator(".import-text").fill(code)
     dialog.get_by_role("button", name="校验并预览").click()
     page.wait_for_selector(".import-preview")
@@ -130,7 +130,13 @@ def desktop_flow(browser):
     detail = page.locator(".card-detail")
     assert detail.is_visible()
     assert detail.locator(".ability-block").count() >= 2
-    assert detail.locator(".balance-strip").is_visible()
+    ability_names = detail.locator(".ability-block h2").all_inner_texts()
+    assert all(re.fullmatch(r"[\u3400-\u9fff]{4}", name) for name in ability_names)
+    detail_text = detail.inner_text()
+    assert not re.search(r"\b[a-z]+_[a-z_]+\b", detail_text)
+    for internal_label in ("Card ID", "优先级", "预计总值", "CORE-2-"):
+        assert internal_label not in detail_text
+    page.screenshot(path=ARTIFACTS / "card-detail-desktop.png", full_page=False)
     page.get_by_role("button", name="关闭").click()
     page.screenshot(path=ARTIFACTS / "collection-desktop.png", full_page=False)
 
@@ -139,7 +145,11 @@ def desktop_flow(browser):
     assert page.locator(".front-archive article").count() == 72
     archive_text = page.locator(".front-archive").inner_text()
     for front_id in ("central-muster", "phoenix-gate", "migrating-crown"):
-        assert front_id in archive_text
+        assert front_id not in archive_text
+    for internal_label in ("Effect ID", "效果参数", "最低客户端", "内容包", "FRONT ARCHIVE"):
+        assert internal_label not in archive_text
+    assert not re.search(r"[A-Za-z]", archive_text)
+    assert not re.search(r"\b[a-z]+_[a-z_]+\b", archive_text)
     assert page.locator(".front-archive article.complexity-chaotic").count() >= 8
     page.screenshot(path=ARTIFACTS / "fronts-desktop.png", full_page=False)
 
@@ -155,7 +165,7 @@ def desktop_flow(browser):
     assert page.locator(".analysis-panel .metric-grid").is_visible()
 
     with page.expect_download() as download_info:
-        page.get_by_role("button", name="JSON", exact=True).click()
+        page.get_by_role("button", name="导出文件", exact=True).click()
     download_info.value.save_as(EXPORTED_DECK)
     exported = json.loads(EXPORTED_DECK.read_text())
     assert exported["name"] == "验收远征"
@@ -223,7 +233,8 @@ def desktop_flow(browser):
             page.wait_for_selector(".result-banner")
     assert planned_any, "No legal card was deployed during the six-turn acceptance match"
     assert "total_power" not in page.locator(".result-banner").inner_text()
-    assert page.locator(".event-panel .ability-event").count() > 0
+    assert page.locator(".event-panel li").count() > 0
+    assert not re.search(r"\b[a-z]+_[a-z_]+\b", page.locator(".event-panel").inner_text())
     page.screenshot(path=ARTIFACTS / "game-result-desktop.png", full_page=True)
 
     page.goto(f"{BASE_URL}/history", wait_until="networkidle")

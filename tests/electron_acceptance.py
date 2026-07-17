@@ -1,12 +1,21 @@
 from pathlib import Path
+from time import monotonic, sleep
 from urllib.parse import urlsplit
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import Error, sync_playwright
 
 artifacts = Path(__file__).resolve().parents[2] / "artifacts"
 artifacts.mkdir(exist_ok=True)
 
 with sync_playwright() as playwright:
-    browser = playwright.chromium.connect_over_cdp("http://127.0.0.1:9223")
+    deadline = monotonic() + 20
+    while True:
+        try:
+            browser = playwright.chromium.connect_over_cdp("http://127.0.0.1:9223")
+            break
+        except Error:
+            if monotonic() >= deadline:
+                raise
+            sleep(0.25)
     contexts = browser.contexts
     assert contexts, "Electron did not expose a browser context"
     pages = contexts[0].pages
@@ -31,7 +40,7 @@ with sync_playwright() as playwright:
     assert page.locator(".front-archive article").count() == 72
     page.goto(f"{origin}/deck-builder", wait_until="networkidle")
     assert page.locator("[data-testid=selected-deck] li").count() == 12
-    assert "CORE-2-" in page.locator(".deck-page").inner_text()
+    assert "CORE-2-" not in page.locator(".deck-page").inner_text()
     page.screenshot(path=artifacts / "electron-deck-builder.png", full_page=False)
 
     assert not errors, "Electron browser errors: " + " | ".join(errors)

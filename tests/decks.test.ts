@@ -46,7 +46,7 @@ describe('custom deck data formats', () => {
     expect(result.deck.schemaVersion).toBe(2);
     expect(result.deck.cardIds).toEqual([]);
     expect(result.deck.source).toBe('custom');
-    expect(result.warnings).toContain('旧版牌组已迁移到当前 Schema。');
+    expect(result.warnings).toContain('旧版牌组已更新为当前格式。');
   });
 
   it('migrates old card IDs and reports cards missing from the current catalog', () => {

@@ -114,10 +114,10 @@ const source = (value: unknown, fallback: SavedDeckSource): SavedDeckSource =>
   value === 'custom' || value === 'preset-copy' || value === 'imported' ? value : fallback;
 
 const rawCardIds = (value: unknown): string[] => {
-  if (!Array.isArray(value)) throw new DeckDataError('DECK_CARDS_REQUIRED', '牌组必须包含卡牌 ID 数组。');
+  if (!Array.isArray(value)) throw new DeckDataError('DECK_CARDS_REQUIRED', '牌组必须包含卡牌列表。');
   if (value.length > 12) throw new DeckDataError('DECK_TOO_LARGE', '牌组不能超过十二张卡牌。');
   const result = value.map((cardId) => text(cardId, 128));
-  if (result.some((cardId) => !cardId)) throw new DeckDataError('INVALID_CARD_ID', '牌组包含无效卡牌 ID。');
+  if (result.some((cardId) => !cardId)) throw new DeckDataError('INVALID_CARD_ID', '牌组包含无效卡牌。');
   if (new Set(result).size !== result.length) throw new DeckDataError('DUPLICATE_CARD', '牌组不能包含重复卡牌。');
   return result;
 };
@@ -129,7 +129,7 @@ const migrateIds = (cardIds: string[], context: DeckDataContext): { cardIds: str
     if (replacement) migrated.push(`${cardId} -> ${replacement}`);
     return replacement ?? cardId;
   });
-  if (new Set(next).size !== next.length) throw new DeckDataError('DUPLICATE_CARD', '卡牌 ID 迁移后产生了重复卡牌。');
+  if (new Set(next).size !== next.length) throw new DeckDataError('DUPLICATE_CARD', '牌组更新后产生了重复卡牌。');
   return { cardIds: next, migrated };
 };
 
@@ -153,7 +153,7 @@ export function sanitizeSavedDeck(
   const input = value as Record<string, unknown>;
   const now = options.now ?? Date.now();
   const schemaVersion = Number(input.schemaVersion ?? 1);
-  if (![1, SAVED_DECK_SCHEMA_VERSION].includes(schemaVersion)) throw new DeckDataError('DECK_VERSION_UNSUPPORTED', `不支持牌组 Schema ${schemaVersion}。`);
+  if (![1, SAVED_DECK_SCHEMA_VERSION].includes(schemaVersion)) throw new DeckDataError('DECK_VERSION_UNSUPPORTED', '该牌组版本不受支持。');
   const migrated = migrateIds(rawCardIds(input.cardIds), context);
   const missingCardIds = migrated.cardIds.filter((cardId) => !context.knownCardIds.has(cardId));
   const createdAt = timestamp(input.createdAt, now);
@@ -161,10 +161,10 @@ export function sanitizeSavedDeck(
   if (!name) throw new DeckDataError('INVALID_DECK_NAME', '牌组名称不能为空。');
   const cover = optionalText(input.coverCardId, 128);
   const warnings: string[] = [];
-  if (schemaVersion < SAVED_DECK_SCHEMA_VERSION) warnings.push('旧版牌组已迁移到当前 Schema。');
-  if (input.catalogVersion && input.catalogVersion !== context.catalogVersion) warnings.push(`牌组目录 ${String(input.catalogVersion)} 与当前目录 ${context.catalogVersion} 不同。`);
+  if (schemaVersion < SAVED_DECK_SCHEMA_VERSION) warnings.push('旧版牌组已更新为当前格式。');
+  if (input.catalogVersion && input.catalogVersion !== context.catalogVersion) warnings.push('该牌组来自其他内容版本，部分卡牌可能无法使用。');
   if (missingCardIds.length) warnings.push(`有 ${missingCardIds.length} 张卡牌不在当前目录中。`);
-  if (migrated.migrated.length) warnings.push(`已迁移 ${migrated.migrated.length} 个旧卡牌 ID。`);
+  if (migrated.migrated.length) warnings.push(`已更新 ${migrated.migrated.length} 张旧版卡牌。`);
   return {
     deck: {
       schemaVersion: SAVED_DECK_SCHEMA_VERSION,
@@ -233,9 +233,9 @@ export function exportDeckJson(deck: DeckChoice): string {
 }
 
 export function importDeckJson(raw: string, context: DeckDataContext, now = Date.now()): DeckImportResult {
-  if (byteLength(raw) > MAX_DECK_IMPORT_BYTES) throw new DeckDataError('IMPORT_TOO_LARGE', '导入文件超过 256 KB。');
+  if (byteLength(raw) > MAX_DECK_IMPORT_BYTES) throw new DeckDataError('IMPORT_TOO_LARGE', '导入文件超过 256 千字节。');
   let parsed: unknown;
-  try { parsed = JSON.parse(raw); } catch { throw new DeckDataError('INVALID_JSON', 'JSON 文件无法解析。'); }
+  try { parsed = JSON.parse(raw); } catch { throw new DeckDataError('INVALID_JSON', '牌组文件内容无法解析。'); }
   const candidate = parsed && typeof parsed === 'object' && 'deck' in parsed ? (parsed as Record<string, unknown>).deck : parsed;
   return sanitizeSavedDeck(candidate, context, { now, fallbackSource: 'imported', fallbackId: createDeckId('imported') });
 }
@@ -248,10 +248,10 @@ const base64UrlEncode = (value: string): string => {
 };
 
 const base64UrlDecode = (value: string): string => {
-  if (!/^[A-Za-z0-9_-]+$/.test(value)) throw new DeckDataError('INVALID_DECK_CODE', '牌组码 Payload 格式错误。');
+  if (!/^[A-Za-z0-9_-]+$/.test(value)) throw new DeckDataError('INVALID_DECK_CODE', '牌组码内容格式错误。');
   const padded = value.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat((4 - value.length % 4) % 4);
   let binary: string;
-  try { binary = atob(padded); } catch { throw new DeckDataError('INVALID_DECK_CODE', '牌组码 Payload 无法解码。'); }
+  try { binary = atob(padded); } catch { throw new DeckDataError('INVALID_DECK_CODE', '牌组码内容无法解码。'); }
   const bytes = Uint8Array.from(binary, (character) => character.charCodeAt(0));
   try { return new TextDecoder().decode(bytes); } catch { throw new DeckDataError('INVALID_DECK_CODE', '牌组码文本编码无效。'); }
 };
@@ -267,7 +267,7 @@ const checksum = (value: string): string => {
 
 export function encodeDeckCode(deck: DeckChoice): string {
   if (deck.cardIds.length !== 12 || new Set(deck.cardIds).size !== 12) {
-    throw new DeckDataError('DECK_CODE_SIZE', 'AFD1 牌组码要求十二张不同卡牌。');
+    throw new DeckDataError('DECK_CODE_SIZE', '牌组码要求十二张不同卡牌。');
   }
   const payload = base64UrlEncode(JSON.stringify({
     schemaVersion: SAVED_DECK_SCHEMA_VERSION,
@@ -286,7 +286,7 @@ export function decodeDeckCode(code: string, context: DeckDataContext, now = Dat
   const normalized = code.trim();
   if (normalized.length > MAX_DECK_CODE_LENGTH) throw new DeckDataError('DECK_CODE_TOO_LONG', '牌组码超过长度上限。');
   const parts = normalized.split('.');
-  if (parts.length !== 3 || parts[0] !== 'AFD1') throw new DeckDataError('DECK_CODE_VERSION', '只支持 AFD1 牌组码。');
+  if (parts.length !== 3 || parts[0] !== 'AFD1') throw new DeckDataError('DECK_CODE_VERSION', '该牌组码版本不受支持。');
   const payload = parts[1]!;
   if (checksum(payload) !== parts[2]!.toLowerCase()) throw new DeckDataError('DECK_CODE_CHECKSUM', '牌组码校验和不匹配。');
   return importDeckJson(base64UrlDecode(payload), context, now);

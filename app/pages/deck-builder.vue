@@ -22,8 +22,9 @@ import {
   X
 } from 'lucide-vue-next';
 import { onBeforeRouteLeave } from 'vue-router';
-import type { CardDefinition } from '~/common/src/index';
+import type { AbilityTrigger, AtomicEffectType, CardDefinition } from '~/common/src/index';
 import { CARDS, CARD_BY_ID, CATALOG_VERSION } from '~/data/catalog';
+import { EFFECT_LABELS, TRIGGER_LABELS } from '~/utils/ability-text';
 import {
   analyzeDeck,
   createDeckShareUrl,
@@ -176,8 +177,9 @@ const regions = unique(CARDS.map((card) => card.region));
 const professions = unique(CARDS.map((card) => card.profession));
 const factions = unique(CARDS.map((card) => card.faction));
 const tags = unique(CARDS.flatMap((card) => card.tags));
-const triggers = unique(CARDS.flatMap((card) => (card.abilities ?? []).map((ability) => ability.trigger)));
-const abilityIds = unique(CARDS.flatMap((card) => (card.abilities ?? []).map((ability) => ability.abilityId)));
+const triggers = unique(CARDS.flatMap((card) => (card.abilities ?? []).map((ability) => ability.trigger))) as AbilityTrigger[];
+const effectTypes = unique(CARDS.flatMap((card) => (card.abilities ?? []).flatMap((ability) => ability.effects.map((effect) => effect.type)))) as AtomicEffectType[];
+const triggerLabel = (value: string) => TRIGGER_LABELS[value as AbilityTrigger] ?? '特殊时机';
 
 const filtered = computed(() => {
   const query = search.value.trim().toLocaleLowerCase();
@@ -187,7 +189,7 @@ const filtered = computed(() => {
     card.abilityTextZh,
     card.role,
     card.tags.join(' '),
-    ...(card.abilities ?? []).flatMap((ability) => [ability.nameZh, ability.textZh, ability.trigger, ability.abilityId])
+    ...(card.abilities ?? []).flatMap((ability) => [ability.nameZh, ability.textZh])
   ].join(' ').toLocaleLowerCase().includes(query))
     .filter((card) => cost.value === 'all' || String(card.cost) === cost.value)
     .filter((card) => era.value === 'all' || card.era === era.value)
@@ -201,7 +203,7 @@ const filtered = computed(() => {
       const [kind, value] = skill.value.split(':');
       return kind === 'trigger'
         ? (card.abilities ?? []).some((ability) => ability.trigger === value)
-        : (card.abilities ?? []).some((ability) => ability.abilityId === value);
+        : (card.abilities ?? []).some((ability) => ability.effects.some((effect) => effect.type === value));
     });
   return result.sort((left, right) => {
     const compare = sortBy.value === 'power' ? right.power - left.power
@@ -314,7 +316,7 @@ const readJsonFile = async (event: Event) => {
   const file = input.files?.[0];
   if (!file) return;
   try {
-    if (file.size > 256 * 1024) throw new Error('导入文件超过 256 KB。');
+    if (file.size > 256 * 1024) throw new Error('导入文件超过 256 千字节。');
     importText.value = await file.text();
     importMode.value = 'json';
     parseImportText();
@@ -366,10 +368,10 @@ const downloadJson = () => {
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement('a');
   anchor.href = url;
-  anchor.download = `${editingName.value.replace(/[\\/:*?"<>|]/g, '-') || 'aeonfront-deck'}.json`;
+  anchor.download = `${editingName.value.replace(/[\\/:*?"<>|]/g, '-') || '万世战线牌组'}.json`;
   anchor.click();
   URL.revokeObjectURL(url);
-  statusMessage.value = 'JSON 牌组文件已导出。';
+  statusMessage.value = '牌组文件已导出。';
 };
 
 onMounted(() => {
@@ -384,9 +386,9 @@ onMounted(() => {
   <div class="page deck-page">
     <header class="page-heading deck-heading">
       <div>
-        <span class="eyebrow">DECK OPERATIONS</span>
+        <span class="eyebrow">牌组管理</span>
         <div class="title-line"><h1>{{ $t('deck.title') }}</h1><span v-if="dirty" class="unsaved-dot">未保存</span></div>
-        <p>{{ editingCards.length }}/12 张 · 目录 {{ CATALOG_VERSION }} · {{ customDecks.length }}/100 套自定义牌组</p>
+        <p>{{ editingCards.length }}/12 张 · 已保存 {{ customDecks.length }}/100 套自定义牌组</p>
       </div>
       <div class="button-row deck-actions">
         <button class="button" type="button" @click="openNew"><Plus :size="17" /> 新建</button>
@@ -420,9 +422,9 @@ onMounted(() => {
           <span class="slot-number">{{ index + 1 }}</span>
           <button type="button" @click="detail = CARD_BY_ID[cardId] ?? null">
             <template v-if="CARD_BY_ID[cardId]"><strong>{{ CARD_BY_ID[cardId]?.nameZh }}</strong><small>{{ CARD_BY_ID[cardId]?.cost }} 费 · {{ CARD_BY_ID[cardId]?.power }} 战力</small></template>
-            <template v-else><strong class="danger">缺失卡牌</strong><small>{{ cardId }}</small></template>
+            <template v-else><strong class="danger">缺失卡牌</strong><small>无法载入</small></template>
           </button>
-          <button class="remove-card" type="button" :aria-label="`移除 ${CARD_BY_ID[cardId]?.nameZh ?? cardId}`" @click="commitCards(editingCards.filter(id => id !== cardId))"><X :size="15" /></button>
+          <button class="remove-card" type="button" :aria-label="`移除 ${CARD_BY_ID[cardId]?.nameZh ?? '缺失卡牌'}`" @click="commitCards(editingCards.filter(id => id !== cardId))"><X :size="15" /></button>
         </li>
         <li v-for="index in Math.max(0, 12 - editingCards.length)" :key="`empty-${index}`" class="empty-slot"><span class="slot-number">{{ editingCards.length + index }}</span><span>空位</span></li>
       </ol>
@@ -438,7 +440,7 @@ onMounted(() => {
           <select v-model="profession" class="select" aria-label="职业筛选"><option value="all">职业 · 全部</option><option v-for="value in professions" :key="value">{{ value }}</option></select>
           <select v-model="faction" class="select" aria-label="阵营筛选"><option value="all">阵营 · 全部</option><option v-for="value in factions" :key="value">{{ value }}</option></select>
           <select v-model="tag" class="select" aria-label="标签筛选"><option value="all">标签 · 全部</option><option v-for="value in tags" :key="value">{{ value }}</option></select>
-          <select v-model="skill" class="select" aria-label="技能类型筛选"><option value="all">技能类型 · 全部</option><optgroup label="触发时机"><option v-for="value in triggers" :key="value" :value="`trigger:${value}`">{{ value }}</option></optgroup><optgroup label="技能原型"><option v-for="value in abilityIds" :key="value" :value="`ability:${value}`">{{ value }}</option></optgroup></select>
+          <select v-model="skill" class="select" aria-label="技能类型筛选"><option value="all">技能类型 · 全部</option><optgroup label="触发时机"><option v-for="value in triggers" :key="value" :value="`trigger:${value}`">{{ TRIGGER_LABELS[value] }}</option></optgroup><optgroup label="技能效果"><option v-for="value in effectTypes" :key="value" :value="`effect:${value}`">{{ EFFECT_LABELS[value] }}</option></optgroup></select>
           <label class="sort-field"><ArrowDownUp :size="16" /><select v-model="sortBy" class="select" aria-label="排序"><option value="cost">按费用</option><option value="power">按战力</option><option value="era">按时代</option><option value="region">按地区</option><option value="profession">按职业</option><option value="tag">按标签</option><option value="name">按名称</option></select></label>
           <label class="check-field"><input v-model="onlySelected" type="checkbox"> 仅显示已加入</label>
         </div>
@@ -487,13 +489,13 @@ onMounted(() => {
           <ul v-if="analysis.warnings.length" class="warning-list"><li v-for="warning in analysis.warnings" :key="warning.code" :class="warning.severity">{{ warning.message }}</li></ul>
           <p v-else class="success analysis-clear"><Check :size="16" /> 未发现明显构筑问题</p>
           <details><summary>时代 / 地区 / 职业</summary><div class="breakdown"><span v-for="([name, countValue]) in breakdown(analysis.eras)" :key="`era-${name}`">{{ name }} <strong>{{ countValue }}</strong></span><span v-for="([name, countValue]) in breakdown(analysis.regions)" :key="`region-${name}`">{{ name }} <strong>{{ countValue }}</strong></span><span v-for="([name, countValue]) in breakdown(analysis.professions)" :key="`profession-${name}`">{{ name }} <strong>{{ countValue }}</strong></span></div></details>
-          <details><summary>阵营 / 标签 / 触发</summary><div class="breakdown"><span v-for="([name, countValue]) in breakdown(analysis.factions)" :key="`faction-${name}`">{{ name }} <strong>{{ countValue }}</strong></span><span v-for="([name, countValue]) in breakdown(analysis.tags)" :key="`tag-${name}`">{{ name }} <strong>{{ countValue }}</strong></span><span v-for="([name, countValue]) in breakdown(analysis.triggers)" :key="`trigger-${name}`">{{ name }} <strong>{{ countValue }}</strong></span></div></details>
+          <details><summary>阵营 / 标签 / 触发</summary><div class="breakdown"><span v-for="([name, countValue]) in breakdown(analysis.factions)" :key="`faction-${name}`">{{ name }} <strong>{{ countValue }}</strong></span><span v-for="([name, countValue]) in breakdown(analysis.tags)" :key="`tag-${name}`">{{ name }} <strong>{{ countValue }}</strong></span><span v-for="([name, countValue]) in breakdown(analysis.triggers)" :key="`trigger-${name}`">{{ triggerLabel(name) }} <strong>{{ countValue }}</strong></span></div></details>
         </section>
 
         <section class="transfer-panel">
           <div class="inspector-title"><h2>导入与分享</h2></div>
           <div class="transfer-actions">
-            <button class="button" type="button" @click="downloadJson"><Download :size="16" /> JSON</button>
+            <button class="button" type="button" @click="downloadJson"><Download :size="16" /> 导出文件</button>
             <button class="button" type="button" @click="importDialog = true"><Upload :size="16" /> 导入</button>
             <button class="button" type="button" :disabled="editingCards.length !== 12" @click="copyText(deckCode, '牌组码')"><Clipboard :size="16" /> 牌组码</button>
             <button class="button" type="button" :disabled="editingCards.length !== 12" @click="copyText(shareUrl, '分享链接')"><Link2 :size="16" /> 分享</button>
@@ -523,9 +525,9 @@ onMounted(() => {
       <section class="dialog compact-dialog" role="dialog" aria-modal="true" aria-label="导入牌组">
         <header class="dialog-header"><strong>导入牌组</strong><button class="icon-button" type="button" aria-label="关闭" @click="importDialog = false"><X :size="19" /></button></header>
         <div class="dialog-content dialog-form">
-          <div class="segmented"><button type="button" :class="{ active: importMode === 'code' }" @click="importMode = 'code'">AFD1 牌组码</button><button type="button" :class="{ active: importMode === 'json' }" @click="importMode = 'json'">JSON 文本</button></div>
-          <textarea v-model="importText" class="input import-text" :placeholder="importMode === 'code' ? '粘贴 AFD1 牌组码' : '粘贴牌组 JSON'" rows="8"></textarea>
-          <label class="button file-button"><FileJson :size="17" /> 选择 JSON 文件<input type="file" accept="application/json,.json" @change="readJsonFile"></label>
+          <div class="segmented"><button type="button" :class="{ active: importMode === 'code' }" @click="importMode = 'code'">牌组码</button><button type="button" :class="{ active: importMode === 'json' }" @click="importMode = 'json'">牌组文本</button></div>
+          <textarea v-model="importText" class="input import-text" :placeholder="importMode === 'code' ? '粘贴牌组码' : '粘贴牌组文本'" rows="8"></textarea>
+          <label class="button file-button"><FileJson :size="17" /> 选择牌组文件<input type="file" accept="application/json,.json" @change="readJsonFile"></label>
           <p v-if="importError" class="danger">{{ importError }}</p>
           <div class="dialog-actions"><button class="button" type="button" @click="importDialog = false">取消</button><button class="button primary" type="button" :disabled="!importText.trim()" @click="parseImportText"><Upload :size="17" /> 校验并预览</button></div>
         </div>
@@ -536,8 +538,8 @@ onMounted(() => {
       <section class="dialog compact-dialog" role="dialog" aria-modal="true" aria-label="牌组预览">
         <header class="dialog-header"><strong>{{ sharePreview ? '分享牌组预览' : '导入预览' }}</strong><button class="icon-button" type="button" aria-label="关闭" @click="closeImportPreview"><X :size="19" /></button></header>
         <div v-if="importPreview" class="dialog-content import-preview">
-          <div><span class="eyebrow">{{ importPreview.deck.catalogVersion }}</span><h2>{{ importPreview.deck.name }}</h2><p>{{ importPreview.deck.description || '无描述' }}</p></div>
-          <ol><li v-for="cardId in importPreview.deck.cardIds" :key="cardId"><span>{{ CARD_BY_ID[cardId]?.nameZh ?? cardId }}</span><small :class="{ danger: !CARD_BY_ID[cardId] }">{{ CARD_BY_ID[cardId] ? `${CARD_BY_ID[cardId]?.cost} 费 / ${CARD_BY_ID[cardId]?.power} 战力` : '当前目录缺失' }}</small></li></ol>
+          <div><span class="eyebrow">牌组预览</span><h2>{{ importPreview.deck.name }}</h2><p>{{ importPreview.deck.description || '无描述' }}</p></div>
+          <ol><li v-for="cardId in importPreview.deck.cardIds" :key="cardId"><span>{{ CARD_BY_ID[cardId]?.nameZh ?? '缺失卡牌' }}</span><small :class="{ danger: !CARD_BY_ID[cardId] }">{{ CARD_BY_ID[cardId] ? `${CARD_BY_ID[cardId]?.cost} 费 / ${CARD_BY_ID[cardId]?.power} 战力` : '当前内容中不存在' }}</small></li></ol>
           <ul v-if="importPreview.warnings.length" class="warning-list"><li v-for="warning in importPreview.warnings" :key="warning" class="warning">{{ warning }}</li></ul>
           <p>保存时会创建新牌组，不会覆盖本地同名牌组。</p>
           <div class="dialog-actions"><button class="button" type="button" @click="closeImportPreview">取消</button><button class="button primary" type="button" @click="confirmImport"><Save :size="17" /> 保存到牌组库</button></div>

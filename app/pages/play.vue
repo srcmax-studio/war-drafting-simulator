@@ -13,7 +13,7 @@ const begin = () => {
 
 <template>
   <div class="page page-narrow">
-    <header class="page-heading"><div><span class="eyebrow">MATCH OPERATIONS</span><h1>{{ $t('play.title') }}</h1></div></header>
+    <header class="page-heading"><div><span class="eyebrow">对战准备</span><h1>{{ $t('play.title') }}</h1></div></header>
     <div class="mode-list">
       <section>
         <Bot :size="32" /><div><h2>{{ $t('play.practice') }}</h2><p>{{ $t('play.practiceDesc') }}</p><label class="field"><span class="field-label">出战牌组</span><select class="select" :value="selectedDeck?.deckId" @change="selectDeck(($event.target as HTMLSelectElement).value)"><option v-for="deck in decks" :key="deck.deckId" :value="deck.deckId">{{ deck.source === 'preset' ? '预设 · ' : '自定义 · ' }}{{ deck.name }} · {{ deck.cardIds.length }}/12</option></select></label><p v-if="!legalDeck" class="danger deck-error">该牌组必须包含十二张当前目录中的不同卡牌。</p></div><button class="button primary" type="button" :disabled="!legalDeck" @click="begin">{{ $t('common.start') }} <ArrowRight :size="17" /></button>

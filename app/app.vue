@@ -18,7 +18,7 @@ watch(() => route.fullPath, () => { mobileOpen.value = false; });
 <template>
   <div class="app-shell">
     <header class="app-header">
-      <NuxtLink to="/" class="brand-lockup" aria-label="Aeonfront home">
+      <NuxtLink to="/" class="brand-lockup" aria-label="万世战线首页">
         <span class="brand-mark">AF</span>
         <span><strong>万世战线</strong><small>AEONFRONT</small></span>
       </NuxtLink>

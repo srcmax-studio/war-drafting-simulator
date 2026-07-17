@@ -1,6 +1,7 @@
 import { PROTOCOL_VERSION, type CardDefinition, type DeploymentIntent, type FrontDefinition, type PlayerView } from '~/common/src/index';
 import { CARD_BY_ID, CATALOG_VERSION, PACK_VERSIONS } from '~/data/catalog';
 import { toSubmittedDeck, type DeckChoice } from '~/utils/decks';
+import { formatRuleError } from '~/utils/game-errors';
 
 interface OnlineGameView extends PlayerView { deadline: number | null }
 interface RoomState {
@@ -56,7 +57,7 @@ export function useOnlineClient() {
   const { markUsed } = useDecks();
 
   const send = (action: Record<string, unknown>): string => {
-    if (!socket || socket.readyState !== WebSocket.OPEN) throw new Error('WebSocket is not connected.');
+    if (!socket || socket.readyState !== WebSocket.OPEN) throw new Error('尚未连接服务器。');
     const id = requestId();
     socket.send(JSON.stringify({ protocolVersion: PROTOCOL_VERSION, requestId: id, ...action }));
     return id;
@@ -90,7 +91,7 @@ export function useOnlineClient() {
     if (message.event === 'serverStatus') {
       serverStatus.value = message.payload;
       if (message.payload.catalogVersion && message.payload.catalogVersion !== CATALOG_VERSION) {
-        error.value = `CATALOG_VERSION_MISMATCH: 服务器目录 ${message.payload.catalogVersion}，客户端目录 ${CATALOG_VERSION}`;
+        error.value = formatRuleError('CATALOG_VERSION_MISMATCH');
         status.value = 'error';
         return;
       }
@@ -127,7 +128,7 @@ export function useOnlineClient() {
       error.value = '';
       if (gameView.value) send({ action: 'lockTurn', turn: gameView.value.turn });
     } else if (message.event === 'error') {
-      error.value = `${message.payload.code}: ${message.payload.message}`;
+      error.value = formatRuleError(message.payload.code);
       if (message.requestId === pendingSubmitRequestId) pendingSubmitRequestId = '';
       if (!gameView.value) status.value = 'error';
     }
@@ -141,13 +142,24 @@ export function useOnlineClient() {
     gameView.value = null;
     savedGameId.value = '';
     pendingSubmitRequestId = '';
-    socket = new WebSocket(options.url);
+    try {
+      socket = new WebSocket(options.url);
+    } catch {
+      status.value = 'error';
+      error.value = '服务器地址格式不正确。';
+      return;
+    }
     socket.onmessage = (event) => {
       try { handle(JSON.parse(event.data)); }
-      catch (cause) { error.value = cause instanceof Error ? cause.message : 'Invalid server response.'; status.value = 'error'; }
+      catch { error.value = '服务器返回了无法识别的数据。'; status.value = 'error'; }
     };
     socket.onerror = () => { status.value = 'error'; error.value = '无法连接服务器'; };
-    socket.onclose = () => { if (status.value !== 'idle' && !gameView.value?.winner) status.value = 'error'; };
+    socket.onclose = () => {
+      if (status.value !== 'idle' && !gameView.value?.winner) {
+        status.value = 'error';
+        if (!error.value) error.value = '连接已断开，请重新连接。';
+      }
+    };
   };
 
   const disconnect = () => { socket?.close(); socket = null; status.value = 'idle'; };

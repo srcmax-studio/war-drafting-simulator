@@ -15,7 +15,7 @@ const { history } = useMatchHistory();
         <img v-for="(name, index) in featured" :key="name" :src="imageFor(name)" :alt="name" :style="{ '--rank': index }">
       </div>
       <div class="hero-copy">
-        <span class="eyebrow">AEONFRONT · SEASON 01</span>
+        <span class="eyebrow">万世战线 · 第一赛季</span>
         <h1>万世战线</h1>
         <p>{{ $t('home.tagline') }}</p>
         <div class="button-row">
@@ -26,7 +26,7 @@ const { history } = useMatchHistory();
       <aside class="readiness-strip">
         <span>{{ $t('home.status') }}</span>
         <strong>{{ selectedDeck?.name }}</strong>
-        <small>{{ selectedDeck?.cardIds.length ?? 0 }}/12 CARDS</small>
+        <small>{{ selectedDeck?.cardIds.length ?? 0 }}/12 张卡牌</small>
       </aside>
     </section>
 

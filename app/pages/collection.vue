@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ArrowDownUp, ChevronLeft, ChevronRight, Search } from 'lucide-vue-next';
 import type { AbilityTrigger, CardDefinition } from '~/common/src/index';
-import { ASSET_BY_CARD, CARDS, CATALOG_VERSION } from '~/data/catalog';
+import { CARDS } from '~/data/catalog';
 import { TRIGGER_LABELS } from '~/utils/ability-text';
 
 const search = ref('');
@@ -23,7 +23,7 @@ const tags = unique(CARDS.flatMap((card) => card.tags));
 const triggers = unique(CARDS.flatMap((card) => (card.abilities ?? []).map((ability) => ability.trigger))) as AbilityTrigger[];
 const filtered = computed(() => {
   const query = search.value.trim().toLocaleLowerCase();
-  return CARDS.filter((card) => !query || [card.nameZh, card.description, card.abilityTextZh, card.role, card.tags.join(' '), ...(card.abilities ?? []).flatMap((ability) => [ability.nameZh, ability.abilityId, ability.textZh])].join(' ').toLocaleLowerCase().includes(query))
+  return CARDS.filter((card) => !query || [card.nameZh, card.description, card.abilityTextZh, card.role, card.tags.join(' '), ...(card.abilities ?? []).flatMap((ability) => [ability.nameZh, ability.textZh])].join(' ').toLocaleLowerCase().includes(query))
     .filter((card) => era.value === 'all' || card.era === era.value)
     .filter((card) => region.value === 'all' || card.region === region.value)
     .filter((card) => profession.value === 'all' || card.profession === profession.value)
@@ -33,8 +33,7 @@ const filtered = computed(() => {
     .sort((left, right) => {
       const comparison = sortBy.value === 'cost' ? left.cost - right.cost
         : sortBy.value === 'power' ? right.power - left.power
-          : sortBy.value === 'value' ? (right.balance?.expectedTotalValue ?? right.power) - (left.balance?.expectedTotalValue ?? left.power)
-            : left.nameZh.localeCompare(right.nameZh, 'zh-CN');
+          : left.nameZh.localeCompare(right.nameZh, 'zh-CN');
       return comparison || left.cardId.localeCompare(right.cardId);
     });
 });
@@ -45,7 +44,7 @@ watch([search, era, region, profession, cost, tag, trigger, sortBy], () => { pag
 
 <template>
   <div class="page">
-    <header class="page-heading"><div><span class="eyebrow">CHARACTER ARCHIVE</span><h1>{{ $t('cards.title') }}</h1><p>{{ $t('cards.result', { count: filtered.length }) }} · 目录 {{ CATALOG_VERSION }} · WebP {{ Object.values(ASSET_BY_CARD).filter(asset => asset.web).length }} · HD {{ Object.values(ASSET_BY_CARD).filter(asset => asset.hd).length }}</p></div></header>
+    <header class="page-heading"><div><span class="eyebrow">角色档案</span><h1>{{ $t('cards.title') }}</h1><p>{{ $t('cards.result', { count: filtered.length }) }} · 点击卡牌查看完整技能说明</p></div></header>
     <div class="collection-toolbar">
       <label class="search-field"><Search :size="17" /><input v-model="search" class="input" :placeholder="$t('common.search')"></label>
       <select v-model="cost" class="select"><option value="all">{{ $t('cards.cost') }} · {{ $t('common.all') }}</option><option v-for="value in 6" :key="value" :value="String(value)">{{ value }}</option></select>
@@ -54,7 +53,7 @@ watch([search, era, region, profession, cost, tag, trigger, sortBy], () => { pag
       <select v-model="profession" class="select"><option value="all">{{ $t('cards.profession') }} · {{ $t('common.all') }}</option><option v-for="value in professions" :key="value">{{ value }}</option></select>
       <select v-model="tag" class="select"><option value="all">标签 · 全部</option><option v-for="value in tags" :key="value">{{ value }}</option></select>
       <select v-model="trigger" class="select"><option value="all">技能触发 · 全部</option><option v-for="value in triggers" :key="value" :value="value">{{ TRIGGER_LABELS[value] }}</option></select>
-      <label class="sort-control"><ArrowDownUp :size="16" /><select v-model="sortBy" class="select"><option value="name">按名称</option><option value="cost">按费用</option><option value="power">按战力</option><option value="value">按预计总值</option></select></label>
+      <label class="sort-control"><ArrowDownUp :size="16" /><select v-model="sortBy" class="select"><option value="name">按名称</option><option value="cost">按费用</option><option value="power">按战力</option></select></label>
     </div>
     <div class="card-grid"><CardTile v-for="card in visible" :key="card.cardId" :card="card" @select="detail = card" /></div>
     <div class="pagination"><button class="icon-button" type="button" aria-label="上一页" :disabled="page <= 1" @click="page--"><ChevronLeft :size="18" /></button><span>{{ page }} / {{ pages }}</span><button class="icon-button" type="button" aria-label="下一页" :disabled="page >= pages" @click="page++"><ChevronRight :size="18" /></button></div>

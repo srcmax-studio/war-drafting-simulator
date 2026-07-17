@@ -58,6 +58,13 @@ describe('client data integration', () => {
     });
     expect(averages.every((value, index) => index === 0 || value > averages[index - 1]!)).toBe(true);
   });
+  it('ships only four-character Chinese skill names and localized skill text', () => {
+    const abilities = cards.flatMap((card) => card.abilities ?? []);
+    expect(abilities).toHaveLength(1221);
+    expect(new Set(abilities.map((ability) => ability.nameZh)).size).toBe(abilities.length);
+    expect(abilities.every((ability) => /^\p{Script=Han}{4}$/u.test(ability.nameZh) && !ability.nameZh.includes('的'))).toBe(true);
+    expect(abilities.every((ability) => ability.textZh.startsWith(`${ability.nameZh}：`) && !/[A-Za-z_]/u.test(ability.textZh))).toBe(true);
+  });
   it('completes and replays a six-turn local practice match', () => {
     const state = createGame({
       seed: 20260717,

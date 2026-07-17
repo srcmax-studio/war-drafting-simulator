@@ -16,6 +16,7 @@ import {
 } from '~/common/src/index';
 import { CARD_BY_ID, CARDS, CATALOG_VERSION, FRONTS, PACK_VERSIONS, PRESET_DECKS } from '~/data/catalog';
 import type { DeckChoice } from '~/utils/decks';
+import { formatRuleError } from '~/utils/game-errors';
 
 const HUMAN_ID = 'local-player';
 const AI_ID = 'practice-ai';
@@ -114,9 +115,9 @@ export function useLocalGame() {
     if (!ai || ai.locked) return;
     const intent = makeAiIntent(game.value);
     const submitted = submitTurnIntent(game.value, AI_ID, intent);
-    if (!submitted.ok) throw new Error(submitted.issues[0]?.message ?? 'AI plan rejected.');
+    if (!submitted.ok) throw new Error(formatRuleError(submitted.issues[0]?.code ?? 'AI_INVALID_PLAN'));
     const locked = lockTurn(game.value, AI_ID, `local-ai-lock-${game.value.turn}`);
-    if (!locked.ok) throw new Error(locked.issues[0]?.message ?? 'AI lock rejected.');
+    if (!locked.ok) throw new Error(formatRuleError(locked.issues[0]?.code ?? 'AI_LOCK_FAILED'));
   };
 
   const saveResult = () => {
@@ -178,7 +179,7 @@ export function useLocalGame() {
     const normalized = next.map((deployment, order) => ({ ...deployment, order }));
     const result = validateTurnIntent(game.value, HUMAN_ID, { requestId: 'local-preview', turn: game.value.turn, deployments: normalized });
     if (!result.ok) {
-      error.value = result.issues[0]?.message ?? '行动不合法';
+      error.value = formatRuleError(result.issues[0]?.code);
       return;
     }
     error.value = '';
@@ -190,9 +191,9 @@ export function useLocalGame() {
     if (!game.value || game.value.phase !== 'planning') return;
     const turn = game.value.turn;
     const result = submitTurnIntent(game.value, HUMAN_ID, { requestId: `local-player-plan-${turn}`, turn, deployments: plan.value });
-    if (!result.ok) { error.value = result.issues[0]?.message ?? '行动不合法'; return; }
+    if (!result.ok) { error.value = formatRuleError(result.issues[0]?.code); return; }
     const locked = lockTurn(game.value, HUMAN_ID, `local-player-lock-${turn}`);
-    if (!locked.ok) { error.value = locked.issues[0]?.message ?? '无法锁定'; return; }
+    if (!locked.ok) { error.value = formatRuleError(locked.issues[0]?.code); return; }
     plan.value = [];
     if (game.value.winner) saveResult();
     else planAi();
@@ -200,12 +201,12 @@ export function useLocalGame() {
   const banner = () => {
     if (!game.value) return;
     const result = raiseBanner(game.value, HUMAN_ID, `local-player-banner-${game.value.turn}`);
-    if (!result.ok) error.value = result.issues[0]?.message ?? '无法举旗';
+    if (!result.ok) error.value = formatRuleError(result.issues[0]?.code);
   };
   const retreat = () => {
     if (!game.value) return;
     const result = withdraw(game.value, HUMAN_ID, `local-player-withdraw-${game.value.turn}`);
-    if (!result.ok) error.value = result.issues[0]?.message ?? '无法撤军';
+    if (!result.ok) error.value = formatRuleError(result.issues[0]?.code);
     else saveResult();
   };
 

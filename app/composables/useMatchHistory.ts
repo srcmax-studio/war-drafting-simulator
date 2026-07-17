@@ -32,7 +32,7 @@ export function restoreGameFromHistory(serialized: string): GameState {
   const state = deserializeGame(serialized);
   if (state.setup.cards.length === 0 && Object.keys(state.cardCatalog).length === 0) {
     if (state.setup.catalogVersion && state.setup.catalogVersion !== CATALOG_VERSION) {
-      throw new Error(`Replay catalog ${state.setup.catalogVersion} is not installed.`);
+      throw new Error('该对局记录来自其他内容版本，当前无法重放。');
     }
     state.setup.cards = CARDS;
     state.setup.fronts = FRONTS;
