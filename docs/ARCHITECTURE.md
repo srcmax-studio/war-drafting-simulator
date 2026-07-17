@@ -14,4 +14,4 @@ The character repository preserves the 824 source records and deterministically 
 
 The server owns deadlines and all mutations. WebSocket connections map to reconnectable player records. Every action has a protocol version and request id; rule-layer ids are namespaced by player. Player views remove opponent hands, deck order, unrevealed cards and plans. Practice uses the same engine and an AI that consumes its private view rather than the opponent's hidden data.
 
-Game history stores the serialized deterministic state and event log under `aeonfront_match_history_v1`. Replay recreates the initial setup and re-applies player action events, then requires byte-equivalent serialized state.
+Game history uses `aeonfront_match_history_v2`. Local practice stores serialized deterministic state and the event log; replay recreates the initial setup and re-applies player action events, then requires byte-equivalent serialized state. Online entries store deck/catalog identity, the authoritative public result and the permitted event stream without claiming to reconstruct hidden private state.

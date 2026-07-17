@@ -23,4 +23,5 @@ jobs:
       - run: npm run validate:cards
       - run: npm run validate:assets
       - run: npm run validate:fronts
+      - run: npm run validate:packs
       - run: npm run build

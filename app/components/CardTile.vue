@@ -17,7 +17,7 @@ const fallback = () => { source.value = cardFallbackUrl(props.card); };
   <button
     type="button"
     class="card-tile"
-    :class="{ selected, compact }"
+    :class="{ selected, compact, finisher: card.cost >= 5, 'multi-skill': (card.abilities?.length ?? 0) > 1 }"
     :disabled="disabled"
     :aria-label="`${card.nameZh}，费用 ${card.cost}，战力 ${card.power}`"
     @click="emit('select', card)"
@@ -26,9 +26,11 @@ const fallback = () => { source.value = cardFallbackUrl(props.card); };
     <span class="card-shade" aria-hidden="true" />
     <span class="card-stat card-cost">{{ card.cost }}</span>
     <span class="card-stat card-power">{{ card.power }}</span>
+    <span v-if="(card.abilities?.length ?? 0) > 1" class="ability-count">{{ card.abilities?.length }} 技能</span>
+    <span v-if="card.cost >= 5" class="finisher-mark">终结</span>
     <span class="card-copy">
       <h3>{{ card.nameZh }}</h3>
-      <p>{{ card.abilityTextZh }}</p>
+      <p>{{ card.abilities?.[0]?.textZh ?? card.abilityTextZh }}</p>
       <span class="card-meta">{{ card.era }} · {{ card.profession }}</span>
     </span>
   </button>

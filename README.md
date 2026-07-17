@@ -4,6 +4,8 @@
 
 Players bring twelve unique character cards, gain increasing military orders over six turns, and deploy simultaneously across three seeded fronts. The authoritative shared engine resolves reveal order, structured abilities, front effects, banner stakes, withdrawal and scoring without an external model.
 
+The client includes a complete local deck library: blank, preset-copy, custom-copy and random starting points; ordered drag-and-drop editing; filters and live balance analysis; favorites, defaults and recent use; versioned migration and backup; JSON files, checksummed `AFD1` deck codes and confirmation-only share links. Custom decks work in practice and authoritative online matches.
+
 ## Repository family
 
 | Repository | Responsibility |
@@ -34,9 +36,12 @@ Open `http://localhost:3000`. Practice mode is fully local. For online play, sta
 npm run lint
 npm run typecheck
 npm test
+npm run test:replay
 npm run validate:cards
 npm run validate:assets
 npm run validate:fronts
+npm run validate:packs
+npm run balance:cards
 npm run build
 npm run generate
 npm run app:build

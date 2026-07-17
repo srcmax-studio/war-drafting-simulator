@@ -5,6 +5,7 @@ import { extname, join, normalize } from 'node:path';
 
 let assetServer: Server | null = null;
 let assetUrl = '';
+let mainWindow: BrowserWindow | null = null;
 
 const mimeTypes: Record<string, string> = {
   '.css': 'text/css; charset=utf-8',
@@ -52,7 +53,7 @@ const startAssetServer = async (): Promise<string> => {
 };
 
 const createWindow = async (): Promise<void> => {
-  const window = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 1440,
     height: 960,
     minWidth: 980,
@@ -62,14 +63,14 @@ const createWindow = async (): Promise<void> => {
     title: '万世战线 Aeonfront',
     webPreferences: { contextIsolation: true, sandbox: true }
   });
+  mainWindow.once('ready-to-show', () => mainWindow?.show());
+  mainWindow.once('closed', () => { mainWindow = null; });
   const devUrl = process.env.VITE_DEV_SERVER_URL;
   const url = devUrl ?? await startAssetServer();
-  await window.loadURL(url);
-  window.once('ready-to-show', () => window.show());
+  await mainWindow.loadURL(url);
 };
 
-await app.whenReady();
-await createWindow();
+void app.whenReady().then(createWindow);
 app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) void createWindow();
 });

@@ -1,61 +1,97 @@
 import {
+  SeededRandom,
   createGame,
   createPlayerView,
   lockTurn,
   raiseBanner,
-  serializeGame,
   submitTurnIntent,
   validateTurnIntent,
   withdraw,
+  type CardDefinition,
   type DeploymentIntent,
+  type FrontDefinition,
   type GameState,
   type PlayerView,
   type TurnIntent
 } from '~/common/src/index';
-import { CARD_BY_ID, CARDS, FRONTS, PRESET_DECKS } from '~/data/catalog';
+import { CARD_BY_ID, CARDS, CATALOG_VERSION, FRONTS, PACK_VERSIONS, PRESET_DECKS } from '~/data/catalog';
+import type { DeckChoice } from '~/utils/decks';
 
 const HUMAN_ID = 'local-player';
 const AI_ID = 'practice-ai';
 
-const effectiveCost = (cardId: string, effectId: string): number => {
-  const card = CARD_BY_ID[cardId];
-  if (!card) return 99;
-  if (effectId === 'cost_down') return Math.max(1, card.cost - 1);
-  if (effectId === 'cost_up') return card.cost + 1;
-  return card.cost;
+const numberArg = (front: FrontDefinition, key: string, fallback: number): number => {
+  const value = front.effectArgs?.[key];
+  return typeof value === 'number' && Number.isFinite(value) ? value : fallback;
+};
+
+const adjustedCost = (card: CardDefinition, front: FrontDefinition, turn: number, firstHere: boolean): number => {
+  let cost = card.cost;
+  if (front.effectId === 'cost_down') cost -= numberArg(front, 'amount', 1);
+  if (front.effectId === 'cost_up') cost += numberArg(front, 'amount', 1);
+  if (front.effectId === 'future_beacon' && card.era === String(front.effectArgs?.era ?? '未来时代')) cost -= numberArg(front, 'cost', 1);
+  if (front.effectId === 'hand_cost_down' && card.cost >= numberArg(front, 'threshold', 4)) cost -= numberArg(front, 'amount', 1);
+  if (front.effectId === 'low_cost_surcharge' && card.cost <= numberArg(front, 'threshold', 2)) cost += numberArg(front, 'amount', 1);
+  if (front.effectId === 'final_turn_discount' && turn === numberArg(front, 'turn', 6)) cost -= numberArg(front, 'amount', 2);
+  if (firstHere && front.effectId === 'first_card_discount') cost -= numberArg(front, 'amount', 1);
+  if (firstHere && front.effectId === 'high_cost_discount' && card.cost >= numberArg(front, 'threshold', 5)) cost -= numberArg(front, 'amount', 2);
+  return Math.max(1, Math.floor(cost));
+};
+
+const allowed = (card: CardDefinition, front: FrontDefinition): boolean =>
+  !(front.effectId === 'ban_high_cost' && card.cost >= numberArg(front, 'threshold', 4))
+  && !(front.effectId === 'ban_low_cost' && card.cost <= numberArg(front, 'threshold', 2));
+
+const traitScore = (card: CardDefinition, front: FrontDefinition): number => {
+  if (front.effectId === 'era_bonus' && card.era === front.effectArgs?.era) return 3;
+  if (front.effectId === 'region_bonus' && card.region === front.effectArgs?.region) return 3;
+  if (front.effectId === 'profession_bonus' && card.profession.includes(String(front.effectArgs?.professionIncludes ?? ''))) return 3;
+  if (front.effectId === 'identity_bonus' && Array.isArray(front.effectArgs?.identities) && front.effectArgs.identities.includes(card.identity)) return 3;
+  return 0;
 };
 
 const makeAiIntent = (state: GameState): TurnIntent => {
   const view = createPlayerView(state, AI_ID);
   const ai = view.players.find((player) => player.playerId === AI_ID);
   let energy = ai?.energy ?? 0;
+  const rng = new SeededRandom((state.seed ^ state.turn * 0x9e3779b9) >>> 0);
   const laneCounts = new Map(view.fronts.map((front) => [front.definition.frontId, front.cards[AI_ID]?.length ?? 0]));
+  const turnDeployments = new Map<string, number>();
   const deployments: DeploymentIntent[] = [];
-  const hand = [...(ai?.hand ?? [])].sort((left, right) => {
-    const leftCard = CARD_BY_ID[left]!;
-    const rightCard = CARD_BY_ID[right]!;
-    return (rightCard.power / rightCard.cost) - (leftCard.power / leftCard.cost) || left.localeCompare(right);
-  });
-  for (const cardId of hand) {
-    const card = CARD_BY_ID[cardId]!;
-    const targets = view.fronts.filter((front) => {
-      if (front.definition.effectId === 'ban_high_cost' && card.cost >= 4) return false;
-      if (front.definition.effectId === 'ban_low_cost' && card.cost <= 2) return false;
-      const capacity = front.definition.effectId === 'capacity_up' ? 5 : front.definition.effectId === 'capacity_down' ? 3 : 4;
-      return (laneCounts.get(front.definition.frontId) ?? 0) < capacity;
-    }).sort((left, right) => {
-      const leftOwn = left.power[AI_ID] ?? 0;
-      const rightOwn = right.power[AI_ID] ?? 0;
-      const leftEnemy = Object.entries(left.power).find(([id]) => id !== AI_ID)?.[1] ?? 0;
-      const rightEnemy = Object.entries(right.power).find(([id]) => id !== AI_ID)?.[1] ?? 0;
-      return (leftOwn - leftEnemy) - (rightOwn - rightEnemy);
+  const hand = [...(ai?.hand ?? [])]
+    .map((cardId) => ({ card: CARD_BY_ID[cardId], tie: rng.next() }))
+    .filter((entry): entry is { card: CardDefinition; tie: number } => Boolean(entry.card))
+    .sort((left, right) => {
+      const leftValue = left.card.balance?.expectedTotalValue ?? left.card.power;
+      const rightValue = right.card.balance?.expectedTotalValue ?? right.card.power;
+      return rightValue / right.card.cost - leftValue / left.card.cost || left.tie - right.tie || left.card.cardId.localeCompare(right.card.cardId);
     });
-    const target = targets.find((front) => effectiveCost(cardId, front.definition.effectId) <= energy);
-    if (!target) continue;
-    const cost = effectiveCost(cardId, target.definition.effectId);
-    deployments.push({ cardId, frontId: target.definition.frontId, order: deployments.length });
-    laneCounts.set(target.definition.frontId, (laneCounts.get(target.definition.frontId) ?? 0) + 1);
-    energy -= cost;
+  for (const { card } of hand) {
+    const candidates = view.fronts
+      .filter((front) => allowed(card, front.definition))
+      .filter((front) => !front.deploymentBlocked[AI_ID])
+      .filter((front) => (laneCounts.get(front.definition.frontId) ?? 0) < front.capacity[AI_ID]!)
+      .filter((front) => front.definition.effectId !== 'single_deploy' || (turnDeployments.get(front.definition.frontId) ?? 0) < 1)
+      .map((front) => {
+        const firstHere = (turnDeployments.get(front.definition.frontId) ?? 0) === 0;
+        const cost = adjustedCost(card, front.definition, view.turn, firstHere);
+        const own = front.power[AI_ID] ?? 0;
+        const opponent = Object.entries(front.power).find(([id]) => id !== AI_ID)?.[1] ?? 0;
+        const value = card.balance?.expectedTotalValue ?? card.power;
+        return { front, cost, score: value + traitScore(card, front.definition) - Math.abs(Number(own) - Number(opponent ?? 0)) * .08 + rng.next() };
+      })
+      .filter((candidate) => candidate.cost <= energy)
+      .sort((left, right) => right.score - left.score || left.front.definition.frontId.localeCompare(right.front.definition.frontId));
+    for (const candidate of candidates) {
+      const proposed = [...deployments, { cardId: card.cardId, frontId: candidate.front.definition.frontId, order: deployments.length }];
+      const result = validateTurnIntent(state, AI_ID, { requestId: 'local-ai-preview', turn: state.turn, deployments: proposed });
+      if (!result.ok) continue;
+      deployments.push(proposed.at(-1)!);
+      laneCounts.set(candidate.front.definition.frontId, (laneCounts.get(candidate.front.definition.frontId) ?? 0) + 1);
+      turnDeployments.set(candidate.front.definition.frontId, (turnDeployments.get(candidate.front.definition.frontId) ?? 0) + 1);
+      energy -= candidate.cost;
+      break;
+    }
   }
   return { requestId: `local-ai-plan-${state.turn}`, turn: state.turn, deployments };
 };
@@ -65,7 +101,7 @@ export function useLocalGame() {
   const plan = useState<DeploymentIntent[]>('aeonfront-local-plan', () => []);
   const error = useState<string>('aeonfront-local-error', () => '');
   const savedGameId = useState<string>('aeonfront-saved-game', () => '');
-  const { selectedDeck } = useDecks();
+  const { selectedDeck, markUsed } = useDecks();
   const { add } = useMatchHistory();
 
   const view = computed<PlayerView | null>(() => game.value ? createPlayerView(game.value, HUMAN_ID) : null);
@@ -86,19 +122,31 @@ export function useLocalGame() {
   const saveResult = () => {
     if (!game.value || game.value.phase !== 'ended' || savedGameId.value === game.value.gameId) return;
     savedGameId.value = game.value.gameId;
+    const setup = game.value.setup.players.find((player) => player.playerId === HUMAN_ID);
     add({
+      schemaVersion: 2,
       gameId: game.value.gameId,
       timestamp: Date.now(),
       mode: 'practice',
       playerId: HUMAN_ID,
-      deckName: selectedDeck.value?.name ?? '演武牌组',
-      serializedGame: serializeGame(game.value),
+      deckId: setup?.deckId ?? 'practice-deck',
+      deckName: setup?.deckName ?? '演武牌组',
+      catalogVersion: game.value.setup.catalogVersion ?? CATALOG_VERSION,
+      packVersions: { ...(game.value.setup.packVersions ?? PACK_VERSIONS) },
+      serializedGame: compactGameForHistory(game.value),
       winner: game.value.winner
     });
   };
 
-  const startPractice = (cardIds?: string[]) => {
-    const humanDeck = cardIds ?? selectedDeck.value?.cardIds ?? PRESET_DECKS[0]!.cardIds;
+  const startPractice = (deck?: DeckChoice | string[]) => {
+    const selected = selectedDeck.value;
+    const cardIds = Array.isArray(deck) ? deck : deck?.cardIds ?? selected?.cardIds ?? PRESET_DECKS[0]!.cardIds;
+    const deckId = Array.isArray(deck) ? selected?.deckId : deck?.deckId ?? selected?.deckId;
+    const deckName = Array.isArray(deck) ? selected?.name : deck?.name ?? selected?.name;
+    if (cardIds.length !== 12 || new Set(cardIds).size !== 12 || cardIds.some((cardId) => !CARD_BY_ID[cardId])) {
+      error.value = '演武牌组必须包含十二张当前目录中的不同卡牌。';
+      return false;
+    }
     const aiDeck = PRESET_DECKS[1]!.cardIds;
     const seed = Date.now() >>> 0;
     game.value = createGame({
@@ -106,15 +154,19 @@ export function useLocalGame() {
       seed,
       cards: CARDS,
       fronts: FRONTS,
+      catalogVersion: CATALOG_VERSION,
+      packVersions: { ...PACK_VERSIONS },
       players: [
-        { playerId: HUMAN_ID, name: '玩家', deck: [...humanDeck] },
-        { playerId: AI_ID, name: '演武官', deck: [...aiDeck] }
+        { playerId: HUMAN_ID, name: '玩家', deck: [...cardIds], deckId, deckName },
+        { playerId: AI_ID, name: '演武官', deck: [...aiDeck], deckId: PRESET_DECKS[1]!.deckId, deckName: PRESET_DECKS[1]!.nameZh }
       ]
     });
+    if (deckId) markUsed(deckId);
     plan.value = [];
     error.value = '';
     savedGameId.value = '';
     planAi();
+    return true;
   };
 
   const toggleDeployment = (cardId: string, frontId: string) => {
@@ -134,7 +186,6 @@ export function useLocalGame() {
   };
 
   const clearPlan = () => { plan.value = []; error.value = ''; };
-
   const lock = () => {
     if (!game.value || game.value.phase !== 'planning') return;
     const turn = game.value.turn;
@@ -146,7 +197,6 @@ export function useLocalGame() {
     if (game.value.winner) saveResult();
     else planAi();
   };
-
   const banner = () => {
     if (!game.value) return;
     const result = raiseBanner(game.value, HUMAN_ID, `local-player-banner-${game.value.turn}`);

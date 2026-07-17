@@ -1,6 +1,6 @@
 {
   "name": "aeonfront",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "万世战线 Aeonfront Web and Electron client.",
   "author": "SrcMax Studio <support@srcmax.com>",
   "type": "module",
@@ -25,9 +25,19 @@
     "lint": "eslint app electron nuxt.config.ts vitest.config.ts",
     "typecheck": "nuxt typecheck",
     "test": "vitest run",
+    "test:replay": "vitest run -t replay",
+    "test:browser": "python3 tests/browser_acceptance.py",
+    "test:online": "python3 tests/online_acceptance.py",
+    "test:electron": "python3 tests/electron_acceptance.py",
+    "generate:cards": "node data/characters/scripts/generate-tcg-data.mjs",
     "validate:cards": "tsx scripts/validate-client-data.ts",
     "validate:assets": "node scripts/validate-client-assets.mjs",
     "validate:fronts": "tsx scripts/validate-client-data.ts --fronts",
+    "validate:packs": "node data/characters/scripts/validate-packs.mjs",
+    "balance:cards": "node data/characters/scripts/balance-cards.mjs",
+    "balance:cards:quick": "node data/characters/scripts/balance-cards.mjs --quick",
+    "balance:cards:full": "node data/characters/scripts/balance-cards.mjs",
+    "balance:report": "node data/characters/scripts/balance-cards.mjs",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {

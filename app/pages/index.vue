@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ArrowRight, BookOpen, GalleryVerticalEnd, History, LibraryBig, ShieldCheck, Swords, Wifi } from 'lucide-vue-next';
+import { CARDS, FRONTS } from '~/data/catalog';
 const extension = useRuntimeConfig().public.assetExtension;
 const featured = ['秦始皇', '花木兰', '达·芬奇', '吉尔伽美什'];
 const imageFor = (name: string) => `/cards/${encodeURIComponent(name)}.${extension}`;
@@ -31,8 +32,8 @@ const { history } = useMatchHistory();
 
     <section class="home-actions">
       <NuxtLink to="/deck-builder"><GalleryVerticalEnd :size="22" /><div><strong>{{ $t('home.deck') }}</strong><span>{{ selectedDeck?.name }}</span></div><ArrowRight :size="18" /></NuxtLink>
-      <NuxtLink to="/collection"><LibraryBig :size="22" /><div><strong>{{ $t('home.collection') }}</strong><span>824</span></div><ArrowRight :size="18" /></NuxtLink>
-      <NuxtLink to="/fronts"><BookOpen :size="22" /><div><strong>战线档案</strong><span>30</span></div><ArrowRight :size="18" /></NuxtLink>
+      <NuxtLink to="/collection"><LibraryBig :size="22" /><div><strong>{{ $t('home.collection') }}</strong><span>{{ CARDS.length }}</span></div><ArrowRight :size="18" /></NuxtLink>
+      <NuxtLink to="/fronts"><BookOpen :size="22" /><div><strong>战线档案</strong><span>{{ FRONTS.filter(front => front.enabled).length }}</span></div><ArrowRight :size="18" /></NuxtLink>
       <NuxtLink to="/history"><History :size="22" /><div><strong>最近战史</strong><span>{{ history.length }}</span></div><ArrowRight :size="18" /></NuxtLink>
     </section>
 

@@ -1,35 +1,69 @@
 <script setup lang="ts">
-import { Search } from 'lucide-vue-next';
-import type { CardDefinition } from '~/common/src/index';
-import { ASSET_BY_CARD, CARDS } from '~/data/catalog';
+import { ArrowDownUp, ChevronLeft, ChevronRight, Search } from 'lucide-vue-next';
+import type { AbilityTrigger, CardDefinition } from '~/common/src/index';
+import { ASSET_BY_CARD, CARDS, CATALOG_VERSION } from '~/data/catalog';
+import { TRIGGER_LABELS } from '~/utils/ability-text';
+
 const search = ref('');
 const era = ref('all');
 const region = ref('all');
+const profession = ref('all');
 const cost = ref('all');
+const tag = ref('all');
+const trigger = ref('all');
+const sortBy = ref('name');
 const page = ref(1);
 const pageSize = 48;
 const detail = ref<CardDefinition | null>(null);
-const eras = [...new Set(CARDS.map((card) => card.era))].sort((a, b) => a.localeCompare(b, 'zh-CN'));
-const regions = [...new Set(CARDS.map((card) => card.region))].sort((a, b) => a.localeCompare(b, 'zh-CN'));
+const unique = (values: string[]) => [...new Set(values.filter(Boolean))].sort((left, right) => left.localeCompare(right, 'zh-CN'));
+const eras = unique(CARDS.map((card) => card.era));
+const regions = unique(CARDS.map((card) => card.region));
+const professions = unique(CARDS.map((card) => card.profession));
+const tags = unique(CARDS.flatMap((card) => card.tags));
+const triggers = unique(CARDS.flatMap((card) => (card.abilities ?? []).map((ability) => ability.trigger))) as AbilityTrigger[];
 const filtered = computed(() => {
-  const query = search.value.trim().toLowerCase();
-  return CARDS.filter((card) => !query || [card.nameZh, card.description, card.abilityTextZh, card.tags.join(' ')].join(' ').toLowerCase().includes(query))
+  const query = search.value.trim().toLocaleLowerCase();
+  return CARDS.filter((card) => !query || [card.nameZh, card.description, card.abilityTextZh, card.role, card.tags.join(' '), ...(card.abilities ?? []).flatMap((ability) => [ability.nameZh, ability.abilityId, ability.textZh])].join(' ').toLocaleLowerCase().includes(query))
     .filter((card) => era.value === 'all' || card.era === era.value)
     .filter((card) => region.value === 'all' || card.region === region.value)
-    .filter((card) => cost.value === 'all' || String(card.cost) === cost.value);
+    .filter((card) => profession.value === 'all' || card.profession === profession.value)
+    .filter((card) => cost.value === 'all' || String(card.cost) === cost.value)
+    .filter((card) => tag.value === 'all' || card.tags.includes(tag.value))
+    .filter((card) => trigger.value === 'all' || (card.abilities ?? []).some((ability) => ability.trigger === trigger.value))
+    .sort((left, right) => {
+      const comparison = sortBy.value === 'cost' ? left.cost - right.cost
+        : sortBy.value === 'power' ? right.power - left.power
+          : sortBy.value === 'value' ? (right.balance?.expectedTotalValue ?? right.power) - (left.balance?.expectedTotalValue ?? left.power)
+            : left.nameZh.localeCompare(right.nameZh, 'zh-CN');
+      return comparison || left.cardId.localeCompare(right.cardId);
+    });
 });
 const pages = computed(() => Math.max(1, Math.ceil(filtered.value.length / pageSize)));
 const visible = computed(() => filtered.value.slice((page.value - 1) * pageSize, page.value * pageSize));
-watch([search, era, region, cost], () => { page.value = 1; });
+watch([search, era, region, profession, cost, tag, trigger, sortBy], () => { page.value = 1; });
 </script>
 
 <template>
   <div class="page">
-    <header class="page-heading"><div><span class="eyebrow">CHARACTER ARCHIVE</span><h1>{{ $t('cards.title') }}</h1><p>{{ $t('cards.result', { count: filtered.length }) }} · WebP {{ Object.values(ASSET_BY_CARD).filter(asset => asset.web).length }} · HD {{ Object.values(ASSET_BY_CARD).filter(asset => asset.hd).length }}</p></div></header>
-    <div class="toolbar collection-toolbar"><label class="search-field"><Search :size="17" /><input v-model="search" class="input" :placeholder="$t('common.search')"></label><select v-model="cost" class="select"><option value="all">{{ $t('cards.cost') }} · {{ $t('common.all') }}</option><option v-for="value in 6" :key="value" :value="String(value)">{{ value }}</option></select><select v-model="era" class="select"><option value="all">{{ $t('cards.era') }} · {{ $t('common.all') }}</option><option v-for="value in eras" :key="value">{{ value }}</option></select><select v-model="region" class="select"><option value="all">{{ $t('cards.region') }} · {{ $t('common.all') }}</option><option v-for="value in regions" :key="value">{{ value }}</option></select></div>
+    <header class="page-heading"><div><span class="eyebrow">CHARACTER ARCHIVE</span><h1>{{ $t('cards.title') }}</h1><p>{{ $t('cards.result', { count: filtered.length }) }} · 目录 {{ CATALOG_VERSION }} · WebP {{ Object.values(ASSET_BY_CARD).filter(asset => asset.web).length }} · HD {{ Object.values(ASSET_BY_CARD).filter(asset => asset.hd).length }}</p></div></header>
+    <div class="collection-toolbar">
+      <label class="search-field"><Search :size="17" /><input v-model="search" class="input" :placeholder="$t('common.search')"></label>
+      <select v-model="cost" class="select"><option value="all">{{ $t('cards.cost') }} · {{ $t('common.all') }}</option><option v-for="value in 6" :key="value" :value="String(value)">{{ value }}</option></select>
+      <select v-model="era" class="select"><option value="all">{{ $t('cards.era') }} · {{ $t('common.all') }}</option><option v-for="value in eras" :key="value">{{ value }}</option></select>
+      <select v-model="region" class="select"><option value="all">{{ $t('cards.region') }} · {{ $t('common.all') }}</option><option v-for="value in regions" :key="value">{{ value }}</option></select>
+      <select v-model="profession" class="select"><option value="all">{{ $t('cards.profession') }} · {{ $t('common.all') }}</option><option v-for="value in professions" :key="value">{{ value }}</option></select>
+      <select v-model="tag" class="select"><option value="all">标签 · 全部</option><option v-for="value in tags" :key="value">{{ value }}</option></select>
+      <select v-model="trigger" class="select"><option value="all">技能触发 · 全部</option><option v-for="value in triggers" :key="value" :value="value">{{ TRIGGER_LABELS[value] }}</option></select>
+      <label class="sort-control"><ArrowDownUp :size="16" /><select v-model="sortBy" class="select"><option value="name">按名称</option><option value="cost">按费用</option><option value="power">按战力</option><option value="value">按预计总值</option></select></label>
+    </div>
     <div class="card-grid"><CardTile v-for="card in visible" :key="card.cardId" :card="card" @select="detail = card" /></div>
-    <div class="pagination"><button class="icon-button" type="button" :disabled="page <= 1" @click="page--">←</button><span>{{ page }} / {{ pages }}</span><button class="icon-button" type="button" :disabled="page >= pages" @click="page++">→</button></div>
+    <div class="pagination"><button class="icon-button" type="button" aria-label="上一页" :disabled="page <= 1" @click="page--"><ChevronLeft :size="18" /></button><span>{{ page }} / {{ pages }}</span><button class="icon-button" type="button" aria-label="下一页" :disabled="page >= pages" @click="page++"><ChevronRight :size="18" /></button></div>
     <CardDetailModal :card="detail" @close="detail = null" />
   </div>
 </template>
-<style scoped>.collection-toolbar{grid-template-columns:minmax(260px,1fr) repeat(3,minmax(130px,.35fr))}@media(max-width:720px){.collection-toolbar{grid-template-columns:1fr 1fr}.collection-toolbar .search-field{grid-column:span 2}}</style>
+
+<style scoped>
+.collection-toolbar { display: grid; grid-template-columns: minmax(260px,1fr) repeat(4,minmax(120px,.32fr)); gap: 9px; margin-bottom: 20px; }.sort-control { position: relative; }.sort-control svg { position: absolute; z-index: 1; left: 10px; top: 12px; color: var(--muted); }.sort-control .select { padding-left: 34px; }
+@media(max-width:1050px){.collection-toolbar{grid-template-columns:repeat(3,1fr)}.collection-toolbar .search-field{grid-column:span 3}}
+@media(max-width:720px){.collection-toolbar{grid-template-columns:1fr 1fr}.collection-toolbar .search-field{grid-column:span 2}}
+</style>
